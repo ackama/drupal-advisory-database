@@ -7,7 +7,7 @@ This is an early attempt at getting Drupal Security Advisories into an OSV forma
 Check out the repo and run the script.
 
 ```shell
-python ./drual-sa-to-osv.py
+python ./drupal-sa-to-osv.py
 ```
 
 The script will create all the necessary directories if they are not present.
