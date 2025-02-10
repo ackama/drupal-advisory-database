@@ -219,6 +219,48 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
     # pp.pprint(affected_versions)
     return affected_versions
 
+def semver_for_sorting(semver):
+    decrement_semver = False
+    # Check if the semver string starts with a '<' character.
+    if semver[0] == '<':
+        decrement_semver = True
+        semver = semver[1:]
+    semver = semver.strip().split(".")
+    # sanity check the length of the introduced value.
+    while len(semver) < 3:
+        semver.append("0")
+    
+    for i in range(3):
+        if semver[i].isnumeric():
+            semver[i] = int(semver[i])
+        else:
+            semver[i] = 0
+
+    if decrement_semver:
+        if semver[2] > 0:
+            semver[2] -= 1
+        elif semver[1] > 0:
+            semver[1] -= 1
+
+    semver_major = semver[0]
+    semver_minor = semver[1]
+    semver_patch = semver[2]
+    return f"{semver_major}.{semver_minor}.{semver_patch}"
+
+def sort_affected_versions(affected_versions):
+    sorted_versions = {}
+    for affected in affected_versions:
+        if 'introduced' in affected.keys():
+            pp.pprint(affected)
+            sorted_versions[semver_for_sorting(affected['introduced'])] = affected
+        if 'fixed' in affected.keys():
+            sorted_versions[semver_for_sorting(affected['fixed'])] = affected
+
+    # sort the dict by the keys assuming the keys are semver strings.
+    sorted_versions = dict(sorted(sorted_versions.items(), key=lambda item: semver.parse_version_info(item[0])))
+
+    return sorted_versions.values()
+
 # Drupal uses the NIST's Common Misuse Scoring System (CMSS) to calculate the severity of a security advisory.
 # We will want to get this added to the OSV security[].type field.
 # Turns out the actual string is what should go in the field. I will leave this here for reference and in case we need the numeric value later.
@@ -407,6 +449,11 @@ def process_sa(sa_node_id):
 
     affected_versions = parse_affected_versions(sa_json['list'][0]['field_affected_versions'])
     affected_versions = add_fixed_in_versions(affected_versions, fixed_in_json)
+    print("Affected Versions (before):")
+    pp.pprint(affected_versions)
+    affected_versions = sort_affected_versions(affected_versions)
+    print("Affected Versions (sorted):")
+    pp.pprint(affected_versions)
     if len(affected_versions) > 0:
         for affected in affected_versions:
             for [event, version] in affected.items():
