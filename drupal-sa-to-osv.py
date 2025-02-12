@@ -7,6 +7,7 @@ import requests
 import feedparser
 import pprint
 import semver
+import time
 
 repo_url = "https://github.com/CVEProject/cvelistV5.git"
 cve_dir_name = "cvelistV5"
@@ -89,7 +90,7 @@ def write_osv_entry_to_file(osv_dir_name, osv_entry, id):
 
 def fetch_url_to_file(url, file_path):
     if os.path.exists(file_path):
-        print(f"File {file_path} already exists. Skipping fetch.")
+        # print(f"File {file_path} already exists. Skipping fetch.")
         return
 
     response = requests.get(url)
@@ -399,38 +400,48 @@ def composer_package(project_json):
     project_name = project_json['list'][0]['field_project_machine_name']
     return f"{project_type}/{project_name}"
 
+# This fetches a single SA from drupal.org and processes it.
 def process_sa(sa_node_id):
     print("\n")
     print(f"Processing SA nid: {sa_node_id}")
     ## Get the node we need.
     sa_json = get_sa_entry(sa_node_id)
+    process_sa_json(sa_json['list'][0])
 
-    if sa_json['list'][0]['field_is_psa'] == '1':
+# This processes the SA JSON data.
+def process_sa_json(sa_json):
+    if sa_json['field_is_psa'] == '1':
         # We can ignore PSA's.
+        print(f"Skipping PSA: {sa_json['title']}")
+        return
+    if sa_json['field_affected_versions'] is None:
+        # We can ignore SA's that do not have affected versions.
+        print(f"Skipping SA without affected versions: {sa_json['title']}")
+        print(f"SA URL: {sa_json['url']}")
         return
     
-    sa_id = sa_json['list'][0]['url'].split('/')[-1].upper()
+    sa_id = sa_json['url'].split('/')[-1].upper()
     osv_entry = osv_template(sa_id)
     project_json = None
     fixed_in_json = []
 
-    if sa_json['list'][0]['field_project']['id'] != '0':
-        project_json = get_project_entry(sa_json['list'][0]['field_project']['id'])
+    if sa_json['field_project']['id'] != '0':
+        project_json = get_project_entry(sa_json['field_project']['id'])
 
-    if len(sa_json['list'][0]['field_fixed_in']) > 0:
-        for fixed_in in sa_json['list'][0]['field_fixed_in']:
+    if len(sa_json['field_fixed_in']) > 0:
+        for fixed_in in sa_json['field_fixed_in']:
             fixed_in_json.append(get_fixed_in_entry(fixed_in['id']))
 
-    if 'field_sa_reported_by' in sa_json['list'][0].keys():
-        osv_entry['credits'] = get_credits_from_sa(sa_json['list'][0]['field_sa_reported_by'])
+    if 'field_sa_reported_by' in sa_json.keys():
+        osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
 
-    if 'Google Tag' in sa_json['list'][0]['title']:
-        print(f"\n\n## Project:")
-        pp.pprint(project_json)
-        print(f"\n\n## Security Advisory:")
-        pp.pprint(sa_json)
-        print(f"\n\n## Fixed in:")
-        pp.pprint(fixed_in_json)
+    # if 'Google Tag' in sa_json['title']:
+    #     print(f"\n\n## Project:")
+    #     pp.pprint(project_json)
+    #     print(f"\n\n## Security Advisory:")
+    #     pp.pprint(sa_json)
+    #     print(f"\n\n## Fixed in:")
+    #     pp.pprint(fixed_in_json)
 
     osv_entry['id'] = f"{sa_id}"
 
@@ -439,15 +450,15 @@ def process_sa(sa_node_id):
     # https://www.drupal.org/drupal-security-team/security-risk-levels-defined
     # https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
     if full_proposed_entry:
-        osv_entry['affected'][0]['severity'][0]['score'] = sa_json['list'][0]['field_sa_criticality']
+        osv_entry['affected'][0]['severity'][0]['score'] = sa_json['field_sa_criticality']
     else:
         osv_entry['affected'][0]['severity'] = []
 
     osv_entry['affected'][0]['package']['name'] = composer_package(project_json)
-    osv_entry['published'] = datetime.fromtimestamp(int(sa_json['list'][0]['created'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
-    osv_entry['modified'] = datetime.fromtimestamp(int(sa_json['list'][0]['changed'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    osv_entry['published'] = datetime.fromtimestamp(int(sa_json['created'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    osv_entry['modified'] = datetime.fromtimestamp(int(sa_json['changed'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
-    affected_versions = parse_affected_versions(sa_json['list'][0]['field_affected_versions'])
+    affected_versions = parse_affected_versions(sa_json['field_affected_versions'])
     affected_versions = add_fixed_in_versions(affected_versions, fixed_in_json)
     affected_versions = sort_affected_versions(affected_versions)
     if len(affected_versions) > 0:
@@ -455,21 +466,42 @@ def process_sa(sa_node_id):
             for [event, version] in affected.items():
                 osv_entry['affected'][0]['ranges'][0]['events'].append({event: version})
 
-    if len(sa_json['list'][0]['field_sa_cve']) > 0:
-        for cve in sa_json['list'][0]['field_sa_cve']:
+    if len(sa_json['field_sa_cve']) > 0:
+        for cve in sa_json['field_sa_cve']:
             osv_entry['aliases'].append(cve)
 
-    osv_entry['details'] = sa_json['list'][0]['field_sa_description']['value']
+    osv_entry['details'] = sa_json['field_sa_description']['value']
     osv_entry['references'].append({
         'type': 'WEB',
-        'url': sa_json['list'][0]['url']
+        'url': sa_json['url']
     })
 
     fake_ecosystem(osv_entry)
     write_osv_entry_to_file(osv_dir_name, osv_entry, f"{sa_id}")
 
+def build_osv_entries_from_rest_api():
+    url = "https://www.drupal.org/api-d7/node.json?type=sa"
+    fetch_again = True
+    while fetch_again:
+        print(f"Fetching {url}")
+        response = requests.get(url)
+        print(f"Status code: {response.status_code}")
+        if response.status_code == 200:
+            data = response.json()
+            for item in data['list']:
+                process_sa_json(item)
+            if 'next' in data.keys() and data['next'] != "":
+                url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
+            else:
+                print("No more pages to fetch.")
+                fetch_again = False
+        else:
+            print(f"Failed to fetch data from {url}. Status code: {response.status_code}")
+            fetch_again = False
+
 # Processing...
-build_osv_entries_from_rss(osv_dir_name)
+build_osv_entries_from_rest_api()
+# build_osv_entries_from_rss(osv_dir_name)
 # Ignore CVEs for now. Finding a valid Security Advisory on the older ones is a bit of a challenge.
 # Possibly check the node type and process if it is a security advisory.
 # build_osv_entries_from_cve(cve_dir_name, osv_dir_name, repo_url)
