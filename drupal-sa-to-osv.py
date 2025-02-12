@@ -123,6 +123,7 @@ def preload_sa(nid):
     node = get_node(nid, 'tmp')
     if len(node['list']) == 0:
         # Not sure what we have here. Skip it.
+        print(f"Error?: Node {nid} has no content. Skipping.")
         pprint.pprint(node)
         return False
 
@@ -151,10 +152,19 @@ def get_fixed_in_entry(nid):
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
 def parse_affected_versions(affected_versions):
     affected = []
-    for versions in affected_versions.split('||'):
+    for versions in affected_versions.split(' || '):
         # split version on space and append the first element to the affected list after removing any > or >= characters.
-        versions = versions.replace('>=', '').replace('>', '').strip()
-        affected.append({'introduced': versions.split()[0]})
+        versions = versions.replace('>=', '').replace('>', '').replace('< ', '<').strip()
+        introduced = versions.split()[0].strip()
+        if introduced[0] == '<':
+            introduced = '0.0.0'
+        introduced = introduced.replace('*', '0')
+        affected.append({'introduced': introduced})
+        if len(versions.split()) > 1:
+            # It looks like Core does not have field_fixed_in populated. Add a
+            # fixed version from this string if we can.
+            fixed = versions.split()[1].replace('<', '').strip()
+            affected.append({'fixed': fixed})
     return affected
 
 def fake_ecosystem(osv_entry):
@@ -180,7 +190,6 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
     inserted = []
 
     for idx, val in enumerate(affected_versions):
-        # print(f"index: {idx}")
         if 'introduced' not in val.keys():
             continue
         introduced = val['introduced'].replace('<', '').strip().split(".")
@@ -215,8 +224,6 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
                     idx += 1
                     affected_versions.insert(idx, {'fixed': fixed_in_semver})
                     inserted.append(fixed_in_semver)
-    # print("Affected Versions (after):")
-    # pp.pprint(affected_versions)
     return affected_versions
 
 def semver_for_sorting(semver):
@@ -249,17 +256,19 @@ def semver_for_sorting(semver):
 
 def sort_affected_versions(affected_versions):
     sorted_versions = {}
+    return_values = []
     for affected in affected_versions:
         if 'introduced' in affected.keys():
-            pp.pprint(affected)
             sorted_versions[semver_for_sorting(affected['introduced'])] = affected
         if 'fixed' in affected.keys():
             sorted_versions[semver_for_sorting(affected['fixed'])] = affected
 
     # sort the dict by the keys assuming the keys are semver strings.
     sorted_versions = dict(sorted(sorted_versions.items(), key=lambda item: semver.parse_version_info(item[0])))
+    for key in sorted_versions.keys():
+        return_values.append(sorted_versions[key])
 
-    return sorted_versions.values()
+    return return_values
 
 # Drupal uses the NIST's Common Misuse Scoring System (CMSS) to calculate the severity of a security advisory.
 # We will want to get this added to the OSV security[].type field.
@@ -360,14 +369,12 @@ def build_osv_entries_from_cve(cve_dir_name, osv_dir_name, repo_url):
                 refs = cve['containers']['cna']['references']
                 for ref in refs:
                     if 'tags' in ref.keys() and 'x_refsource_CONFIRM' in ref['tags'] and 'drupal.org/node/' in ref['url']:
-                        # print(file)
                         if preload_sa(ref['url'].split('/')[-1]) == True:
                             process_sa(ref['url'].split('/')[-1])
 
 # Fetch the SA data from drupal.org rss feed.
 # https://www.drupal.org/security/all/rss.xml
 def build_osv_entries_from_rss(osv_dir_name):
-    pp = pprint.PrettyPrinter(indent=2)
     # rss_file = "drupal-security-advisories.xml"
     rss_files = {
         "dsa-contrib.xml": "https://www.drupal.org/security/contrib/rss.xml",
@@ -417,9 +424,6 @@ def process_sa(sa_node_id):
     if 'field_sa_reported_by' in sa_json['list'][0].keys():
         osv_entry['credits'] = get_credits_from_sa(sa_json['list'][0]['field_sa_reported_by'])
 
-    # if len(sa_json['list'][0]['field_sa_cve']) > 0:
-    # print(f"## Processing entry from RSS:")
-    # pp.pprint(entry)
     if 'Google Tag' in sa_json['list'][0]['title']:
         print(f"\n\n## Project:")
         pp.pprint(project_json)
@@ -427,9 +431,6 @@ def process_sa(sa_node_id):
         pp.pprint(sa_json)
         print(f"\n\n## Fixed in:")
         pp.pprint(fixed_in_json)
-        
-    # print(entry['summary'])
-
 
     osv_entry['id'] = f"{sa_id}"
 
@@ -442,18 +443,13 @@ def process_sa(sa_node_id):
     else:
         osv_entry['affected'][0]['severity'] = []
 
-    # pp.pprint(fixed_in_json)
     osv_entry['affected'][0]['package']['name'] = composer_package(project_json)
     osv_entry['published'] = datetime.fromtimestamp(int(sa_json['list'][0]['created'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
     osv_entry['modified'] = datetime.fromtimestamp(int(sa_json['list'][0]['changed'])).strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
     affected_versions = parse_affected_versions(sa_json['list'][0]['field_affected_versions'])
     affected_versions = add_fixed_in_versions(affected_versions, fixed_in_json)
-    print("Affected Versions (before):")
-    pp.pprint(affected_versions)
     affected_versions = sort_affected_versions(affected_versions)
-    print("Affected Versions (sorted):")
-    pp.pprint(affected_versions)
     if len(affected_versions) > 0:
         for affected in affected_versions:
             for [event, version] in affected.items():
@@ -462,18 +458,12 @@ def process_sa(sa_node_id):
     if len(sa_json['list'][0]['field_sa_cve']) > 0:
         for cve in sa_json['list'][0]['field_sa_cve']:
             osv_entry['aliases'].append(cve)
-        # print(f"SA has CVEs: {sa_json['list'][0]['field_sa_cve']}")
 
     osv_entry['details'] = sa_json['list'][0]['field_sa_description']['value']
     osv_entry['references'].append({
         'type': 'WEB',
         'url': sa_json['list'][0]['url']
     })
-
-    # print(f"\n\n## Final OSV entry:")
-    # pp.pprint(osv_entry['id'])
-    # pp.pprint(osv_entry['affected'][0]['ranges'][0]['events'])
-    # pp.pprint(sa_json['list'][0]['field_affected_versions'])
 
     fake_ecosystem(osv_entry)
     write_osv_entry_to_file(osv_dir_name, osv_entry, f"{sa_id}")
