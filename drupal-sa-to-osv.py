@@ -505,7 +505,7 @@ def process_sa_json(sa_json):
     write_osv_entry_to_file(osv_dir_name, osv_entry, f"{sa_id}")
 
 def build_osv_entries_from_rest_api(last_modified_timestamp):
-    url = "https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC"
+    url = "https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0"
     fetch_again = True
     while fetch_again:
         print(f"Fetching {url}")
