@@ -83,8 +83,14 @@ def osv_template(sa_id):
         "credits": []
     }
 
+def project_dir_from_osv_entry(osv_dir_name, osv_entry):
+    dir = os.path.join(osv_dir_name, osv_entry['affected'][0]['package']['name'].split('/')[1])
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    return dir
+
 def write_osv_entry_to_file(osv_dir_name, osv_entry, id):
-    output_file = os.path.join(osv_dir_name, f"osv-{id.lower()}.json")
+    output_file = os.path.join(project_dir_from_osv_entry(osv_dir_name, osv_entry), f"osv-{id.lower()}.json")
     with open(output_file, 'w') as f:
         json.dump(osv_entry, f, indent=2)
 
