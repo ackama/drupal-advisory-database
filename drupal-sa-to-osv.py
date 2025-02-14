@@ -38,6 +38,12 @@ def format_datetime(date_str):
         dt = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S")
     return dt.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
+def datetime_to_timestamp(date_str):
+    return int(time.mktime(datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%fZ").timetuple()))
+
+def datetime_from_timestamp(timestamp):
+    return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
 def osv_template(sa_id):
 
     return {
@@ -354,6 +360,19 @@ def get_credits_from_sa(credits):
 
     return credit_list
 
+def get_last_osv_modified_timestamp():
+    # fetch all json files in the osv directory and the subdirectories.
+    highest_modified = 0
+    for root, dirs, files in os.walk(osv_dir_name):
+        for file in files:
+            if file.endswith(".json"):
+                # Load the contents of the file into a dictionary.
+                osv = json.loads(open(os.path.join(root, file)).read())
+                modified = datetime_to_timestamp(osv['modified'])
+                if modified > highest_modified or highest_modified == 0:
+                    highest_modified = modified
+    return highest_modified
+
 # Walk over the cve files and convert them to OSV entries.
 def build_osv_entries_from_cve(cve_dir_name, osv_dir_name, repo_url):
     clone_repo_if_not_exists(repo_url, cve_dir_name)
@@ -485,8 +504,8 @@ def process_sa_json(sa_json):
     fake_ecosystem(osv_entry)
     write_osv_entry_to_file(osv_dir_name, osv_entry, f"{sa_id}")
 
-def build_osv_entries_from_rest_api():
-    url = "https://www.drupal.org/api-d7/node.json?type=sa"
+def build_osv_entries_from_rest_api(last_modified_timestamp):
+    url = "https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC"
     fetch_again = True
     while fetch_again:
         print(f"Fetching {url}")
@@ -495,7 +514,12 @@ def build_osv_entries_from_rest_api():
         if response.status_code == 200:
             data = response.json()
             for item in data['list']:
-                process_sa_json(item)
+                changed = int(item['changed'])
+                if changed > last_modified_timestamp:
+                    process_sa_json(item)
+                else:
+                    # We have reached the last modified entry.
+                    fetch_again = False
             if 'next' in data.keys() and data['next'] != "":
                 url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
             else:
@@ -506,7 +530,8 @@ def build_osv_entries_from_rest_api():
             fetch_again = False
 
 # Processing...
-build_osv_entries_from_rest_api()
+last_modified_timestamp = get_last_osv_modified_timestamp()
+build_osv_entries_from_rest_api(last_modified_timestamp)
 # build_osv_entries_from_rss(osv_dir_name)
 # Ignore CVEs for now. Finding a valid Security Advisory on the older ones is a bit of a challenge.
 # Possibly check the node type and process if it is a security advisory.
