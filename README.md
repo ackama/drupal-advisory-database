@@ -22,22 +22,11 @@ This repo ships with a `.osv-detector.yml` file.  From this repo you can check y
 
 ## How it works
 
-The script takes 2 approaches to finding Security Advisory nodes.
+A number of [SOURCES.md](SOURCES.md) were considered and are still present in the code.
 
-All results of API calls are saved locally for rapid prototyping and to not hammer the APIs.
+The final one settled on was API provided by the [RESTful Web Services](https://www.drupal.org/project/restws) module.
 
-### RSS
-
-The obvious source is the RSS feeds of the [core](https://www.drupal.org/security/core)
-and [contrib](https://www.drupal.org/security/contrib) feeds hosted on Drupal.org
-
-### CVEs
-
-> This is currently a WIP and commented out.
-
-The other source that has a longer history, but only includes SAs that had a matching CVE created.
-
-This process will checkout the full CVE repo and try to pull out a Security Advisory node from any of the URLs found.
+This allows us to fetch a JSON feed of all the Security Advisory(SA) nodes, sorted by last modified so the first page is more than likely going to contain all the nodes we need to examine. The existing advisories are checked and the most recent changed date is used to decide if an SA should be fetched and processed or not and new SA's are processed. If we run out of nodes to process we stop there. If the full page has been processed then the next page is fetched for processing.
 
 ### Building the OSV file
 
@@ -57,7 +46,3 @@ The following will validate all generated files.
 for F in $(ls osv/*.json); do go run github.com/neilpa/yajsv@latest -s schema.json $F
 ; done
 ```
-
-## TODO
-
-OSV Detector does not like the affected ranges events being out of order.  Manual testing showed that the `fixed` version had to follow the `introduced` version as the next entry. A collection of `introduced` couldn't be followed by a collection of `fixed` so this still needs some attention.  Once this is done though, I think this may be good to go.
