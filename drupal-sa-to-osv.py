@@ -11,7 +11,7 @@ import time
 
 repo_url = "https://github.com/CVEProject/cvelistV5.git"
 cve_dir_name = "cvelistV5"
-osv_dir_name = "osv"
+osv_dir_name = "advisories"
 # Not all fields pass the schema test as there are elements that are not yet present in the OSV schema.
 full_proposed_entry = False
 
