@@ -18,7 +18,7 @@ The script will create all the necessary directories if they are not present.
 
 [Install OSV Detector](https://github.com/G-Rath/osv-detector?tab=readme-ov-file#installation) and ensure it is on your `$PATH`.
 
-Create the `.osv-detector.yml` file and add the [extra-databases section](https://github.com/G-Rath/osv-detector?tab=readme-ov-file#extra-databases) and point it at `/path/to/osv-repo/osv`. This is where the generated files are written to.
+This repo ships with a `.osv-detector.yml` file.  From this repo you can check your project with `osv-detector -config .osv-detector.yml /path/to/your/repo`
 
 ## How it works
 

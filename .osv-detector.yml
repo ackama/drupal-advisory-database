@@ -1,0 +1,3 @@
+extra-databases:
+  - url: file:/advisories/
+    name: Local Drupal Advisory Database
