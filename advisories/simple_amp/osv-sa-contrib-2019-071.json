@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-071",
+  "modified": "2023-08-12T06:27:09.000Z",
+  "published": "2019-10-03T05:29:46.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module allows display of a site's content in AMP format.</p>\n<p>The module doesn't sufficiently check access on unpublished or restricted content.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/simple_amp"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.16.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-071"
+    }
+  ],
+  "credits": [
+    {
+      "name": "M. H. ",
+      "contact": [
+        "https://www.drupal.org/user/3054025"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2021-002",
+  "modified": "2022-08-22T07:03:20.000Z",
+  "published": "2021-04-22T03:58:22.000Z",
+  "aliases": [
+    "CVE-2020-13672"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal core's sanitization API fails to properly filter cross-site scripting under certain circumstances.</p>\n<p>Not all sites and users are affected, but configuration changes to prevent the exploit might be impractical and will vary between sites. Therefore, we recommend all sites update to this release as soon as possible.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0"
+            },
+            {
+              "fixed": "7.80"
+            },
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.14"
+            },
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.12"
+            },
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-002"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jasper Mattsson",
+      "contact": [
+        "https://www.drupal.org/user/521118"
+      ]
+    }
+  ]
+}

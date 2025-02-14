@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-067",
+  "modified": "2024-12-05T06:21:11.000Z",
+  "published": "2024-12-05T03:40:50.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to authenticate users through an Identity Provider (IdP) or OAuth Server, allowing them to log in to your Drupal site.</p>\n<p>The module does not sufficiently escape query parameters sent to the callback URL when displaying error messages, particularly if the code parameter is missing in the response.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/miniorange_oauth_client"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "fixed": "1.355.0"
+            },
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.44.0"
+            },
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.19"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-067"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Borut Piletic",
+      "contact": [
+        "https://www.drupal.org/user/2714887"
+      ]
+    }
+  ]
+}

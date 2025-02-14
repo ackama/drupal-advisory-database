@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-004",
+  "modified": "2023-08-12T07:25:48.000Z",
+  "published": "2019-01-24T06:01:58.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Preview Link module enables you to generate preview links so anonymous users can access unpublished revisions of content.<br />\nThe last release of the module introduced an access bypass allowing users to present invalid tokens but still access unpublished content.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/preview_link"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Daniel  ",
+      "contact": [
+        "https://www.drupal.org/user/81431"
+      ]
+    }
+  ]
+}

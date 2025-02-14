@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-011",
+  "modified": "2025-01-30T06:49:23.000Z",
+  "published": "2025-01-30T06:13:29.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to integrate the site with the Google Tag Manager (GTM) application.</p>\n<p>The module doesn't have the \"restrict access\" flag on the \"administer google_tag_container\" permission. A user with this permission can load a GTM container that completely changes the page or inserts malicious JS, resulting in a cross site scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the aforementioned permission.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/google_tag"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.8.0"
+            },
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-011"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

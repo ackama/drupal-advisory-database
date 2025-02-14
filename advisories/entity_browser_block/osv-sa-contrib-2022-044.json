@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-044",
+  "modified": "2023-08-11T09:33:53.000Z",
+  "published": "2022-05-26T04:53:45.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Entity Browser Block provides a Block Plugin for every Entity Browser on your site.</p>\n<p>The module didn't sufficiently check entity view access in the block form.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to place a block - either through the core \"Block Layout\" page or via a module like Layout Builder.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_browser_block"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-044"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dan Flanagan",
+      "contact": [
+        "https://www.drupal.org/user/3615359"
+      ]
+    }
+  ]
+}

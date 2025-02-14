@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-092",
+  "modified": "2023-08-12T06:16:26.000Z",
+  "published": "2019-12-12T07:20:59.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Smart Trim module allows site builders additional control with text summary fields.</p>\n<p>The module doesn't sufficiently filter text when certain options are selected.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the ability to create content on the site when certain options are selected for the trimmed output.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/smart_trim"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-092"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Anne",
+      "contact": [
+        "https://www.drupal.org/u/ckaotik"
+      ]
+    },
+    {
+      "name": "Adam Shepherd",
+      "contact": [
+        "https://www.drupal.org/user/2650563"
+      ]
+    }
+  ]
+}

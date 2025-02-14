@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2024-004",
+  "modified": "2024-12-10T12:22:01.000Z",
+  "published": "2024-11-21T06:21:58.000Z",
+  "aliases": [
+    "CVE-2024-55634"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.</p>\n<p>As a result, a user may be able to register with the same email address as another user.</p>\n<p>This may lead to data integrity issues.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.2.11"
+            },
+            {
+              "introduced": "10.3.0"
+            },
+            {
+              "fixed": "10.3.9"
+            },
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.8"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2024-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Wayne Eaker",
+      "contact": [
+        "https://www.drupal.org/user/326925"
+      ]
+    }
+  ]
+}

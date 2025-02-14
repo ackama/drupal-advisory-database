@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-023",
+  "modified": "2023-08-11T01:53:00.000Z",
+  "published": "2023-06-29T05:02:13.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to define configurable GDPR alert messages.</p>\n<p>The module doesn't sufficiently filter user-supplied text leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker needs additional permissions. The vulnerability can be exploited by an attacker with a role with the permission \"administer gdpr alert\" regardless of other configurations.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/gdpr_alert"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-023"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    }
+  ]
+}

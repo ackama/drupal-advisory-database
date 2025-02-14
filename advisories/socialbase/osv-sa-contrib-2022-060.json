@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-060",
+  "modified": "2023-08-11T06:23:08.000Z",
+  "published": "2022-12-01T04:20:10.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>\nThe Social Base theme is designed as a base theme for Open Social. This base<br />\ntheme holds has a lot of sensible defaults. It doesn't however contain much<br />\nstyling. We expect developers to want to change this for their own project.\n</p>\n<p>When content within the Open Social distribution is placed within a group then the Socialbase theme renders a link to that group on the content view page.</p>\n<p>The link to groups was rendered without sufficiently checking that the viewing user has access to the group. When creating public content in a non-public group this could lead to exposing the existence of the group and the group title to unauthorized users. The group itself remained inaccessible.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/socialbase"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.3"
+            },
+            {
+              "fixed": "2.3.4"
+            },
+            {
+              "introduced": "2.4"
+            },
+            {
+              "fixed": "2.4.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-060"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alexander Varwijk",
+      "contact": [
+        "https://www.drupal.org/user/1868952"
+      ]
+    }
+  ]
+}

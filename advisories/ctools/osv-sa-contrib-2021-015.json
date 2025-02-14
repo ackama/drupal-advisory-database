@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-015",
+  "modified": "2023-08-12T05:08:06.000Z",
+  "published": "2021-06-17T03:58:47.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Chaos tool suite (ctools) module provides a number of APIs and extensions for Drupal, its 8.x-3.x branch is a start from scratch to evaluate the features of ctools that didn't make it into Drupal Core 8.0.x and port them.</p>\n<p>The module doesn't sufficiently handle block access control on its EntityView plugin. This is a followup to more fully implement the fixes from <a href=\"https://www.drupal.org/sa-contrib-2021-009\" rel=\"nofollow\">SA-CONTRIB-2021-009</a></p>\n<p>This vulnerability is mitigated by the fact that successful exploitation requires special conditions in place such as custom blockAccess() method that differs from the default return value of 'AccessResult::allowed()' and extending from EntityView.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ctools"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "3.7.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-015"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Vanetta",
+      "contact": [
+        "https://www.drupal.org/user/452914"
+      ]
+    }
+  ]
+}

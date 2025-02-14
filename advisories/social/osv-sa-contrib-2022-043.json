@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-043",
+  "modified": "2023-08-11T09:32:49.000Z",
+  "published": "2022-05-26T04:49:46.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Open Social is a Drupal distribution for online communities.</p>\n<p>Group entities created within Open Social did not sufficiently check entity access in group overviews, allowing users to see information in the overviews they should not have access to. Visiting the entity directly resulted in correct access checks applied.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to view Group entities in an overview and have certain common permissions revoked.</p>\n<p>Please note the affected versions were already unsupported, this advisory is released additionally as there are still reported installs for the affected versions.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dmitry Kiselev",
+      "contact": [
+        "https://www.drupal.org/user/1945174"
+      ]
+    }
+  ]
+}

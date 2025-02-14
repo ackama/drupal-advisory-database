@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-022",
+  "modified": "2023-08-12T09:38:26.000Z",
+  "published": "2018-04-26T05:37:20.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to monitor and manage any number of remote Drupal sites and aggregate useful information for administrators in a central dashboard.</p>\n<p>The modules (DRD and DRD Agent) encrypt the data which is exchanged between them but in order to do so, they use the PHP serialize/unserialize functions instead of the json_encode/json_decode combination. As the unserialize function is called on unauthenticated content, this introduces a PHP object injection vulnerability.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drd_agent"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "3.5.0"
+            },
+            {
+              "fixed": "3.7.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-022"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Snopek ",
+      "contact": [
+        "https://www.drupal.org/user/266527"
+      ]
+    }
+  ]
+}

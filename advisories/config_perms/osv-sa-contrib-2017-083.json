@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-083",
+  "modified": "2023-08-22T01:31:18.000Z",
+  "published": "2017-11-09T06:22:08.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Custom Permissions is a lightweight module that allows permissions to be created and managed through an administrative form.</p>\n<p>When this module is in use, any user who is able to perform an action which rebuilds some of Drupal's caches can trigger a scenario in which certain pages protected by this module's custom permissions temporarily lose those custom access controls, thereby leading to an access bypass vulnerability.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/config_perms"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-083"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Koza",
+      "contact": [
+        "https://www.drupal.org/user/2110062"
+      ]
+    },
+    {
+      "name": "David Rothstein",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    }
+  ]
+}

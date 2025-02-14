@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-004",
+  "modified": "2023-08-12T05:15:22.000Z",
+  "published": "2021-03-04T05:49:33.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The <a href=\"https://www.drupal.org/project/webform\" rel=\"nofollow\">Webform module for Drupal 8/9</a> includes a default Contact webform, which sends a notification email to the site owner and a confirmation email to the email address supplied via the form.</p>\n<p>The confirmation email can be used as an open mail relay to send an email to any email address.  </p>\n<p>This vulnerability is mitigated by the fact that the site owner's email address is also receiving a notification email, which should alert the site owner to the exploitation. If the site owner's mailbox is not monitored, the open mail relay can be more easily exploited.</p>\n<p>With the Webform module's latest release, the default Contact's confirmation email will only be sent to an authenticated user's email address. Anonymous users will no longer receive a confirmation email.  </p>\n<p>If anonymous users need to receive a confirmation email, we recommend you add SPAM protection to the form and update the email handler.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "5.25.0"
+            },
+            {
+              "introduced": "6.0.0"
+            },
+            {
+              "introduced": "6.0.1"
+            },
+            {
+              "fixed": "6.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "KarinG",
+      "contact": [
+        "https://www.drupal.org/user/787114"
+      ]
+    }
+  ]
+}

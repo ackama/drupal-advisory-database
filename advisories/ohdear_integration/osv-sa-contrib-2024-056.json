@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-056",
+  "modified": "2024-10-31T06:53:04.000Z",
+  "published": "2024-10-31T06:11:24.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Integrates your Drupal website with the Oh Dear monitoring app.</p>\n<p>Cached data of monitoring results is accessible to non-logged in users when caching is enabled on the module. </p>\n<p>This vulnerability is mitigated by the fact that it only affects sites where caching is enabled for OhDear report healthcheck endpoint. It is not enabled by default and there's no UI option to do it. It has to be done directly in the ohdear_integration.settings.yml.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ohdear_integration"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-056"
+    }
+  ],
+  "credits": [
+    {
+      "name": "casey",
+      "contact": [
+        "https://www.drupal.org/user/32403"
+      ]
+    }
+  ]
+}

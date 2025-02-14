@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-040",
+  "modified": "2023-08-24T06:28:12.000Z",
+  "published": "2023-08-24T05:24:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Data Field module provides a way of building field types that are made up of other fields, a simpler alternative to e.g. the Paragraphs system.</p>\n<p>Access to these forms isn't properly validated, allowing a user with the \"access content\" permission to view and edit fields on entities.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/datafield"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.0.16"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-040"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    }
+  ]
+}

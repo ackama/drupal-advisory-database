@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-029",
+  "modified": "2023-08-12T05:49:52.000Z",
+  "published": "2020-07-23T06:53:26.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Modal form module is a toolset for quick start of using forms in modal windows.</p>\n<p>Any form is available for view and submit when the <code class=\"language-php\">modal_form</code> module is installed. The only requirement is to know the form's fully-qualified class name.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/modal_form"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-029"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dave Long ",
+      "contact": [
+        "https://www.drupal.org/user/246492"
+      ]
+    }
+  ]
+}

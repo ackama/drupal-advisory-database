@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-053",
+  "modified": "2023-08-11T07:26:24.000Z",
+  "published": "2022-08-25T06:21:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to accept payments from the Elavon payment provider.</p>\n<p>The module doesn't sufficiently verify that it's communicating with the correct server when using the <strong>Elavon (On-site)</strong> payment gateway, which could lead to leaking valid payment details as well as accepting invalid payment details.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to spoof the Elavon DNS received by your site.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/commerce_elavon"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.5.0"
+            },
+            {
+              "fixed": "2.3.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-053"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andy Fowlston",
+      "contact": [
+        "https://www.drupal.org/user/220112"
+      ]
+    }
+  ]
+}

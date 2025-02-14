@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-043",
+  "modified": "2023-09-07T04:48:26.000Z",
+  "published": "2023-09-07T03:23:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Provides <a href=\"https://github.com/scrivo/highlight.php\" title=\"highlight.php\" rel=\"nofollow\">highlight.php</a> integration to Drupal, allowing &lt;code&gt; blocks to be automatically highlighted with the correct language.</p>\n<p>The module's Twig function doesn't sufficiently filter user-entered data.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/highlight_php"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

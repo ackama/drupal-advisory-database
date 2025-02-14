@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-016",
+  "modified": "2023-08-12T05:54:28.000Z",
+  "published": "2020-05-07T04:59:39.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This webform module enables you to build 'Term select' and 'Term checkboxes' elements.</p>\n<p>The module doesn't sufficiently check term 'view' access when rendering the  'Term select' and 'Term checkboxes' elements.  Unpublished terms will always appear in the 'Term select' and 'Term checkboxes' elements.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "5.11.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "James Gilliland ",
+      "contact": [
+        "https://www.drupal.org/user/48673"
+      ]
+    }
+  ]
+}

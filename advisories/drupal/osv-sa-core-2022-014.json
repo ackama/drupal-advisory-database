@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2022-014",
+  "modified": "2022-08-22T06:22:47.000Z",
+  "published": "2022-07-21T03:40:05.000Z",
+  "aliases": [
+    "CVE-2022-25277"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p><em>Updated 2022-07-20 19:45 UTC to indicate that this only affects Apache web servers.</em></p>\n<p>Drupal core sanitizes filenames with dangerous extensions upon upload (reference: <a href=\"https://www.drupal.org/sa-core-2020-012\" rel=\"nofollow\">SA-CORE-2020-012</a>) and strips leading and trailing dots from filenames to prevent uploading server configuration files (reference: <a href=\"https://www.drupal.org/sa-core-2019-010\" rel=\"nofollow\">SA-CORE-2019-010</a>). </p>\n<p>However, the protections for these two vulnerabilities previously did not work correctly together. As a result, if the site were configured to allow the upload of files with an <code class=\"language-php\">htaccess</code> extension, these files' filenames would not be properly sanitized. This could allow bypassing the protections provided by Drupal core's default <code class=\"language-php\">.htaccess</code> files and possible remote code execution on Apache web servers.</p>\n<p>This issue is mitigated by the fact that it requires a field administrator to explicitly configure a file field to allow <code class=\"language-php\">htaccess</code> as an extension (a restricted permission), or a contributed module or custom code that overrides allowed file uploads.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.3.19"
+            },
+            {
+              "introduced": "9.4.0"
+            },
+            {
+              "fixed": "9.4.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2022-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Elar Lang",
+      "contact": [
+        "https://www.drupal.org/user/3583903"
+      ]
+    }
+  ]
+}

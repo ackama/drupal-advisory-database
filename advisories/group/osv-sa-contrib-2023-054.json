@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-054",
+  "modified": "2023-12-07T15:47:34.000Z",
+  "published": "2023-12-07T05:16:28.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Group module has the ability to make content private to specific groups. When viewing a list of entities, e.g. nodes, a visitor should only see those entities that are either not attached to a group or that they have group access to.</p>\n<p>The module doesn't sufficiently enforce list access under the scenario where two users have the same outsider and insider permissions, but are members of different groups without any individual roles being assigned to said memberships. In such a scenario, the permissions hash for both will be the same even though it should differ.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have the same hash as someone else, which is quite rare yet not unthinkable.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/group"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.2.2"
+            },
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.2.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dylan Donkersgoed",
+      "contact": [
+        "https://www.drupal.org/user/2803351"
+      ]
+    }
+  ]
+}

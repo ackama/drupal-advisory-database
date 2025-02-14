@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-021",
+  "modified": "2024-05-23T07:45:40.000Z",
+  "published": "2024-05-23T04:21:55.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Commerce View Receipts module enables you to view commerce order receipts in the browser.</p>\n<p>The module doesn't sufficiently check access permissions, allowing an unauthorised user to view the private information of other customers.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/commerce_view_receipt"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-021"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Norman K\u00e4mper-Leymann",
+      "contact": [
+        "https://www.drupal.org/user/2482808"
+      ]
+    }
+  ]
+}

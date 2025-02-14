@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-020",
+  "modified": "2024-05-23T05:05:40.000Z",
+  "published": "2024-05-23T04:03:46.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Email Contact module provides email field display formatters that can display the field as a link to the contact form, or as an inline contact form.</p>\n<p>The module does not sufficiently handle restricted entity or field access to the mail sending form, when the \"Email contact link\" formatter is used.</p>\n<p>This vulnerability is mitigated by the fact that it requires the \"Email contact link\" formatter to be used.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/email_contact"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-020"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Claudiu Cristea",
+      "contact": [
+        "https://www.drupal.org/user/56348"
+      ]
+    }
+  ]
+}

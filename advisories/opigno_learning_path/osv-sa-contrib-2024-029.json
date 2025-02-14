@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-029",
+  "modified": "2024-08-08T05:52:56.000Z",
+  "published": "2024-08-08T05:36:15.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Opigno Learning Path module enables you to manage group content. </p>\n<p>Administrative forms allow uploading malicious files which may contain arbitrary code (RCE) or cross site scriptiong (XSS). These forms were not adequately controlled with permissions that communicate the severity of the permission.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Manage group content in any group\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/opigno_learning_path"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "3.1.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-029"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcin Grabias",
+      "contact": [
+        "https://www.drupal.org/user/1599440"
+      ]
+    },
+    {
+      "name": " catch",
+      "contact": [
+        "https://www.drupal.org/user/35733"
+      ]
+    }
+  ]
+}

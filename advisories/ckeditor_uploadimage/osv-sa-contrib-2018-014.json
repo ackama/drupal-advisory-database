@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-014",
+  "modified": "2023-08-12T09:43:18.000Z",
+  "published": "2018-02-22T08:04:59.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to drag and drop or paste images into CKEditor.<br />\nThe module does not sufficiently verify users permissions, which leads to anonymous users being able to upload files to the server.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ckeditor_uploadimage"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jean-Francois Hovinne ",
+      "contact": [
+        "https://www.drupal.org/user/77723"
+      ]
+    }
+  ]
+}

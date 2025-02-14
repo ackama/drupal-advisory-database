@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-016",
+  "modified": "2025-02-13T06:38:09.000Z",
+  "published": "2025-02-13T06:38:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables your site to obfuscate Email addresses and prevent spambots to collect them. </p>\n<p>The module doesn't sanitize HTML data attributes when an email address link is transformed to separate span HTML elements and then transformed back by JavaScript leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This is mitigated by the fact an attacker must be able to insert span HTML elements with data attributes in the page.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/spamspan"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "3.2.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

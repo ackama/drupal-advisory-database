@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-035",
+  "modified": "2023-08-12T05:43:11.000Z",
+  "published": "2020-11-19T06:15:24.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The File Example submodule within the Examples project does not properly sanitize certain filenames as described in <a href=\"https://www.drupal.org/sa-core-2020-012\" rel=\"nofollow\">SA-CORE-2020-012</a>, along with other related vulnerabilities.</p>\n<p>Therefore, File Example so is being removed from Examples until a version demonstrating file security best practices can added back in the future.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/examples"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            },
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "introduced": "3.0.1"
+            },
+            {
+              "fixed": "3.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-035"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alex Pott",
+      "contact": [
+        "https://www.drupal.org/user/157725"
+      ]
+    }
+  ]
+}

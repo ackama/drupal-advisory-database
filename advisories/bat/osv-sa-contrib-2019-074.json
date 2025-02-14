@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-074",
+  "modified": "2023-08-12T06:28:44.000Z",
+  "published": "2019-10-17T05:09:20.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Bat module provides a foundation through which a wide range of availability management, reservation and booking use cases can be addressed.</p>\n<p>The routes used to view events don't sufficiently guard access for non-privileged users. Specifically, a user with the 'View own' permission for bat events can view others' events as well.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/bat"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-074"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jelle Sebreghts ",
+      "contact": [
+        "https://www.drupal.org/user/829198"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-095",
+  "modified": "2023-08-12T06:15:27.000Z",
+  "published": "2019-12-12T07:59:46.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Permissions by Term module extends Drupal by functionality for restricting access to single nodes via taxonomy terms.</p>\n<p>The module doesn't sufficiently restrict access to node previews, when the Search API module is used to display nodes in search result lists.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/permissions_by_term"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-095"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tam\u00e1s Nagy",
+      "contact": [
+        "https://www.drupal.org/user/2252152"
+      ]
+    }
+  ]
+}

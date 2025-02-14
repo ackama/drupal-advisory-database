@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-002",
+  "modified": "2023-08-12T02:06:15.000Z",
+  "published": "2022-01-06T06:12:29.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to implement OAuth 2.0 authentication for Drupal.</p>\n<p>The module doesn't sufficiently verify client secret keys for \"confidential\" OAuth 2.0 clients when using certain grant types. The token refresh and client credentials grants are not affected.</p>\n<p>This vulnerability is mitigated by the fact that the vast majority of OAuth 2.0 clients in the wild are public, not confidential. Furthermore, all affected grant types still require users to authenticate to Drupal during the OAuth flow.</p>\n<p>The implicit grant type is insecure for other reasons (and still requires user authentication) and is disabled by default.</p>\n<p>Sites at risk of information disclosure would be specifically configured to restrict access based on the OAuth client's confidentiality status and configured scopes, not only traditional Drupal user permissions and roles.</p>\n<p>Further mitigation includes <a href=\"https://tools.ietf.org/html/rfc6819#section-5.2.3.5\" rel=\"nofollow\">configuring allowed redirect URIs for clients</a>. This is an OAuth best practice for guarding against man-in-the-middle attacks on authorization codes, and prevents redirection to imposter clients.</p>\n<p>Anyone implementing OAuth 2.0 on their Drupal site is also encouraged to review the <a href=\"https://oauth.net/security/\" rel=\"nofollow\">relevant RFCs and Internet-Drafts</a> pertaining to OAuth security.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/simple_oauth"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "4.6.0"
+            },
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": "5.0.6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-002"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Simon B\u00e4se",
+      "contact": [
+        "https://www.drupal.org/user/3686593"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-094",
+  "modified": "2023-08-12T06:15:45.000Z",
+  "published": "2019-12-12T07:38:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This project enables administrators to create modal dialogs.</p>\n<p>The routes used by the module lacked proper permissions, allowing untrusted users to access, create and modify modal configurations.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/modal_page"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-094"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Will Mowlam",
+      "contact": [
+        "https://www.drupal.org/user/232558"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-016",
+  "modified": "2023-08-12T09:44:04.000Z",
+  "published": "2018-03-22T05:59:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.</p>\n<p>The module doesn't sufficiently check access when viewing related resources or relationships, thereby causing an access bypass vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be allowed to view the related data, otherwise all they can glean is an entity type UUID and a UUID, which are meaningless by themselves.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/jsonapi"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.14.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Gabe Sullice ",
+      "contact": [
+        "https://www.drupal.org/user/2287430"
+      ]
+    }
+  ]
+}

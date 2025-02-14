@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-036",
+  "modified": "2023-08-11T09:43:53.000Z",
+  "published": "2022-05-05T04:11:07.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Image Field Caption (<code class=\"language-php\">image_field_caption</code>) adds an extra text area for captions on image fields.</p>\n<p>The module doesn't sanitize user input in certain cases, which leads to a Cross-Site-Scripting (XSS) vulnerability.</p>\n<p>The vulnerability is mitigated by several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/image_field_caption"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-036"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
+      ]
+    }
+  ]
+}

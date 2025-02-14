@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-055",
+  "modified": "2023-08-12T06:39:41.000Z",
+  "published": "2019-07-11T04:30:00.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to add and manage additional custom permissions through the administration UI.</p>\n<p>The module doesn't sufficiently check for the proper access permissions to this page.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the route of the Custom Permissions administration form though this is easily known.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/config_perms"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-055"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mohammed Razem ",
+      "contact": [
+        "https://www.drupal.org/user/255384"
+      ]
+    }
+  ]
+}

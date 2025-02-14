@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-014",
+  "modified": "2023-08-12T01:48:18.000Z",
+  "published": "2022-01-27T06:18:11.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables users to create 'private' vocabularies.</p>\n<p>The module doesn't sufficiently check user access permissions when attempting to view, edit, or add terms to vocabularies, including vocabularies not managed by the module.</p>\n<p>Partial mitigation is available by requiring users have been granted at least  \"Administer own taxonomy\", \"Edit own terms in vocabulary_name\" or  \"Delete own terms in vocabulary_name\" permissions, however this does not mitigate all known issues.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/private_taxonomy"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    }
+  ]
+}

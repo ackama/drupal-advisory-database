@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-025",
+  "modified": "2024-12-12T07:40:17.000Z",
+  "published": "2024-06-06T04:45:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Acquia DAM provides a connection to a third-party asset management system, allowing for images to be managed, linked to, and viewed from Drupal. In order for assets to be managed in Drupal, a site administrator must first authenticate the site to their DAM instance.</p>\n<p>The module doesn't sufficiently protect the ability to disconnect a site from DAM. While disconnected sites do not lose asset data in Drupal, it will prevent site editors from accessing the DAM until a site administrator re-authenticates the site. Some uncached media images may also fail to be fetched while disconnected.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/acquia_dam"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.0.13"
+            },
+            {
+              "fixed": "1.1.0-beta3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-025"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Matt Glaman",
+      "contact": [
+        "https://www.drupal.org/user/2416470"
+      ]
+    }
+  ]
+}

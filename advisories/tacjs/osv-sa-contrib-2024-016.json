@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-016",
+  "modified": "2024-03-28T07:03:18.000Z",
+  "published": "2024-03-28T06:16:26.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables sites to comply with the European cookie law using tarteaucitron.js.</p>\n<p>The module doesn't sufficiently filter user-supplied markup inside of content leading to a persistent Cross Site Scripting (XSS) vulnerability. More details are available in <a href=\"https://nvd.nist.gov/vuln/detail/CVE-2023-3620\" rel=\"nofollow\">CVE-2023-3620</a>.</p>\n<p>This vulnerability is mitigated by the fact that an attacker needs to be able to write content in the page, a feature commonly available on Drupal sites.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/tacjs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "6.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

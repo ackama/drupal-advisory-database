@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-001",
+  "modified": "2023-08-12T05:24:49.000Z",
+  "published": "2021-01-28T06:17:43.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The optional Social Auth Extra module enables you to use the single sign-on methods provided by Open Social e.g. Facebook, LinkedIn, Google and Twitter.</p>\n<p>The module doesn't implement a proper cache strategy for anonymous users allowing the registration form to be cached with disclosed information in certain scenarios. The information is usually only available for logged-in users of the community.</p>\n<p>This vulnerability is mitigated by the fact that <code class=\"language-php\">social_auth_extra</code> needs to be enabled, one of the single sign-on methods needs to be configured. There is no impact for regular registration without single sign-on.</p>\n<p>Removing the single sign-on providers from configuration will allow this vulnerability to be blocked. </p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "8.10.0"
+            },
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.8.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alexander Varwijk",
+      "contact": [
+        "https://www.drupal.org/user/1868952"
+      ]
+    }
+  ]
+}

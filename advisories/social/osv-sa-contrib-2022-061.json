@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-061",
+  "modified": "2023-08-11T06:25:19.000Z",
+  "published": "2022-12-01T04:28:44.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Social Flexible Group is an Open Social extension that allows users to create groups with many different configurations. </p>\n<p>In specific uncommon scenarios, where a platform doesn't have any flexible groups with the \"Group members only (secret)\" visibility, community groups are visible to anonymous users on the /all-groups page. No other group information is revealed since group access is not affected by this issue.</p>\n<p>This vulnerability is mitigated by creating a Flexible Group with visibility \"Group members only (secret)\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "11.4.9"
+            },
+            {
+              "introduced": "11.5.0"
+            },
+            {
+              "fixed": "11.5.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-061"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tiago Siqueira",
+      "contact": [
+        "https://www.drupal.org/user/2822445"
+      ]
+    }
+  ]
+}

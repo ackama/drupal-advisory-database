@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-011",
+  "modified": "2024-02-29T08:04:34.000Z",
+  "published": "2024-02-29T07:14:40.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Coffee module helps you to navigate through the Drupal admin menus faster with a shortcut popup.</p>\n<p>The module doesn't sufficiently escape menu names when displaying them in the popup, thereby exposing a XSS vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer menus and menu links\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/coffee"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-011"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
+      ]
+    }
+  ]
+}

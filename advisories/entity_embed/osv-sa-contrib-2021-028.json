@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-028",
+  "modified": "2023-08-12T05:02:11.000Z",
+  "published": "2021-09-16T03:28:04.000Z",
+  "aliases": [
+    "CVE-2020-13673"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>This advisory addresses a similar issue to <a href=\"https://www.drupal.org/sa-core-2021-006\" rel=\"nofollow\">Drupal core - Moderately critical - Cross Site Request Forgery - SA-CORE-2021-006</a>.</p>\n<p>The Entity Embed module provides a filter to allow embedding entities in content fields. In certain circumstances, the filter could allow an unprivileged user to inject HTML into a page when it is accessed by a trusted user with permission to embed entities. In some cases, this could lead to cross-site scripting.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_embed"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-028"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Aaron Zinck",
+      "contact": [
+        "https://www.drupal.org/user/518662"
+      ]
+    }
+  ]
+}

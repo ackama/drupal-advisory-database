@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-062",
+  "modified": "2023-08-11T06:25:13.000Z",
+  "published": "2022-12-01T04:34:03.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Social Private Message module allows users on the platform to allow users to send private messages to each other.</p>\n<p>The module does not properly perform the correct access checks for certain operations.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "11.4.9"
+            },
+            {
+              "introduced": "11.5.0"
+            },
+            {
+              "fixed": "11.5.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-062"
+    }
+  ],
+  "credits": [
+    {
+      "name": "zanvidmar",
+      "contact": [
+        "https://www.drupal.org/user/3003243"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-038",
+  "modified": "2023-08-12T05:45:32.000Z",
+  "published": "2020-11-19T06:27:58.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables your users residing at a SAML 2.0 compliant Identity Provider to login to your Drupal website.</p>\n<p>The module has two Authentication Bypass vulnerabilities.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/miniorange_saml"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.14.0"
+            },
+            {
+              "fixed": "2.54.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-038"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    },
+    {
+      "name": "Michael Mazzolini",
+      "contact": [
+        "https://www.drupal.org/user/3649306"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-015",
+  "modified": "2023-08-11T01:58:30.000Z",
+  "published": "2023-05-18T04:46:26.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The File Chooser Field allows users to upload files using 3rd party plugins such as Google Drive and Dropbox. </p>\n<p>This module fails to validate user input sufficiently which could under certain circumstances lead to a Server Side Request Forgery (SSRF) vulnerability leading to Information Disclosure. In uncommon configurations and scenarios, it might lead to Remote Code Execution.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/file_chooser_field"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.13.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-015"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    },
+    {
+      "name": "George Hazlewood",
+      "contact": [
+        "https://www.drupal.org/user/2314"
+      ]
+    }
+  ]
+}

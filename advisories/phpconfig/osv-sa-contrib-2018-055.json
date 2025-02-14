@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-055",
+  "modified": "2023-08-12T09:24:54.000Z",
+  "published": "2018-08-09T05:14:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to add or overwrite PHP configuration on a drupal website.</p>\n<p>The module doesn't sufficiently allow access to set these configurations, leading to arbitrary PHP configuration execution by an attacker.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer phpconfig\".</p>\n<p>After updating the module, it's important to review the permissions of your website and if 'administer phpconfig' permission is given to a not fully trusted user role, we advise to revoke it.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/phpconfig"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-055"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Balazs Janos Tatar",
+      "contact": [
+        "https://www.drupal.org/u/tatarbj"
+      ]
+    }
+  ]
+}

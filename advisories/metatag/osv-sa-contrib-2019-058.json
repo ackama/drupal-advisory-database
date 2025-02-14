@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-058",
+  "modified": "2023-08-12T06:32:08.000Z",
+  "published": "2019-07-25T04:31:19.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to customize meta tags to help with a site's search engine ranking and improve the display of page summaries when shared on social networks.</p>\n<p>The module doesn't sufficiently check for a site being in maintenance mode.</p>\n<p>This vulnerability is mitigated by the fact that the site must be configured to disallow access to certain content, and must be put into maintenance mode.</p>\n<p><a name=\"cve-identifiers-issued\" id=\"cve-identifiers-issued\" rel=\"nofollow\"></a></p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/metatag"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.9.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-058"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Shloma",
+      "contact": [
+        "https://www.drupal.org/user/2858019"
+      ]
+    }
+  ]
+}

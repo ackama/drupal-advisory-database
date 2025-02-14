@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-011",
+  "modified": "2023-08-11T03:37:51.000Z",
+  "published": "2023-03-16T06:40:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <a href=\"https://www.drupal.org/node/251466#procedure---own-project---unsupported\" rel=\"nofollow\">https://www.drupal.org/node/251466#procedure---own-project---unsupported</a></p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/responsive_media_image"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-011"
+    }
+  ],
+  "credits": []
+}

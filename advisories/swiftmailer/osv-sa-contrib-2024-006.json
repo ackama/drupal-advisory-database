@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-006",
+  "modified": "2024-01-25T14:06:00.000Z",
+  "published": "2024-01-25T04:54:55.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Drupal Swift Mailer module extends the basic e-mail sending functionality provided by Drupal by delegating all e-mail handling to the Swift Mailer library. This enables your site to take advantage of the many features which the Swift Mailer library provides.</p>\n<p>The module could allow an attacker to gain widespread access to a Drupal site. This vulnerability is mitigated by the fact that an attacker must have a means to trigger sending an email with a body that they can control, which would requires either another contributed module or custom integration.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/swiftmailer"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Adam Shepherd",
+      "contact": [
+        "https://www.drupal.org/user/2650563"
+      ]
+    }
+  ]
+}

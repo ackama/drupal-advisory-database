@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-069",
+  "modified": "2024-12-05T06:22:01.000Z",
+  "published": "2024-12-05T04:13:14.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module provides a field formatter for the field type 'file' called `Table of files with download all link` .</p>\n<p>The module had vulnerabilities allowing a user to download files they normally should not be able to download.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/download_all_files"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-069"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    },
+    {
+      "name": "Jeroen Tubex",
+      "contact": [
+        "https://www.drupal.org/user/2228934"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-045",
+  "modified": "2024-10-10T05:48:25.000Z",
+  "published": "2024-10-10T04:48:10.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to group nodes within pages that have a highly-granular, distributed permissions structure.</p>\n<p>A function which can be used by third-party code does not return valid data under certain rare circumstances. If the third-party code relies on this data to decide whether to grant access to content, it may grant more access than was intended.</p>\n<p>This vulnerability is only present in sites that have custom code calling the <code class=\"language-php\">mm_content_get_uids_in_group()</code> function with a single UID of zero (0) in the second parameter. </p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/monster_menus"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.34.0"
+            },
+            {
+              "fixed": "9.3.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-045"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dan Wilga",
+      "contact": [
+        "https://www.drupal.org/user/56892"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-081",
+  "modified": "2023-08-12T09:10:49.000Z",
+  "published": "2018-12-20T06:53:49.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module provides a JSON:API specification-compliant HTTP API for accessing and manipulating Drupal content and configuration entities.</p>\n<p>The module doesn't sufficiently check access when responding to certain filtered collection requests, thereby causing an access bypass vulnerability. (This means certain <code class=\"language-php\">GET</code> requests are vulnerable; no <code class=\"language-php\">POST</code>, <code class=\"language-php\">PATCH</code> or <code class=\"language-php\">DELETE</code> requests are vulnerable.)</p>\n<p>In order to fix this issue, two new hooks were added: <code class=\"language-php\">hook_jsonapi_ENTITY_TYPE_filter_access()</code> and <code class=\"language-php\">hook_jsonapi_entity_field_filter_access()</code>. Sites with custom entity types and/or with entity or field access customizations may need to implement these newly introduced hooks.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/jsonapi"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.24.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-081"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Gabe Sullice ",
+      "contact": [
+        "https://www.drupal.org/user/2287430"
+      ]
+    },
+    {
+      "name": "Lauri Eskola ",
+      "contact": [
+        "https://www.drupal.org/user/1078742"
+      ]
+    }
+  ]
+}

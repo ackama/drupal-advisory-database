@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-037",
+  "modified": "2023-08-12T04:54:22.000Z",
+  "published": "2021-09-23T05:17:05.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables sites to define a domain from Domain Access that points directly to a group page.</p>\n<p>The module doesn't sufficiently manage the access to content administrative paths allowing an attacker to see and take actions on content (nodes) they should be allowed to.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/domain_group"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.4.0"
+            },
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-037"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kalle Kipin\u00e4",
+      "contact": [
+        "https://www.drupal.org/user/813328"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-036",
+  "modified": "2024-09-05T04:40:57.000Z",
+  "published": "2024-09-05T03:42:05.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables field collections to be displayed as tables. It supports display suite and field permissions and provides operations (modify, delete, duplicate).</p>\n<p>This module has multiple vulnerabilities due to the requirements on the routes it provides not being restrictive enough.</p>\n<h2>Information disclosure</h2>\n<p>Several routes <em>only</em> checked for the 'access content' permission before displaying a paragraph, and did not check whether the user should actually have access to view the paragraph in question.</p>\n<h2>Access bypass</h2>\n<p>The <code class=\"language-php\">paragraphs_item.add_page</code> route previously allowed anyone with the 'access content' permission to add paragraphs to any content regardless of permissions to be able to edit the host field or content, or any other hooks for adjusting access to add paragraphs of that type.</p>\n<p>These vulnerabilities are mitigated by the fact that an attacker must have a role with the permission \"access content\" which is commonly assigned to all roles.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/paragraphs_table"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.23.0"
+            },
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-036"
+    }
+  ],
+  "credits": [
+    {
+      "name": "James Williams",
+      "contact": [
+        "https://www.drupal.org/user/592268"
+      ]
+    }
+  ]
+}

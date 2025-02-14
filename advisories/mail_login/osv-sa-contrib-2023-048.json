@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-048",
+  "modified": "2023-10-05T05:35:18.000Z",
+  "published": "2023-10-05T04:41:34.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables users to log in by email address with minimal configurations. </p>\n<p>Drupal core contains protection against brute force attacks via a flood control mechanism. This module's functionality did not replicate the flood control, enabling brute force attacks.</p>\n<p>A previous security advisory, <a href=\"https://www.drupal.org/sa-contrib-2023-045\" rel=\"nofollow\">SA-CONTRIB-2023-45</a>, was released for this issue, but that release did not successfully address the vulnerability. This security advisory and updated module version supersede the previous one.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/mail_login"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.9.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-048"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Melisa Cordero",
+      "contact": [
+        "https://www.drupal.org/user/3655438"
+      ]
+    },
+    {
+      "name": "Emil Johnsson",
+      "contact": [
+        "https://www.drupal.org/user/1868992"
+      ]
+    }
+  ]
+}

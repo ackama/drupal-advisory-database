@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-042",
+  "modified": "2024-10-03T07:05:34.000Z",
+  "published": "2024-10-03T05:15:59.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module adds a tab for sufficiently permissioned users. The tab shows all revisions like standard Drupal but it also allows pretty viewing of all added/changed/deleted words between revisions.</p>\n<p>The module doesn't sufficiently check revision access before rendering a diff report for 1) nodes or 2) general entities that support diff.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission from the general node permission to \"view all revisions\", one of the more specific node type permissions, \"view %bundle revisions\" or the equivalent for other general entity types.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/diff"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.8.0"
+            },
+            {
+              "fixed": "2.0.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-042"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Matthias Vogel",
+      "contact": [
+        "https://www.drupal.org/user/3319139"
+      ]
+    }
+  ]
+}

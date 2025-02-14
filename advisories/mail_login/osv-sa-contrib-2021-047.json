@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2021-047",
+  "modified": "2023-08-12T04:49:16.000Z",
+  "published": "2021-12-23T06:47:54.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This modules enables users to login via email address.</p>\n<p>This module does not sufficiently check user status when authenticating.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/mail_login"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-047"
+    }
+  ],
+  "credits": [
+    {
+      "name": "seroton",
+      "contact": [
+        "https://www.drupal.org/user/1473154"
+      ]
+    },
+    {
+      "name": "Abhishek Vishwakarma",
+      "contact": [
+        "https://www.drupal.org/user/896554"
+      ]
+    },
+    {
+      "name": "Dmitriy.trt",
+      "contact": [
+        "https://www.drupal.org/user/329125"
+      ]
+    }
+  ]
+}

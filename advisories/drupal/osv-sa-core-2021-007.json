@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2021-007",
+  "modified": "2022-08-22T06:57:29.000Z",
+  "published": "2021-09-16T03:20:39.000Z",
+  "aliases": [
+    "CVE-2020-13674"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>The QuickEdit module does not properly validate access to routes, which could allow cross-site request forgery under some circumstances and lead to possible data integrity issues.</p>\n<p>Sites are only affected if the QuickEdit module (which comes with the Standard profile) is installed. Removing the \"access in-place editing\" permission from untrusted users <strong>will not</strong> fully mitigate the vulnerability.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.19"
+            },
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.13"
+            },
+            {
+              "introduced": "9.2.0"
+            },
+            {
+              "fixed": "9.2.6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-026",
+  "modified": "2023-08-12T01:50:17.000Z",
+  "published": "2022-02-24T06:10:52.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module provides an entity relationship hierarchy tree widget for an entity reference field.</p>\n<p>The module doesn't sufficiently filter on output, leading to a Cross Site Scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission to modify an entity that is the reference to a field.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_reference_tree"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-026"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jeroen Vreuls",
+      "contact": [
+        "https://www.drupal.org/user/2700643"
+      ]
+    }
+  ]
+}

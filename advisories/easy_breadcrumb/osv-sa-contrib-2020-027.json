@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-027",
+  "modified": "2023-08-12T05:49:02.000Z",
+  "published": "2020-07-23T05:58:17.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to use the current URL (path alias) and the current page's title to automatically extract the breadcrumb's segments and its respective links then show them as breadcrumbs on your website.</p>\n<p>The module doesn't sufficiently sanitize editor input in certain circumstances leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability requires the user have 'administer Easy Breadcrumb settings permission'.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/easy_breadcrumb"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.13.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-027"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Greg Boggs ",
+      "contact": [
+        "https://www.drupal.org/user/153069"
+      ]
+    }
+  ]
+}

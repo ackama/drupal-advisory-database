@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-024",
+  "modified": "2023-08-11T01:40:55.000Z",
+  "published": "2023-06-29T05:03:36.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to create dynamic layouts and add sample color palettes for color selection hints via its UI.</p>\n<p>The module doesn't sufficiently sanitize the module's settings in certain scenarios leading to a Cross Site Scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permissions \"administer gridstack\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/gridstack"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.11.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-024"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    }
+  ]
+}

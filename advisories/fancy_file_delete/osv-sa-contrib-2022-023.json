@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-023",
+  "modified": "2023-08-12T01:48:49.000Z",
+  "published": "2022-02-10T04:17:56.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to manage and delete files.</p>\n<p>The module doesn't sufficiently protect unmanaged files from view under the scenario unauthenticated user knows path to visit the view and can attempt to delete files which results in duplicate files being created.</p>\n<p>To mitigate this issue without deploying code, review all views that are based on Fancy File Delete and ensure they have an access control set to use the permission \"administer unmanaged files entities\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/fancy_file_delete"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.7"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-023"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ambient.Impact",
+      "contact": [
+        "https://www.drupal.org/user/1131532"
+      ]
+    }
+  ]
+}

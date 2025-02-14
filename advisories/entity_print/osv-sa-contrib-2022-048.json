@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-048",
+  "modified": "2023-08-11T09:36:29.000Z",
+  "published": "2022-07-14T03:44:42.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to generate print versions of content.<br />\nSome installations of the module make use of the dompdf/dompdf third-party dependency.<br />\nSecurity vulnerabilities exist for versions of dompdf/dompdf &lt; 2.0.0</p>\n<p>See the library release notes for more detail: <a href=\"https://github.com/dompdf/dompdf/releases/tag/v2.0.0\" rel=\"nofollow\">https://github.com/dompdf/dompdf/releases/tag/v2.0.0</a></p>\n<h3>Note on 3rd party vulnerabilities</h3>\n<p>This security advisory corresponds to a 3rd party vulnerability. Normally the Drupal Security Team would not issue advisories related to 3rd party code that is shipped separately from a module per our policy (most recent update is <a href=\"https://www.drupal.org/psa-2019-09-04\" rel=\"nofollow\">PSA-2019-09-04</a>). In this case, because the module required a specific version and could not be updated without a change to the Drupal module we do issue an advisory.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_print"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.6.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-048"
+    }
+  ],
+  "credits": [
+    {
+      "name": "szato",
+      "contact": [
+        "https://www.drupal.org/user/389677"
+      ]
+    },
+    {
+      "name": "Munavir P k",
+      "contact": [
+        "https://www.drupal.org/user/3604066"
+      ]
+    }
+  ]
+}

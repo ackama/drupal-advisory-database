@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-010",
+  "modified": "2023-08-11T02:20:35.000Z",
+  "published": "2023-03-16T06:22:57.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Media Responsive Thumbnail module allows media reference fields to be rendered as a responsive image.</p>\n<p>This module does not properly check entity access prior to rendering media. This may result in users seeing thumbnails of media items they do not have access to.</p>\n<p>This release was coordinated with <a href=\"https://www.drupal.org/sa-core-2023-002\" rel=\"nofollow\">SA-CORE-2023-002</a>.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/media_responsive_thumbnail"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-010"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dan Flanagan",
+      "contact": [
+        "https://www.drupal.org/user/3615359"
+      ]
+    }
+  ]
+}

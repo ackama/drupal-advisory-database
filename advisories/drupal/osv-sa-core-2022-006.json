@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2022-006",
+  "modified": "2022-08-22T06:48:04.000Z",
+  "published": "2022-03-22T10:39:35.000Z",
+  "aliases": [
+    "CVE-2022-24775"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal uses the third-party Guzzle library for handling HTTP requests and responses to external services. <a href=\"https://github.com/guzzle/psr7/security/advisories/GHSA-q7rv-6hp3-vh96\" rel=\"nofollow\">Guzzle has released a security update </a> which may affect some Drupal sites.</p>\n<p>We are issuing this security advisory outside our regular <a href=\"https://www.drupal.org/node/1173280\" rel=\"nofollow\">Drupal security release window schedule</a> since Guzzle has already published information about the vulnerability, and vulnerabilities might exist with core, contributed modules, or custom modules that use Guzzle for outgoing requests. Guzzle has rated this vulnerability as low-risk.</p>\n<p>This advisory is not covered by Drupal Steward.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.2.16"
+            },
+            {
+              "introduced": "9.3.0"
+            },
+            {
+              "fixed": "9.3.9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2022-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jeroen Tubex",
+      "contact": [
+        "https://www.drupal.org/user/2228934"
+      ]
+    },
+    {
+      "name": "Damien McKenna",
+      "contact": [
+        "https://www.drupal.org/user/108450"
+      ]
+    }
+  ]
+}

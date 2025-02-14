@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-026",
+  "modified": "2023-08-11T01:49:56.000Z",
+  "published": "2023-06-29T05:11:07.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to use complex autocompletion in forms.</p>\n<p>The module doesn't sufficiently filter text in the data it exposes, allowing a malicious user to enter specially crafted tags to exploit a Cross Site Scripting (XSS) attack.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role which allows them to publish the kind of data used in the autocomplete (for instance create nodes if the tool is used to search nodes, comments if the tool is used to search comments, etc...)</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/search_autocomplete"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-026"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mingsong ",
+      "contact": [
+        "https://www.drupal.org/user/2986445"
+      ]
+    }
+  ]
+}

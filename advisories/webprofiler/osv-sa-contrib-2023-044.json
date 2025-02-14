@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-044",
+  "modified": "2023-09-19T02:27:44.000Z",
+  "published": "2023-09-07T04:33:36.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Webprofiler module provides a way of displaying the Symfony profile debugging tool at the bottom of each page.</p>\n<p>The abbr_class Twig filter can be used to bypass the Twig auto-escape feature.</p>\n<p>This vulnerability is mitigated by the fact that it is only exposed when the filter is specifically used in a theme to render content that contains an attack vector.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webprofiler"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.0"
+            },
+            {
+              "fixed": "10.1.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-044"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

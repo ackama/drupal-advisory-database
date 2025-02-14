@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2020-003",
+  "modified": "2022-08-22T07:13:36.000Z",
+  "published": "2020-05-21T03:22:09.000Z",
+  "aliases": [
+    "CVE-2020-13662 "
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal 7 has an Open Redirect vulnerability. For example, a user could be tricked into visiting a specially crafted link which would redirect them to an arbitrary external URL.</p>\n<p>The vulnerability is caused by insufficient validation of the <code class=\"language-php\">destination</code> query parameter in the <code class=\"language-php\">drupal_goto()</code> function.</p>\n<p>Other versions of Drupal core are not vulnerable.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0"
+            },
+            {
+              "fixed": "7.70"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "vortfu ",
+      "contact": [
+        "https://www.drupal.org/user/3638636"
+      ]
+    }
+  ]
+}

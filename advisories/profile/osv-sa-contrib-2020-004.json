@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-004",
+  "modified": "2023-08-12T05:59:12.000Z",
+  "published": "2020-02-20T06:22:22.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Profile module enables you to allow users to have configurable user profiles.</p>\n<p>The module doesn't sufficiently check access when creating a user profile. Users with the \"create profiles\" permission could create profiles for any users.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/profile"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "karl972 ",
+      "contact": [
+        "https://www.drupal.org/user/1541584"
+      ]
+    }
+  ]
+}

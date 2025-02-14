@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2023-018",
+  "modified": "2023-08-11T01:56:48.000Z",
+  "published": "2023-06-01T01:20:43.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module provides social media share &amp; follow buttons.</p>\n<p>The module doesn't sufficiently check access to a node when retrieving the label of an AddToAny block.</p>\n<p>This vulnerability is mitigated by the fact it requires the node ID to be passed via the route, requiring another module or specific configuration to provide this ID, as the /node/{id} page doesn't provide this value on an access denied.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/addtoany"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.21.0"
+            },
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-018"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    }
+  ]
+}

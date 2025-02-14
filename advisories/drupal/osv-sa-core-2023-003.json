@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2023-003",
+  "modified": "2024-11-22T21:02:17.000Z",
+  "published": "2023-03-16T05:24:29.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.</p>\n<p>The URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.4.12"
+            },
+            {
+              "introduced": "9.5.0"
+            },
+            {
+              "fixed": "9.5.5"
+            },
+            {
+              "introduced": "10.0.0"
+            },
+            {
+              "fixed": "10.0.5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2023-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jan Kellermann",
+      "contact": [
+        "https://www.drupal.org/user/371731"
+      ]
+    }
+  ]
+}
