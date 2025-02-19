@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2025-001",
+  "modified": "2025-02-20T07:13:10.000Z",
+  "published": "2025-02-20T05:49:28.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal core doesn't sufficiently filter error messages under certain circumstances, leading to a reflected Cross Site Scripting vulnerability (XSS).</p>\n<p>Sites are encouraged to update. There are not yet public documented steps to exploit this, but there may be soon given the nature of this issue.</p>\n<p>This issue is being protected by <a href=\"https://www.drupal.org/steward\" rel=\"nofollow\">Drupal Steward</a>. Sites that use Drupal Steward are already protected, but are still encouraged to upgrade in the near future.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/drupal"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.3.13"
+            },
+            {
+              "introduced": "10.4.0"
+            },
+            {
+              "fixed": "10.4.3"
+            },
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.12"
+            },
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.1.3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2025-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Arne (arkepp)",
+      "contact": [
+        "/u/arkepp"
+      ]
+    },
+    {
+      "name": "bdanin",
+      "contact": [
+        "/u/bdanin"
+      ]
+    },
+    {
+      "name": "Douglas Groene (dgroene)",
+      "contact": [
+        "/u/dgroene"
+      ]
+    },
+    {
+      "name": "Dragos Dumitrescu (dragos-dumi)",
+      "contact": [
+        "/u/dragos-dumi"
+      ]
+    },
+    {
+      "name": "Flo Kosiol (flokosiol)",
+      "contact": [
+        "/u/flokosiol"
+      ]
+    },
+    {
+      "name": "Gerardo Cadau (juanramonperez)",
+      "contact": [
+        "/u/juanramonperez"
+      ]
+    },
+    {
+      "name": "Justin Christoffersen (larsdesigns)",
+      "contact": [
+        "/u/larsdesigns"
+      ]
+    },
+    {
+      "name": "nuwans",
+      "contact": [
+        "/u/nuwans"
+      ]
+    },
+    {
+      "name": "Sven Decabooter (svendecabooter)",
+      "contact": [
+        "/u/svendecabooter"
+      ]
+    },
+    {
+      "name": "Will Gunn (wgunn_e)",
+      "contact": [
+        "/u/wgunn_e"
+      ]
+    }
+  ]
+}
