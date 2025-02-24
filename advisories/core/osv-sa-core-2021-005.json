@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2021-005",
+  "modified": "2022-08-22T06:59:16.000Z",
+  "published": "2021-08-13T06:08:50.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Drupal project uses the <a href=\"https://github.com/ckeditor/ckeditor4\" rel=\"nofollow\">CKEditor</a>, library for WYSIWYG editing. CKEditor has released <a href=\"https://ckeditor.com/blog/ckeditor-4.16.2-with-browser-improvements-and-security-fixes/\" rel=\"nofollow\">a security update that impacts Drupal</a>.</p>\n<p>Vulnerabilities are possible if Drupal is configured to allow use of the CKEditor library for WYSIWYG editing. An attacker that can create or edit content (even without access to CKEditor themselves) may be able to exploit one or more Cross-Site Scripting (XSS) vulnerabilities to target users with access to the WYSIWYG CKEditor, including site admins with privileged access.\n</p>\n<p>For more information, see <a href=\"https://ckeditor.com/blog/ckeditor-4.16.2-with-browser-improvements-and-security-fixes/\" rel=\"nofollow\">CKEditor's announcement of the release</a>.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.18"
+            },
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.12"
+            },
+            {
+              "introduced": "9.2.0"
+            },
+            {
+              "fixed": "9.2.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Krzysztof Krzton",
+      "contact": [
+        "https://www.drupal.org/user/3618903"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2020-005",
+  "modified": "2022-08-22T07:11:59.000Z",
+  "published": "2020-06-18T06:06:23.000Z",
+  "aliases": [
+    "CVE-2020-13664"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal 8 and 9 have a remote code execution vulnerability under certain circumstances.</p>\n<p>An attacker could trick an administrator into visiting a malicious site that could result in creating a carefully named directory on the file system. With this directory in place, an attacker could attempt to brute force a remote code execution vulnerability.</p>\n<p>Windows servers are most likely to be affected.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.8"
+            },
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.1"
+            },
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lorenzo G ",
+      "contact": [
+        "https://www.drupal.org/user/3644903"
+      ]
+    },
+    {
+      "name": "Sam Thomas ",
+      "contact": [
+        "https://www.drupal.org/user/3603418"
+      ]
+    }
+  ]
+}

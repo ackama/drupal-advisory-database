@@ -423,6 +423,8 @@ def process_rss_feed(rss_file, rss_url):
 def composer_package(project_json):
     project_type = 'drupal'
     project_name = project_json['list'][0]['field_project_machine_name']
+    if project_name == 'drupal':
+        project_name = 'core'
     return f"{project_type}/{project_name}"
 
 # This fetches a single SA from drupal.org and processes it.

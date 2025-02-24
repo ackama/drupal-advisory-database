@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2019-006",
+  "modified": "2022-08-22T07:38:49.000Z",
+  "published": "2019-04-18T08:30:56.000Z",
+  "aliases": [
+    "CVE-2019-11358"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>The jQuery project released version 3.4.0, and as part of that, disclosed a security vulnerability that affects all prior versions. As described in their <a href=\"https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/\" rel=\"nofollow\">release notes</a>:</p>\n<blockquote><p>jQuery 3.4.0 includes a fix for some unintended behavior when using jQuery.extend(true, {}, ...). If an unsanitized source object contained an enumerable __proto__ property, it could extend the native Object.prototype. This fix is included in jQuery 3.4.0, but patch diffs exist to patch previous jQuery versions.</p>\n</blockquote>\n<p>It's possible that this vulnerability is exploitable with some Drupal modules. As a precaution, this Drupal security release backports the fix to jQuery.extend(), without making any other changes to the jQuery version that is included in Drupal core (3.2.1 for Drupal 8 and 1.4.4 for Drupal 7) or running on the site via some other module such as <a href=\"https://www.drupal.org/project/jquery_update\" rel=\"nofollow\">jQuery Update</a>.</p>\n<p><em>2019-04-22, edited to add CVE.</em></p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0"
+            },
+            {
+              "fixed": "7.66"
+            },
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.15"
+            },
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.6.15"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "dtv_rb ",
+      "contact": [
+        "https://www.drupal.org/user/3528196"
+      ]
+    },
+    {
+      "name": "xjm",
+      "contact": [
+        "https://www.drupal.org/user/65776"
+      ]
+    }
+  ]
+}

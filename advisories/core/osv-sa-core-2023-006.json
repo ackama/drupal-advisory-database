@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2023-006",
+  "modified": "2024-11-22T21:00:59.000Z",
+  "published": "2023-09-21T04:23:05.000Z",
+  "aliases": [
+    "CVE-2023-5256"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>In certain scenarios, Drupal's JSON:API module will output error backtraces. With some configurations, this may cause sensitive information to be cached and made available to anonymous users, leading to privilege escalation.</p>\n<p>This vulnerability only affects sites with the JSON:API module enabled, and can be mitigated by uninstalling JSON:API.</p>\n<p>The core REST and contributed GraphQL modules are not affected.</p>\n<p><a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a> partners have been made aware of this issue. Some platforms may provide mitigations. However, not all WAF configurations can mitigate the issue, so it is still recommended to update promptly to this security release if your site uses JSON:API.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.7.0"
+            },
+            {
+              "fixed": "9.5.11"
+            },
+            {
+              "introduced": "10.0"
+            },
+            {
+              "fixed": "10.0.11"
+            },
+            {
+              "introduced": "10.1"
+            },
+            {
+              "fixed": "10.1.4"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2023-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "ghostccamm ",
+      "contact": [
+        "https://www.drupal.org/user/3778490"
+      ]
+    }
+  ]
+}

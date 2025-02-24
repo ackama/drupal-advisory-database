@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2020-011",
+  "modified": "2022-08-22T07:07:45.000Z",
+  "published": "2020-09-17T04:45:26.000Z",
+  "aliases": [
+    "CVE-2020-13670"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>A vulnerability exists in the File module which allows an attacker to gain access to the file metadata of a permanent private file that they do not have access to by guessing the ID of the file.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.10"
+            },
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.6"
+            },
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-011"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Rothstein ",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    },
+    {
+      "name": "Ivan  ",
+      "contact": [
+        "https://www.drupal.org/user/556138"
+      ]
+    },
+    {
+      "name": "elarlang ",
+      "contact": [
+        "https://www.drupal.org/user/3583903"
+      ]
+    },
+    {
+      "name": "Mori Sugimoto ",
+      "contact": [
+        "https://www.drupal.org/user/82971"
+      ]
+    },
+    {
+      "name": "kyk ",
+      "contact": [
+        "https://www.drupal.org/user/29822"
+      ]
+    },
+    {
+      "name": "njbooher",
+      "contact": [
+        "https://www.drupal.org/u/njbooher"
+      ]
+    }
+  ]
+}

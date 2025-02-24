@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2019-001",
+  "modified": "2022-08-22T07:42:50.000Z",
+  "published": "2019-01-17T06:17:11.000Z",
+  "aliases": [
+    "CVE-2019-6338"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Drupal core uses the third-party PEAR Archive_Tar library. This library has released a security update which impacts some Drupal configurations. Refer to <a href=\"https://nvd.nist.gov/vuln/detail/CVE-2018-1000888\" rel=\"nofollow\">CVE-2018-1000888</a> for details.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0"
+            },
+            {
+              "fixed": "7.62"
+            },
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.9"
+            },
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.6.6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ayesh Karunaratne ",
+      "contact": [
+        "https://www.drupal.org/user/796148"
+      ]
+    },
+    {
+      "name": " farisv ",
+      "contact": [
+        "https://www.drupal.org/u/farisv"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2022-004",
+  "modified": "2022-08-22T06:51:53.000Z",
+  "published": "2022-02-17T05:46:24.000Z",
+  "aliases": [
+    "CVE-2022-25270"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>The Quick Edit module does not properly check entity access in some circumstances. This could result in users with the \"access in-place editing\" permission viewing some content they are are not authorized to access.</p>\n<p>Sites are only affected if the QuickEdit module (which comes with the Standard profile) is installed.</p>\n<p>Also see <a href=\"https://www.drupal.org/sa-contrib-2022-025\" rel=\"nofollow\">Quick Edit - Moderately critical - Information disclosure - SA-CONTRIB-2022-025</a> which addresses the same vulnerability for the contributed module.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.2.13"
+            },
+            {
+              "introduced": "9.3.0"
+            },
+            {
+              "fixed": "9.3.6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2022-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

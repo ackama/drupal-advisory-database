@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2018-003",
+  "modified": "2022-08-22T07:47:01.000Z",
+  "published": "2018-04-19T03:34:09.000Z",
+  "aliases": [
+    "CVE-2018-9861"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>\nCKEditor, a third-party JavaScript library included in Drupal core, has <a href=\"https://ckeditor.com/blog/CKEditor-4.9.2-with-a-security-patch-released/\" rel=\"nofollow\">fixed a cross-site scripting (XSS) vulnerability</a>.  The vulnerability stemmed from the fact that it was possible to execute XSS inside CKEditor when using the <code class=\"language-php\">image2</code> plugin (which Drupal 8 core also uses).\n</p>\n<p>\nWe would like to thank the CKEditor team for patching the vulnerability and coordinating the fix and release process, and matching the Drupal core security window.\n</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.4.7"
+            },
+            {
+              "introduced": "8.5.0"
+            },
+            {
+              "fixed": "8.5.2"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2018-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kyaw Min Thein ",
+      "contact": [
+        "https://www.drupal.org/user/3560461"
+      ]
+    }
+  ]
+}

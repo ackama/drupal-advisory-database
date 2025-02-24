@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CORE-2021-003",
+  "modified": "2022-08-22T07:01:54.000Z",
+  "published": "2021-05-27T06:33:55.000Z",
+  "aliases": [
+    "CVE-2021-33829"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p><b> Update: 2021-06-11:  Added CVE-2021-33829 identifier</b></p>\n<p>Drupal core uses the third-party CKEditor library. This library has an error in parsing HTML that could lead to an XSS attack. CKEditor 4.16.1 and later include the fix.</p>\n<p>Update: 2021-06-11: More details are available on <a href=\"https://ckeditor.com/blog/ckeditor-4.16.1-with-accessibility-enhancements/#improvements-for-comments-in-html-parser\" rel=\"nofollow\">CKEditor's blog</a>.</p>\n<p>Users of the CKEditor library via means other than Drupal core should update their 3rd party code (e.g. the WYSIWYG module for Drupal 7). The Drupal Security Team policy is not to alert for issues affecting 3rd party libraries unless those are shipped with Drupal core. See <a href=\"https://www.drupal.org/psa-2016-004\" rel=\"nofollow\">DRUPAL-SA-PSA-2016-004 for more details</a>.</p>\n<p>This issue is mitigated by the fact that it only affects sites with CKEditor enabled.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.16"
+            },
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.14"
+            },
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Or Sahar",
+      "contact": [
+        "https://www.drupal.org/user/3676145"
+      ]
+    }
+  ]
+}

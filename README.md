@@ -18,7 +18,7 @@ The script will create all the necessary directories if they are not present.
 
 [Install OSV Detector](https://github.com/G-Rath/osv-detector?tab=readme-ov-file#installation) and ensure it is on your `$PATH`.
 
-This repo ships with a `.osv-detector.yml` file.  From this repo you can check your project with `osv-detector -config .osv-detector.yml /path/to/your/repo`
+This repo ships with an `.osv-detector.yml` file.  From this repo you can check your project with `osv-detector -config .osv-detector.yml /path/to/your/repo`
 
 ## How it works
 
@@ -43,6 +43,5 @@ Fetch the current `schema.json` file from the [Open Source Vulnerability schema]
 The following will validate all generated files.
 
 ```shell
-for F in $(ls osv/*.json); do go run github.com/neilpa/yajsv@latest -s schema.json $F
-; done
+for F in advisories/*/*.json; do go run github.com/neilpa/yajsv@latest -s schema.json $F ; done
 ```
