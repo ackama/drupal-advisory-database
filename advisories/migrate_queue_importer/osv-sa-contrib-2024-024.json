@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-024",
-  "modified": "2024-05-30T08:20:11.000Z",
+  "modified": "2025-02-21T08:13:35.000Z",
   "published": "2024-05-30T04:58:59.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13260"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>The Migrate queue importer module enables you to create cron migrations(configuration entities) with a reference towards migration entities in order to import them during cron runs.</p>\n<p>The module doesn't sufficiently protect against Cross Site Request Forgery<br />\nunder specific scenarios allowing an attacker to enable/disable a cron migration.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the<br />\nid of the migration.</p>",

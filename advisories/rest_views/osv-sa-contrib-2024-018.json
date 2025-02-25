@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-018",
-  "modified": "2024-04-25T04:23:07.000Z",
+  "modified": "2025-02-21T07:44:08.000Z",
   "published": "2024-04-25T02:23:34.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13254"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>The Rest views module lets site admins create rest exports in views with additional options for serializing data.</p>\n<p>This module does not accurately check access and may expose paths to unpublished content.</p>\n<p>This vulnerability is mitigated by the fact that there must be a specific content structure to expose.</p>\n<p>Paths to unpublished entities (such as nodes) will be exposed if those entities are referenced from other entities listed in a REST display, and the reference field on those listed entities is displayed with the \"Entity path\" formatter.</p>",

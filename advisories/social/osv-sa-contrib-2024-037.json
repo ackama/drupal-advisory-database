@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-037",
-  "modified": "2025-01-10T08:22:01.000Z",
+  "modified": "2025-02-21T08:22:50.000Z",
   "published": "2024-09-05T04:15:41.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13273"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>Open Social is a Drupal distribution for online communities, which ships with an optional module called Social Embed. </p>\n<p>This module allows a website to display embedded content (such as photos or videos) when a user posts a link to that resource, without having to parse the resource directly.</p>\n<p>Added URL's were not sufficiently validated which could lead to a DoS via Blind SSRF and/or Application Takeover via Stored XSS.</p>\n<p>This vulnerability is mitigated by the fact that social_embed submodule needs to be enabled.</p>",

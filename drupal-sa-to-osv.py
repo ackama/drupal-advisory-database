@@ -167,7 +167,7 @@ def parse_affected_versions(affected_versions):
     affected = []
     for versions in affected_versions.split(' || '):
         # split version on space and append the first element to the affected list after removing any > or >= characters.
-        versions = versions.replace('>=', '').replace('>', '').replace('< ', '<').strip()
+        versions = versions.replace('>=', '').replace('>', '').replace('< ', '<').replace('= ', '=').strip()
         introduced = versions.split()[0].strip()
         if introduced[0] == '<':
             introduced = '0.0.0'
@@ -176,7 +176,7 @@ def parse_affected_versions(affected_versions):
         if len(versions.split()) > 1:
             # It looks like Core does not have field_fixed_in populated. Add a
             # fixed version from this string if we can.
-            fixed = versions.split()[1].replace('<', '').strip()
+            fixed = versions.split()[1].replace('<', '').replace('=', '').strip()
             affected.append({'fixed': fixed})
     return affected
 
@@ -201,7 +201,6 @@ def add_fixed_in_versions(affected_versions, fixed_in_json):
 
 def check_for_fixed_versions(affected_versions, fixed_in_json):
     inserted = []
-
     for idx, val in enumerate(affected_versions):
         if 'introduced' not in val.keys():
             continue
@@ -241,6 +240,8 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
 
 def semver_for_sorting(semver):
     decrement_semver = False
+    if semver == '':
+        return ''
     # Check if the semver string starts with a '<' character.
     if semver[0] == '<':
         decrement_semver = True
@@ -446,7 +447,7 @@ def process_sa_json(sa_json):
         print(f"Skipping SA without affected versions: {sa_json['title']}")
         print(f"SA URL: {sa_json['url']}")
         return
-    
+
     sa_id = sa_json['url'].split('/')[-1].upper()
     osv_entry = osv_template(sa_id)
     project_json = None
@@ -461,14 +462,6 @@ def process_sa_json(sa_json):
 
     if 'field_sa_reported_by' in sa_json.keys():
         osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
-
-    # if 'Google Tag' in sa_json['title']:
-    #     print(f"\n\n## Project:")
-    #     pp.pprint(project_json)
-    #     print(f"\n\n## Security Advisory:")
-    #     pp.pprint(sa_json)
-    #     print(f"\n\n## Fixed in:")
-    #     pp.pprint(fixed_in_json)
 
     osv_entry['id'] = f"{sa_id}"
 
@@ -529,6 +522,7 @@ def build_osv_entries_from_rest_api(last_modified_timestamp):
                 fetch_again = False
         else:
             print(f"Failed to fetch data from {url}. Status code: {response.status_code}")
+            pp.pprint(response.headers)
             fetch_again = False
 
 # Processing...

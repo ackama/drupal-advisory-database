@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-012",
-  "modified": "2024-02-29T08:04:47.000Z",
+  "modified": "2025-02-21T08:09:55.000Z",
   "published": "2024-02-29T07:19:01.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13248"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module gives each node a 'private' checkbox. If it's set, the node can only be seen by the node author, or users with the 'access private content' permission. </p>\n<p>The module incorrectly grants access to private nodes under certain specific circumstances. This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Access private content\".</p>",

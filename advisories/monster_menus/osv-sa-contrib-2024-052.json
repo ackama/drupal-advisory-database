@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-052",
-  "modified": "2024-10-24T05:59:50.000Z",
+  "modified": "2025-02-21T09:05:19.000Z",
   "published": "2024-10-24T04:45:47.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13288"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module enables you to group nodes within pages that have a highly-granular, distributed permissions structure.</p>\n<p>In certain cases the module doesn't sufficiently sanitize data before passing it to PHP's unserialize() function, which can result in arbitrary code execution.</p>",

@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-033",
-  "modified": "2024-08-29T04:14:52.000Z",
+  "modified": "2025-02-21T08:24:02.000Z",
   "published": "2024-08-29T03:32:41.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13269"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module enables you to cache pages for logged in users at the Varnish level.</p>\n<p>The Varnish bin names may be guessable when no hashing noise configuration is set on the module configuration page, which would ultimately allow any user to view cached pages that were intended for other roles when guessing such a bin name.</p>",

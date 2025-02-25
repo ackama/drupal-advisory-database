@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-068",
-  "modified": "2024-12-05T06:21:30.000Z",
+  "modified": "2025-02-21T09:07:26.000Z",
   "published": "2024-12-05T03:46:03.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13302"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>Module to restrict access from anonymous and regular users to configured pre-defined pages.</p>\n<p>The module does not adequately handle protecting certain types of URLs.</p>",

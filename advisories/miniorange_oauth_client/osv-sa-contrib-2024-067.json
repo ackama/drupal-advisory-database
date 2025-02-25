@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-067",
-  "modified": "2024-12-05T06:21:11.000Z",
+  "modified": "2025-02-21T09:07:11.000Z",
   "published": "2024-12-05T03:40:50.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13301"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module enables you to authenticate users through an Identity Provider (IdP) or OAuth Server, allowing them to log in to your Drupal site.</p>\n<p>The module does not sufficiently escape query parameters sent to the callback URL when displaying error messages, particularly if the code parameter is missing in the response.</p>",

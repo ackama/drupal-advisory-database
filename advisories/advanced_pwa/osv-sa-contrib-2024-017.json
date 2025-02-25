@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-017",
-  "modified": "2024-05-27T23:15:54.000Z",
+  "modified": "2025-02-21T07:44:32.000Z",
   "published": "2024-04-25T01:16:40.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13253"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>Progressive web applications are web applications that load like regular web pages or websites but can offer the user functionality such as working offline, push notifications, and device hardware access traditionally available only to native applications.</p>\n<p>This module doesn't sufficiently protect access to the settings form, allowing an unauthorized malicious user to view and modify the module settings.</p>",

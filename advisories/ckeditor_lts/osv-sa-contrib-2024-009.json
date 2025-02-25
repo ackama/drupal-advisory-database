@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2024-009",
-  "modified": "2024-02-15T09:55:55.000Z",
+  "modified": "2025-02-21T07:37:01.000Z",
   "published": "2024-02-15T08:31:10.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2024-13245"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>The CKEditor 4 LTS - WYSIWYG HTML editor module uses the CKEditor library for WYSIWYG editing. CKEditor has released a <a href=\"https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS\" target=\"_blank\" rel=\"nofollow\">security update</a> that on certain configurations may impact the Drupal module that bundles and integrates this code.</p>\n<p>The vulnerability is mitigated by the fact it requires:</p>\n<ol>\n<li><a href=\"https://ckeditor.com/docs/ckeditor4/latest/features/fullpage.html\" target=\"_blank\" rel=\"nofollow\">full-page editing</a> mode is enabled</li>\n<li>or CDATA elements in Advanced Content Filtering configuration (defaults to script and style elements) are enabled.</li>\n<li>An attacker must have a permission with access to the CKEditor instance.</li>\n</ol>\n<p>For more information, see CKEditor's security advisory:<br />\n<a href=\"https://github.com/ckeditor/ckeditor4/security/advisories/GHSA-fq6h-4g8v-qqvm\" target=\"_blank\" rel=\"nofollow\">CVE-2024-24815</a>: Cross-site scripting (XSS) vulnerability caused by incorrect CDATA detection</p>",
