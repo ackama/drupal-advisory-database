@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-024",
+  "modified": "2025-04-01T11:07:08.000Z",
+  "published": "2025-03-20T07:52:53.000Z",
+  "aliases": [
+    "CVE-2025-31695"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module adds a formatter for link fields that displays the current entity with another view mode inside the link. </p>\n<p>Drupal core does not sufficiently sanitize link element attributes, which can lead to a Cross Site Scripting vulnerability (XSS).</p>\n<p>A separate fix for Drupal core has been released but this module requires a concurrent release to make use of the Drupal core fix.</p>\n<p>This vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/link_field_display_mode_formatter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-024"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Daniel Wehner (dawehner)",
+      "contact": [
+        "/u/dawehner"
+      ]
+    },
+    {
+      "name": "Joseph Zhao (pandaski)",
+      "contact": [
+        "/u/pandaski"
+      ]
+    }
+  ]
+}

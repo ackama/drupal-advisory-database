@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-009",
-  "modified": "2025-01-30T06:48:06.000Z",
+  "modified": "2025-04-01T11:04:22.000Z",
   "published": "2025-01-30T05:54:02.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-31681"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module allows a site to setup two factor authentication via QR code using authenticator applications on mobile devices including phones.</p>\n<p>The module does not properly protect its custom paths, allowing one user to access a different user's two factor configuration.</p>",
