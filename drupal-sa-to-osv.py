@@ -17,6 +17,7 @@ full_proposed_entry = False
 
 pp = pprint.PrettyPrinter(indent=2)
 
+
 # Ensure we have the source data.
 def clone_repo_if_not_exists(repo_url, dir_name):
     if not os.path.exists(dir_name):
@@ -28,6 +29,7 @@ def clone_repo_if_not_exists(repo_url, dir_name):
         print(f"Pulling latest changes from '{repo_url}'...")
         subprocess.run(["git", "pull"], cwd=dir_name)
 
+
 # Some of the date strings in the cve files are not in the correct format for the OSV schema.
 def format_datetime(date_str):
     if date_str[-1] == 'Z':
@@ -38,14 +40,16 @@ def format_datetime(date_str):
         dt = datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S")
     return dt.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
+
 def datetime_to_timestamp(date_str):
     return int(time.mktime(datetime.strptime(date_str, "%Y-%m-%dT%H:%M:%S.%fZ").timetuple()))
+
 
 def datetime_from_timestamp(timestamp):
     return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
-def osv_template(sa_id):
 
+def osv_template(sa_id):
     return {
         "schema_version": "1.3.0",
         "id": '',
@@ -89,16 +93,19 @@ def osv_template(sa_id):
         "credits": []
     }
 
+
 def project_dir_from_osv_entry(osv_dir_name, osv_entry):
     dir = os.path.join(osv_dir_name, osv_entry['affected'][0]['package']['name'].split('/')[1])
     if not os.path.exists(dir):
         os.makedirs(dir)
     return dir
 
+
 def write_osv_entry_to_file(osv_dir_name, osv_entry, id):
     output_file = os.path.join(project_dir_from_osv_entry(osv_dir_name, osv_entry), f"osv-{id.lower()}.json")
     with open(output_file, 'w') as f:
         json.dump(osv_entry, f, indent=2)
+
 
 def fetch_url_to_file(url, file_path):
     if os.path.exists(file_path):
@@ -113,6 +120,7 @@ def fetch_url_to_file(url, file_path):
     else:
         print(f"Failed to fetch content from {url}. Status code: {response.status_code}")
 
+
 # Fetch a node from drupal.org
 def get_node(nid, type):
     dir = 'files'
@@ -122,6 +130,7 @@ def get_node(nid, type):
     sa_file = f"{dir}/{type}-{nid}.json"
     fetch_url_to_file(sa_url, sa_file)
     return json.loads(open(sa_file).read())
+
 
 def preload_sa(nid):
     # @TODO: NID is unique. Check if we have one already. If so return True if it is a security advisory.
@@ -150,17 +159,21 @@ def preload_sa(nid):
             return True
     return False
 
+
 # Fetch the SA node from drupal.org
 def get_sa_entry(nid):
     return get_node(nid, 'sa')
+
 
 # Fetch the project node from drupal.org
 def get_project_entry(nid):
     return get_node(nid, 'project_module')
 
+
 # Fetch the Project Release node from drupal.org
 def get_fixed_in_entry(nid):
     return get_node(nid, 'project_release')
+
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
 def parse_affected_versions(affected_versions):
@@ -180,6 +193,7 @@ def parse_affected_versions(affected_versions):
             affected.append({'fixed': fixed})
     return affected
 
+
 def fake_ecosystem(osv_entry):
     if not full_proposed_entry:
         # Fake the package.ecosystem so a schema validator doesn't complain.
@@ -188,6 +202,7 @@ def fake_ecosystem(osv_entry):
         # Fake the ID so it passes the schema validation.
         osv_entry['id'] = f"OSV-{osv_entry['id']}"
     return osv_entry
+
 
 def add_fixed_in_versions(affected_versions, fixed_in_json):
     for fixed_in in fixed_in_json:
@@ -198,6 +213,7 @@ def add_fixed_in_versions(affected_versions, fixed_in_json):
             fixed_in_semver = f"{fixed_major}.{fixed_minor}.{fixed_patch}"
             affected_versions.append({'fixed': fixed_in_semver})
     return affected_versions
+
 
 def check_for_fixed_versions(affected_versions, fixed_in_json):
     inserted = []
@@ -238,6 +254,7 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
                     inserted.append(fixed_in_semver)
     return affected_versions
 
+
 def semver_for_sorting(semver):
     decrement_semver = False
     if semver == '':
@@ -268,6 +285,7 @@ def semver_for_sorting(semver):
     semver_patch = semver[2]
     return f"{semver_major}.{semver_minor}.{semver_patch}"
 
+
 def sort_affected_versions(affected_versions):
     sorted_versions = {}
     return_values = []
@@ -283,6 +301,7 @@ def sort_affected_versions(affected_versions):
         return_values.append(sorted_versions[key])
 
     return return_values
+
 
 # Drupal uses the NIST's Common Misuse Scoring System (CMSS) to calculate the severity of a security advisory.
 # We will want to get this added to the OSV security[].type field.
@@ -326,6 +345,7 @@ def calculate_severity(criticality):
         score += severity_matrix[key][value]
     return f"{score}"
 
+
 # Convert the severity score to a string.
 def severity_string(score):
     if score <= 4:
@@ -340,6 +360,7 @@ def severity_string(score):
         return 'Highly Critical'
     else:
         return 'Score Error'
+
 
 def get_credits_from_sa(credits):
     credit_list = []
@@ -361,6 +382,7 @@ def get_credits_from_sa(credits):
 
     return credit_list
 
+
 def get_last_osv_modified_timestamp():
     # fetch all json files in the osv directory and the subdirectories.
     highest_modified = 0
@@ -373,6 +395,7 @@ def get_last_osv_modified_timestamp():
                 if modified > highest_modified or highest_modified == 0:
                     highest_modified = modified
     return highest_modified
+
 
 # Walk over the cve files and convert them to OSV entries.
 def build_osv_entries_from_cve(cve_dir_name, osv_dir_name, repo_url):
@@ -395,9 +418,11 @@ def build_osv_entries_from_cve(cve_dir_name, osv_dir_name, repo_url):
 
                 refs = cve['containers']['cna']['references']
                 for ref in refs:
-                    if 'tags' in ref.keys() and 'x_refsource_CONFIRM' in ref['tags'] and 'drupal.org/node/' in ref['url']:
+                    if 'tags' in ref.keys() and 'x_refsource_CONFIRM' in ref['tags'] and 'drupal.org/node/' in ref[
+                        'url']:
                         if preload_sa(ref['url'].split('/')[-1]) == True:
                             process_sa(ref['url'].split('/')[-1])
+
 
 # Fetch the SA data from drupal.org rss feed.
 # https://www.drupal.org/security/all/rss.xml
@@ -410,6 +435,7 @@ def build_osv_entries_from_rss(osv_dir_name):
     for rss_file, rss_url in rss_files.items():
         process_rss_feed(rss_file, rss_url)
 
+
 def process_rss_feed(rss_file, rss_url):
     # Fetch the RSS feed and save it to a file.
     fetch_url_to_file(rss_url, rss_file)
@@ -421,12 +447,14 @@ def process_rss_feed(rss_file, rss_url):
         print(f"Processing entry: {entry['id']}")
         process_sa(entry['id'].split()[0])
 
+
 def composer_package(project_json):
     project_type = 'drupal'
     project_name = project_json['list'][0]['field_project_machine_name']
     if project_name == 'drupal':
         project_name = 'core'
     return f"{project_type}/{project_name}"
+
 
 # This fetches a single SA from drupal.org and processes it.
 def process_sa(sa_node_id):
@@ -435,6 +463,7 @@ def process_sa(sa_node_id):
     ## Get the node we need.
     sa_json = get_sa_entry(sa_node_id)
     process_sa_json(sa_json['list'][0])
+
 
 # This processes the SA JSON data.
 def process_sa_json(sa_json):
@@ -499,6 +528,7 @@ def process_sa_json(sa_json):
     fake_ecosystem(osv_entry)
     write_osv_entry_to_file(osv_dir_name, osv_entry, f"{sa_id}")
 
+
 def build_osv_entries_from_rest_api(last_modified_timestamp):
     url = "https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0"
     fetch_again = True
@@ -524,6 +554,7 @@ def build_osv_entries_from_rest_api(last_modified_timestamp):
             print(f"Failed to fetch data from {url}. Status code: {response.status_code}")
             pp.pprint(response.headers)
             fetch_again = False
+
 
 # Processing...
 last_modified_timestamp = get_last_osv_modified_timestamp()
