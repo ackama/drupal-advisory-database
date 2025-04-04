@@ -195,7 +195,7 @@ def add_fixed_in_versions(affected_versions, fixed_in_json):
             fixed_major = fixed_version['field_release_version_major']
             fixed_minor = fixed_version['field_release_version_minor']
             fixed_patch = fixed_version['field_release_version_patch'] or '0'
-            fixed_in_semver = f"{fixed_major}.{fixed_minor}.{fixed_patch}"  
+            fixed_in_semver = f"{fixed_major}.{fixed_minor}.{fixed_patch}"
             affected_versions.append({'fixed': fixed_in_semver})
     return affected_versions
 
@@ -208,7 +208,7 @@ def check_for_fixed_versions(affected_versions, fixed_in_json):
         # sanity check the length of the introduced value.
         while len(introduced) < 3:
             introduced.append("0")
-        
+
         for i in range(3):
             if introduced[i].isnumeric():
                 introduced[i] = int(introduced[i])
@@ -250,7 +250,7 @@ def semver_for_sorting(semver):
     # sanity check the length of the introduced value.
     while len(semver) < 3:
         semver.append("0")
-    
+
     for i in range(3):
         if semver[i].isnumeric():
             semver[i] = int(semver[i])
