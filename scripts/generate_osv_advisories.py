@@ -19,14 +19,13 @@ osv_dir_name = 'advisories'
 full_proposed_entry = False
 
 
-class SANode(typing.TypedDict):
+class SANodeField(typing.TypedDict):
   resource: typing.Literal['node', 'comment']
   uri: str
   id: str
 
 
-# todo: come up with a better name
-class SANode2(typing.TypedDict):
+class SARichTextField(typing.TypedDict):
   format: typing.Literal['1']
   value: str
 
@@ -34,12 +33,12 @@ class SANode2(typing.TypedDict):
 class SAAdvisory(typing.TypedDict):
   field_is_psa: typing.Literal['0', '1']
   field_affected_versions: str | None
-  field_project: SANode
-  field_fixed_in: list[SANode]
-  field_sa_reported_by: SANode2
+  field_project: SANodeField
+  field_fixed_in: list[SANodeField]
+  field_sa_reported_by: SARichTextField
   field_sa_criticality: str
   field_sa_cve: list[str]
-  field_sa_description: SANode2
+  field_sa_description: SARichTextField
   created: str
   changed: str
   title: str
