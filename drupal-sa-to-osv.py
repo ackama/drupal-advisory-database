@@ -15,8 +15,6 @@ osv_dir_name = 'advisories'
 # Not all fields pass the schema test as there are elements that are not yet present in the OSV schema.
 full_proposed_entry = False
 
-pp = pprint.PrettyPrinter(indent=2)
-
 
 # Ensure we have the source data.
 def clone_repo_if_not_exists(repo_url, dir_name):
@@ -544,30 +542,15 @@ def process_sa_json(sa_json):
 
 
 def build_osv_entries_from_rest_api(last_modified_timestamp):
-  url = 'https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0'
-  fetch_again = True
-  while fetch_again:
-    print(f'Fetching {url}')
-    response = requests.get(url)
-    print(f'Status code: {response.status_code}')
-    if response.status_code == 200:
-      data = response.json()
-      for item in data['list']:
-        changed = int(item['changed'])
-        if changed > last_modified_timestamp:
-          process_sa_json(item)
-        else:
-          # We have reached the last modified entry.
-          fetch_again = False
-      if 'next' in data.keys() and data['next'] != '':
-        url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
-      else:
-        print('No more pages to fetch.')
-        fetch_again = False
-    else:
-      print(f'Failed to fetch data from {url}. Status code: {response.status_code}')
-      pp.pprint(response.headers)
-      fetch_again = False
+  for file in os.scandir('cache/advisories'):
+    if not file.is_file() or file.name.endswith('.json'):
+      continue
+
+    data = open(file.path, 'r').read()
+    item = json.loads(data)
+    changed = int(item['changed'])
+    if changed > last_modified_timestamp:
+      process_sa_json(item)
 
 
 # Processing...
