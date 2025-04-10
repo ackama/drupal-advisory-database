@@ -45,3 +45,20 @@ The following will validate all generated files.
 ```shell
 for F in advisories/*/*.json; do go run github.com/neilpa/yajsv@latest -s schema.json $F ; done
 ```
+
+
+### Generating OSV advisories
+
+First, (re)download the Drupal Security Advisories:
+
+```shell
+scripts/download_sa_advisories.py
+```
+
+This will download all SAs that have been modified since the most recent OSV modification time, and store them in `cache/advisories`.
+
+Then, you can (re)generate the OSV advisories:
+
+```shell
+scripts/generate_osv_advisories.py
+```
