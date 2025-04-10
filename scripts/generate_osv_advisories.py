@@ -249,7 +249,7 @@ class SAAdvisory(typing.TypedDict):
   url: str
 
 
-def osv_template(sa_id: str) -> dict:
+def osv_template(sa_id: str) -> Vulnerability:
   """
   Builds a dict representing an osv with some initial fields prefilled
   """
@@ -328,7 +328,7 @@ class DrupalApiResponse(typing.TypedDict):
 
 
 # Fetch a node from drupal.org
-def get_node(nid, type) -> DrupalApiResponse:
+def get_node(nid: str, type) -> DrupalApiResponse:
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
@@ -349,8 +349,8 @@ def get_fixed_in_entry(nid: str) -> DrupalApiResponse[DrupalProjectRelease]:
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
-def parse_affected_versions(affected_versions):
-  affected = []
+def parse_affected_versions(affected_versions: str) -> list[Event]:
+  affected: list[Event] = []
   for versions in affected_versions.split(' || '):
     # split version on space and append the first element to the affected list after removing any > or >= characters.
     versions = (
@@ -373,7 +373,7 @@ def parse_affected_versions(affected_versions):
   return affected
 
 
-def fake_ecosystem(osv_entry):
+def fake_ecosystem(osv_entry: Vulnerability):
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
     for affected in osv_entry['affected']:
@@ -384,7 +384,7 @@ def fake_ecosystem(osv_entry):
 
 
 def add_fixed_in_versions(
-  affected_versions,
+  affected_versions: list[Event],
   fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]],
 ):
   for fixed_in in fixed_in_json:
@@ -428,7 +428,7 @@ def semver_for_sorting(semver):
   return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
-def sort_affected_versions(affected_versions):
+def sort_affected_versions(affected_versions: list[Event]):
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
@@ -475,7 +475,7 @@ def composer_package(project_json: DrupalApiResponse[DrupalProjectModule]) -> st
   return f'{project_type}/{project_name}'
 
 
-def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> dict | None:
+def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
   """
@@ -493,7 +493,7 @@ def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> dict | None:
     print(f'SA URL: {sa_json["url"]}')
     return None
 
-  osv_entry = osv_template(sa_id)
+  osv_entry: Vulnerability = osv_template(sa_id)
   project_json: DrupalApiResponse[DrupalProjectModule] | None = None
   fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]] = []
 
