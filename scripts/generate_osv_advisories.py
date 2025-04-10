@@ -8,7 +8,6 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
-import time
 import typing
 from datetime import datetime
 
@@ -45,12 +44,6 @@ class SAAdvisory(typing.TypedDict):
   changed: str
   title: str
   url: str
-
-
-def datetime_to_timestamp(date_str):
-  return int(
-    time.mktime(datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S.%fZ').timetuple())
-  )
 
 
 def osv_template(sa_id: str) -> dict:
@@ -118,11 +111,6 @@ def get_node(nid, type):
   sa_file = f'{dir}/{type}-{nid}.json'
   fetch_url_to_file(sa_url, sa_file)
   return json.loads(open(sa_file).read())
-
-
-# Fetch the SA node from drupal.org
-def get_sa_entry(nid):
-  return get_node(nid, 'sa')
 
 
 # Fetch the project node from drupal.org
@@ -249,20 +237,6 @@ def get_credits_from_sa(credits):
       credit_list.append({'name': name, 'contact': [href]})
 
   return credit_list
-
-
-def get_last_osv_modified_timestamp():
-  # fetch all json files in the osv directory and the subdirectories.
-  highest_modified = 0
-  for root, dirs, files in os.walk(osv_dir_name):
-    for file in files:
-      if file.endswith('.json'):
-        # Load the contents of the file into a dictionary.
-        osv = json.loads(open(os.path.join(root, file)).read())
-        modified = datetime_to_timestamp(osv['modified'])
-        if modified > highest_modified or highest_modified == 0:
-          highest_modified = modified
-  return highest_modified
 
 
 def composer_package(project_json):
