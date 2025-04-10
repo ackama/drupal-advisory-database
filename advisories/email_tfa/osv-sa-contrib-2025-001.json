@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-001",
-  "modified": "2025-01-09T07:39:42.000Z",
+  "modified": "2025-04-01T11:03:35.000Z",
   "published": "2025-01-09T06:22:11.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-31676"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module enables you to do Two-Factor Authentication by email, using a user registered email to send a verification code to the user's email every time the user tries to log in to your site.</p>\n<p>The module did not sufficiently protect against brute force attacks, allowing an attacker to bypass the second factor.</p>\n<p>This vulnerability is mitigated by the fact the attacker must be able to present the username and first factor (i.e. password).</p>",

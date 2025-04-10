@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-014",
-  "modified": "2025-02-13T06:37:40.000Z",
+  "modified": "2025-04-01T11:05:00.000Z",
   "published": "2025-02-13T06:37:40.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-31685"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>Open Social is a Drupal distribution for online communities, which ships with a default (optional) module social_language to make your platform multilingual. </p>\n<p>Some site administration configuration does not correctly check access when trying to translate allowing unauthorised people to translate these parts.</p>\n<p>The issue is mitigated by the fact that social_language needs to be enabled with more than 1 language.</p>",

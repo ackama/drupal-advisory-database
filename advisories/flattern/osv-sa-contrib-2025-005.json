@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-005",
-  "modified": "2025-01-23T06:31:13.000Z",
+  "modified": "2025-04-01T11:23:08.000Z",
   "published": "2025-01-23T05:59:00.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-3060"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <a href=\"https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons\" rel=\"nofollow\">https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...</a></p>",

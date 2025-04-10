@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-017",
-  "modified": "2025-02-13T06:38:22.000Z",
+  "modified": "2025-04-01T11:05:40.000Z",
   "published": "2025-02-13T06:38:22.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-31688"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>This module enables you to create super sets of configuration and enable them conditionally, for example have some modules installed only in some environments.</p>\n<p>The module does not use Cross Site Request Forgery (CSRF) tokens to protect routes for enabling or disabling a split.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the machine name of a split and deceive a user with the permission to modify it.<br />\nThe status only takes effect when exporting the configuration (1.x and 2.x) or importing the configuration (1.x only) and the status is not fixed via configuration override, which is the typical setup.</p>",

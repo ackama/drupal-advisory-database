@@ -1,9 +1,11 @@
 {
   "schema_version": "1.3.0",
   "id": "OSV-SA-CONTRIB-2025-004",
-  "modified": "2025-01-23T06:31:08.000Z",
+  "modified": "2025-04-01T11:03:51.000Z",
   "published": "2025-01-23T05:50:12.000Z",
-  "aliases": [],
+  "aliases": [
+    "CVE-2025-31678"
+  ],
   "related": [],
   "summary": "",
   "details": "<p>The AI logging sub-module enables you to log AI requests and responses for debugging and auditing purposes.</p>\n<p>The module doesn't sufficiently check for access to view the preview listing of the logs. Full log details are correctly protected, and API keys are never logged.\n</p>\n<p>This vulnerability is mitigated by the fact that it only affects sites using the AI Logging sub-module with 'Log requests' enabled in the AI Logging configuration page.</p>",

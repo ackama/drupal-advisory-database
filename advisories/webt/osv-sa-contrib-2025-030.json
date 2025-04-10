@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-030",
+  "modified": "2025-04-10T05:04:09.000Z",
+  "published": "2025-04-10T05:04:09.000Z",
+  "aliases": [
+    "CVE-2025-3475"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>This module enables you to translate nodes, configuration, UI strings automatically.</p>\n<p>The module doesn't sufficiently validate the incoming API response when using eTranslation integration, which has an asynchronous workflow. Specially crafted requests could overwrite entities and translations of entities with arbitrary content and create load on the system leading to a Denial of Service.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webt"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-030"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jan Kellermann (jan kellermann)",
+      "contact": [
+        "/u/jan-kellermann"
+      ]
+    }
+  ]
+}

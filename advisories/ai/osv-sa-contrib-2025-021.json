@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-021",
+  "modified": "2025-04-01T11:06:37.000Z",
+  "published": "2025-03-06T06:18:25.000Z",
+  "aliases": [
+    "CVE-2025-31692"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>The AI Automators module (a submodule of AI) enables you to create different automated tasks that fills out field data using LLM outputs.</p>\n<p>The module doesn't sufficiently sanitize input before passing it to the underlying shell as part of a command for execution, allowing an attacker to run arbitrary commands.</p>\n<p>The vulnerability exists in optional Automator Types which are part of the optional AI Automators (sub)module.</p>\n<p>The AI module is included in Drupal CMS.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ai"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0.0.0"
+            },
+            {
+              "fixed": "1.0.5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-021"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber (mcdruid)",
+      "contact": [
+        "/u/mcdruid"
+      ]
+    }
+  ]
+}
