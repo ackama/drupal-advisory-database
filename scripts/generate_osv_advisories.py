@@ -77,7 +77,7 @@ def fetch_url_to_file(url, file_path):
 
 
 # Fetch a node from drupal.org
-def get_node(nid: str, type) -> drupal.DrupalApiResponse:
+def get_node(nid: str, type) -> drupal.ApiResponse:
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
@@ -88,14 +88,12 @@ def get_node(nid: str, type) -> drupal.DrupalApiResponse:
 
 
 # Fetch the project node from drupal.org
-def get_project_entry(nid: str) -> drupal.DrupalApiResponse[drupal.DrupalProjectModule]:
+def get_project_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
   return get_node(nid, 'project_module')
 
 
 # Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(
-  nid: str,
-) -> drupal.DrupalApiResponse[drupal.DrupalProjectRelease]:
+def get_fixed_in_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
   return get_node(nid, 'project_release')
 
 
@@ -136,7 +134,7 @@ def fake_ecosystem(osv_entry: osv.Vulnerability):
 
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
-  fixed_in_json: list[drupal.DrupalApiResponse[drupal.DrupalProjectRelease]],
+  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]],
 ):
   for fixed_in in fixed_in_json:
     for fixed_version in fixed_in['list']:
@@ -218,9 +216,7 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(
-  project_json: drupal.DrupalApiResponse[drupal.DrupalProjectModule],
-) -> str:
+def composer_package(project_json: drupal.ApiResponse[drupal.ProjectModule]) -> str:
   project_type = 'drupal'
   project_name = project_json['list'][0]['field_project_machine_name']
   if project_name == 'drupal':
@@ -230,7 +226,7 @@ def composer_package(
 
 def build_osv_advisory(
   sa_id: str,
-  sa_json: drupal.SAAdvisory,
+  sa_json: drupal.Advisory,
 ) -> osv.Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
@@ -250,8 +246,8 @@ def build_osv_advisory(
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json: drupal.DrupalApiResponse[drupal.DrupalProjectModule] | None = None
-  fixed_in_json: list[drupal.DrupalApiResponse[drupal.DrupalProjectRelease]] = []
+  project_json: drupal.ApiResponse[drupal.ProjectModule] | None = None
+  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
 
   if sa_json['field_project']['id'] != '0':
     project_json = get_project_entry(sa_json['field_project']['id'])
