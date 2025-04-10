@@ -101,8 +101,30 @@ def fetch_url_to_file(url, file_path):
     print(f'Failed to fetch content from {url}. Status code: {response.status_code}')
 
 
+class DrupalNode(typing.TypedDict):
+  id: str
+
+
+class DrupalProjectModule(DrupalNode):
+  field_project_machine_name: str
+
+
+class DrupalProjectRelease(DrupalNode):
+  field_release_version: str
+  field_release_version_major: str
+  field_release_version_minor: str
+  field_release_version_patch: str
+
+
+TNode = typing.TypeVar('TNode', bound=DrupalNode)
+
+
+class DrupalApiResponse(typing.TypedDict):
+  list: list[TNode]
+
+
 # Fetch a node from drupal.org
-def get_node(nid, type):
+def get_node(nid, type) -> DrupalApiResponse:
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
@@ -113,12 +135,12 @@ def get_node(nid, type):
 
 
 # Fetch the project node from drupal.org
-def get_project_entry(nid):
+def get_project_entry(nid: str) -> DrupalApiResponse[DrupalProjectModule]:
   return get_node(nid, 'project_module')
 
 
 # Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(nid):
+def get_fixed_in_entry(nid: str) -> DrupalApiResponse[DrupalProjectRelease]:
   return get_node(nid, 'project_release')
 
 
@@ -157,7 +179,10 @@ def fake_ecosystem(osv_entry):
   return osv_entry
 
 
-def add_fixed_in_versions(affected_versions, fixed_in_json):
+def add_fixed_in_versions(
+  affected_versions,
+  fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]],
+):
   for fixed_in in fixed_in_json:
     for fixed_version in fixed_in['list']:
       fixed_major = fixed_version['field_release_version_major']
@@ -238,7 +263,7 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json):
+def composer_package(project_json: DrupalApiResponse[DrupalProjectModule]) -> str:
   project_type = 'drupal'
   project_name = project_json['list'][0]['field_project_machine_name']
   if project_name == 'drupal':
@@ -265,8 +290,8 @@ def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> dict | None:
     return None
 
   osv_entry = osv_template(sa_id)
-  project_json = None
-  fixed_in_json = []
+  project_json: DrupalApiResponse[DrupalProjectModule] | None = None
+  fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]] = []
 
   if sa_json['field_project']['id'] != '0':
     project_json = get_project_entry(sa_json['field_project']['id'])
