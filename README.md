@@ -2,16 +2,6 @@
 
 This is an early attempt at getting Drupal Security Advisories into an OSV format for use with [OSV Detector](https://github.com/G-Rath/osv-detector)/[OSV Scanner](https://google.github.io/osv-scanner/).
 
-## Usage
-
-Check out the repo and run the script.
-
-```shell
-python ./drupal-sa-to-osv.py
-```
-
-The script will create all the necessary directories if they are not present.
-
 ## Usage in your project
 
 ### OSV Detector
