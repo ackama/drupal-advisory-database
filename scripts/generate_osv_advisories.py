@@ -8,248 +8,19 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
-import typing
 from datetime import datetime
 
 import requests
 import semver
+
+from typings import drupal, osv
 
 osv_dir_name = 'advisories'
 # Not all fields pass the schema test as there are elements that are not yet present in the OSV schema.
 full_proposed_entry = False
 
 
-EcosystemType = typing.Literal[
-  'AlmaLinux',
-  'Alpine',
-  'Android',
-  'Bioconductor',
-  'Bitnami',
-  'Chainguard',
-  'ConanCenter',
-  'CRAN',
-  'crates.io',
-  'Debian',
-  'GHC',
-  'GitHub Actions',
-  'Go',
-  'Hackage',
-  'Hex',
-  'Kubernetes',
-  'Linux',
-  'Mageia',
-  'Maven',
-  'npm',
-  'NuGet',
-  'openSUSE',
-  'OSS-Fuzz',
-  'Packagist',
-  'Photon OS',
-  'Pub',
-  'PyPI',
-  'Red Hat',
-  'Rocky Linux',
-  'RubyGems',
-  'SUSE',
-  'SwiftURL',
-  'Ubuntu',
-  'Wolfi',
-]
-
-
-class Package(typing.TypedDict):
-  """
-  Package describes the affected code library or command provided by the package.
-
-  See: https://ossf.github.io/osv-schema/#affectedpackage-field
-  """
-
-  ecosystem: str
-  name: str
-  purl: typing.NotRequired[str]
-
-
-class Event(typing.TypedDict, total=False):
-  """
-  Event describes a single version that either:
-    - Introduces a vulnerability: {"introduced": string}
-    - Fixes a vulnerability: {"fixed": string}
-    - Describes the last known affected version: {"last_affected": string}
-    - Sets an upper limit on the range being described: {"limit": string}
-
-  Event instances form part of a "timeline" of status changes for the affected
-  package described by the affected class.
-
-  See: https://ossf.github.io/osv-schema/#affectedrangesevents-fields
-  """
-
-  introduced: str
-  fixed: str
-  last_affected: str
-  limit: str
-
-
-RangeType = typing.Literal[
-  'SEMVER',
-  'ECOSYSTEM',
-  'GIT',
-]
-
-
-class Range(typing.TypedDict):
-  """
-  Range describes the affected range of given version for a specific package.
-
-  See: https://ossf.github.io/osv-schema/#affectedranges-field
-  """
-
-  type: RangeType
-  events: list[Event]
-  repo: typing.NotRequired[str]
-  database_specific: typing.NotRequired[dict[str]]
-
-
-SeverityType = typing.Literal[
-  'CVSS_V2',
-  'CVSS_V3',
-  'CVSS_V4',
-]
-
-
-class Severity(typing.TypedDict):
-  """
-  Severity describes the severity of a vulnerability for an affected package
-  using one or more quantitative scoring methods.
-
-  See: https://ossf.github.io/osv-schema/#severity-field
-  """
-
-  type: SeverityType
-  score: str
-
-
-class Affected(typing.TypedDict, total=False):
-  """
-  Affected describes an affected package version, meaning one instance that
-  contains the vulnerability.
-
-  See: https://ossf.github.io/osv-schema/#affected-fields
-  """
-
-  package: Package
-  severity: list[Severity]
-  ranges: list[Range]
-  versions: list[str]
-  database_specific: dict[str]
-  ecosystem_specific: dict[str]
-
-
-ReferenceType = typing.Literal[
-  'ADVISORY',
-  'ARTICLE',
-  'DETECTION',
-  'DISCUSSION',
-  'REPORT',
-  'FIX',
-  'INTRODUCED',
-  'GIT',
-  'PACKAGE',
-  'EVIDENCE',
-  'WEB',
-]
-
-
-class Reference(typing.TypedDict):
-  """
-  Reference links to additional information, advisories, issue tracker entries,
-  and so on about the vulnerability itself.
-
-  See: https://ossf.github.io/osv-schema/#references-field
-  """
-
-  type: ReferenceType
-  url: str
-
-
-CreditType = typing.Literal[
-  'FINDER',
-  'REPORTER',
-  'ANALYST',
-  'COORDINATOR',
-  'REMEDIATION_DEVELOPER',
-  'REMEDIATION_REVIEWER',
-  'REMEDIATION_VERIFIER',
-  'TOOL',
-  'SPONSOR',
-  'OTHER',
-]
-
-
-class Credit(typing.TypedDict):
-  """
-  Credit describes who to give credit to for the discovery, confirmation, patch,
-  or other events in the life cycle of a vulnerability.
-
-  See: https://ossf.github.io/osv-schema/#credits-fields
-  """
-
-  name: str
-  type: typing.NotRequired[CreditType]
-  contact: typing.NotRequired[list[str]]
-
-
-class Vulnerability(typing.TypedDict, total=False):
-  """
-  Vulnerability is the core Open Source Vulnerability (OSV) data type.
-
-  The full documentation for the schema is available at
-  https://ossf.github.io/osv-schema.
-  """
-
-  schema_version: str
-  id: typing.Required[str]
-  modified: typing.Required[str]
-  published: str
-  withdrawn: str
-  aliases: list[str]
-  related: list[str]
-  upstream: list[str]
-  summary: str
-  details: str
-  severity: list[Severity]
-  affected: list[Affected]
-  references: list[Reference]
-  credits: list[Credit]
-  database_specific: dict[str]
-
-
-class SANodeField(typing.TypedDict):
-  resource: typing.Literal['node', 'comment']
-  uri: str
-  id: str
-
-
-class SARichTextField(typing.TypedDict):
-  format: typing.Literal['1']
-  value: str
-
-
-class SAAdvisory(typing.TypedDict):
-  field_is_psa: typing.Literal['0', '1']
-  field_affected_versions: str | None
-  field_project: SANodeField
-  field_fixed_in: list[SANodeField]
-  field_sa_reported_by: SARichTextField
-  field_sa_criticality: str
-  field_sa_cve: list[str]
-  field_sa_description: SARichTextField
-  created: str
-  changed: str
-  title: str
-  url: str
-
-
-def osv_template(sa_id: str) -> Vulnerability:
+def osv_template(sa_id: str) -> osv.Vulnerability:
   """
   Builds a dict representing an osv with some initial fields prefilled
   """
@@ -305,30 +76,8 @@ def fetch_url_to_file(url, file_path):
     print(f'Failed to fetch content from {url}. Status code: {response.status_code}')
 
 
-class DrupalNode(typing.TypedDict):
-  id: str
-
-
-class DrupalProjectModule(DrupalNode):
-  field_project_machine_name: str
-
-
-class DrupalProjectRelease(DrupalNode):
-  field_release_version: str
-  field_release_version_major: str
-  field_release_version_minor: str
-  field_release_version_patch: str
-
-
-TNode = typing.TypeVar('TNode', bound=DrupalNode)
-
-
-class DrupalApiResponse(typing.TypedDict):
-  list: list[TNode]
-
-
 # Fetch a node from drupal.org
-def get_node(nid: str, type) -> DrupalApiResponse:
+def get_node(nid: str, type) -> drupal.DrupalApiResponse:
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
@@ -339,18 +88,20 @@ def get_node(nid: str, type) -> DrupalApiResponse:
 
 
 # Fetch the project node from drupal.org
-def get_project_entry(nid: str) -> DrupalApiResponse[DrupalProjectModule]:
+def get_project_entry(nid: str) -> drupal.DrupalApiResponse[drupal.DrupalProjectModule]:
   return get_node(nid, 'project_module')
 
 
 # Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(nid: str) -> DrupalApiResponse[DrupalProjectRelease]:
+def get_fixed_in_entry(
+  nid: str,
+) -> drupal.DrupalApiResponse[drupal.DrupalProjectRelease]:
   return get_node(nid, 'project_release')
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
-def parse_affected_versions(affected_versions: str) -> list[Event]:
-  affected: list[Event] = []
+def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
+  affected: list[osv.Event] = []
   for versions in affected_versions.split(' || '):
     # split version on space and append the first element to the affected list after removing any > or >= characters.
     versions = (
@@ -373,7 +124,7 @@ def parse_affected_versions(affected_versions: str) -> list[Event]:
   return affected
 
 
-def fake_ecosystem(osv_entry: Vulnerability):
+def fake_ecosystem(osv_entry: osv.Vulnerability):
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
     for affected in osv_entry['affected']:
@@ -384,8 +135,8 @@ def fake_ecosystem(osv_entry: Vulnerability):
 
 
 def add_fixed_in_versions(
-  affected_versions: list[Event],
-  fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]],
+  affected_versions: list[osv.Event],
+  fixed_in_json: list[drupal.DrupalApiResponse[drupal.DrupalProjectRelease]],
 ):
   for fixed_in in fixed_in_json:
     for fixed_version in fixed_in['list']:
@@ -428,7 +179,7 @@ def semver_for_sorting(semver):
   return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
-def sort_affected_versions(affected_versions: list[Event]):
+def sort_affected_versions(affected_versions: list[osv.Event]):
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
@@ -467,7 +218,9 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json: DrupalApiResponse[DrupalProjectModule]) -> str:
+def composer_package(
+  project_json: drupal.DrupalApiResponse[drupal.DrupalProjectModule],
+) -> str:
   project_type = 'drupal'
   project_name = project_json['list'][0]['field_project_machine_name']
   if project_name == 'drupal':
@@ -475,7 +228,10 @@ def composer_package(project_json: DrupalApiResponse[DrupalProjectModule]) -> st
   return f'{project_type}/{project_name}'
 
 
-def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> Vulnerability | None:
+def build_osv_advisory(
+  sa_id: str,
+  sa_json: drupal.SAAdvisory,
+) -> osv.Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
   """
@@ -493,9 +249,9 @@ def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> Vulnerability | None:
     print(f'SA URL: {sa_json["url"]}')
     return None
 
-  osv_entry: Vulnerability = osv_template(sa_id)
-  project_json: DrupalApiResponse[DrupalProjectModule] | None = None
-  fixed_in_json: list[DrupalApiResponse[DrupalProjectRelease]] = []
+  osv_entry: osv.Vulnerability = osv_template(sa_id)
+  project_json: drupal.DrupalApiResponse[drupal.DrupalProjectModule] | None = None
+  fixed_in_json: list[drupal.DrupalApiResponse[drupal.DrupalProjectRelease]] = []
 
   if sa_json['field_project']['id'] != '0':
     project_json = get_project_entry(sa_json['field_project']['id'])
