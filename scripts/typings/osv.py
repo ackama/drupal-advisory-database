@@ -94,6 +94,7 @@ SeverityType = typing.Literal[
   'CVSS_V2',
   'CVSS_V3',
   'CVSS_V4',
+  'NIST_CMSS',  # todo: this is not defined in the spec
 ]
 
 
