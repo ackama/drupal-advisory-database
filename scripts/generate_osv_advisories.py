@@ -62,20 +62,6 @@ def osv_template(sa_id: str) -> osv.Vulnerability:
   }
 
 
-def fetch_url_to_file(url, file_path):
-  if os.path.exists(file_path):
-    # print(f"File {file_path} already exists. Skipping fetch.")
-    return
-
-  response = requests.get(url)
-  if response.status_code == 200:
-    with open(file_path, 'wb') as file:
-      file.write(response.content)
-    print(f'Content fetched from {url} and written to {file_path}')
-  else:
-    print(f'Failed to fetch content from {url}. Status code: {response.status_code}')
-
-
 def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
   """
   Fetches a node from drupal.org by its id
@@ -85,11 +71,18 @@ def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
   try:
     with open(sa_file) as f:
       return json.load(f)
-  except FileNotFoundError:
+  except FileNotFoundError as e:
     os.makedirs(f'cache/{node_type}', exist_ok=True)
-    sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
-    fetch_url_to_file(sa_url, sa_file)
-    return json.loads(open(sa_file).read())
+    resp = requests.get(f'https://www.drupal.org/api-d7/node.json?nid={nid}')
+
+    if resp.status_code == 200:
+      body: drupal.ApiResponse = resp.json()
+      with open(sa_file, 'w') as f:
+        json.dump(body, f)
+      return body
+    raise Exception(
+      f'unexpected response when fetching node {nid}: {resp.status_code}'
+    ) from e
 
 
 def fetch_project_module_node(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
