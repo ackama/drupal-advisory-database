@@ -125,9 +125,9 @@ def fake_ecosystem(osv_entry: osv.Vulnerability):
 
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
-  fixed_in_json: list[drupal.ProjectRelease],
+  project_releases: list[drupal.ProjectRelease],
 ):
-  for fixed_version in fixed_in_json:
+  for fixed_version in project_releases:
     fixed_major = fixed_version['field_release_version_major']
     fixed_minor = fixed_version['field_release_version_minor']
     fixed_patch = fixed_version['field_release_version_patch'] or '0'
@@ -206,9 +206,9 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json: drupal.Project) -> str:
+def composer_package(project_module: drupal.Project) -> str:
   project_type = 'drupal'
-  project_name = project_json['field_project_machine_name']
+  project_name = project_module['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
   return f'{project_type}/{project_name}'
@@ -216,7 +216,7 @@ def composer_package(project_json: drupal.Project) -> str:
 
 def build_osv_advisory(
   sa_id: str,
-  sa_json: drupal.Advisory,
+  sa_advisory: drupal.Advisory,
 ) -> osv.Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
@@ -224,28 +224,28 @@ def build_osv_advisory(
 
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
-  if sa_json['field_is_psa'] == '1':
+  if sa_advisory['field_is_psa'] == '1':
     print(' \\- skipping as it is a psa? (this should not happen)')
     return None
 
   # there's not really much we can do if there isn't an affected version
-  if sa_json['field_affected_versions'] is None:
+  if sa_advisory['field_affected_versions'] is None:
     print(' \\- skipping as we do not have any affected versions')
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json = typing.cast(
-    drupal.Project, fetch_drupal_node(sa_json['field_project']['id'])
+  project_module = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
-  fixed_in_json: list[drupal.ProjectRelease] = []
+  project_releases: list[drupal.ProjectRelease] = []
 
-  if len(sa_json['field_fixed_in']) > 0:
-    for fixed_in in sa_json['field_fixed_in']:
+  if len(sa_advisory['field_fixed_in']) > 0:
+    for fixed_in in sa_advisory['field_fixed_in']:
       node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
-      fixed_in_json.append(node)
+      project_releases.append(node)
 
-  if 'field_sa_reported_by' in sa_json:
-    osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
+  if 'field_sa_reported_by' in sa_advisory:
+    osv_entry['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
 
   osv_entry['id'] = f'{sa_id}'
 
@@ -254,30 +254,32 @@ def build_osv_advisory(
   # https://www.drupal.org/drupal-security-team/security-risk-levels-defined
   # https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
   if full_proposed_entry:
-    osv_entry['affected'][0]['severity'][0]['score'] = sa_json['field_sa_criticality']
+    osv_entry['affected'][0]['severity'][0]['score'] = sa_advisory[
+      'field_sa_criticality'
+    ]
   else:
     osv_entry['affected'][0]['severity'] = []
 
-  osv_entry['affected'][0]['package']['name'] = composer_package(project_json)
-  osv_entry['published'] = datetime.fromtimestamp(int(sa_json['created'])).strftime(
+  osv_entry['affected'][0]['package']['name'] = composer_package(project_module)
+  osv_entry['published'] = datetime.fromtimestamp(int(sa_advisory['created'])).strftime(
     '%Y-%m-%dT%H:%M:%S.000Z'
   )
-  osv_entry['modified'] = datetime.fromtimestamp(int(sa_json['changed'])).strftime(
+  osv_entry['modified'] = datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
     '%Y-%m-%dT%H:%M:%S.000Z'
   )
 
-  affected_versions = parse_affected_versions(sa_json['field_affected_versions'])
-  affected_versions = add_fixed_in_versions(affected_versions, fixed_in_json)
+  affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
+  affected_versions = add_fixed_in_versions(affected_versions, project_releases)
   affected_versions = sort_affected_versions(affected_versions)
   for event in affected_versions:
     osv_entry['affected'][0]['ranges'][0]['events'].append(event)
 
-  if len(sa_json['field_sa_cve']) > 0:
-    for cve in sa_json['field_sa_cve']:
+  if len(sa_advisory['field_sa_cve']) > 0:
+    for cve in sa_advisory['field_sa_cve']:
       osv_entry['aliases'].append(cve)
 
-  osv_entry['details'] = sa_json['field_sa_description']['value']
-  osv_entry['references'].append({'type': 'WEB', 'url': sa_json['url']})
+  osv_entry['details'] = sa_advisory['field_sa_description']['value']
+  osv_entry['references'].append({'type': 'WEB', 'url': sa_advisory['url']})
 
   fake_ecosystem(osv_entry)
 
