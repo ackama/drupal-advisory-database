@@ -31,7 +31,7 @@ def get_last_osv_modified_timestamp() -> int:
   Determines the timestamp of the most recently modified OSV advisory
   """
   highest_modified = 0
-  for root, dirs, files in os.walk(osv_dir_name):
+  for root, _, files in os.walk(osv_dir_name):
     for file in files:
       if file.endswith('.json'):
         # Load the contents of the file into a dictionary.
