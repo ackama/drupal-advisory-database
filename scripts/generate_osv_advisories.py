@@ -281,10 +281,8 @@ def build_osv_advisory(
   affected_versions = parse_affected_versions(sa_json['field_affected_versions'])
   affected_versions = add_fixed_in_versions(affected_versions, fixed_in_json)
   affected_versions = sort_affected_versions(affected_versions)
-  if len(affected_versions) > 0:
-    for affected in affected_versions:
-      for [event, version] in affected.items():
-        osv_entry['affected'][0]['ranges'][0]['events'].append({event: version})
+  for event in affected_versions:
+    osv_entry['affected'][0]['ranges'][0]['events'].append(event)
 
   if len(sa_json['field_sa_cve']) > 0:
     for cve in sa_json['field_sa_cve']:
