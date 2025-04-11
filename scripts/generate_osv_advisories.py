@@ -80,11 +80,12 @@ def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
   """
   Fetches a node from drupal.org by its id
   """
-  dir = 'files'
-  if not os.path.exists('files'):
-    os.mkdir(dir)
+  if not os.path.exists('cache'):
+    os.mkdir('cache')
+  if not os.path.exists(f'cache/{node_type}'):
+    os.mkdir(f'cache/{node_type}')
   sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
-  sa_file = f'{dir}/{node_type}-{nid}.json'
+  sa_file = f'cache/{node_type}/{nid}.json'
   fetch_url_to_file(sa_url, sa_file)
   return json.loads(open(sa_file).read())
 
