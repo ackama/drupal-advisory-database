@@ -77,6 +77,10 @@ def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
 
     if resp.status_code == 200:
       body: drupal.ApiResponse = resp.json()
+
+      if len(body['list']) != 1:
+        raise Exception(f'API returned {len(body["list"])} items for node {nid}') from e
+
       with open(sa_file, 'w') as f:
         json.dump(body, f)
       return body
