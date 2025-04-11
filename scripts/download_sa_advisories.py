@@ -4,13 +4,12 @@
 Downloads Drupal SA advisories using the REST API.
 
 By default, only advisories that have been modified since the
-most recent modification to an OSV advisory will be downloaded
+most recent changed time out of all the existing SA advisories
 """
 
 import json
 import os
-import time
-from datetime import datetime
+import typing
 
 import requests
 
@@ -20,27 +19,20 @@ osv_dir_name = 'advisories'
 cache_dir_name = 'cache/advisories'
 
 
-def datetime_to_timestamp(date_str: str) -> int:
-  return int(
-    time.mktime(datetime.strptime(date_str, '%Y-%m-%dT%H:%M:%S.%fZ').timetuple())
-  )
-
-
-def get_last_osv_modified_timestamp() -> int:
+def get_most_recent_changed_timestamp() -> int:
   """
-  Determines the timestamp of the most recently modified OSV advisory
+  Determines the timestamp of the most recently changed SA advisory
   """
-  highest_modified = 0
-  for root, _, files in os.walk(osv_dir_name):
-    for file in files:
-      if file.endswith('.json'):
-        # Load the contents of the file into a dictionary.
-        with open(os.path.join(root, file)) as f:
-          osv = json.load(f)
-        modified = datetime_to_timestamp(osv['modified'])
-        if modified > highest_modified or highest_modified == 0:
-          highest_modified = modified
-  return highest_modified
+  most_recent_changed = 0
+  for file in os.scandir(cache_dir_name):
+    if not file.is_file() or not file.name.endswith('.json'):
+      continue
+    with open(file.path) as f:
+      advisory = typing.cast(drupal.Advisory, json.load(f))
+      changed = int(advisory['changed'])
+      if changed > most_recent_changed or most_recent_changed == 0:
+        most_recent_changed = changed
+  return most_recent_changed
 
 
 def determine_sa_id(advisory: drupal.Advisory) -> str:
@@ -81,5 +73,5 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
       fetch_again = False
 
 
-last_modified_timestamp = get_last_osv_modified_timestamp()
+last_modified_timestamp = get_most_recent_changed_timestamp()
 download_sa_advisories_from_rest_api(last_modified_timestamp)
