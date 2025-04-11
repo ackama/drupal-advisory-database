@@ -73,5 +73,5 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
       fetch_again = False
 
 
-last_modified_timestamp = get_most_recent_changed_timestamp()
-download_sa_advisories_from_rest_api(last_modified_timestamp)
+most_recent_changed_time = get_most_recent_changed_timestamp()
+download_sa_advisories_from_rest_api(most_recent_changed_time)
