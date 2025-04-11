@@ -309,7 +309,7 @@ def generate_osv_advisories():
 
     print(f'processing {file.path}')
 
-    data = open(file.path, 'r').read()
+    data = open(file.path).read()
     sa_advisory = json.loads(data)
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
