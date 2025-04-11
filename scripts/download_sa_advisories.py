@@ -35,7 +35,8 @@ def get_last_osv_modified_timestamp() -> int:
     for file in files:
       if file.endswith('.json'):
         # Load the contents of the file into a dictionary.
-        osv = json.loads(open(os.path.join(root, file)).read())
+        with open(os.path.join(root, file)) as f:
+          osv = json.load(f)
         modified = datetime_to_timestamp(osv['modified'])
         if modified > highest_modified or highest_modified == 0:
           highest_modified = modified
@@ -65,11 +66,12 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
         changed = int(item['changed'])
         if changed > last_modified_timestamp:
           advisory_id = determine_sa_id(item)
-          open(f'{cache_dir_name}/{advisory_id}.json', 'w').write(json.dumps(item))
+          with open(f'{cache_dir_name}/{advisory_id}.json', 'w') as f:
+            json.dump(item, f)
         else:
           # We have reached the last modified entry.
           fetch_again = False
-      if 'next' in data.keys() and data['next'] != '':
+      if 'next' in data and data['next'] != '':
         url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
       else:
         print('No more pages to fetch.')
