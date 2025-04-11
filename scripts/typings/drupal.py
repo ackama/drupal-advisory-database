@@ -45,5 +45,5 @@ class ProjectRelease(Node):
 TNode = typing.TypeVar('TNode', bound=Node)
 
 
-class ApiResponse(typing.TypedDict):
+class ApiResponse(typing.TypedDict, typing.Generic[TNode]):
   list: list[TNode]
