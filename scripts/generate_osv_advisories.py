@@ -113,14 +113,14 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   return affected
 
 
-def fake_ecosystem(osv_entry: osv.Vulnerability):
+def fake_ecosystem(osv_advisory: osv.Vulnerability):
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
-    for affected in osv_entry['affected']:
+    for affected in osv_advisory['affected']:
       affected['package']['ecosystem'] = 'Packagist'
     # Fake the ID so it passes the schema validation.
-    osv_entry['id'] = f'OSV-{osv_entry["id"]}'
-  return osv_entry
+    osv_advisory['id'] = f'OSV-{osv_advisory["id"]}'
+  return osv_advisory
 
 
 def add_fixed_in_versions(
@@ -233,7 +233,7 @@ def build_osv_advisory(
     print(' \\- skipping as we do not have any affected versions')
     return None
 
-  osv_entry: osv.Vulnerability = osv_template(sa_id)
+  osv_advisory: osv.Vulnerability = osv_template(sa_id)
   project_module = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
@@ -245,45 +245,45 @@ def build_osv_advisory(
       project_releases.append(node)
 
   if 'field_sa_reported_by' in sa_advisory:
-    osv_entry['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
+    osv_advisory['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
 
-  osv_entry['id'] = f'{sa_id}'
+  osv_advisory['id'] = f'{sa_id}'
 
   # TODO: Add the severity to the OSV entry.
   # https://ossf.github.io/osv-schema/#severitytype-field
   # https://www.drupal.org/drupal-security-team/security-risk-levels-defined
   # https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
   if full_proposed_entry:
-    osv_entry['affected'][0]['severity'][0]['score'] = sa_advisory[
+    osv_advisory['affected'][0]['severity'][0]['score'] = sa_advisory[
       'field_sa_criticality'
     ]
   else:
-    osv_entry['affected'][0]['severity'] = []
+    osv_advisory['affected'][0]['severity'] = []
 
-  osv_entry['affected'][0]['package']['name'] = composer_package(project_module)
-  osv_entry['published'] = datetime.fromtimestamp(int(sa_advisory['created'])).strftime(
-    '%Y-%m-%dT%H:%M:%S.000Z'
-  )
-  osv_entry['modified'] = datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
-    '%Y-%m-%dT%H:%M:%S.000Z'
-  )
+  osv_advisory['affected'][0]['package']['name'] = composer_package(project_module)
+  osv_advisory['published'] = datetime.fromtimestamp(
+    int(sa_advisory['created'])
+  ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
+  osv_advisory['modified'] = datetime.fromtimestamp(
+    int(sa_advisory['changed'])
+  ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
   affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
   affected_versions = add_fixed_in_versions(affected_versions, project_releases)
   affected_versions = sort_affected_versions(affected_versions)
   for event in affected_versions:
-    osv_entry['affected'][0]['ranges'][0]['events'].append(event)
+    osv_advisory['affected'][0]['ranges'][0]['events'].append(event)
 
   if len(sa_advisory['field_sa_cve']) > 0:
     for cve in sa_advisory['field_sa_cve']:
-      osv_entry['aliases'].append(cve)
+      osv_advisory['aliases'].append(cve)
 
-  osv_entry['details'] = sa_advisory['field_sa_description']['value']
-  osv_entry['references'].append({'type': 'WEB', 'url': sa_advisory['url']})
+  osv_advisory['details'] = sa_advisory['field_sa_description']['value']
+  osv_advisory['references'].append({'type': 'WEB', 'url': sa_advisory['url']})
 
-  fake_ecosystem(osv_entry)
+  fake_ecosystem(osv_advisory)
 
-  return osv_entry
+  return osv_advisory
 
 
 def fetch_affected_packages(osv_advisory: dict) -> list[str]:
