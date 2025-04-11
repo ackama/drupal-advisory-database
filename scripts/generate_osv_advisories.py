@@ -8,6 +8,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
+import typing
 from datetime import datetime
 
 import requests
@@ -62,7 +63,7 @@ def osv_template(sa_id: str) -> osv.Vulnerability:
   }
 
 
-def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
+def fetch_drupal_node(nid: str, node_type: str) -> drupal.Node:
   """
   Fetches a node from drupal.org by its id
   """
@@ -76,31 +77,31 @@ def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
     resp = requests.get(f'https://www.drupal.org/api-d7/node.json?nid={nid}')
 
     if resp.status_code == 200:
-      body: drupal.ApiResponse = resp.json()
+      items = typing.cast(drupal.ApiResponse, resp.json())['list']
 
-      if len(body['list']) != 1:
-        raise Exception(f'API returned {len(body["list"])} items for node {nid}') from e
+      if len(items) != 1:
+        raise Exception(f'API returned {len(items)} items for node {nid}') from e
 
       with open(sa_file, 'w') as f:
-        json.dump(body, f)
-      return body
+        json.dump(items[0], f)
+      return items[0]
     raise Exception(
       f'unexpected response when fetching node {nid}: {resp.status_code}'
     ) from e
 
 
-def fetch_project_module_node(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
+def fetch_project_module_node(nid: str) -> drupal.ProjectModule:
   """
   Fetches a project module node from drupal.org by its id
   """
-  return fetch_drupal_node(nid, 'project_module')
+  return typing.cast(drupal.ProjectModule, fetch_drupal_node(nid, 'project_module'))
 
 
-def fetch_project_release_node(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
+def fetch_project_release_node(nid: str) -> drupal.ProjectRelease:
   """
   Fetches a project release node from drupal.org by its id
   """
-  return fetch_drupal_node(nid, 'project_release')
+  return typing.cast(drupal.ProjectRelease, fetch_drupal_node(nid, 'project_release'))
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
@@ -140,15 +141,14 @@ def fake_ecosystem(osv_entry: osv.Vulnerability):
 
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
-  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]],
+  fixed_in_json: list[drupal.ProjectRelease],
 ):
-  for fixed_in in fixed_in_json:
-    for fixed_version in fixed_in['list']:
-      fixed_major = fixed_version['field_release_version_major']
-      fixed_minor = fixed_version['field_release_version_minor']
-      fixed_patch = fixed_version['field_release_version_patch'] or '0'
-      fixed_in_semver = f'{fixed_major}.{fixed_minor}.{fixed_patch}'
-      affected_versions.append({'fixed': fixed_in_semver})
+  for fixed_version in fixed_in_json:
+    fixed_major = fixed_version['field_release_version_major']
+    fixed_minor = fixed_version['field_release_version_minor']
+    fixed_patch = fixed_version['field_release_version_patch'] or '0'
+    fixed_in_semver = f'{fixed_major}.{fixed_minor}.{fixed_patch}'
+    affected_versions.append({'fixed': fixed_in_semver})
   return affected_versions
 
 
@@ -222,9 +222,9 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json: drupal.ApiResponse[drupal.ProjectModule]) -> str:
+def composer_package(project_json: drupal.ProjectModule) -> str:
   project_type = 'drupal'
-  project_name = project_json['list'][0]['field_project_machine_name']
+  project_name = project_json['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
   return f'{project_type}/{project_name}'
@@ -251,7 +251,7 @@ def build_osv_advisory(
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
   project_json = fetch_project_module_node(sa_json['field_project']['id'])
-  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
+  fixed_in_json: list[drupal.ProjectRelease] = []
 
   if len(sa_json['field_fixed_in']) > 0:
     for fixed_in in sa_json['field_fixed_in']:
