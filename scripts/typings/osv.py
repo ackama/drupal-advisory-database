@@ -87,7 +87,7 @@ class Range(typing.TypedDict):
   type: RangeType
   events: list[Event]
   repo: typing.NotRequired[str]
-  database_specific: typing.NotRequired[dict[str]]
+  database_specific: typing.NotRequired[dict[str, typing.Any]]
 
 
 SeverityType = typing.Literal[
@@ -121,8 +121,8 @@ class Affected(typing.TypedDict, total=False):
   severity: list[Severity]
   ranges: list[Range]
   versions: list[str]
-  database_specific: dict[str]
-  ecosystem_specific: dict[str]
+  database_specific: dict[str, typing.Any]
+  ecosystem_specific: dict[str, typing.Any]
 
 
 ReferenceType = typing.Literal[
@@ -201,4 +201,4 @@ class Vulnerability(typing.TypedDict, total=False):
   affected: list[Affected]
   references: list[Reference]
   credits: list[Credit]
-  database_specific: dict[str]
+  database_specific: dict[str, typing.Any]
