@@ -76,25 +76,31 @@ def fetch_url_to_file(url, file_path):
     print(f'Failed to fetch content from {url}. Status code: {response.status_code}')
 
 
-# Fetch a node from drupal.org
-def get_node(nid: str, type) -> drupal.ApiResponse:
+def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
+  """
+  Fetches a node from drupal.org by its id
+  """
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
   sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
-  sa_file = f'{dir}/{type}-{nid}.json'
+  sa_file = f'{dir}/{node_type}-{nid}.json'
   fetch_url_to_file(sa_url, sa_file)
   return json.loads(open(sa_file).read())
 
 
-# Fetch the project node from drupal.org
-def get_project_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
-  return get_node(nid, 'project_module')
+def fetch_project_module_node(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
+  """
+  Fetches a project module node from drupal.org by its id
+  """
+  return fetch_drupal_node(nid, 'project_module')
 
 
-# Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
-  return get_node(nid, 'project_release')
+def fetch_project_release_node(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
+  """
+  Fetches a project release node from drupal.org by its id
+  """
+  return fetch_drupal_node(nid, 'project_release')
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
@@ -244,12 +250,12 @@ def build_osv_advisory(
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json = get_project_entry(sa_json['field_project']['id'])
+  project_json = fetch_project_module_node(sa_json['field_project']['id'])
   fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
 
   if len(sa_json['field_fixed_in']) > 0:
     for fixed_in in sa_json['field_fixed_in']:
-      fixed_in_json.append(get_fixed_in_entry(fixed_in['id']))
+      fixed_in_json.append(fetch_project_release_node(fixed_in['id']))
 
   if 'field_sa_reported_by' in sa_json:
     osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
