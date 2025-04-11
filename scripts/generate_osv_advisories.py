@@ -80,11 +80,16 @@ def fetch_drupal_node(nid: str, node_type: str) -> drupal.ApiResponse:
   """
   Fetches a node from drupal.org by its id
   """
-  os.makedirs(f'cache/{node_type}', exist_ok=True)
-  sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
   sa_file = f'cache/{node_type}/{nid}.json'
-  fetch_url_to_file(sa_url, sa_file)
-  return json.loads(open(sa_file).read())
+
+  try:
+    with open(sa_file) as f:
+      return json.load(f)
+  except FileNotFoundError:
+    os.makedirs(f'cache/{node_type}', exist_ok=True)
+    sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
+    fetch_url_to_file(sa_url, sa_file)
+    return json.loads(open(sa_file).read())
 
 
 def fetch_project_module_node(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
