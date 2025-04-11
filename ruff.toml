@@ -4,8 +4,9 @@ indent-width = 2
 quote-style = 'single'
 
 [lint]
+ignore = ['E501']
 select = [
-#  'E',   # pycodestyle
+  'E',   # pycodestyle
 #  'F',   # Pyflakes
 #  'UP',  # pyupgrade
 #  'B',   # flake8-bugbear
