@@ -25,7 +25,4 @@ jobs:
           persist-credentials: false
       - uses: astral-sh/ruff-action@v3
         with:
-          args: 'check'
-      - uses: astral-sh/ruff-action@v3
-        with:
           args: 'format --check --diff'
