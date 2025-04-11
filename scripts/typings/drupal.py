@@ -46,4 +46,8 @@ TNode = typing.TypeVar('TNode', bound=Node)
 
 
 class ApiResponse(typing.TypedDict, typing.Generic[TNode]):
+  self: str
+  first: str
+  last: str
+  next: str
   list: list[TNode]
