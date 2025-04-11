@@ -244,11 +244,8 @@ def build_osv_advisory(
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json: drupal.ApiResponse[drupal.ProjectModule] | None = None
+  project_json = get_project_entry(sa_json['field_project']['id'])
   fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
-
-  if sa_json['field_project']['id'] != '0':
-    project_json = get_project_entry(sa_json['field_project']['id'])
 
   if len(sa_json['field_fixed_in']) > 0:
     for fixed_in in sa_json['field_fixed_in']:
