@@ -88,11 +88,11 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     ) from e
 
 
-def fetch_project_module_node(nid: str) -> drupal.ProjectModule:
+def fetch_project_module_node(nid: str) -> drupal.Project:
   """
   Fetches a project module node from drupal.org by its id
   """
-  return typing.cast(drupal.ProjectModule, fetch_drupal_node(nid))
+  return typing.cast(drupal.Project, fetch_drupal_node(nid))
 
 
 def fetch_project_release_node(nid: str) -> drupal.ProjectRelease:
@@ -220,7 +220,7 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json: drupal.ProjectModule) -> str:
+def composer_package(project_json: drupal.Project) -> str:
   project_type = 'drupal'
   project_name = project_json['field_project_machine_name']
   if project_name == 'drupal':
