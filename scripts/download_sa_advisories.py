@@ -74,7 +74,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
         else:
           # We have reached the last modified entry.
           fetch_again = False
-      print(' \- finished processing page')
+      print(' \\- finished processing page')
       if 'next' in data and data['next'] != '':
         url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
       else:

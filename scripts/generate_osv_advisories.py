@@ -235,12 +235,12 @@ def build_osv_advisory(
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
   if sa_json['field_is_psa'] == '1':
-    print(' \- skipping as it is a psa? (this should not happen)')
+    print(' \\- skipping as it is a psa? (this should not happen)')
     return None
 
   # there's not really much we can do if there isn't an affected version
   if sa_json['field_affected_versions'] is None:
-    print(' \- skipping as we do not have any affected versions')
+    print(' \\- skipping as we do not have any affected versions')
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
