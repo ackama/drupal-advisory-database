@@ -73,18 +73,15 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     with open(sa_file) as f:
       return json.load(f)
   except FileNotFoundError as e:
-    os.makedirs('cache/node', exist_ok=True)
-    resp = requests.get(f'https://www.drupal.org/api-d7/node.json?nid={nid}')
+    os.makedirs('cache/nodes', exist_ok=True)
+    resp = requests.get(f'https://www.drupal.org/api-d7/node/{nid}.json')
 
     if resp.status_code == 200:
-      items = typing.cast(drupal.ApiResponse, resp.json())['list']
-
-      if len(items) != 1:
-        raise Exception(f'API returned {len(items)} items for node {nid}') from e
+      node: drupal.Node = resp.json()
 
       with open(sa_file, 'w') as f:
-        json.dump(items[0], f)
-      return items[0]
+        json.dump(node, f)
+      return node
     raise Exception(
       f'unexpected response when fetching node {nid}: {resp.status_code}'
     ) from e
