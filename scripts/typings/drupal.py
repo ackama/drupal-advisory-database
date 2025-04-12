@@ -12,7 +12,11 @@ class RichTextField(typing.TypedDict):
   value: str
 
 
-class Advisory(typing.TypedDict):
+class Node(typing.TypedDict):
+  id: str
+
+
+class Advisory(Node):
   field_is_psa: typing.Literal['0', '1']
   field_affected_versions: str | None
   field_project: NodeField
@@ -25,10 +29,6 @@ class Advisory(typing.TypedDict):
   changed: str
   title: str
   url: str
-
-
-class Node(typing.TypedDict):
-  id: str
 
 
 class ProjectModule(Node):
