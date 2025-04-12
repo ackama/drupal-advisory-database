@@ -74,6 +74,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
       return json.load(f)
   except FileNotFoundError as e:
     os.makedirs('cache/nodes', exist_ok=True)
+    print(f' *- fetching https://www.drupal.org/api-d7/node/{nid}.json')
     resp = requests.get(f'https://www.drupal.org/api-d7/node/{nid}.json')
 
     if resp.status_code == 200:
