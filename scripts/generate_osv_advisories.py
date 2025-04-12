@@ -63,17 +63,17 @@ def osv_template(sa_id: str) -> osv.Vulnerability:
   }
 
 
-def fetch_drupal_node(nid: str, node_type: str) -> drupal.Node:
+def fetch_drupal_node(nid: str) -> drupal.Node:
   """
   Fetches a node from drupal.org by its id
   """
-  sa_file = f'cache/{node_type}/{nid}.json'
+  sa_file = f'cache/nodes/{nid}.json'
 
   try:
     with open(sa_file) as f:
       return json.load(f)
   except FileNotFoundError as e:
-    os.makedirs(f'cache/{node_type}', exist_ok=True)
+    os.makedirs('cache/node', exist_ok=True)
     resp = requests.get(f'https://www.drupal.org/api-d7/node.json?nid={nid}')
 
     if resp.status_code == 200:
@@ -94,14 +94,14 @@ def fetch_project_module_node(nid: str) -> drupal.ProjectModule:
   """
   Fetches a project module node from drupal.org by its id
   """
-  return typing.cast(drupal.ProjectModule, fetch_drupal_node(nid, 'project_module'))
+  return typing.cast(drupal.ProjectModule, fetch_drupal_node(nid))
 
 
 def fetch_project_release_node(nid: str) -> drupal.ProjectRelease:
   """
   Fetches a project release node from drupal.org by its id
   """
-  return typing.cast(drupal.ProjectRelease, fetch_drupal_node(nid, 'project_release'))
+  return typing.cast(drupal.ProjectRelease, fetch_drupal_node(nid))
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
