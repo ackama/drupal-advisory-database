@@ -88,20 +88,6 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     ) from e
 
 
-def fetch_project_module_node(nid: str) -> drupal.Project:
-  """
-  Fetches a project module node from drupal.org by its id
-  """
-  return typing.cast(drupal.Project, fetch_drupal_node(nid))
-
-
-def fetch_project_release_node(nid: str) -> drupal.ProjectRelease:
-  """
-  Fetches a project release node from drupal.org by its id
-  """
-  return typing.cast(drupal.ProjectRelease, fetch_drupal_node(nid))
-
-
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
 def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   affected: list[osv.Event] = []
@@ -248,12 +234,15 @@ def build_osv_advisory(
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json = fetch_project_module_node(sa_json['field_project']['id'])
+  project_json = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_json['field_project']['id'])
+  )
   fixed_in_json: list[drupal.ProjectRelease] = []
 
   if len(sa_json['field_fixed_in']) > 0:
     for fixed_in in sa_json['field_fixed_in']:
-      fixed_in_json.append(fetch_project_release_node(fixed_in['id']))
+      node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
+      fixed_in_json.append(node)
 
   if 'field_sa_reported_by' in sa_json:
     osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
