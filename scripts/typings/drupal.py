@@ -14,6 +14,7 @@ class RichTextField(typing.TypedDict):
 
 class Node(typing.TypedDict):
   nid: str
+  type: str
 
 
 class Advisory(Node):
