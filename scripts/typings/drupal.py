@@ -13,7 +13,7 @@ class RichTextField(typing.TypedDict):
 
 
 class Node(typing.TypedDict):
-  id: str
+  nid: str
 
 
 class Advisory(Node):
