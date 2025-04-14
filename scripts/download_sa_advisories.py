@@ -24,14 +24,17 @@ def get_most_recent_changed_timestamp() -> int:
   Determines the timestamp of the most recently changed SA advisory
   """
   most_recent_changed = 0
-  for file in os.scandir(cache_dir_name):
-    if not file.is_file() or not file.name.endswith('.json'):
-      continue
-    with open(file.path) as f:
-      advisory = typing.cast(drupal.Advisory, json.load(f))
-      changed = int(advisory['changed'])
-      if changed > most_recent_changed or most_recent_changed == 0:
-        most_recent_changed = changed
+  try:
+    for file in os.scandir(cache_dir_name):
+      if not file.is_file() or not file.name.endswith('.json'):
+        continue
+      with open(file.path) as f:
+        advisory = typing.cast(drupal.Advisory, json.load(f))
+        changed = int(advisory['changed'])
+        if changed > most_recent_changed or most_recent_changed == 0:
+          most_recent_changed = changed
+  except FileNotFoundError:
+    pass
   return most_recent_changed
 
 
