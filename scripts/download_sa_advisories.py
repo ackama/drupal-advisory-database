@@ -14,6 +14,8 @@ from datetime import datetime
 
 import requests
 
+from typings import drupal
+
 osv_dir_name = 'advisories'
 cache_dir_name = 'cache/advisories'
 
@@ -40,7 +42,7 @@ def get_last_osv_modified_timestamp() -> int:
   return highest_modified
 
 
-def determine_sa_id(advisory: dict) -> str:
+def determine_sa_id(advisory: drupal.Advisory) -> str:
   return advisory['url'].split('/')[-1].upper()
 
 
@@ -58,7 +60,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
     response = requests.get(url)
     print(f'Status code: {response.status_code}')
     if response.status_code == 200:
-      data = response.json()
+      data: drupal.ApiResponse = response.json()
       for item in data['list']:
         changed = int(item['changed'])
         if changed > last_modified_timestamp:

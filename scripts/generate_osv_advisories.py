@@ -8,44 +8,19 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
-import typing
 from datetime import datetime
 
 import requests
 import semver
+
+from typings import drupal, osv
 
 osv_dir_name = 'advisories'
 # Not all fields pass the schema test as there are elements that are not yet present in the OSV schema.
 full_proposed_entry = False
 
 
-class SANodeField(typing.TypedDict):
-  resource: typing.Literal['node', 'comment']
-  uri: str
-  id: str
-
-
-class SARichTextField(typing.TypedDict):
-  format: typing.Literal['1']
-  value: str
-
-
-class SAAdvisory(typing.TypedDict):
-  field_is_psa: typing.Literal['0', '1']
-  field_affected_versions: str | None
-  field_project: SANodeField
-  field_fixed_in: list[SANodeField]
-  field_sa_reported_by: SARichTextField
-  field_sa_criticality: str
-  field_sa_cve: list[str]
-  field_sa_description: SARichTextField
-  created: str
-  changed: str
-  title: str
-  url: str
-
-
-def osv_template(sa_id: str) -> dict:
+def osv_template(sa_id: str) -> osv.Vulnerability:
   """
   Builds a dict representing an osv with some initial fields prefilled
   """
@@ -102,7 +77,7 @@ def fetch_url_to_file(url, file_path):
 
 
 # Fetch a node from drupal.org
-def get_node(nid, type):
+def get_node(nid: str, type) -> drupal.ApiResponse:
   dir = 'files'
   if not os.path.exists('files'):
     os.mkdir(dir)
@@ -113,18 +88,18 @@ def get_node(nid, type):
 
 
 # Fetch the project node from drupal.org
-def get_project_entry(nid):
+def get_project_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
   return get_node(nid, 'project_module')
 
 
 # Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(nid):
+def get_fixed_in_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
   return get_node(nid, 'project_release')
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
-def parse_affected_versions(affected_versions):
-  affected = []
+def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
+  affected: list[osv.Event] = []
   for versions in affected_versions.split(' || '):
     # split version on space and append the first element to the affected list after removing any > or >= characters.
     versions = (
@@ -147,7 +122,7 @@ def parse_affected_versions(affected_versions):
   return affected
 
 
-def fake_ecosystem(osv_entry):
+def fake_ecosystem(osv_entry: osv.Vulnerability):
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
     for affected in osv_entry['affected']:
@@ -157,7 +132,10 @@ def fake_ecosystem(osv_entry):
   return osv_entry
 
 
-def add_fixed_in_versions(affected_versions, fixed_in_json):
+def add_fixed_in_versions(
+  affected_versions: list[osv.Event],
+  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]],
+):
   for fixed_in in fixed_in_json:
     for fixed_version in fixed_in['list']:
       fixed_major = fixed_version['field_release_version_major']
@@ -199,7 +177,7 @@ def semver_for_sorting(semver):
   return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
-def sort_affected_versions(affected_versions):
+def sort_affected_versions(affected_versions: list[osv.Event]):
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
@@ -238,7 +216,7 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json):
+def composer_package(project_json: drupal.ApiResponse[drupal.ProjectModule]) -> str:
   project_type = 'drupal'
   project_name = project_json['list'][0]['field_project_machine_name']
   if project_name == 'drupal':
@@ -246,7 +224,10 @@ def composer_package(project_json):
   return f'{project_type}/{project_name}'
 
 
-def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> dict | None:
+def build_osv_advisory(
+  sa_id: str,
+  sa_json: drupal.Advisory,
+) -> osv.Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
   """
@@ -264,9 +245,9 @@ def build_osv_advisory(sa_id: str, sa_json: SAAdvisory) -> dict | None:
     print(f'SA URL: {sa_json["url"]}')
     return None
 
-  osv_entry = osv_template(sa_id)
-  project_json = None
-  fixed_in_json = []
+  osv_entry: osv.Vulnerability = osv_template(sa_id)
+  project_json: drupal.ApiResponse[drupal.ProjectModule] | None = None
+  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
 
   if sa_json['field_project']['id'] != '0':
     project_json = get_project_entry(sa_json['field_project']['id'])
