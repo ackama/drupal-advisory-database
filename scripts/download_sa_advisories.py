@@ -63,6 +63,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
           )
           with open(f'{cache_dir_name}/{advisory_id}.json', 'w') as f:
             json.dump(item, f)
+            f.write('\n')
         else:
           # We have reached the last modified entry.
           fetch_again = False

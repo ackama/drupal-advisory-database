@@ -82,6 +82,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
 
       with open(sa_file, 'w') as f:
         json.dump(node, f)
+        f.write('\n')
       return node
     raise Exception(
       f'unexpected response when fetching node {nid}: {resp.status_code}'
@@ -314,6 +315,7 @@ def generate_osv_advisories():
       file_name = f'osv-{sa_id.lower()}'
       with open(f'advisories/{name}/{file_name}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
+        f.write('\n')
 
 
 generate_osv_advisories()
