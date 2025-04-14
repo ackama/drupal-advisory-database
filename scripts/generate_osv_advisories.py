@@ -235,14 +235,12 @@ def build_osv_advisory(
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
   if sa_json['field_is_psa'] == '1':
-    # todo: warn that we somehow got a psa type here
-    print(f'Skipping PSA: {sa_json["title"]}')
+    print(' \\- skipping as it is a psa? (this should not happen)')
     return None
 
   # there's not really much we can do if there isn't an affected version
   if sa_json['field_affected_versions'] is None:
-    print(f'Skipping SA without affected versions: {sa_json["title"]}')
-    print(f'SA URL: {sa_json["url"]}')
+    print(' \\- skipping as we do not have any affected versions')
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
@@ -307,10 +305,9 @@ def generate_osv_advisories():
     if not file.is_file() or not file.name.endswith('.json'):
       continue
 
-    print(f'processing {file.path}')
-
     with open(file.path) as f:
       sa_advisory = json.load(f)
+    print(f'processing {sa_advisory["url"]}')
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
 

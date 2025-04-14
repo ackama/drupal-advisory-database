@@ -46,30 +46,34 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
   """
   os.makedirs(cache_dir_name, exist_ok=True)
 
+  print(f'fetching sa advisories modified after {last_modified_timestamp}')
   url = 'https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0'
   fetch_again = True
   while fetch_again:
-    print(f'Fetching {url}')
+    print(f'fetching {url}')
     response = requests.get(url)
-    print(f'Status code: {response.status_code}')
     if response.status_code == 200:
       data: drupal.ApiResponse = response.json()
       for item in data['list']:
         changed = int(item['changed'])
         if changed > last_modified_timestamp:
           advisory_id = determine_sa_id(item)
+          print(
+            f' |- updating {cache_dir_name}/{advisory_id}.json as {item["url"]} has changed'
+          )
           with open(f'{cache_dir_name}/{advisory_id}.json', 'w') as f:
             json.dump(item, f)
         else:
           # We have reached the last modified entry.
           fetch_again = False
+      print(' \\- finished processing page')
       if 'next' in data and data['next'] != '':
         url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
       else:
-        print('No more pages to fetch.')
+        print('finished processing new and updated advisories')
         fetch_again = False
     else:
-      print(f'Failed to fetch data from {url}. Status code: {response.status_code}')
+      print(f'X API responded {response.status_code}')
       fetch_again = False
 
 
