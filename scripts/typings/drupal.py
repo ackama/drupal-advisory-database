@@ -32,7 +32,8 @@ class Advisory(Node):
   url: str
 
 
-class ProjectModule(Node):
+class Project(Node):
+  # type will be project_module, project_theme, or project_core
   field_project_machine_name: str
 
 

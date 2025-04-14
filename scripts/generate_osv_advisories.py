@@ -8,6 +8,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
+import typing
 from datetime import datetime
 
 import requests
@@ -62,39 +63,29 @@ def osv_template(sa_id: str) -> osv.Vulnerability:
   }
 
 
-def fetch_url_to_file(url, file_path):
-  if os.path.exists(file_path):
-    # print(f"File {file_path} already exists. Skipping fetch.")
-    return
+def fetch_drupal_node(nid: str) -> drupal.Node:
+  """
+  Fetches a node from drupal.org by its id
+  """
+  sa_file = f'cache/nodes/{nid}.json'
 
-  response = requests.get(url)
-  if response.status_code == 200:
-    with open(file_path, 'wb') as file:
-      file.write(response.content)
-    print(f'Content fetched from {url} and written to {file_path}')
-  else:
-    print(f'Failed to fetch content from {url}. Status code: {response.status_code}')
+  try:
+    with open(sa_file) as f:
+      return json.load(f)
+  except FileNotFoundError as e:
+    os.makedirs('cache/nodes', exist_ok=True)
+    print(f' *- fetching https://www.drupal.org/api-d7/node/{nid}.json')
+    resp = requests.get(f'https://www.drupal.org/api-d7/node/{nid}.json')
 
+    if resp.status_code == 200:
+      node: drupal.Node = resp.json()
 
-# Fetch a node from drupal.org
-def get_node(nid: str, type) -> drupal.ApiResponse:
-  dir = 'files'
-  if not os.path.exists('files'):
-    os.mkdir(dir)
-  sa_url = f'https://www.drupal.org/api-d7/node.json?nid={nid}'
-  sa_file = f'{dir}/{type}-{nid}.json'
-  fetch_url_to_file(sa_url, sa_file)
-  return json.loads(open(sa_file).read())
-
-
-# Fetch the project node from drupal.org
-def get_project_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectModule]:
-  return get_node(nid, 'project_module')
-
-
-# Fetch the Project Release node from drupal.org
-def get_fixed_in_entry(nid: str) -> drupal.ApiResponse[drupal.ProjectRelease]:
-  return get_node(nid, 'project_release')
+      with open(sa_file, 'w') as f:
+        json.dump(node, f)
+      return node
+    raise Exception(
+      f'unexpected response when fetching node {nid}: {resp.status_code}'
+    ) from e
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
@@ -134,15 +125,14 @@ def fake_ecosystem(osv_entry: osv.Vulnerability):
 
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
-  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]],
+  fixed_in_json: list[drupal.ProjectRelease],
 ):
-  for fixed_in in fixed_in_json:
-    for fixed_version in fixed_in['list']:
-      fixed_major = fixed_version['field_release_version_major']
-      fixed_minor = fixed_version['field_release_version_minor']
-      fixed_patch = fixed_version['field_release_version_patch'] or '0'
-      fixed_in_semver = f'{fixed_major}.{fixed_minor}.{fixed_patch}'
-      affected_versions.append({'fixed': fixed_in_semver})
+  for fixed_version in fixed_in_json:
+    fixed_major = fixed_version['field_release_version_major']
+    fixed_minor = fixed_version['field_release_version_minor']
+    fixed_patch = fixed_version['field_release_version_patch'] or '0'
+    fixed_in_semver = f'{fixed_major}.{fixed_minor}.{fixed_patch}'
+    affected_versions.append({'fixed': fixed_in_semver})
   return affected_versions
 
 
@@ -216,9 +206,9 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_json: drupal.ApiResponse[drupal.ProjectModule]) -> str:
+def composer_package(project_json: drupal.Project) -> str:
   project_type = 'drupal'
-  project_name = project_json['list'][0]['field_project_machine_name']
+  project_name = project_json['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
   return f'{project_type}/{project_name}'
@@ -244,12 +234,15 @@ def build_osv_advisory(
     return None
 
   osv_entry: osv.Vulnerability = osv_template(sa_id)
-  project_json = get_project_entry(sa_json['field_project']['id'])
-  fixed_in_json: list[drupal.ApiResponse[drupal.ProjectRelease]] = []
+  project_json = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_json['field_project']['id'])
+  )
+  fixed_in_json: list[drupal.ProjectRelease] = []
 
   if len(sa_json['field_fixed_in']) > 0:
     for fixed_in in sa_json['field_fixed_in']:
-      fixed_in_json.append(get_fixed_in_entry(fixed_in['id']))
+      node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
+      fixed_in_json.append(node)
 
   if 'field_sa_reported_by' in sa_json:
     osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
