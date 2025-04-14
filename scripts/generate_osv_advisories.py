@@ -181,16 +181,16 @@ def sort_affected_versions(affected_versions: list[osv.Event]):
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
-    if 'introduced' in affected.keys():
+    if 'introduced' in affected:
       sorted_versions[semver_for_sorting(affected['introduced'])] = affected
-    if 'fixed' in affected.keys():
+    if 'fixed' in affected:
       sorted_versions[semver_for_sorting(affected['fixed'])] = affected
 
   # sort the dict by the keys assuming the keys are semver strings.
   sorted_versions = dict(
     sorted(sorted_versions.items(), key=lambda item: semver.parse_version_info(item[0]))
   )
-  for key in sorted_versions.keys():
+  for key in sorted_versions:
     return_values.append(sorted_versions[key])
 
   return return_values
@@ -200,7 +200,7 @@ def get_credits_from_sa(credits):
   credit_list = []
 
   # Sanity checks.
-  if len(credits) == 0 or 'value' not in credits.keys():
+  if len(credits) == 0 or 'value' not in credits:
     return credit_list
   # The credits['value'] is a sting with an ordered list of credits.
   # A credit is a link to the user's profile on drupal.org with the user's name as the link text.
@@ -256,7 +256,7 @@ def build_osv_advisory(
     for fixed_in in sa_json['field_fixed_in']:
       fixed_in_json.append(get_fixed_in_entry(fixed_in['id']))
 
-  if 'field_sa_reported_by' in sa_json.keys():
+  if 'field_sa_reported_by' in sa_json:
     osv_entry['credits'] = get_credits_from_sa(sa_json['field_sa_reported_by'])
 
   osv_entry['id'] = f'{sa_id}'
@@ -309,8 +309,8 @@ def generate_osv_advisories():
 
     print(f'processing {file.path}')
 
-    data = open(file.path, 'r').read()
-    sa_advisory = json.loads(data)
+    with open(file.path) as f:
+      sa_advisory = json.load(f)
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
 
@@ -327,9 +327,8 @@ def generate_osv_advisories():
       os.makedirs(f'advisories/{name}', exist_ok=True)
       # todo: drop the osv- and keep the uppercasing
       file_name = f'osv-{sa_id.lower()}'
-      open(f'advisories/{name}/{file_name}.json', 'w').write(
-        json.dumps(osv_advisory, indent=2)
-      )
+      with open(f'advisories/{name}/{file_name}.json', 'w') as f:
+        json.dump(osv_advisory, f, indent=2)
 
 
 generate_osv_advisories()
