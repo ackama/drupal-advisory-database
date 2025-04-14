@@ -1,7 +1,7 @@
 import typing
 
 
-class NodeField(typing.TypedDict):
+class EntityReferenceField(typing.TypedDict):
   resource: typing.Literal['node', 'comment']
   uri: str
   id: str
@@ -20,8 +20,8 @@ class Node(typing.TypedDict):
 class Advisory(Node):
   field_is_psa: typing.Literal['0', '1']
   field_affected_versions: str | None
-  field_project: NodeField
-  field_fixed_in: list[NodeField]
+  field_project: EntityReferenceField
+  field_fixed_in: list[EntityReferenceField]
   field_sa_reported_by: RichTextField
   field_sa_criticality: str
   field_sa_cve: list[str]
