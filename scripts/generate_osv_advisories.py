@@ -206,9 +206,9 @@ def get_credits_from_sa(credits):
   return credit_list
 
 
-def composer_package(project_module: drupal.Project) -> str:
+def composer_package(project: drupal.Project) -> str:
   project_type = 'drupal'
-  project_name = project_module['field_project_machine_name']
+  project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
   return f'{project_type}/{project_name}'
@@ -234,7 +234,7 @@ def build_osv_advisory(
     return None
 
   osv_advisory: osv.Vulnerability = osv_template(sa_id)
-  project_module = typing.cast(
+  project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
   project_releases: list[drupal.ProjectRelease] = []
@@ -260,7 +260,7 @@ def build_osv_advisory(
   else:
     osv_advisory['affected'][0]['severity'] = []
 
-  osv_advisory['affected'][0]['package']['name'] = composer_package(project_module)
+  osv_advisory['affected'][0]['package']['name'] = composer_package(project)
   osv_advisory['published'] = datetime.fromtimestamp(
     int(sa_advisory['created'])
   ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
