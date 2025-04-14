@@ -40,6 +40,6 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.13'
       - run: python3 -m pip install mypy semver requests types-requests
       - run: mypy scripts/download_sa_advisories.py scripts/generate_osv_advisories.py
