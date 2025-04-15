@@ -1,0 +1,6 @@
+[project]
+name = "drupal-advisory-database"
+dependencies = []
+
+[tool.poetry]
+package-mode = false
