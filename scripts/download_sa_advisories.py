@@ -53,7 +53,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
     print(f'fetching {url}')
     response = requests.get(url)
     if response.status_code == 200:
-      data: drupal.ApiResponse = response.json()
+      data: drupal.ApiResponse[drupal.Advisory] = response.json()
       for item in data['list']:
         changed = int(item['changed'])
         if changed > last_modified_timestamp:

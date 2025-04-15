@@ -44,10 +44,7 @@ class ProjectRelease(Node):
   field_release_version_patch: str
 
 
-TNode = typing.TypeVar('TNode', bound=Node)
-
-
-class ApiResponse(typing.TypedDict, typing.Generic[TNode]):
+class ApiResponse[TNode: Node = Node](typing.TypedDict):
   self: str
   first: str
   last: str
