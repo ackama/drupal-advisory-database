@@ -25,9 +25,11 @@ jobs:
           persist-credentials: false
       - uses: astral-sh/ruff-action@v3
         with:
+          version-file: 'pyproject.toml'
           args: 'check'
       - uses: astral-sh/ruff-action@v3
         with:
+          version-file: 'pyproject.toml'
           args: 'format --check --diff'
   mypy:
     permissions:
