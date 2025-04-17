@@ -55,7 +55,7 @@ def fetch_and_cache_drupal_nodes():
     for fixed_in in sa_advisory['field_fixed_in']:
       ids.add(fixed_in['id'])
 
-  for i, batch in enumerate(batched(ids, 50)):
+  for i, batch in enumerate(batched(ids, 50, strict=False)):
     print(f'fetching {len(batch)} nodes ({len(ids) - i * 50 - len(batch)} remaining)')
     for node in fetch_drupal_nodes(list(batch)):
       print(f' |- writing cache/nodes/{node["nid"]}.json')
