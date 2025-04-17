@@ -21,7 +21,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0.0.0"
+              "introduced": "0"
             },
             {
               "fixed": "12.3.11"

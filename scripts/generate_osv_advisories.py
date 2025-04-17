@@ -103,7 +103,7 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
     )
     introduced = versions.split()[0].strip()
     if introduced[0] == '<':
-      introduced = '0.0.0'
+      introduced = '0'
     introduced = introduced.replace('*', '0')
     affected.append({'introduced': introduced})
     if len(versions.split()) > 1:
