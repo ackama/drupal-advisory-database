@@ -114,7 +114,7 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   return affected
 
 
-def fake_ecosystem(osv_advisory: osv.Vulnerability):
+def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
     for affected in osv_advisory['affected']:
@@ -127,7 +127,7 @@ def fake_ecosystem(osv_advisory: osv.Vulnerability):
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
   project_releases: list[drupal.ProjectRelease],
-):
+) -> list[osv.Event]:
   for fixed_version in project_releases:
     fixed_major = fixed_version['field_release_version_major']
     fixed_minor = fixed_version['field_release_version_minor']
@@ -168,7 +168,7 @@ def semver_for_sorting(semver):
   return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
-def sort_affected_versions(affected_versions: list[osv.Event]):
+def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event]:
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
@@ -291,7 +291,7 @@ def fetch_affected_packages(osv_advisory: osv.Vulnerability) -> list[str]:
   return [affected['package']['name'] for affected in osv_advisory['affected']]
 
 
-def generate_osv_advisories():
+def generate_osv_advisories() -> None:
   for file in os.scandir('cache/advisories'):
     if not file.is_file() or not file.name.endswith('.json'):
       continue
