@@ -137,7 +137,7 @@ def add_fixed_in_versions(
   return affected_versions
 
 
-def semver_for_sorting(semver):
+def semver_for_sorting(semver: typing.Any) -> str:
   decrement_semver = False
   if semver == '':
     return ''
@@ -187,7 +187,7 @@ def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event
   return return_values
 
 
-def get_credits_from_sa(credits):
+def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
   credit_list: list[osv.Credit] = []
 
   # Sanity checks.

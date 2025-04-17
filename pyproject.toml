@@ -14,5 +14,3 @@ package-mode = false
 
 [tool.mypy]
 strict = true
-disallow_untyped_calls = false
-disallow_untyped_defs = false
