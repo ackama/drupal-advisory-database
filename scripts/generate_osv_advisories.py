@@ -287,7 +287,7 @@ def build_osv_advisory(
   return osv_advisory
 
 
-def fetch_affected_packages(osv_advisory: dict) -> list[str]:
+def fetch_affected_packages(osv_advisory: osv.Vulnerability) -> list[str]:
   return [affected['package']['name'] for affected in osv_advisory['affected']]
 
 
