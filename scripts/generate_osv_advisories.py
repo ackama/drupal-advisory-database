@@ -188,7 +188,7 @@ def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event
 
 
 def get_credits_from_sa(credits):
-  credit_list = []
+  credit_list: list[osv.Credit] = []
 
   # Sanity checks.
   if len(credits) == 0 or 'value' not in credits:
