@@ -240,10 +240,9 @@ def build_osv_advisory(
   )
   project_releases: list[drupal.ProjectRelease] = []
 
-  if len(sa_advisory['field_fixed_in']) > 0:
-    for fixed_in in sa_advisory['field_fixed_in']:
-      node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
-      project_releases.append(node)
+  for fixed_in in sa_advisory['field_fixed_in']:
+    node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
+    project_releases.append(node)
 
   if 'field_sa_reported_by' in sa_advisory:
     osv_advisory['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
@@ -275,9 +274,8 @@ def build_osv_advisory(
   for event in affected_versions:
     osv_advisory['affected'][0]['ranges'][0]['events'].append(event)
 
-  if len(sa_advisory['field_sa_cve']) > 0:
-    for cve in sa_advisory['field_sa_cve']:
-      osv_advisory['aliases'].append(cve)
+  for cve in sa_advisory['field_sa_cve']:
+    osv_advisory['aliases'].append(cve)
 
   osv_advisory['details'] = sa_advisory['field_sa_description']['value']
   osv_advisory['references'].append({'type': 'WEB', 'url': sa_advisory['url']})
