@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-035",
+  "modified": "2025-04-17T04:25:12.000Z",
+  "published": "2025-04-17T04:25:12.000Z",
+  "aliases": [
+    "CVE-2025-3734"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Stage File Proxy is a general solution for getting production files on a development server on demand.</p>\n<p>The module doesn't sufficiently validate the existence of remote files prior to attempting to download and create them. An attacker could send many requests and exhaust disk resources.</p>\n<p>This vulnerability is mitigated by the fact it only affects sites where the Origin is configured with a trailing slash. Sites that cannot upgrade immediately can confirm they do not have a trailing slash or remove the trailing slash to mitigate the issue.</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/stage_file_proxy"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-035"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ide Braakman (idebr)",
+      "contact": [
+        "/u/idebr"
+      ]
+    }
+  ]
+}
