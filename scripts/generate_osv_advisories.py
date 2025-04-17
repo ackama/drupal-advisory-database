@@ -238,11 +238,10 @@ def build_osv_advisory(
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
-  project_releases: list[drupal.ProjectRelease] = []
-
-  for fixed_in in sa_advisory['field_fixed_in']:
-    node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
-    project_releases.append(node)
+  project_releases = [
+    typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
+    for fixed_in in sa_advisory['field_fixed_in']
+  ]
 
   if 'field_sa_reported_by' in sa_advisory:
     osv_advisory['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
