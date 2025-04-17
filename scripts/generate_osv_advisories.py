@@ -21,48 +21,6 @@ osv_dir_name = 'advisories'
 full_proposed_entry = False
 
 
-def osv_template(sa_id: str) -> osv.Vulnerability:
-  """
-  Builds a dict representing an osv with some initial fields prefilled
-  """
-  return {
-    'schema_version': '1.3.0',
-    'id': '',
-    'modified': '',
-    'published': '',
-    'aliases': [],
-    'related': [],
-    'summary': '',
-    'details': '',
-    'affected': [
-      {
-        'package': {'ecosystem': 'Drupal', 'name': ''},
-        'severity': [{'type': 'NIST_CMSS', 'score': ''}],
-        'ranges': [
-          {
-            'type': 'ECOSYSTEM',
-            'events': [
-              # {
-              #     "introduced": cve['containers']['cna']['affected'][0]['versions'][0]['version']
-              # },
-              # {
-              #     "fixed": cve['containers']['cna']['affected'][0]['versions'][0]['version']
-              # }
-            ],
-          }
-        ],
-      }
-    ],
-    'references': [
-      # {
-      #     "type": "WEB",
-      #     "url": ''
-      # }
-    ],
-    'credits': [],
-  }
-
-
 def fetch_drupal_node(nid: str) -> drupal.Node:
   """
   Fetches a node from drupal.org by its id
@@ -234,7 +192,42 @@ def build_osv_advisory(
     print(' \\- skipping as we do not have any affected versions')
     return None
 
-  osv_advisory: osv.Vulnerability = osv_template(sa_id)
+  osv_advisory: osv.Vulnerability = {
+    'schema_version': '1.3.0',
+    'id': '',
+    'modified': '',
+    'published': '',
+    'aliases': [],
+    'related': [],
+    'summary': '',
+    'details': '',
+    'affected': [
+      {
+        'package': {'ecosystem': 'Drupal', 'name': ''},
+        'severity': [{'type': 'NIST_CMSS', 'score': ''}],
+        'ranges': [
+          {
+            'type': 'ECOSYSTEM',
+            'events': [
+              # {
+              #     "introduced": cve['containers']['cna']['affected'][0]['versions'][0]['version']
+              # },
+              # {
+              #     "fixed": cve['containers']['cna']['affected'][0]['versions'][0]['version']
+              # }
+            ],
+          }
+        ],
+      }
+    ],
+    'references': [
+      # {
+      #     "type": "WEB",
+      #     "url": ''
+      # }
+    ],
+    'credits': [],
+  }
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
