@@ -27,7 +27,7 @@ def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
   resp = requests.get(url)
 
   if resp.status_code == 200:
-    items = typing.cast(drupal.ApiResponse, resp.json())['list']
+    items = typing.cast(drupal.ApiResponse[drupal.Node], resp.json())['list']
 
     if len(items) != len(nids):
       raise Exception(f'API returned {len(items)} nodes but expected {len(nids)}')
@@ -35,12 +35,12 @@ def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
   raise Exception(f'unexpected response when fetching nodes {nids}: {resp.status_code}')
 
 
-def fetch_and_cache_drupal_nodes():
+def fetch_and_cache_drupal_nodes() -> None:
   """
   Ensures all the drupal.org nodes used by the downloaded advisories are cached
   locally, using the bulk collection api endpoint to retrieve them 50 at a time
   """
-  ids = set()
+  ids = set[str]()
 
   os.makedirs('cache/nodes', exist_ok=True)
 
