@@ -49,7 +49,7 @@ def fetch_and_cache_drupal_nodes() -> None:
       continue
 
     with open(file.path) as f:
-      sa_advisory = json.load(f)
+      sa_advisory: drupal.Advisory = json.load(f)
     ids.add(sa_advisory['field_project']['id'])
 
     for fixed_in in sa_advisory['field_fixed_in']:

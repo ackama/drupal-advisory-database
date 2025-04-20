@@ -297,7 +297,7 @@ def generate_osv_advisories() -> None:
       continue
 
     with open(file.path) as f:
-      sa_advisory = json.load(f)
+      sa_advisory: drupal.Advisory = json.load(f)
     print(f'processing {sa_advisory["url"]}')
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
