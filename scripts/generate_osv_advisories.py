@@ -112,6 +112,9 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
       # fixed version from this string if we can.
       fixed = parts[1].replace('<', '').replace('=', '').strip()
       affected.append({'fixed': fixed})
+    elif parts[0][0] == '<':
+      affected.append({'fixed': parts[0][1:]})
+
   return affected
 
 
