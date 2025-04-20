@@ -219,6 +219,9 @@ def build_osv_advisory(
             'events': [],
           }
         ],
+        'database_specific': {
+          'affected_versions': sa_advisory['field_affected_versions']
+        },
       }
     ],
     'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
