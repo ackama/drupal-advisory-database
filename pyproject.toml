@@ -11,3 +11,6 @@ dependencies = [
 
 [tool.poetry]
 package-mode = false
+
+[tool.mypy]
+strict = true

@@ -71,7 +71,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
 
   try:
     with open(sa_file) as f:
-      return json.load(f)
+      return typing.cast(drupal.Node, json.load(f))
   except FileNotFoundError as e:
     os.makedirs('cache/nodes', exist_ok=True)
     print(f' *- fetching https://www.drupal.org/api-d7/node/{nid}.json')
@@ -114,7 +114,7 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   return affected
 
 
-def fake_ecosystem(osv_advisory: osv.Vulnerability):
+def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
     for affected in osv_advisory['affected']:
@@ -127,7 +127,7 @@ def fake_ecosystem(osv_advisory: osv.Vulnerability):
 def add_fixed_in_versions(
   affected_versions: list[osv.Event],
   project_releases: list[drupal.ProjectRelease],
-):
+) -> list[osv.Event]:
   for fixed_version in project_releases:
     fixed_major = fixed_version['field_release_version_major']
     fixed_minor = fixed_version['field_release_version_minor']
@@ -137,7 +137,7 @@ def add_fixed_in_versions(
   return affected_versions
 
 
-def semver_for_sorting(semver):
+def semver_for_sorting(semver: typing.Any) -> str:
   decrement_semver = False
   if semver == '':
     return ''
@@ -168,7 +168,7 @@ def semver_for_sorting(semver):
   return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
-def sort_affected_versions(affected_versions: list[osv.Event]):
+def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event]:
   sorted_versions = {}
   return_values = []
   for affected in affected_versions:
@@ -187,8 +187,8 @@ def sort_affected_versions(affected_versions: list[osv.Event]):
   return return_values
 
 
-def get_credits_from_sa(credits):
-  credit_list = []
+def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
+  credit_list: list[osv.Credit] = []
 
   # Sanity checks.
   if len(credits) == 0 or 'value' not in credits:
@@ -287,17 +287,17 @@ def build_osv_advisory(
   return osv_advisory
 
 
-def fetch_affected_packages(osv_advisory: dict) -> list[str]:
+def fetch_affected_packages(osv_advisory: osv.Vulnerability) -> list[str]:
   return [affected['package']['name'] for affected in osv_advisory['affected']]
 
 
-def generate_osv_advisories():
+def generate_osv_advisories() -> None:
   for file in os.scandir('cache/advisories'):
     if not file.is_file() or not file.name.endswith('.json'):
       continue
 
     with open(file.path) as f:
-      sa_advisory = json.load(f)
+      sa_advisory: drupal.Advisory = json.load(f)
     print(f'processing {sa_advisory["url"]}')
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)

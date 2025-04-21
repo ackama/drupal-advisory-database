@@ -42,7 +42,7 @@ def determine_sa_id(advisory: drupal.Advisory) -> str:
   return advisory['url'].split('/')[-1].upper()
 
 
-def download_sa_advisories_from_rest_api(last_modified_timestamp: int):
+def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
   """
   Downloads the Drupal SA advisories that have been modified since the given
   timestamp using the REST API, storing them on disk as JSON files
