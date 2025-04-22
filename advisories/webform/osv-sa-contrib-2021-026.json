@@ -23,14 +23,25 @@
             },
             {
               "fixed": "5.28.0"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": "<5.28.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "6.0.0"
             },
             {
               "fixed": "6.0.5"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">=6.0.0 <6.0.5"
+          }
         }
       ],
       "database_specific": {

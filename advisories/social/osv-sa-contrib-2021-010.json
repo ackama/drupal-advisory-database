@@ -23,20 +23,39 @@
             },
             {
               "fixed": "9.17.0"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.17.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "10.0.0"
             },
             {
               "fixed": "10.0.13"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.0.0 <10.0.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "10.1.0"
             },
             {
               "fixed": "10.1.6"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">=10.1.0 <10.1.6"
+          }
         }
       ],
       "database_specific": {

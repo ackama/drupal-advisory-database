@@ -23,14 +23,25 @@
             },
             {
               "fixed": "8.7.12"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.7.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "8.8.0"
             },
             {
               "fixed": "8.8.4"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">= 8.8.0 <8.8.4"
+          }
         }
       ],
       "database_specific": {

@@ -24,7 +24,10 @@
             {
               "fixed": "1.9.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "<1.9.0"
+          }
         }
       ],
       "database_specific": {

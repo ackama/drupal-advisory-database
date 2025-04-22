@@ -24,7 +24,10 @@
             {
               "fixed": "2.12.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "<2.12.0"
+          }
         }
       ],
       "database_specific": {

@@ -21,7 +21,10 @@
             {
               "introduced": "1.0.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "1.0.0"
+          }
         }
       ],
       "database_specific": {

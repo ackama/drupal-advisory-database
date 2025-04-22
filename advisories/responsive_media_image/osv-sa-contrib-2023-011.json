@@ -21,7 +21,10 @@
             {
               "introduced": "0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "*"
+          }
         }
       ],
       "database_specific": {

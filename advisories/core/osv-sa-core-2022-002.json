@@ -24,7 +24,10 @@
             {
               "fixed": "7.86.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">7.0 <=7.86"
+          }
         }
       ],
       "database_specific": {

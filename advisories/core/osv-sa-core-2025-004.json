@@ -25,26 +25,53 @@
             },
             {
               "fixed": "10.3.14"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.3.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "10.4.0"
             },
             {
               "fixed": "10.4.5"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.4.0 < 10.4.5"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "11.0.0"
             },
             {
               "fixed": "11.0.13"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.0.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "11.1.0"
             },
             {
               "fixed": "11.1.5"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">= 11.1.0 < 11.1.5"
+          }
         }
       ],
       "database_specific": {

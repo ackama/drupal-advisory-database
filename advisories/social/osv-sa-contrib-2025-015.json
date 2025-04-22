@@ -25,14 +25,25 @@
             },
             {
               "fixed": "12.3.11"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": "<12.3.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "12.4.0"
             },
             {
               "fixed": "12.4.10"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">=12.4.0 <12.4.10"
+          }
         }
       ],
       "database_specific": {

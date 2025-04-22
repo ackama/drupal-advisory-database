@@ -24,7 +24,10 @@
             {
               "fixed": "1.5.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "<1.5"
+          }
         }
       ],
       "database_specific": {
