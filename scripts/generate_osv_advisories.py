@@ -21,48 +21,6 @@ osv_dir_name = 'advisories'
 full_proposed_entry = False
 
 
-def osv_template(sa_id: str) -> osv.Vulnerability:
-  """
-  Builds a dict representing an osv with some initial fields prefilled
-  """
-  return {
-    'schema_version': '1.3.0',
-    'id': '',
-    'modified': '',
-    'published': '',
-    'aliases': [],
-    'related': [],
-    'summary': '',
-    'details': '',
-    'affected': [
-      {
-        'package': {'ecosystem': 'Drupal', 'name': ''},
-        'severity': [{'type': 'NIST_CMSS', 'score': ''}],
-        'ranges': [
-          {
-            'type': 'ECOSYSTEM',
-            'events': [
-              # {
-              #     "introduced": cve['containers']['cna']['affected'][0]['versions'][0]['version']
-              # },
-              # {
-              #     "fixed": cve['containers']['cna']['affected'][0]['versions'][0]['version']
-              # }
-            ],
-          }
-        ],
-      }
-    ],
-    'references': [
-      # {
-      #     "type": "WEB",
-      #     "url": ''
-      # }
-    ],
-    'credits': [],
-  }
-
-
 def fetch_drupal_node(nid: str) -> drupal.Node:
   """
   Fetches a node from drupal.org by its id
@@ -234,21 +192,41 @@ def build_osv_advisory(
     print(' \\- skipping as we do not have any affected versions')
     return None
 
-  osv_advisory: osv.Vulnerability = osv_template(sa_id)
+  osv_advisory: osv.Vulnerability = {
+    'schema_version': '1.3.0',
+    'id': sa_id,
+    'modified': datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
+      '%Y-%m-%dT%H:%M:%S.000Z'
+    ),
+    'published': datetime.fromtimestamp(int(sa_advisory['created'])).strftime(
+      '%Y-%m-%dT%H:%M:%S.000Z'
+    ),
+    'aliases': sa_advisory['field_sa_cve'],
+    'related': [],
+    'summary': '',
+    'details': sa_advisory['field_sa_description']['value'],
+    'affected': [
+      {
+        'package': {'ecosystem': 'Drupal', 'name': ''},
+        'severity': [{'type': 'NIST_CMSS', 'score': ''}],
+        'ranges': [
+          {
+            'type': 'ECOSYSTEM',
+            'events': [],
+          }
+        ],
+      }
+    ],
+    'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
+    'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
+  }
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
-  project_releases: list[drupal.ProjectRelease] = []
-
-  if len(sa_advisory['field_fixed_in']) > 0:
-    for fixed_in in sa_advisory['field_fixed_in']:
-      node = typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
-      project_releases.append(node)
-
-  if 'field_sa_reported_by' in sa_advisory:
-    osv_advisory['credits'] = get_credits_from_sa(sa_advisory['field_sa_reported_by'])
-
-  osv_advisory['id'] = f'{sa_id}'
+  project_releases = [
+    typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
+    for fixed_in in sa_advisory['field_fixed_in']
+  ]
 
   # TODO: Add the severity to the OSV entry.
   # https://ossf.github.io/osv-schema/#severitytype-field
@@ -262,25 +240,12 @@ def build_osv_advisory(
     osv_advisory['affected'][0]['severity'] = []
 
   osv_advisory['affected'][0]['package']['name'] = composer_package(project)
-  osv_advisory['published'] = datetime.fromtimestamp(
-    int(sa_advisory['created'])
-  ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
-  osv_advisory['modified'] = datetime.fromtimestamp(
-    int(sa_advisory['changed'])
-  ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
   affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
   affected_versions = add_fixed_in_versions(affected_versions, project_releases)
   affected_versions = sort_affected_versions(affected_versions)
   for event in affected_versions:
     osv_advisory['affected'][0]['ranges'][0]['events'].append(event)
-
-  if len(sa_advisory['field_sa_cve']) > 0:
-    for cve in sa_advisory['field_sa_cve']:
-      osv_advisory['aliases'].append(cve)
-
-  osv_advisory['details'] = sa_advisory['field_sa_description']['value']
-  osv_advisory['references'].append({'type': 'WEB', 'url': sa_advisory['url']})
 
   fake_ecosystem(osv_advisory)
 
