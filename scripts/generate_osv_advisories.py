@@ -48,6 +48,7 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
 
 
 def expand_version(version: str) -> str:
+  # this means "all possible versions"
   if version == '0':
     return version
   parts = version.split('-')
