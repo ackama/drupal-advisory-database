@@ -31,7 +31,10 @@
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "affected_versions": "<4.4.4"
+      }
     }
   ],
   "references": [

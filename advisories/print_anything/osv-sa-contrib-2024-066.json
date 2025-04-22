@@ -25,7 +25,10 @@
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "affected_versions": "*"
+      }
     }
   ],
   "references": [
