@@ -19,13 +19,13 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "2.3"
+              "introduced": "2.3.0"
             },
             {
               "fixed": "2.3.4"
             },
             {
-              "introduced": "2.4"
+              "introduced": "2.4.0"
             },
             {
               "fixed": "2.4.3"

@@ -47,6 +47,18 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     ) from e
 
 
+def expand_version(version: str) -> str:
+  # this means "all possible versions"
+  if version == '0':
+    return version
+  parts = version.split('-')
+  build = f'-{parts[1]}' if len(parts) == 2 else ''
+  components = parts[0].split('.')
+  while len(components) < 3:
+    components.append('0')
+  return '.'.join(components) + build
+
+
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
 def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   affected: list[osv.Event] = []
@@ -64,14 +76,14 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
     if introduced[0] == '<':
       introduced = '0'
     introduced = introduced.replace('*', '0')
-    affected.append({'introduced': introduced})
+    affected.append({'introduced': expand_version(introduced)})
     if len(parts) > 1:
       # It looks like Core does not have field_fixed_in populated. Add a
       # fixed version from this string if we can.
       fixed = parts[1].replace('<', '').replace('=', '').strip()
-      affected.append({'fixed': fixed})
+      affected.append({'fixed': expand_version(fixed)})
     elif parts[0][0] == '<':
-      affected.append({'fixed': parts[0][1:]})
+      affected.append({'fixed': expand_version(parts[0][1:])})
 
   return affected
 
