@@ -32,7 +32,10 @@
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.7.11 || >= 8.8.0 <8.8.1"
+      }
     }
   ],
   "references": [

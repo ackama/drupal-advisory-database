@@ -26,7 +26,10 @@
             }
           ]
         }
-      ]
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.0"
+      }
     }
   ],
   "references": [
