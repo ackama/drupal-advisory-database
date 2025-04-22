@@ -21,9 +21,6 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "fixed": "1.355.0"
-            },
-            {
               "introduced": "3.0.0"
             },
             {

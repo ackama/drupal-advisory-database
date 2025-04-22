@@ -86,19 +86,6 @@ def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
   return osv_advisory
 
 
-def add_fixed_in_versions(
-  affected_versions: list[osv.Event],
-  project_releases: list[drupal.ProjectRelease],
-) -> list[osv.Event]:
-  for fixed_version in project_releases:
-    fixed_major = fixed_version['field_release_version_major']
-    fixed_minor = fixed_version['field_release_version_minor']
-    fixed_patch = fixed_version['field_release_version_patch'] or '0'
-    fixed_in_semver = f'{fixed_major}.{fixed_minor}.{fixed_patch}'
-    affected_versions.append({'fixed': fixed_in_semver})
-  return affected_versions
-
-
 def semver_for_sorting(semver: typing.Any) -> str:
   decrement_semver = False
   if semver == '':
@@ -227,10 +214,6 @@ def build_osv_advisory(
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
-  project_releases = [
-    typing.cast(drupal.ProjectRelease, fetch_drupal_node(fixed_in['id']))
-    for fixed_in in sa_advisory['field_fixed_in']
-  ]
 
   # TODO: Add the severity to the OSV entry.
   # https://ossf.github.io/osv-schema/#severitytype-field
@@ -246,7 +229,6 @@ def build_osv_advisory(
   osv_advisory['affected'][0]['package']['name'] = composer_package(project)
 
   affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
-  affected_versions = add_fixed_in_versions(affected_versions, project_releases)
   affected_versions = sort_affected_versions(affected_versions)
   for event in affected_versions:
     osv_advisory['affected'][0]['ranges'][0]['events'].append(event)
