@@ -104,10 +104,24 @@ def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
       'field_affected_versions must be present to determine affected ranges'
     )
 
-  return [
+  ranges = [
     build_affected_range(constraint.strip())
     for constraint in sa_advisory['field_affected_versions'].split('||')
   ]
+
+  return sorted(
+    ranges,
+    key=lambda ran: (event_to_semver_for_sorting(ran['events'][0])),
+  )
+
+
+def event_to_semver_for_sorting(event: osv.Event) -> semver.Version:
+  version = '0.0.0'
+  if 'introduced' in event:
+    version = event['introduced']
+  elif 'fixed' in event:
+    version = event['fixed']
+  return semver.Version.parse(semver_for_sorting(version))
 
 
 def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
