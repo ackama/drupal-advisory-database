@@ -35,9 +35,6 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "1.1.0"
-            },
-            {
               "fixed": "1.1.0-beta3"
             }
           ],
