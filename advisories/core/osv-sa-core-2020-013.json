@@ -22,10 +22,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "7.0"
+              "introduced": "7.0.0"
             },
             {
-              "fixed": "7.75"
+              "fixed": "7.75.0"
             },
             {
               "introduced": "8.0.0"
