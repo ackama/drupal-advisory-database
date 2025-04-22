@@ -12,7 +12,6 @@ import typing
 from datetime import datetime
 
 import requests
-import semver
 
 from typings import drupal, osv
 
@@ -118,56 +117,6 @@ def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
     # Fake the ID so it passes the schema validation.
     osv_advisory['id'] = f'OSV-{osv_advisory["id"]}'
   return osv_advisory
-
-
-def semver_for_sorting(semver: typing.Any) -> str:
-  decrement_semver = False
-  if semver == '':
-    return ''
-  # Check if the semver string starts with a '<' character.
-  if semver[0] == '<':
-    decrement_semver = True
-    semver = semver[1:]
-  semver = semver.strip().split('.')
-  # sanity check the length of the introduced value.
-  while len(semver) < 3:
-    semver.append('0')
-
-  for i in range(3):
-    if semver[i].isnumeric():
-      semver[i] = int(semver[i])
-    else:
-      semver[i] = 0
-
-  if decrement_semver:
-    if semver[2] > 0:
-      semver[2] -= 1
-    elif semver[1] > 0:
-      semver[1] -= 1
-
-  semver_major = semver[0]
-  semver_minor = semver[1]
-  semver_patch = semver[2]
-  return f'{semver_major}.{semver_minor}.{semver_patch}'
-
-
-def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event]:
-  sorted_versions = {}
-  return_values = []
-  for affected in affected_versions:
-    if 'introduced' in affected:
-      sorted_versions[semver_for_sorting(affected['introduced'])] = affected
-    if 'fixed' in affected:
-      sorted_versions[semver_for_sorting(affected['fixed'])] = affected
-
-  # sort the dict by the keys assuming the keys are semver strings.
-  sorted_versions = dict(
-    sorted(sorted_versions.items(), key=lambda item: semver.parse_version_info(item[0]))
-  )
-  for key in sorted_versions:
-    return_values.append(sorted_versions[key])
-
-  return return_values
 
 
 def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
