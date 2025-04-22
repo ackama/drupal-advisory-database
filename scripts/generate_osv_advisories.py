@@ -48,12 +48,14 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
 
 
 def expand_version(version: str) -> str:
-  if version == '0' or '-' in version:
+  if version == '0':
     return version
-  components = version.split('.')
+  parts = version.split('-')
+  build = f'-{parts[1]}' if len(parts) == 2 else ''
+  components = parts[0].split('.')
   while len(components) < 3:
     components.append('0')
-  return '.'.join(components)
+  return '.'.join(components) + build
 
 
 # parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
