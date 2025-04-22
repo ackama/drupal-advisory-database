@@ -59,33 +59,43 @@ def expand_version(version: str) -> str:
   return '.'.join(components) + build
 
 
-# parse the affected versions string into a list of affected versions given a string like '>=3.0.0 <3.44.0 || >=4.0.0 <4.0.19'
-def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
-  affected: list[osv.Event] = []
-  for versions in affected_versions.split(' || '):
-    # split version on space and append the first element to the affected list after removing any > or >= characters.
-    versions = (
-      versions.replace('>=', '')
-      .replace('>', '')
-      .replace('< ', '<')
-      .replace('= ', '=')
-      .strip()
-    )
-    parts = [part.strip() for part in versions.split()]
-    introduced = parts[0]
-    if introduced[0] == '<':
-      introduced = '0'
-    introduced = introduced.replace('*', '0')
-    affected.append({'introduced': expand_version(introduced)})
-    if len(parts) > 1:
-      # It looks like Core does not have field_fixed_in populated. Add a
-      # fixed version from this string if we can.
-      fixed = parts[1].replace('<', '').replace('=', '').strip()
-      affected.append({'fixed': expand_version(fixed)})
-    elif parts[0][0] == '<':
-      affected.append({'fixed': expand_version(parts[0][1:])})
+def parse_version_constraint(versions: str) -> list[osv.Event]:
+  """
+  Parses a version constraint into a series of events that express what versions
+  are and are not affected by the advisory the constraint was sourced from
+  """
+  events: list[osv.Event] = []
+  # split version on space and append the first element to the affected list after removing any > or >= characters.
+  versions = (
+    versions.replace('>=', '')
+    .replace('>', '')
+    .replace('< ', '<')
+    .replace('= ', '=')
+    .strip()
+  )
+  parts = [part.strip() for part in versions.split()]
+  introduced = parts[0]
+  if introduced[0] == '<':
+    introduced = '0'
+  introduced = introduced.replace('*', '0')
+  events.append({'introduced': expand_version(introduced)})
+  if len(parts) > 1:
+    # It looks like Core does not have field_fixed_in populated. Add a
+    # fixed version from this string if we can.
+    fixed = parts[1].replace('<', '').replace('=', '').strip()
+    events.append({'fixed': expand_version(fixed)})
+  elif parts[0][0] == '<':
+    events.append({'fixed': expand_version(parts[0][1:])})
 
-  return affected
+  return events
+
+
+def build_affected_range(constraint: str) -> osv.Range:
+  return {
+    'type': 'ECOSYSTEM',
+    'events': parse_version_constraint(constraint),
+    'database_specific': {'constraint': constraint},
+  }
 
 
 def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
@@ -94,10 +104,10 @@ def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
       'field_affected_versions must be present to determine affected ranges'
     )
 
-  affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
-  affected_versions = sort_affected_versions(affected_versions)
-
-  return [{'type': 'ECOSYSTEM', 'events': affected_versions}]
+  return [
+    build_affected_range(constraint.strip())
+    for constraint in sa_advisory['field_affected_versions'].split('||')
+  ]
 
 
 def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
