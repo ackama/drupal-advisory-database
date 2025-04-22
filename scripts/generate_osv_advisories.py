@@ -59,16 +59,20 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
       .replace('= ', '=')
       .strip()
     )
-    introduced = versions.split()[0].strip()
+    parts = [part.strip() for part in versions.split()]
+    introduced = parts[0]
     if introduced[0] == '<':
       introduced = '0'
     introduced = introduced.replace('*', '0')
     affected.append({'introduced': introduced})
-    if len(versions.split()) > 1:
+    if len(parts) > 1:
       # It looks like Core does not have field_fixed_in populated. Add a
       # fixed version from this string if we can.
-      fixed = versions.split()[1].replace('<', '').replace('=', '').strip()
+      fixed = parts[1].replace('<', '').replace('=', '').strip()
       affected.append({'fixed': fixed})
+    elif parts[0][0] == '<':
+      affected.append({'fixed': parts[0][1:]})
+
   return affected
 
 

@@ -22,6 +22,9 @@
           "events": [
             {
               "introduced": "0"
+            },
+            {
+              "fixed": "3.0.1"
             }
           ]
         }
