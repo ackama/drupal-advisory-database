@@ -88,6 +88,18 @@ def parse_affected_versions(affected_versions: str) -> list[osv.Event]:
   return affected
 
 
+def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
+  if sa_advisory['field_affected_versions'] is None:
+    raise Exception(
+      'field_affected_versions must be present to determine affected ranges'
+    )
+
+  affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
+  affected_versions = sort_affected_versions(affected_versions)
+
+  return [{'type': 'ECOSYSTEM', 'events': affected_versions}]
+
+
 def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
   if not full_proposed_entry:
     # Fake the package.ecosystem so a schema validator doesn't complain.
@@ -191,6 +203,8 @@ def build_osv_advisory(
     return None
 
   # there's not really much we can do if there isn't an affected version
+  # todo: since build_affected_ranges throws if this isn't present, it might
+  #  make more sense to use that, with a custom exception class
   if sa_advisory['field_affected_versions'] is None:
     print(' \\- skipping as we do not have any affected versions')
     return None
@@ -212,12 +226,7 @@ def build_osv_advisory(
       {
         'package': {'ecosystem': 'Drupal', 'name': ''},
         'severity': [{'type': 'NIST_CMSS', 'score': ''}],
-        'ranges': [
-          {
-            'type': 'ECOSYSTEM',
-            'events': [],
-          }
-        ],
+        'ranges': build_affected_ranges(sa_advisory),
         'database_specific': {
           'affected_versions': sa_advisory['field_affected_versions']
         },
@@ -242,11 +251,6 @@ def build_osv_advisory(
     osv_advisory['affected'][0]['severity'] = []
 
   osv_advisory['affected'][0]['package']['name'] = composer_package(project)
-
-  affected_versions = parse_affected_versions(sa_advisory['field_affected_versions'])
-  affected_versions = sort_affected_versions(affected_versions)
-  for event in affected_versions:
-    osv_advisory['affected'][0]['ranges'][0]['events'].append(event)
 
   fake_ecosystem(osv_advisory)
 
