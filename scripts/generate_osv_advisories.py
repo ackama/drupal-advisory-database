@@ -107,9 +107,10 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
   if len(parts) > 1:
-    # It looks like Core does not have field_fixed_in populated. Add a
-    # fixed version from this string if we can.
-    events.append({'fixed': parts[1].to_string()})
+    if parts[1].operator == '<':
+      events.append({'fixed': parts[1].to_string()})
+    elif parts[1].operator == '<=':
+      events.append({'last_affected': parts[1].to_string()})
   elif parts[0].operator == '<':
     events.append({'fixed': parts[0].to_string()})
   elif parts[0].operator == '':
