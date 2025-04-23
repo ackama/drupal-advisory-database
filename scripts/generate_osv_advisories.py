@@ -96,6 +96,9 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   are and are not affected by the advisory the constraint was sourced from,
   along with any warnings about the constraints validity
   """
+  if constraint == '*':
+    return [typing.cast(osv.Event, {'introduced': '0'})], []
+
   events: list[osv.Event] = []
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
   introduced = parts[0].to_string()
