@@ -101,7 +101,11 @@ class ComposerVersionConstraintPart:
     return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
 
 
-def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str]]:
+# noinspection PyDefaultArgument
+def parse_version_constraint(
+  constraint: str,
+  extra_warnings: typing.Sequence[str] = [],
+) -> tuple[list[osv.Event], list[str]]:
   """
   Parses a version constraint into a series of events that express what versions
   are and are not affected by the advisory the constraint was sourced from,
@@ -117,7 +121,7 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
     return [typing.cast(osv.Event, {'introduced': '0'})], []
 
   events: list[osv.Event] = []
-  warnings: list[str] = []
+  warnings: list[str] = list(extra_warnings)
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
 
   if parts[0].second_component == '*' or parts[0].third_component == '*':
@@ -139,20 +143,24 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
         f'{parts[0].first_component or "0"}.{int(parts[0].second_component or "0") + 1}'
       )
 
-    return parse_version_constraint(f'>={lower}-dev <{upper}-dev')
+    return parse_version_constraint(f'>={lower}-dev <{upper}-dev', warnings)
 
   if parts[0].operator == '~':
-    # todo: warn if there's another part or a wildcard
+    if len(parts) > 1:
+      warnings.append('the ~ operator should not be paired with a second part')
+    # todo: warn and handle if there's a wildcard
     major = int(parts[0].first_component or '0') + 1
     minor = 0
 
     if parts[0].third_component is not None:
       major -= 1
       minor = int(parts[0].second_component or '0') + 1
-    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0-dev')
+    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0-dev', warnings)
 
   if parts[0].operator == '^':
-    # todo: warn if there's another part or a wildcard
+    if len(parts) > 1:
+      warnings.append('the ^ operator should not be paired with a second part')
+    # todo: warn and handle if there's a wildcard
     major = int(parts[0].first_component or '0') + 1
     minor = 0
     patch = 0
@@ -170,7 +178,9 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
         minor -= 1
         patch += 1
 
-    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.{patch}-dev')
+    return parse_version_constraint(
+      f'>={parts[0]} <{major}.{minor}.{patch}-dev', warnings
+    )
 
   introduced = str(parts[0])
   if parts[0].operator == '<' or parts[0].operator == '<=':

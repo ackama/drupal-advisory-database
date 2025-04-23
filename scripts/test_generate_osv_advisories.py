@@ -179,6 +179,28 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.0.0-dev'}, {'last_affected': '1.0.0-dev'}],
         ['exact versions should not omit components'],
       ),
+      # ~ operator
+      (
+        '~1.2 <=1.2.3',
+        [{'introduced': '1.2.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the ~ operator should not be paired with a second part'],
+      ),
+      (
+        '~1.2 <=1.2.3 >= 2.0.0',
+        [{'introduced': '1.2.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the ~ operator should not be paired with a second part'],
+      ),
+      # ^ operator
+      (
+        '^1.2.3 <1.3.0',
+        [{'introduced': '1.2.3-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the ^ operator should not be paired with a second part'],
+      ),
+      (
+        '^1.2.3 <1.3.0 >= 2.0.0',
+        [{'introduced': '1.2.3-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the ^ operator should not be paired with a second part'],
+      ),
     ],
   )
 
