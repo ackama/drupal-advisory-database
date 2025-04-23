@@ -112,6 +112,8 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
     events.append({'fixed': parts[1].to_string()})
   elif parts[0].operator == '<':
     events.append({'fixed': parts[0].to_string()})
+  elif parts[0].operator == '':
+    events.append({'last_affected': parts[0].to_string()})
 
   return events, []
 
