@@ -58,10 +58,11 @@ def expand_version(version: str) -> str:
   return '.'.join(components) + build
 
 
-def parse_version_constraint(versions: str) -> list[osv.Event]:
+def parse_version_constraint(versions: str) -> tuple[list[osv.Event], list[str]]:
   """
   Parses a version constraint into a series of events that express what versions
-  are and are not affected by the advisory the constraint was sourced from
+  are and are not affected by the advisory the constraint was sourced from,
+  along with any warnings about the constraints validity
   """
   events: list[osv.Event] = []
   # split version on space and append the first element to the affected list after removing any > or >= characters.
@@ -86,13 +87,15 @@ def parse_version_constraint(versions: str) -> list[osv.Event]:
   elif parts[0][0] == '<':
     events.append({'fixed': expand_version(parts[0][1:])})
 
-  return events
+  return events, []
 
 
 def build_affected_range(constraint: str) -> osv.Range:
+  events, _warnings = parse_version_constraint(constraint)
+
   return {
     'type': 'ECOSYSTEM',
-    'events': parse_version_constraint(constraint),
+    'events': events,
     'database_specific': {'constraint': constraint},
   }
 
