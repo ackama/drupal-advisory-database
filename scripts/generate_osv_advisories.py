@@ -204,14 +204,18 @@ def parse_version_constraint(
   elif len(parts) > 1:
     if len(parts) > 2:
       warnings.append('there should not be more than two parts in a version constraint')
-    # todo: warn if
-    #  - the second part has an exact version
-    #  - the second part has ~, ^, >(=), <=, wildcards,
-    if parts[1].operator == '<':
+
+    if parts[1].operator == '':
+      warnings.append('exact versions should not be paired with other parts')
+    elif parts[1].operator == '<':
       events.append({'fixed': str(parts[1])})
     elif parts[1].operator == '<=':
       events.append({'last_affected': str(parts[1])})
-  elif parts[0].operator == '<':
+    else:
+      warnings.append(
+        f'the {parts[1].operator} operator should not be used for the second part'
+      )
+  if parts[0].operator == '<':
     events.append({'fixed': str(parts[0])})
 
   return events, warnings
