@@ -46,7 +46,6 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('>=1 <2', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       ('1.*', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       # vuln is only present in 1.0.0(-stable)
-      # todo: exact versions cannot omit any components
       (
         '1.0.0',
         [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
@@ -163,6 +162,23 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # (this is an exception to how ^ works, since 0.x versions can have breaking changes)
       ('>=0.0.3 <0.0.4', [{'introduced': '0.0.3-dev'}, {'fixed': '0.0.4-dev'}], []),
       ('^0.0.3', [{'introduced': '0.0.3-dev'}, {'fixed': '0.0.4-dev'}], []),
+      # technically invalid constraints
+      # exact versions
+      (
+        '1',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        ['exact versions should not omit components'],
+      ),
+      (
+        '1.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        ['exact versions should not omit components'],
+      ),
+      (
+        '1-dev',
+        [{'introduced': '1.0.0-dev'}, {'last_affected': '1.0.0-dev'}],
+        ['exact versions should not omit components'],
+      ),
     ],
   )
 

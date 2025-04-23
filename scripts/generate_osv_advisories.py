@@ -117,6 +117,7 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
     return [typing.cast(osv.Event, {'introduced': '0'})], []
 
   events: list[osv.Event] = []
+  warnings: list[str] = []
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
 
   if parts[0].second_component == '*' or parts[0].third_component == '*':
@@ -191,10 +192,16 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   elif parts[0].operator == '<':
     events.append({'fixed': str(parts[0])})
   elif parts[0].operator == '' or parts[0].operator == '<=':
-    # todo: warn if exact version is missing components
+    if parts[0].operator == '' and (
+      parts[0].first_component is None
+      or parts[0].second_component is None
+      or parts[0].third_component is None
+    ):
+      warnings.append('exact versions should not omit components')
+
     events.append({'last_affected': str(parts[0])})
 
-  return events, []
+  return events, warnings
 
 
 def build_affected_range(constraint: str) -> osv.Range:
