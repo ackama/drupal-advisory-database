@@ -62,7 +62,7 @@ def expand_version(version: str) -> str:
 class ComposerVersionConstraintPart:
   def __init__(self, part: str):
     result = re.match(
-      r'^(?P<operator>[<>]=?|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+))?(?:\.(?P<third_component>\d+))?(?P<stability>.+)?$',
+      r'^(?P<operator>[<>]=?|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+|\*))?(?:\.(?P<third_component>\d+|\*))?(?P<stability>.+)?$',
       part,
     )
 
@@ -107,6 +107,27 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
 
   events: list[osv.Event] = []
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
+
+  if parts[0].second_component == '*' or parts[0].third_component == '*':
+    # todo: warn if there's another part
+    if parts[0].operator != '':
+      # todo: warn here
+      #  (wildcard ranges cannot be used with other operators)
+      pass
+
+    lower = parts[0].first_component or '0'
+    if parts[0].second_component == '*':
+      if parts[0].third_component is not None:
+        # todo: warn here
+        #  (wildcard should be the last component in the version)
+        pass
+      upper = str(int(parts[0].first_component or '0') + 1)
+    else:
+      upper = (
+        f'{parts[0].first_component or "0"}.{int(parts[0].second_component or "0") + 1}'
+      )
+
+    return parse_version_constraint(f'>={lower}-dev <{upper}-dev')
 
   if parts[0].operator == '~':
     # todo: warn if there's another part or a wildcard
