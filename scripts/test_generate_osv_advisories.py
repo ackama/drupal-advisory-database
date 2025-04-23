@@ -196,6 +196,61 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
           'exact versions should not be paired with other parts',
         ],
       ),
+      # = is not an operator, but we treat it like the exact operator
+      (
+        '=1.0.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        ['the = operator is not real, and will be treated as an exact version'],
+      ),
+      (
+        '=1',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not omit components',
+        ],
+      ),
+      (
+        '=1.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not omit components',
+        ],
+      ),
+      (
+        '=1-dev',
+        [{'introduced': '1.0.0-dev'}, {'last_affected': '1.0.0-dev'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not omit components',
+        ],
+      ),
+      (
+        '=1.0.0 1.2.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not be paired with other parts',
+        ],
+      ),
+      (
+        '=1.0.0 1.2.0 2.0.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not be paired with other parts',
+        ],
+      ),
+      (
+        '=1.0 1.2.0',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [
+          'the = operator is not real, and will be treated as an exact version',
+          'exact versions should not omit components',
+          'exact versions should not be paired with other parts',
+        ],
+      ),
       # * operator
       (
         '1.* <= 2.0',

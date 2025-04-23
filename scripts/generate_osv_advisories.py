@@ -62,7 +62,7 @@ def expand_version(version: str) -> str:
 class ComposerVersionConstraintPart:
   def __init__(self, part: str):
     result = re.match(
-      r'^(?P<operator>[<>]=?|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+|\*))?(?:\.(?P<third_component>\d+|\*))?(?P<stability>.+)?$',
+      r'^(?P<operator>[<>]=?|=|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+|\*))?(?:\.(?P<third_component>\d+|\*))?(?P<stability>.+)?$',
       part,
     )
 
@@ -123,6 +123,13 @@ def parse_version_constraint(
   events: list[osv.Event] = []
   warnings: list[str] = list(extra_warnings)
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
+
+  for part in parts:
+    if part.operator == '=':
+      part.operator = ''
+      warnings.append(
+        'the = operator is not real, and will be treated as an exact version'
+      )
 
   if parts[0].second_component == '*' or parts[0].third_component == '*':
     if len(parts) > 1:
