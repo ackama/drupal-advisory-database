@@ -147,6 +147,10 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
   if len(parts) > 1:
+    # todo: warn if
+    #  - there's more than 2 parts
+    #  - the second part has an exact version
+    #  - the second part has ~, ^, >(=), <=, wildcards,
     if parts[1].operator == '<':
       events.append({'fixed': parts[1].to_string()})
     elif parts[1].operator == '<=':
@@ -154,6 +158,7 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   elif parts[0].operator == '<':
     events.append({'fixed': parts[0].to_string()})
   elif parts[0].operator == '' or parts[0].operator == '<=':
+    # todo: warn if exact version is missing components
     events.append({'last_affected': parts[0].to_string()})
 
   return events, []
