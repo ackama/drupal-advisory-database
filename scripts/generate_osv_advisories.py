@@ -118,6 +118,29 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
       minor = int(parts[0].second_component or '0') + 1
     return parse_version_constraint(f'>={parts[0].to_string()} <{major}.{minor}.0-dev')
 
+  if parts[0].operator == '^':
+    # todo: warn if there's another part or a wildcard
+    major = int(parts[0].first_component or '0') + 1
+    minor = 0
+    patch = 0
+
+    # if the original major version was 0, then we need to increment
+    # either the minor or patch version instead
+    if major == 1:
+      major -= 1
+      minor = int(parts[0].second_component or '0') + 1
+      patch = int(parts[0].third_component or '0')
+
+      # if the original minor version was 0, then we need to increment
+      # the patch version instead
+      if minor == 1:
+        minor -= 1
+        patch += 1
+
+    return parse_version_constraint(
+      f'>={parts[0].to_string()} <{major}.{minor}.{patch}-dev'
+    )
+
   introduced = parts[0].to_string()
   if parts[0].operator == '<' or parts[0].operator == '<=':
     introduced = '0'
