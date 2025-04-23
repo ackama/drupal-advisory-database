@@ -39,7 +39,6 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [],
       ),
       # vuln is present in every version from 1.0(.0-dev), and fixed in 1.1(.0-dev)
-      # todo: wildcard seems to be implicitly only allowed for the patch version
       ('>=1.0 <1.1', [{'introduced': '1.0.0-dev'}, {'fixed': '1.1.0-dev'}], []),
       ('1.0.*', [{'introduced': '1.0.0-dev'}, {'fixed': '1.1.0-dev'}], []),
       # vuln is present in every version from 1(.0.0-dev), and fixed in 2(.0.0-dev)
@@ -178,6 +177,43 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         '1-dev',
         [{'introduced': '1.0.0-dev'}, {'last_affected': '1.0.0-dev'}],
         ['exact versions should not omit components'],
+      ),
+      # * operator
+      (
+        '1.* <= 2.0',
+        [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the * operator should not be paired with a second part'],
+      ),
+      *[
+        (
+          f'{operator}1.*',
+          [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+          ['the * operator should not be mixed with other operators'],
+        )
+        for operator in ('>', '>=', '<', '<=', '^', '~')
+      ],
+      (
+        '1.*.0',
+        [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the * operator should be the last component of the version'],
+      ),
+      (
+        '1.*.*',
+        [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the * operator should be the last component of the version'],
+      ),
+      (
+        '1.*.0 <= 2.0.0',
+        [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+        [
+          'the * operator should not be paired with a second part',
+          'the * operator should be the last component of the version',
+        ],
+      ),
+      (
+        '1.*-beta1',
+        [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['the * operator should not be mixed with a stability suffix'],
       ),
       # ~ operator
       (

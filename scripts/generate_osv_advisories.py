@@ -125,18 +125,19 @@ def parse_version_constraint(
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
 
   if parts[0].second_component == '*' or parts[0].third_component == '*':
-    # todo: warn if there's another part
+    if len(parts) > 1:
+      warnings.append('the * operator should not be paired with a second part')
     if parts[0].operator != '':
-      # todo: warn here
-      #  (wildcard ranges cannot be used with other operators)
-      pass
+      warnings.append('the * operator should not be mixed with other operators')
+    # todo: this is probably true, though the docs don't come close to mentioning it
+    #  it might be worth trying to double check, but for now it should be safe to do
+    if parts[0].stability is not None:
+      warnings.append('the * operator should not be mixed with a stability suffix')
 
     lower = parts[0].first_component or '0'
     if parts[0].second_component == '*':
       if parts[0].third_component is not None:
-        # todo: warn here
-        #  (wildcard should be the last component in the version)
-        pass
+        warnings.append('the * operator should be the last component of the version')
       upper = str(int(parts[0].first_component or '0') + 1)
     else:
       upper = (
@@ -148,7 +149,6 @@ def parse_version_constraint(
   if parts[0].operator == '~':
     if len(parts) > 1:
       warnings.append('the ~ operator should not be paired with a second part')
-    # todo: warn and handle if there's a wildcard
     major = int(parts[0].first_component or '0') + 1
     minor = 0
 
@@ -160,7 +160,6 @@ def parse_version_constraint(
   if parts[0].operator == '^':
     if len(parts) > 1:
       warnings.append('the ^ operator should not be paired with a second part')
-    # todo: warn and handle if there's a wildcard
     major = int(parts[0].first_component or '0') + 1
     minor = 0
     patch = 0
