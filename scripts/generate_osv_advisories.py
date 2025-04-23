@@ -8,6 +8,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
+import re
 import typing
 from datetime import datetime
 
@@ -58,6 +59,37 @@ def expand_version(version: str) -> str:
   return '.'.join(components) + build
 
 
+class ComposerVersionConstraintPart:
+  def __init__(self, part: str):
+    result = re.match(
+      r'^(?P<operator>[<>]=?|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+))?(?:\.(?P<third_component>\d+))?(?P<stability>.+)?$',
+      part,
+    )
+
+    if result is None:
+      # todo: ensure this is handled appropriately
+      raise Exception(f'"{part}" is not a valid version constraint')
+
+    self.operator: str = result.group('operator') or ''
+    self.first_component: str | None = result.group('first_component')
+    self.second_component: str | None = result.group('second_component')
+    self.third_component: str | None = result.group('third_component')
+    self.stability: str | None = result.group('stability')
+
+  def __resolve_canonical_stability(self) -> str:
+    # todo: might as well make this an empty string
+    if self.stability is not None:
+      return self.stability
+    if self.operator in ('', '>', '<='):
+      return '-stable'
+    if self.operator in ('>=', '<'):
+      return '-dev'
+    return ''
+
+  def to_string(self) -> str:
+    return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
+
+
 def parse_version_constraint(versions: str) -> tuple[list[osv.Event], list[str]]:
   """
   Parses a version constraint into a series of events that express what versions
@@ -65,27 +97,18 @@ def parse_version_constraint(versions: str) -> tuple[list[osv.Event], list[str]]
   along with any warnings about the constraints validity
   """
   events: list[osv.Event] = []
-  # split version on space and append the first element to the affected list after removing any > or >= characters.
-  versions = (
-    versions.replace('>=', '')
-    .replace('>', '')
-    .replace('< ', '<')
-    .replace('= ', '=')
-    .strip()
-  )
-  parts = [part.strip() for part in versions.split()]
-  introduced = parts[0]
-  if introduced[0] == '<':
+  parts = [ComposerVersionConstraintPart(part) for part in versions.split()]
+  introduced = parts[0].to_string()
+  if parts[0].operator == '<':
     introduced = '0'
   introduced = introduced.replace('*', '0')
-  events.append({'introduced': expand_version(introduced)})
+  events.append({'introduced': introduced})
   if len(parts) > 1:
     # It looks like Core does not have field_fixed_in populated. Add a
     # fixed version from this string if we can.
-    fixed = parts[1].replace('<', '').replace('=', '').strip()
-    events.append({'fixed': expand_version(fixed)})
-  elif parts[0][0] == '<':
-    events.append({'fixed': expand_version(parts[0][1:])})
+    events.append({'fixed': parts[1].to_string()})
+  elif parts[0].operator == '<':
+    events.append({'fixed': parts[0].to_string()})
 
   return events, []
 
