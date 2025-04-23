@@ -279,4 +279,5 @@ def generate_osv_advisories() -> None:
         f.write('\n')
 
 
-generate_osv_advisories()
+if __name__ == '__main__':
+  generate_osv_advisories()
