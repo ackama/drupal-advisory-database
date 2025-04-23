@@ -96,6 +96,8 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   are and are not affected by the advisory the constraint was sourced from,
   along with any warnings about the constraints validity
   """
+  constraint = re.sub(r'([<>]=?) +', r'\1', re.sub(r' +', ' ', constraint.strip()))
+
   if constraint == '*':
     return [typing.cast(osv.Event, {'introduced': '0'})], []
 
