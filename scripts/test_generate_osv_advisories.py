@@ -109,6 +109,12 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       #   since the latter indicates a version that is guaranteed to exist
       #   regexp: /affected_versions": ">[^=]/
       ('>1.0.0 <1.0.2', [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2-dev'}], []),
+      ('>1.0.0-dev <1.0.2', [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2-dev'}], []),
+      (
+        '>1.0.0-beta2 <1.0.2',
+        [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2-dev'}],
+        [],
+      ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4-dev'}], []),
       ('<2.0.4dev', [{'introduced': '0'}, {'fixed': '2.0.4dev'}], []),
       ('<=2.0.4', [{'introduced': '0'}, {'last_affected': '2.0.4-stable'}], []),

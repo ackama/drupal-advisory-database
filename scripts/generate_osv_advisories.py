@@ -86,6 +86,17 @@ class ComposerVersionConstraintPart:
       return '-dev'
     return ''
 
+  def guess_next_version(self) -> str:
+    version = semver.Version.parse(self.to_string())
+
+    if self.stability is None or self.stability == '-stable':
+      return f'{version.bump_patch()}-dev'
+
+    if not self.stability[-1:].isdigit():
+      version = semver.Version.parse(self.to_string() + '0')
+
+    return str(version.bump_prerelease())
+
   def to_string(self) -> str:
     return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
 
@@ -165,6 +176,9 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   introduced = parts[0].to_string()
   if parts[0].operator == '<' or parts[0].operator == '<=':
     introduced = '0'
+  elif parts[0].operator == '>':
+    # todo: warn about this, as we really don't want to be using this operator
+    introduced = parts[0].guess_next_version()
   introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
   if len(parts) > 1:
