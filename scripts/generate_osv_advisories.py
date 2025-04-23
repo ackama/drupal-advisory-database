@@ -90,14 +90,14 @@ class ComposerVersionConstraintPart:
     return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
 
 
-def parse_version_constraint(versions: str) -> tuple[list[osv.Event], list[str]]:
+def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str]]:
   """
   Parses a version constraint into a series of events that express what versions
   are and are not affected by the advisory the constraint was sourced from,
   along with any warnings about the constraints validity
   """
   events: list[osv.Event] = []
-  parts = [ComposerVersionConstraintPart(part) for part in versions.split()]
+  parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
   introduced = parts[0].to_string()
   if parts[0].operator == '<':
     introduced = '0'
