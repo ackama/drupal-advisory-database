@@ -87,17 +87,17 @@ class ComposerVersionConstraintPart:
     return ''
 
   def guess_next_version(self) -> str:
-    version = semver.Version.parse(self.to_string())
+    version = semver.Version.parse(str(self))
 
     if self.stability is None or self.stability == '-stable':
       return f'{version.bump_patch()}-dev'
 
     if not self.stability[-1:].isdigit():
-      version = semver.Version.parse(self.to_string() + '0')
+      version = semver.Version.parse(str(self) + '0')
 
     return str(version.bump_prerelease())
 
-  def to_string(self) -> str:
+  def __str__(self) -> str:
     return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
 
 
@@ -148,7 +148,7 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
     if parts[0].third_component is not None:
       major -= 1
       minor = int(parts[0].second_component or '0') + 1
-    return parse_version_constraint(f'>={parts[0].to_string()} <{major}.{minor}.0-dev')
+    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0-dev')
 
   if parts[0].operator == '^':
     # todo: warn if there's another part or a wildcard
@@ -169,11 +169,9 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
         minor -= 1
         patch += 1
 
-    return parse_version_constraint(
-      f'>={parts[0].to_string()} <{major}.{minor}.{patch}-dev'
-    )
+    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.{patch}-dev')
 
-  introduced = parts[0].to_string()
+  introduced = str(parts[0])
   if parts[0].operator == '<' or parts[0].operator == '<=':
     introduced = '0'
   elif parts[0].operator == '>':
@@ -187,14 +185,14 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
     #  - the second part has an exact version
     #  - the second part has ~, ^, >(=), <=, wildcards,
     if parts[1].operator == '<':
-      events.append({'fixed': parts[1].to_string()})
+      events.append({'fixed': str(parts[1])})
     elif parts[1].operator == '<=':
-      events.append({'last_affected': parts[1].to_string()})
+      events.append({'last_affected': str(parts[1])})
   elif parts[0].operator == '<':
-    events.append({'fixed': parts[0].to_string()})
+    events.append({'fixed': str(parts[0])})
   elif parts[0].operator == '' or parts[0].operator == '<=':
     # todo: warn if exact version is missing components
-    events.append({'last_affected': parts[0].to_string()})
+    events.append({'last_affected': str(parts[0])})
 
   return events, []
 
