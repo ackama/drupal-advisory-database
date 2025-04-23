@@ -190,8 +190,9 @@ def parse_version_constraint(
   introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
   if len(parts) > 1:
+    if len(parts) > 2:
+      warnings.append('there should not be more than two parts in a version constraint')
     # todo: warn if
-    #  - there's more than 2 parts
     #  - the second part has an exact version
     #  - the second part has ~, ^, >(=), <=, wildcards,
     if parts[1].operator == '<':
