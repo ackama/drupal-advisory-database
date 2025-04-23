@@ -189,7 +189,19 @@ def parse_version_constraint(
     introduced = parts[0].guess_next_version()
   introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
-  if len(parts) > 1:
+  if parts[0].operator == '' or parts[0].operator == '<=':
+    if parts[0].operator == '':
+      if (
+        parts[0].first_component is None
+        or parts[0].second_component is None
+        or parts[0].third_component is None
+      ):
+        warnings.append('exact versions should not omit components')
+      if len(parts) > 1:
+        warnings.append('exact versions should not be paired with other parts')
+
+    events.append({'last_affected': str(parts[0])})
+  elif len(parts) > 1:
     if len(parts) > 2:
       warnings.append('there should not be more than two parts in a version constraint')
     # todo: warn if
@@ -201,15 +213,6 @@ def parse_version_constraint(
       events.append({'last_affected': str(parts[1])})
   elif parts[0].operator == '<':
     events.append({'fixed': str(parts[0])})
-  elif parts[0].operator == '' or parts[0].operator == '<=':
-    if parts[0].operator == '' and (
-      parts[0].first_component is None
-      or parts[0].second_component is None
-      or parts[0].third_component is None
-    ):
-      warnings.append('exact versions should not omit components')
-
-    events.append({'last_affected': str(parts[0])})
 
   return events, warnings
 
