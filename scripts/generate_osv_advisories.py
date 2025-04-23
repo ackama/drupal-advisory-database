@@ -98,6 +98,10 @@ def parse_version_constraint(constraint: str) -> tuple[list[osv.Event], list[str
   """
   constraint = re.sub(r'([<>]=?) +', r'\1', re.sub(r' +', ' ', constraint.strip()))
 
+  # todo: make sure this doesn't generate an empty range?
+  if constraint == '':
+    return [], ['constraint is empty']
+
   if constraint == '*':
     return [typing.cast(osv.Event, {'introduced': '0'})], []
 

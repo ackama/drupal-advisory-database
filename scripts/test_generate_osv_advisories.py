@@ -11,7 +11,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
     list[tuple[str, list[osv.Event], list[str]]],
     [
       # nothing in, nothing out
-      ('', [], []),
+      ('', [], ['constraint is empty']),
       # vuln is present in every version
       ('*', [{'introduced': '0'}], []),
       # vuln is present in every version since 1.0.0-dev
