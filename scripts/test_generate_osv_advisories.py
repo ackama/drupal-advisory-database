@@ -66,7 +66,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # vuln was introduced in 1.1.0(-dev), and present up to 1.2.0(-stable)
       (
         '>=1.1.0 <=1.2.0',
-        [{'introduced': '1.1.0-dev'}, {'last_affected': '1.2.0-stable'}],
+        [{'introduced': '1.1.0-dev'}, {'last_affected': '1.2.0'}],
         [],
       ),
       # some real-world examples

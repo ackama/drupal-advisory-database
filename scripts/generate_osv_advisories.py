@@ -79,8 +79,6 @@ class ComposerVersionConstraintPart:
   def __resolve_canonical_stability(self) -> str:
     if self.stability != '':
       return self.stability
-    if self.operator in ('', '>', '<='):
-      return '-stable'
     if self.operator in ('>=', '<'):
       return '-dev'
     return ''
