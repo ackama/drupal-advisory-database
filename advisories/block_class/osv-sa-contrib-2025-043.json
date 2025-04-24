@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-043",
+  "modified": "2025-04-24T04:59:01.000Z",
+  "published": "2025-04-24T04:59:01.000Z",
+  "aliases": [
+    "CVE-2025-3902"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "<p>Block Class enables you to add custom attributes to blocks.</p>\n<p>The module did not sufficiently sanitize custom attribute input, allowing for potential XSS attacks when malicious JavaScript was injected as a custom attribute.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer block classes\".</p>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/block_class"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.1"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=4.0.0 <4.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ivo  Van Geertruyen (mr.baileys)",
+      "contact": [
+        "/u/mrbaileys"
+      ]
+    }
+  ]
+}
