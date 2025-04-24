@@ -205,7 +205,6 @@ def parse_version_constraint(
   elif parts[0].operator == '>':
     # todo: warn about this, as we really don't want to be using this operator
     introduced = parts[0].guess_next_version()
-  introduced = introduced.replace('*', '0')
   events.append({'introduced': introduced})
   if parts[0].operator == '' or parts[0].operator == '<=':
     if parts[0].operator == '':
