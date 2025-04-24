@@ -162,6 +162,37 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('>=0.0.3 <0.0.4', [{'introduced': '0.0.3-dev'}, {'fixed': '0.0.4-dev'}], []),
       ('^0.0.3', [{'introduced': '0.0.3-dev'}, {'fixed': '0.0.4-dev'}], []),
       # technically invalid constraints
+      # leading zeros
+      (
+        '1.00.00',
+        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '>=1.01.00',
+        [{'introduced': '1.1.0-dev'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '>=1.01 <02.0.0',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '2.0.0-dev'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '>=1.0.01 <2.0.0',
+        [{'introduced': '1.0.1-dev'}, {'fixed': '2.0.0-dev'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '>=1.0.00001 <2.0.0',
+        [{'introduced': '1.0.1-dev'}, {'fixed': '2.0.0-dev'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '>=1.0.000100 <2.0.0',
+        [{'introduced': '1.0.100-dev'}, {'fixed': '2.0.0-dev'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
       # exact versions
       (
         '1',

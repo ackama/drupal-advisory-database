@@ -98,7 +98,11 @@ class ComposerVersionConstraintPart:
     return str(version.bump_prerelease())
 
   def __str__(self) -> str:
-    return f'{self.first_component or "0"}.{self.second_component or "0"}.{self.third_component or "0"}{self.__resolve_canonical_stability()}'
+    first_component = int(self.first_component or '0')
+    second_component = int(self.second_component or '0')
+    third_component = int(self.third_component or '0')
+
+    return f'{first_component}.{second_component}.{third_component}{self.__resolve_canonical_stability()}'
 
 
 # noinspection PyDefaultArgument
@@ -130,6 +134,13 @@ def parse_version_constraint(
       warnings.append(
         'the = operator is not real, and will be treated as an exact version'
       )
+    for component in [
+      part.first_component or '',
+      part.second_component or '',
+      part.third_component or '',
+    ]:
+      if len(component) > 1 and component.startswith('0'):
+        warnings.append('components should not be prefixed with leading zeros')
 
   if parts[0].second_component == '*' or parts[0].third_component == '*':
     if len(parts) > 1:
