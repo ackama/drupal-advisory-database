@@ -58,7 +58,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # vuln has been present since initial release, and was fixed in 1.0.0(-dev)
       ('<1.0.0', [{'introduced': '0'}, {'fixed': '1.0.0-dev'}], []),
       # vuln has been present since initial release, and was fixed after 1.0.0(-stable)
-      ('<=1.0.0', [{'introduced': '0'}, {'last_affected': '1.0.0-stable'}], []),
+      ('<=1.0.0', [{'introduced': '0'}, {'last_affected': '1.0.0'}], []),
       # vuln was introduced in 1.1.0(-dev), and was fixed in 1.1.1(-dev)
       ('>=1.1.0 <1.1.1', [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.1-dev'}], []),
       # vuln was introduced in 1.1.0(-dev), and was fixed in 1.2.0(-dev)
@@ -89,7 +89,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4-dev'}], []),
       ('<2.0.4dev', [{'introduced': '0'}, {'fixed': '2.0.4dev'}], []),
-      ('<=2.0.4', [{'introduced': '0'}, {'last_affected': '2.0.4-stable'}], []),
+      ('<=2.0.4', [{'introduced': '0'}, {'last_affected': '2.0.4'}], []),
       ('<=2.0.4stable', [{'introduced': '0'}, {'last_affected': '2.0.4stable'}], []),
       ('>=2.0.4', [{'introduced': '2.0.4-dev'}], []),
       # vuln was introduced in 1.1.0-dev and fixed in 1.1.0-beta3
@@ -337,7 +337,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       *[
         (
           f'<=1.0.0 {operator}1.2.0',
-          [{'introduced': '0'}, {'last_affected': '1.0.0-stable'}],
+          [{'introduced': '0'}, {'last_affected': '1.0.0'}],
           ['the <= operator should not be paired with other parts'],
         )
         for operator in ('', '>', '>=', '<', '<=', '^', '~')

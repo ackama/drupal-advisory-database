@@ -248,7 +248,8 @@ def parse_version_constraint(
 def normalize_stability(events: list[osv.Event]) -> list[osv.Event]:
   if not all(
     [
-      (
+      event.get('introduced') == '0'
+      or (
         event.get('introduced')
         or event.get('last_affected')
         or event.get('fixed')
