@@ -76,6 +76,10 @@ class ComposerVersionConstraintPart:
     self.third_component: str | None = result.group('third_component')
     self.stability: str = result.group('stability') or ''
 
+    # prefer representing stable implicitly
+    if self.stability == '-stable':
+      self.stability = ''
+
   def next_version(self, part: str) -> str:
     next_version = str(semver.Version.parse(str(self)).next_version(part))
 
@@ -158,7 +162,7 @@ def parse_version_constraint(
       warnings.append('the * operator should not be mixed with other operators')
     # todo: this is probably true, though the docs don't come close to mentioning it
     #  it might be worth trying to double check, but for now it should be safe to do
-    if parts[0].stability != '' and parts[0].stability != '-stable':
+    if parts[0].stability != '':
       warnings.append('the * operator should not be mixed with a stability suffix')
 
     lower = parts[0].first_component or '0'
@@ -262,40 +266,7 @@ def parse_version_constraint(
         f'the {parts[1].operator} operator should not be used for the second part'
       )
 
-  return normalize_stability(events), list(dict.fromkeys(warnings))
-
-
-def normalize_stability(events: list[osv.Event]) -> list[osv.Event]:
-  if not all(
-    [
-      event.get('introduced') == '0'
-      or (
-        event.get('introduced')
-        or event.get('last_affected')
-        or event.get('fixed')
-        or event.get('limit')
-        or ''
-      ).endswith('-stable')
-      for event in events
-    ]
-  ):
-    return events
-
-  new_events: list[osv.Event] = []
-
-  for event in events:
-    if 'introduced' in event:
-      new_events.append({'introduced': event['introduced'].removesuffix('-stable')})
-    if 'fixed' in event:
-      new_events.append({'fixed': event['fixed'].removesuffix('-stable')})
-    if 'last_affected' in event:
-      new_events.append(
-        {'last_affected': event['last_affected'].removesuffix('-stable')}
-      )
-    if 'limit' in event:
-      new_events.append({'limit': event['limit'].removesuffix('-stable')})
-
-  return new_events
+  return events, list(dict.fromkeys(warnings))
 
 
 def build_affected_range(constraint: str) -> osv.Range:
