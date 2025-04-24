@@ -26,7 +26,10 @@
             {
               "fixed": "4.0.1"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "<4.0.1"
+          }
         }
       ],
       "database_specific": {

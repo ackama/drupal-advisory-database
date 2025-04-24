@@ -23,14 +23,25 @@
             },
             {
               "fixed": "2.3.4"
-            },
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.3 <2.3.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
             {
               "introduced": "2.4.0"
             },
             {
               "fixed": "2.4.3"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": ">=2.4 <2.4.3"
+          }
         }
       ],
       "database_specific": {

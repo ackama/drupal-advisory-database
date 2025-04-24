@@ -26,7 +26,10 @@
             {
               "fixed": "12.05.0"
             }
-          ]
+          ],
+          "database_specific": {
+            "constraint": "<12.05"
+          }
         }
       ],
       "database_specific": {
