@@ -19,7 +19,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "7.0.1-dev"
+              "introduced": "7.0.1"
             },
             {
               "last_affected": "7.86.0"

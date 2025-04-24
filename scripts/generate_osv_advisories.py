@@ -76,19 +76,22 @@ class ComposerVersionConstraintPart:
     self.third_component: str | None = result.group('third_component')
     self.stability: str = result.group('stability') or ''
 
-  def guess_next_version(self) -> str:
-    version = semver.Version.parse(str(self))
-
-    if self.stability == '' or self.stability == '-stable':
-      return f'{version.bump_patch()}-dev'
-
-    if not self.stability[-1:].isdigit():
-      version = semver.Version.parse(str(self) + '0')
-
-    return str(version.bump_prerelease())
-
   def next_version(self, part: str) -> str:
-    return str(semver.Version.parse(str(self)).next_version(part))
+    next_version = str(semver.Version.parse(str(self)).next_version(part))
+
+    # semver.Version does not seem to increment the prerelease version if it does
+    # not have a number already, so we've got to add that manually
+    #
+    # todo: this is possibly a bug in the semver library, though also it might be
+    #  something we should warn on?
+    #  see https://github.com/python-semver/python-semver/issues/369
+    if (
+      part == 'prerelease'
+      and self.stability != ''
+      and not self.stability[-1:].isdigit()
+    ):
+      next_version += '1'
+    return next_version
 
   def __str__(self) -> str:
     first_component = int(self.first_component or '0')
@@ -211,7 +214,9 @@ def parse_version_constraint(
     warnings.append(
       'the > operator should be avoided as it does not provide a concrete version'
     )
-    introduced = parts[0].guess_next_version()
+    introduced = parts[0].next_version(
+      'patch' if parts[0].stability == '' else 'prerelease'
+    )
   events.append({'introduced': introduced})
 
   # determine the second event, which will be either "fixed" or "last_affected"

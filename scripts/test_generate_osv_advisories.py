@@ -73,12 +73,17 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # (this implies that the vuln was introduced in version 1.0.1-stable)
       (
         '>1.0.0 <1.0.2',
-        [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2'}],
+        [{'introduced': '1.0.1'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       (
         '>1.0.0-dev <1.0.2',
         [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      (
+        '>1.0.0-dev1 <1.0.2',
+        [{'introduced': '1.0.0-dev2'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       (
@@ -89,13 +94,13 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('>=7.0 <7.86', [{'introduced': '7.0.0'}, {'fixed': '7.86.0'}], []),
       (
         '>7.0 <7.86',
-        [{'introduced': '7.0.1-dev'}, {'fixed': '7.86.0'}],
+        [{'introduced': '7.0.1'}, {'fixed': '7.86.0'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       ('>=7.0 <=7.86', [{'introduced': '7.0.0'}, {'last_affected': '7.86.0'}], []),
       (
         '>7.0 <=7.86',
-        [{'introduced': '7.0.1-dev'}, {'last_affected': '7.86.0'}],
+        [{'introduced': '7.0.1'}, {'last_affected': '7.86.0'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4'}], []),
