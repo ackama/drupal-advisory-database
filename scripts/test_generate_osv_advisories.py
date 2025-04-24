@@ -83,6 +83,18 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
+      ('>=7.0 <7.86', [{'introduced': '7.0.0'}, {'fixed': '7.86.0'}], []),
+      (
+        '>7.0 <7.86',
+        [{'introduced': '7.0.1-dev'}, {'fixed': '7.86.0'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      ('>=7.0 <=7.86', [{'introduced': '7.0.0'}, {'last_affected': '7.86.0'}], []),
+      (
+        '>7.0 <=7.86',
+        [{'introduced': '7.0.1-dev'}, {'last_affected': '7.86.0'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4'}], []),
       ('<2.0.4dev', [{'introduced': '0'}, {'fixed': '2.0.4dev'}], []),
       ('<=2.0.4', [{'introduced': '0'}, {'last_affected': '2.0.4'}], []),
@@ -111,10 +123,23 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # vuln was introduced in version 1.0(.0-stable), and fixed in 2.0.0(-stable)
       # (this is an exception to how ~ works, to guard against major version jumps)
       ('>=1.0 <2.0.0', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
+      ('~1.0', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
       ('~1', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
       # vuln was introduced in version 1.2.3(-stable), and fixed in 2.0.0(-stable)
       ('>=1.2.3 <2.0.0', [{'introduced': '1.2.3'}, {'fixed': '2.0.0'}], []),
       ('^1.2.3', [{'introduced': '1.2.3'}, {'fixed': '2.0.0'}], []),
+      # vuln was introduced in version 1.3(.0-stable), and fixed in 2.0.0(-stable)
+      ('>=1.3 <2.0.0', [{'introduced': '1.3.0'}, {'fixed': '2.0.0'}], []),
+      ('^1.3', [{'introduced': '1.3.0'}, {'fixed': '2.0.0'}], []),
+      # vuln was introduced in version 1.0(.0-stable), and fixed in 2.0.0(-stable)
+      ('>=1.0.0 <2.0.0', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
+      ('^1.0', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
+      # vuln was introduced in version 1.0.3(-stable), and fixed in 2.0.0(-stable)
+      ('>=1.0.3 <2.0.0', [{'introduced': '1.0.3'}, {'fixed': '2.0.0'}], []),
+      ('^1.0.3', [{'introduced': '1.0.3'}, {'fixed': '2.0.0'}], []),
+      # vuln was introduced in version 1.(.0.0-stable), and fixed in 2.0.0(-stable)
+      ('>=1 <2.0.0', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
+      ('^1', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
       # vuln was introduced in version 0.3.0(-stable), and fixed in 0.4.0(-stable)
       # (this is an exception to how ^ works, since 0.x versions can have breaking changes)
       ('>=0.3.0 <0.4.0', [{'introduced': '0.3.0'}, {'fixed': '0.4.0'}], []),
@@ -154,6 +179,66 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       (
         '>=1.0.000100 <2.0.0',
         [{'introduced': '1.0.100'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '~1.02',
+        [{'introduced': '1.2.0'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '~1.02.03',
+        [{'introduced': '1.2.3'}, {'fixed': '1.3.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '~01',
+        [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^1.02.3',
+        [{'introduced': '1.2.3'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^1.003',
+        [{'introduced': '1.3.0'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^001.000',
+        [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^1.0.003',
+        [{'introduced': '1.0.3'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^0001',
+        [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^0000.3.0000',
+        [{'introduced': '0.3.0'}, {'fixed': '0.4.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^0.0003.0',
+        [{'introduced': '0.3.0'}, {'fixed': '0.4.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^0.003',
+        [{'introduced': '0.3.0'}, {'fixed': '0.4.0'}],
+        ['components should not be prefixed with leading zeros'],
+      ),
+      (
+        '^0.000.3',
+        [{'introduced': '0.0.3'}, {'fixed': '0.0.4'}],
         ['components should not be prefixed with leading zeros'],
       ),
       # exact versions
