@@ -74,11 +74,10 @@ class ComposerVersionConstraintPart:
     self.first_component: str | None = result.group('first_component')
     self.second_component: str | None = result.group('second_component')
     self.third_component: str | None = result.group('third_component')
-    self.stability: str | None = result.group('stability')
+    self.stability: str = result.group('stability') or ''
 
   def __resolve_canonical_stability(self) -> str:
-    # todo: might as well make this an empty string
-    if self.stability is not None:
+    if self.stability != '':
       return self.stability
     if self.operator in ('', '>', '<='):
       return '-stable'
@@ -89,7 +88,7 @@ class ComposerVersionConstraintPart:
   def guess_next_version(self) -> str:
     version = semver.Version.parse(str(self))
 
-    if self.stability is None or self.stability == '-stable':
+    if self.stability == '' or self.stability == '-stable':
       return f'{version.bump_patch()}-dev'
 
     if not self.stability[-1:].isdigit():
@@ -149,7 +148,7 @@ def parse_version_constraint(
       warnings.append('the * operator should not be mixed with other operators')
     # todo: this is probably true, though the docs don't come close to mentioning it
     #  it might be worth trying to double check, but for now it should be safe to do
-    if parts[0].stability is not None:
+    if parts[0].stability != '':
       warnings.append('the * operator should not be mixed with a stability suffix')
 
     lower = parts[0].first_component or '0'
