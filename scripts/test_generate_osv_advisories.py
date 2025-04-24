@@ -70,7 +70,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # (this implies that the vuln was introduced in version 1.0.1-stable)
       (
         '>1.0.0 <1.0.2',
-        [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2-stable'}],
+        [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       (

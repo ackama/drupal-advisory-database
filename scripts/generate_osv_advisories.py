@@ -118,15 +118,7 @@ def parse_version_constraint(
   warnings: list[str] = list(extra_warnings)
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
 
-  # if all the parts are of the "stable" stability, then it is safe to omit it
-  has_no_stable_stability = any(
-    [part.stability != '' and part.stability != '-stable' for part in parts]
-  )
-
   for part in parts:
-    # todo: we can make this go away if we remove the -dev in the class
-    if not has_no_stable_stability and part.stability == '':
-      part.stability = '-stable'
     if part.operator == '=':
       part.operator = ''
       warnings.append(
