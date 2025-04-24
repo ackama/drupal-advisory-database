@@ -103,15 +103,20 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # some real-world examples
       # vuln was introduced after version 1.0.0(-stable) and fixed in 1.0.2(-dev)
       # (this implies that the vuln was introduced in version 1.0.1-dev)
-      # todo: we should avoid the ">" operator as it is less accurate than ">=",
-      #   since the latter indicates a version that is guaranteed to exist
-      #   regexp: /affected_versions": ">[^=]/
-      ('>1.0.0 <1.0.2', [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2-dev'}], []),
-      ('>1.0.0-dev <1.0.2', [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2-dev'}], []),
+      (
+        '>1.0.0 <1.0.2',
+        [{'introduced': '1.0.1-dev'}, {'fixed': '1.0.2-dev'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
+      (
+        '>1.0.0-dev <1.0.2',
+        [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2-dev'}],
+        ['the > operator should be avoided as it does not provide a concrete version'],
+      ),
       (
         '>1.0.0-beta2 <1.0.2',
         [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2-dev'}],
-        [],
+        ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4-dev'}], []),
       ('<2.0.4dev', [{'introduced': '0'}, {'fixed': '2.0.4dev'}], []),
