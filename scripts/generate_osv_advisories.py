@@ -144,6 +144,7 @@ def parse_version_constraint(
       if len(component) > 1 and component.startswith('0'):
         warnings.append('components should not be prefixed with leading zeros')
 
+  # https://getcomposer.org/doc/articles/versions.md#wildcard-version-range-
   if parts[0].second_component == '*' or parts[0].third_component == '*':
     if len(parts) > 1:
       warnings.append('the * operator should not be paired with a second part')
@@ -166,17 +167,20 @@ def parse_version_constraint(
 
     return parse_version_constraint(f'>={lower} <{upper}', warnings)
 
+  # https://getcomposer.org/doc/articles/versions.md#tilde-version-range-
   if parts[0].operator == '~':
     if len(parts) > 1:
       warnings.append('the ~ operator should not be paired with a second part')
     major = int(parts[0].first_component or '0') + 1
     minor = 0
 
+    # if there is a patch number, then increment the minor number rather than the major number
     if parts[0].third_component is not None:
       major -= 1
       minor = int(parts[0].second_component or '0') + 1
     return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0', warnings)
 
+  # https://getcomposer.org/doc/articles/versions.md#caret-version-range-
   if parts[0].operator == '^':
     if len(parts) > 1:
       warnings.append('the ^ operator should not be paired with a second part')
@@ -199,6 +203,7 @@ def parse_version_constraint(
 
     return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.{patch}', warnings)
 
+  # determine the first event, which will be an "introduced"
   introduced = str(parts[0])
   if parts[0].operator == '<' or parts[0].operator == '<=':
     introduced = '0'
@@ -208,6 +213,8 @@ def parse_version_constraint(
     )
     introduced = parts[0].guess_next_version()
   events.append({'introduced': introduced})
+
+  # determine the second event, which will be either "fixed" or "last_affected"
   if parts[0].operator == '' or parts[0].operator.startswith('<'):
     if parts[0].operator == '' and (
       parts[0].first_component is None
