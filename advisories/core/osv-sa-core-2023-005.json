@@ -36,6 +36,9 @@
           "events": [
             {
               "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.1.0"
             }
           ],
           "database_specific": {
@@ -46,7 +49,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.1.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.2.0"
             }
           ],
           "database_specific": {
@@ -57,7 +63,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.2.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.3.0"
             }
           ],
           "database_specific": {
@@ -68,7 +77,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.3.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.4.0"
             }
           ],
           "database_specific": {
@@ -79,7 +91,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.4.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.0"
             }
           ],
           "database_specific": {
@@ -90,7 +105,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.5.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.6.0"
             }
           ],
           "database_specific": {
@@ -101,7 +119,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.6.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.7.0"
             }
           ],
           "database_specific": {
@@ -112,7 +133,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.7.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.0"
             }
           ],
           "database_specific": {
@@ -123,7 +147,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.8.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.0"
             }
           ],
           "database_specific": {
@@ -134,7 +161,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "8.9.0"
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.10.0"
             }
           ],
           "database_specific": {
@@ -146,6 +176,9 @@
           "events": [
             {
               "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.1.0"
             }
           ],
           "database_specific": {
@@ -156,7 +189,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "9.1.0"
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.2.0"
             }
           ],
           "database_specific": {
@@ -167,7 +203,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "9.2.0"
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.3.0"
             }
           ],
           "database_specific": {
@@ -178,7 +217,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "9.3.0"
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.4.0"
             }
           ],
           "database_specific": {

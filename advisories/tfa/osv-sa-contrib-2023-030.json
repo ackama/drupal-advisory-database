@@ -19,10 +19,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "^1.0.0"
+              "introduced": "1.0.0"
             },
             {
-              "fixed": "1.0.0"
+              "fixed": "2.0.0"
             }
           ],
           "database_specific": {

@@ -35,7 +35,7 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "2.0.0"
+              "introduced": "2.0.0-dev"
             },
             {
               "fixed": "2.0.0-beta3"

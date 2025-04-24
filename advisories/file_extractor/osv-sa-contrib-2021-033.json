@@ -34,6 +34,9 @@
           "events": [
             {
               "introduced": "3.0.0"
+            },
+            {
+              "last_affected": "3.0.0"
             }
           ],
           "database_specific": {
@@ -45,6 +48,9 @@
           "events": [
             {
               "introduced": "4.0.0"
+            },
+            {
+              "last_affected": "4.0.0"
             }
           ],
           "database_specific": {

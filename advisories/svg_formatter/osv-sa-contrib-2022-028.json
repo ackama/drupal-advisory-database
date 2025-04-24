@@ -33,7 +33,10 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "=2.0.0"
+              "introduced": "2.0.0"
+            },
+            {
+              "last_affected": "2.0.0"
             }
           ],
           "database_specific": {
