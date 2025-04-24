@@ -362,11 +362,22 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         ['there should not be more than two parts in a version constraint'],
       ),
       # invalid operators for the second part
-      (
-        '<1.0.0 1.2.0',
-        [{'introduced': '0'}, {'fixed': '1.0.0-dev'}],
-        ['exact versions should not be paired with other parts'],
-      ),
+      *[
+        (
+          f'<1.0.0 {operator}1.2.0',
+          [{'introduced': '0'}, {'fixed': '1.0.0-dev'}],
+          ['the < operator should not be paired with other parts'],
+        )
+        for operator in ('', '>', '>=', '<', '<=', '^', '~')
+      ],
+      *[
+        (
+          f'<=1.0.0 {operator}1.2.0',
+          [{'introduced': '0'}, {'last_affected': '1.0.0-stable'}],
+          ['the <= operator should not be paired with other parts'],
+        )
+        for operator in ('', '>', '>=', '<', '<=', '^', '~')
+      ],
       *[
         (
           f'>=1.0.0 {operator}1.2.0',
