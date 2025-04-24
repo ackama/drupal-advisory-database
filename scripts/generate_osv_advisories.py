@@ -76,13 +76,6 @@ class ComposerVersionConstraintPart:
     self.third_component: str | None = result.group('third_component')
     self.stability: str = result.group('stability') or ''
 
-  def __resolve_canonical_stability(self) -> str:
-    if self.stability != '':
-      return self.stability
-    if self.operator in ('>=', '<'):
-      return '-dev'
-    return ''
-
   def guess_next_version(self) -> str:
     version = semver.Version.parse(str(self))
 
@@ -99,7 +92,7 @@ class ComposerVersionConstraintPart:
     second_component = int(self.second_component or '0')
     third_component = int(self.third_component or '0')
 
-    return f'{first_component}.{second_component}.{third_component}{self.__resolve_canonical_stability()}'
+    return f'{first_component}.{second_component}.{third_component}{self.stability}'
 
 
 # noinspection PyDefaultArgument

@@ -75,12 +75,12 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '>1.0.0-dev <1.0.2',
-        [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2-dev'}],
+        [{'introduced': '1.0.0-dev1'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       (
         '>1.0.0-beta2 <1.0.2',
-        [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2-dev'}],
+        [{'introduced': '1.0.0-beta3'}, {'fixed': '1.0.2'}],
         ['the > operator should be avoided as it does not provide a concrete version'],
       ),
       ('<2.0.4', [{'introduced': '0'}, {'fixed': '2.0.4'}], []),
@@ -92,7 +92,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # todo: this should create a warning, as it's invalid
       (
         '>=1.1.0 <1.1.0-beta3',
-        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
+        [{'introduced': '1.1.0'}, {'fixed': '1.1.0-beta3'}],
         [],
       ),
       # vuln was introduced in 7.0(.0-stable) and fixed in 7.57(.0-stable)
