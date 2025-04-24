@@ -225,7 +225,7 @@ def parse_version_constraint(
   if parts[0].operator == '<':
     events.append({'fixed': str(parts[0])})
 
-  return events, warnings
+  return events, list(dict.fromkeys(warnings))
 
 
 def build_affected_range(constraint: str) -> osv.Range:
