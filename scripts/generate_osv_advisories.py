@@ -159,8 +159,10 @@ def parse_version_constraint(
     if parts[0].second_component == '*':
       if parts[0].third_component is not None:
         warnings.append('the * operator should be the last component of the version')
+      lower += '.0'
       upper = str(int(parts[0].first_component or '0') + 1)
     else:
+      lower += f'.{parts[0].second_component}'
       upper = (
         f'{parts[0].first_component or "0"}.{int(parts[0].second_component or "0") + 1}'
       )

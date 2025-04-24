@@ -34,6 +34,9 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # vuln is present in every version from 1.0(.0-stable), and fixed in 1.1(.0-stable)
       ('>=1.0 <1.1', [{'introduced': '1.0.0'}, {'fixed': '1.1.0'}], []),
       ('1.0.*', [{'introduced': '1.0.0'}, {'fixed': '1.1.0'}], []),
+      # vuln is present in every version from 1.2(.0-stable), and fixed in 1.3(.0-stable)
+      ('>=1.2 <1.3', [{'introduced': '1.2.0'}, {'fixed': '1.3.0'}], []),
+      ('1.2.*', [{'introduced': '1.2.0'}, {'fixed': '1.3.0'}], []),
       # vuln is present in every version from 1(.0.0-stable), and fixed in 2(.0.0-stable)
       ('>=1 <2', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
       ('1.*', [{'introduced': '1.0.0'}, {'fixed': '2.0.0'}], []),
