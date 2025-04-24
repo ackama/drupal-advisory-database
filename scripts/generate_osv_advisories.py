@@ -125,7 +125,15 @@ def parse_version_constraint(
   warnings: list[str] = list(extra_warnings)
   parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
 
+  # if all the parts are of the "stable" stability, then it is safe to omit it
+  has_no_stable_stability = any(
+    [part.stability != '' and part.stability != '-stable' for part in parts]
+  )
+
   for part in parts:
+    # todo: we can make this go away if we remove the -dev in the class
+    if not has_no_stable_stability and part.stability == '':
+      part.stability = '-stable'
     if part.operator == '=':
       part.operator = ''
       warnings.append(
@@ -146,7 +154,7 @@ def parse_version_constraint(
       warnings.append('the * operator should not be mixed with other operators')
     # todo: this is probably true, though the docs don't come close to mentioning it
     #  it might be worth trying to double check, but for now it should be safe to do
-    if parts[0].stability != '':
+    if parts[0].stability != '' and parts[0].stability != '-stable':
       warnings.append('the * operator should not be mixed with a stability suffix')
 
     lower = parts[0].first_component or '0'
@@ -159,7 +167,7 @@ def parse_version_constraint(
         f'{parts[0].first_component or "0"}.{int(parts[0].second_component or "0") + 1}'
       )
 
-    return parse_version_constraint(f'>={lower}-dev <{upper}-dev', warnings)
+    return parse_version_constraint(f'>={lower} <{upper}', warnings)
 
   if parts[0].operator == '~':
     if len(parts) > 1:
@@ -170,7 +178,7 @@ def parse_version_constraint(
     if parts[0].third_component is not None:
       major -= 1
       minor = int(parts[0].second_component or '0') + 1
-    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0-dev', warnings)
+    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0', warnings)
 
   if parts[0].operator == '^':
     if len(parts) > 1:
@@ -192,9 +200,7 @@ def parse_version_constraint(
         minor -= 1
         patch += 1
 
-    return parse_version_constraint(
-      f'>={parts[0]} <{major}.{minor}.{patch}-dev', warnings
-    )
+    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.{patch}', warnings)
 
   introduced = str(parts[0])
   if parts[0].operator == '<' or parts[0].operator == '<=':
