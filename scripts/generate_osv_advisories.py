@@ -95,6 +95,18 @@ class ComposerVersionConstraintPart:
     return f'{first_component}.{second_component}.{third_component}{self.stability}'
 
 
+def weigh_stability(stability: str) -> int:
+  stability = stability.removeprefix('-')
+
+  if stability.startswith('RC'):
+    return 3
+
+  for i, start in enumerate(['p', '#', 'rc', 'b', 'a', 'dev']):
+    if stability.startswith(start):
+      return i
+  return 0
+
+
 # noinspection PyDefaultArgument
 def parse_version_constraint(
   constraint: str,
@@ -219,6 +231,15 @@ def parse_version_constraint(
   elif len(parts) > 1:
     if len(parts) > 2:
       warnings.append('there should not be more than two parts in a version constraint')
+
+    if (
+      parts[1].operator.startswith('<')
+      and parts[0].operator.startswith('>')
+      and weigh_stability(parts[0].stability) < weigh_stability(parts[1].stability)
+    ):
+      parts[0].stability = '-dev'
+      events[0]['introduced'] = str(parts[0])
+      warnings.append('stability does not make sense, using -dev instead')
 
     if parts[1].operator == '':
       warnings.append('exact versions should not be paired with other parts')

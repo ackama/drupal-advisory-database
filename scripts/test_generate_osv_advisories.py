@@ -88,11 +88,16 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('<=2.0.4', [{'introduced': '0'}, {'last_affected': '2.0.4'}], []),
       ('<=2.0.4stable', [{'introduced': '0'}, {'last_affected': '2.0.4stable'}], []),
       ('>=2.0.4', [{'introduced': '2.0.4'}], []),
-      # vuln was introduced in 1.1.0-dev and fixed in 1.1.0-beta3
-      # todo: this should create a warning, as it's invalid
+      # vuln was introduced in 1.1.0-alpha and fixed in 1.1.0-beta3
       (
-        '>=1.1.0 <1.1.0-beta3',
-        [{'introduced': '1.1.0'}, {'fixed': '1.1.0-beta3'}],
+        '>=1.1.0-dev <1.1.0-beta3',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
+        [],
+      ),
+      # vuln was introduced in 1.1.0-alpha and fixed in 1.1.0-beta3
+      (
+        '>=1.1.0-alpha <1.1.0-beta3',
+        [{'introduced': '1.1.0-alpha'}, {'fixed': '1.1.0-beta3'}],
         [],
       ),
       # vuln was introduced in 7.0(.0-stable) and fixed in 7.57(.0-stable)
@@ -344,6 +349,17 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
         )
         for operator in ('>', '>=', '^', '~')
       ],
+      # invalid constraint order
+      (
+        '>=1.1.0 <1.1.0-beta3',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
+        ['stability does not make sense, using -dev instead'],
+      ),
+      (
+        '>=1.1.0-beta <1.1.0-alpha',
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-alpha'}],
+        ['stability does not make sense, using -dev instead'],
+      ),
     ],
   )
 
