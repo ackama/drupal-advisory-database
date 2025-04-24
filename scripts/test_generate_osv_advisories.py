@@ -30,14 +30,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('>=1.0   <2.0', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       ('>= 1.0   < 2.0', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       # vuln is present in every version since 1.0(.0-dev) up to 1.1(.0-dev)
-      (
-        '>=1.0 <1.1',
-        [
-          {'introduced': '1.0.0-dev'},
-          {'fixed': '1.1.0-dev'},
-        ],
-        [],
-      ),
+      ('>=1.0 <1.1', [{'introduced': '1.0.0-dev'}, {'fixed': '1.1.0-dev'}], []),
       # vuln is present in every version from 1.0(.0-dev), and fixed in 1.1(.0-dev)
       ('>=1.0 <1.1', [{'introduced': '1.0.0-dev'}, {'fixed': '1.1.0-dev'}], []),
       ('1.0.*', [{'introduced': '1.0.0-dev'}, {'fixed': '1.1.0-dev'}], []),
@@ -45,36 +38,12 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ('>=1 <2', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       ('1.*', [{'introduced': '1.0.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       # vuln is only present in 1.0.0(-stable)
-      (
-        '1.0.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
-      (
-        '1.0.0 ',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
-      (
-        ' 1.0.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
-      (
-        ' 1.0.0 ',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
-      (
-        '  1.0.0 ',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
-      (
-        '1.0.0-stable',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
-        [],
-      ),
+      ('1.0.0', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
+      ('1.0.0 ', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
+      (' 1.0.0', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
+      (' 1.0.0 ', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
+      ('  1.0.0 ', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
+      ('1.0.0-stable', [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}], []),
       (
         '1.0.0-beta2',
         [{'introduced': '1.0.0-beta2'}, {'last_affected': '1.0.0-beta2'}],
@@ -129,21 +98,11 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       #   will need to change to explicitly define their constraint i.e. >=1.1.0-dev
       (
         '>=1.1.0 <1.1.0-beta3',
-        [
-          {'introduced': '1.1.0-dev'},
-          {'fixed': '1.1.0-beta3'},
-        ],
+        [{'introduced': '1.1.0-dev'}, {'fixed': '1.1.0-beta3'}],
         [],
       ),
       # vuln was introduced in 7.0(.0-dev) and fixed in 7.57(.0-dev)
-      (
-        '>=7.0 <7.57',
-        [
-          {'introduced': '7.0.0-dev'},
-          {'fixed': '7.57.0-dev'},
-        ],
-        [],
-      ),
+      ('>=7.0 <7.57', [{'introduced': '7.0.0-dev'}, {'fixed': '7.57.0-dev'}], []),
       # vuln was introduced in version 1.2.0(-dev), and fixed in 2.0.0(-dev)
       ('>=1.2 <2.0.0', [{'introduced': '1.2.0-dev'}, {'fixed': '2.0.0-dev'}], []),
       ('~1.2', [{'introduced': '1.2.0-dev'}, {'fixed': '2.0.0-dev'}], []),
@@ -170,7 +129,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # leading zeros
       (
         '1.00.00',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['components should not be prefixed with leading zeros'],
       ),
       (
@@ -201,12 +160,12 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # exact versions
       (
         '1',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['exact versions should not omit components'],
       ),
       (
         '1.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['exact versions should not omit components'],
       ),
       (
@@ -216,17 +175,17 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '1.0.0 1.2.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['exact versions should not be paired with other parts'],
       ),
       (
         '1.0.0 1.2.0 2.0.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['exact versions should not be paired with other parts'],
       ),
       (
         '1.0 1.2.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'exact versions should not omit components',
           'exact versions should not be paired with other parts',
@@ -235,12 +194,12 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       # = is not an operator, but we treat it like the exact operator
       (
         '=1.0.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         ['the = operator is not real, and will be treated as an exact version'],
       ),
       (
         '=1',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not omit components',
@@ -248,7 +207,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '=1.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not omit components',
@@ -264,7 +223,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '=1.0.0 1.2.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not be paired with other parts',
@@ -272,7 +231,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '=1.0.0 1.2.0 2.0.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not be paired with other parts',
@@ -280,7 +239,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '=1.0 1.2.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not omit components',
@@ -289,7 +248,7 @@ def version_constraint_fixtures() -> list[tuple[str, list[osv.Event], list[str]]
       ),
       (
         '=1.0 =1.2.0',
-        [{'introduced': '1.0.0-stable'}, {'last_affected': '1.0.0-stable'}],
+        [{'introduced': '1.0.0'}, {'last_affected': '1.0.0'}],
         [
           'the = operator is not real, and will be treated as an exact version',
           'exact versions should not omit components',

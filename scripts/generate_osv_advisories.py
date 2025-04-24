@@ -242,7 +242,39 @@ def parse_version_constraint(
         f'the {parts[1].operator} operator should not be used for the second part'
       )
 
-  return events, list(dict.fromkeys(warnings))
+  return normalize_stability(events), list(dict.fromkeys(warnings))
+
+
+def normalize_stability(events: list[osv.Event]) -> list[osv.Event]:
+  if not all(
+    [
+      (
+        event.get('introduced')
+        or event.get('last_affected')
+        or event.get('fixed')
+        or event.get('limit')
+        or ''
+      ).endswith('-stable')
+      for event in events
+    ]
+  ):
+    return events
+
+  new_events: list[osv.Event] = []
+
+  for event in events:
+    if 'introduced' in event:
+      new_events.append({'introduced': event['introduced'].removesuffix('-stable')})
+    if 'fixed' in event:
+      new_events.append({'fixed': event['fixed'].removesuffix('-stable')})
+    if 'last_affected' in event:
+      new_events.append(
+        {'last_affected': event['last_affected'].removesuffix('-stable')}
+      )
+    if 'limit' in event:
+      new_events.append({'limit': event['limit'].removesuffix('-stable')})
+
+  return new_events
 
 
 def build_affected_range(constraint: str) -> osv.Range:
