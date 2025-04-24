@@ -87,6 +87,9 @@ class ComposerVersionConstraintPart:
 
     return str(version.bump_prerelease())
 
+  def next_version(self, part: str) -> str:
+    return str(semver.Version.parse(str(self)).next_version(part))
+
   def __str__(self) -> str:
     first_component = int(self.first_component or '0')
     second_component = int(self.second_component or '0')
@@ -173,37 +176,32 @@ def parse_version_constraint(
   if parts[0].operator == '~':
     if len(parts) > 1:
       warnings.append('the ~ operator should not be paired with a second part')
-    major = int(parts[0].first_component or '0') + 1
-    minor = 0
 
-    # if there is a patch number, then increment the minor number rather than the major number
-    if parts[0].third_component is not None:
-      major -= 1
-      minor = int(parts[0].second_component or '0') + 1
-    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.0', warnings)
+    upper = str(
+      parts[0].next_version(
+        'major'  # bump the major version, unless we're dealing with a x.y.z version
+        if parts[0].third_component is None
+        else 'minor'  # else bump the minor version
+      )
+    )
+    return parse_version_constraint(f'>={parts[0]} <{upper}', warnings)
 
   # https://getcomposer.org/doc/articles/versions.md#caret-version-range-
   if parts[0].operator == '^':
     if len(parts) > 1:
       warnings.append('the ^ operator should not be paired with a second part')
-    major = int(parts[0].first_component or '0') + 1
-    minor = 0
-    patch = 0
 
-    # if the original major version was 0, then we need to increment
-    # either the minor or patch version instead
-    if major == 1:
-      major -= 1
-      minor = int(parts[0].second_component or '0') + 1
-      patch = int(parts[0].third_component or '0')
+    upper = str(
+      parts[0].next_version(
+        'major'  # bump the major version, unless we're dealing with a 0.x version
+        if int(parts[0].first_component or '0') != 0
+        else 'minor'  # else bump the minor version, unless we're dealing with a 0.0.x version
+        if int(parts[0].second_component or '0') != 0
+        else 'patch'  # else bump the patch version
+      )
+    )
 
-      # if the original minor version was 0, then we need to increment
-      # the patch version instead
-      if minor == 1:
-        minor -= 1
-        patch += 1
-
-    return parse_version_constraint(f'>={parts[0]} <{major}.{minor}.{patch}', warnings)
+    return parse_version_constraint(f'>={parts[0]} <{upper}', warnings)
 
   # determine the first event, which will be an "introduced"
   introduced = str(parts[0])
