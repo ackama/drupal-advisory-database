@@ -248,9 +248,7 @@ def parse_version_constraint(
       events[0]['introduced'] = str(parts[0])
       warnings.append('stability does not make sense, using -dev instead')
 
-    if parts[1].operator == '':
-      warnings.append('exact versions should not be paired with other parts')
-    elif parts[1].operator == '<':
+    if parts[1].operator == '<':
       events.append({'fixed': str(parts[1])})
     elif parts[1].operator == '<=':
       events.append({'last_affected': str(parts[1])})
