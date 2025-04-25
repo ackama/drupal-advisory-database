@@ -62,7 +62,7 @@ def expand_version(version: str) -> str:
 class ComposerVersionConstraintPart:
   def __init__(self, part: str):
     result = re.match(
-      r'^(?P<operator>[<>]=?|=|[~^])?(?P<first_component>\d+)(?:\.(?P<second_component>\d+|\*))?(?:\.(?P<third_component>\d+|\*))?(?P<stability>.+)?$',
+      r'^(?P<operator>[<>]=?|=|[~^])?(?P<major>\d+)(?:\.(?P<minor>\d+|\*))?(?:\.(?P<patch>\d+|\*))?(?P<stability>.+)?$',
       part,
     )
 
@@ -71,9 +71,9 @@ class ComposerVersionConstraintPart:
       raise Exception(f'"{part}" is not a valid version constraint')
 
     self.operator: str = result.group('operator') or ''
-    self.first_component: str | None = result.group('first_component')
-    self.second_component: str | None = result.group('second_component')
-    self.third_component: str | None = result.group('third_component')
+    self.first_component: str | None = result.group('major')
+    self.second_component: str | None = result.group('minor')
+    self.third_component: str | None = result.group('patch')
     self.stability: str = result.group('stability') or ''
 
     # prefer representing stable implicitly
