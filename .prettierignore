@@ -7,3 +7,4 @@ __pycache__/
 advisories/
 cache/
 node_modules/
+vendor/
