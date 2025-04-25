@@ -27,7 +27,7 @@ for dirpath, _, filenames in os.walk('advisories'):
       if report_valid:
         print(f'✅ {advisory} is valid')
       passed += 1
-    except jsonschema.ValidationError as err:
+    except (json.JSONDecodeError, jsonschema.ValidationError) as err:
       print(f'❌ {advisory} is invalid')
       print(indent(str(err), prefix='    '))
 
