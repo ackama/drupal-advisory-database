@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Open Social is a Drupal distribution for online communities. </p>\n<p>The distribution didn't validate the flood control limits on the password reset form correctly resulting in a potential attacker flooding the password reset which could result in a Denial of Service. Fortunately the message does not disclose any information to the attacker.</p>",
+  "details": "Open Social is a Drupal distribution for online communities.\n\nThe distribution didn't validate the flood control limits on the password reset form correctly resulting in a potential attacker flooding the password reset which could result in a Denial of Service. Fortunately the message does not disclose any information to the attacker.",
   "affected": [
     {
       "package": {

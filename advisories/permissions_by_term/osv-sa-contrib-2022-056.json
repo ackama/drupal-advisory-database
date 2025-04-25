@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to set content permissions based on taxonomy terms.</p>\n<p>The module doesn't sufficiently restrict access to translated and unpublished nodes.</p>\n<p>This vulnerability is mitigated by the fact that it only affects sites with translated content.</p>",
+  "details": "This module enables you to set content permissions based on taxonomy terms.\n\nThe module doesn't sufficiently restrict access to translated and unpublished nodes.\n\nThis vulnerability is mitigated by the fact that it only affects sites with translated content.",
   "affected": [
     {
       "package": {

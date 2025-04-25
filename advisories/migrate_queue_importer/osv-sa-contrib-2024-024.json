@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Migrate queue importer module enables you to create cron migrations(configuration entities) with a reference towards migration entities in order to import them during cron runs.</p>\n<p>The module doesn't sufficiently protect against Cross Site Request Forgery<br />\nunder specific scenarios allowing an attacker to enable/disable a cron migration.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the<br />\nid of the migration.</p>",
+  "details": "The Migrate queue importer module enables you to create cron migrations(configuration entities) with a reference towards migration entities in order to import them during cron runs.\n\nThe module doesn't sufficiently protect against Cross Site Request Forgery  \nunder specific scenarios allowing an attacker to enable/disable a cron migration.\n\nThis vulnerability is mitigated by the fact that an attacker must know the  \nid of the migration.",
   "affected": [
     {
       "package": {

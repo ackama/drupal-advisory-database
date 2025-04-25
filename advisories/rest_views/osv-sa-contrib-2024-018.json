@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Rest views module lets site admins create rest exports in views with additional options for serializing data.</p>\n<p>This module does not accurately check access and may expose paths to unpublished content.</p>\n<p>This vulnerability is mitigated by the fact that there must be a specific content structure to expose.</p>\n<p>Paths to unpublished entities (such as nodes) will be exposed if those entities are referenced from other entities listed in a REST display, and the reference field on those listed entities is displayed with the \"Entity path\" formatter.</p>",
+  "details": "The Rest views module lets site admins create rest exports in views with additional options for serializing data.\n\nThis module does not accurately check access and may expose paths to unpublished content.\n\nThis vulnerability is mitigated by the fact that there must be a specific content structure to expose.\n\nPaths to unpublished entities (such as nodes) will be exposed if those entities are referenced from other entities listed in a REST display, and the reference field on those listed entities is displayed with the \"Entity path\" formatter.",
   "affected": [
     {
       "package": {

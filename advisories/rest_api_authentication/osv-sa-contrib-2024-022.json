@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal REST &amp; JSON API Authentication module restricts and secures unauthorized access to your Drupal site APIs using different authentication methods including Basic Authentication , API Key Authentication , JWT Authentication , OAuth Authentication , External / Third-Party Provider Authentication, etc.</p>\n<p>The module doesn't sufficiently control user access when using Basic Authentication.</p>",
+  "details": "Drupal REST & JSON API Authentication module restricts and secures unauthorized access to your Drupal site APIs using different authentication methods including Basic Authentication , API Key Authentication , JWT Authentication , OAuth Authentication , External / Third-Party Provider Authentication, etc.\n\nThe module doesn't sufficiently control user access when using Basic Authentication.",
   "affected": [
     {
       "package": {

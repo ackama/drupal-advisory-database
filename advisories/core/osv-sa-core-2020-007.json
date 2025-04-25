@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Drupal AJAX API does not disable JSONP by default, which can lead to cross-site scripting.</p>",
+  "details": "The Drupal AJAX API does not disable JSONP by default, which can lead to cross-site scripting.",
   "affected": [
     {
       "package": {

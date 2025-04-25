@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to log in by email address with minimal configurations. </p>\n<p>Drupal core contains protection against brute force attacks via a flood control mechanism. This module's functionality did not replicate the flood control, enabling brute force attacks.</p>\n<p>A previous security advisory, <a href=\"https://www.drupal.org/sa-contrib-2023-045\" rel=\"nofollow\">SA-CONTRIB-2023-45</a>, was released for this issue, but that release did not successfully address the vulnerability. This security advisory and updated module version supersede the previous one.</p>",
+  "details": "This module enables users to log in by email address with minimal configurations.\n\nDrupal core contains protection against brute force attacks via a flood control mechanism. This module's functionality did not replicate the flood control, enabling brute force attacks.\n\nA previous security advisory, [SA-CONTRIB-2023-45](https://www.drupal.org/sa-contrib-2023-045), was released for this issue, but that release did not successfully address the vulnerability. This security advisory and updated module version supersede the previous one.",
   "affected": [
     {
       "package": {

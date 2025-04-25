@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Under some circumstances, the Drupal core JSON:API module does not properly restrict access to certain content, which may result in unintended access bypass.</p>\n<p>Sites that do not have the JSON:API module enabled are not affected.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "Under some circumstances, the Drupal core JSON:API module does not properly restrict access to certain content, which may result in unintended access bypass.\n\nSites that do not have the JSON:API module enabled are not affected.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Doubleclick for Publishers (DFP) module enables a site to place ads from Doubleclick For Publishers.</p>\n<p>The module doesn't sanitize user input in certain cases, which leads to Cross-Site-Scripting (XSS) vulnerabilities. An attacker that can create or edit certain entities may be able to exploit a Cross-Site-Scripting (XSS) vulnerability to target visitors of the site, including site admins with privileged access.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer DFP\".</p>",
+  "details": "Doubleclick for Publishers (DFP) module enables a site to place ads from Doubleclick For Publishers.\n\nThe module doesn't sanitize user input in certain cases, which leads to Cross-Site-Scripting (XSS) vulnerabilities. An attacker that can create or edit certain entities may be able to exploit a Cross-Site-Scripting (XSS) vulnerability to target visitors of the site, including site admins with privileged access.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer DFP\".",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This project enables administrators to restrict access from anonymous and regular users to pre-defined pages.</p>\n<p>The administration routes used by the project lacked proper permissions, allowing untrusted users to access, create and modify the module's settings.</p>",
+  "details": "This project enables administrators to restrict access from anonymous and regular users to pre-defined pages.\n\nThe administration routes used by the project lacked proper permissions, allowing untrusted users to access, create and modify the module's settings.",
   "affected": [
     {
       "package": {

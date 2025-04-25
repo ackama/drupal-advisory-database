@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal. It contains an \"Apigee Edge Teams\" submodule that provides shared app functionality by allowing developers to be organized into teams.</p>\n<p>The \"Apigee Edge Teams\" submodule has an information disclosure vulnerability. The \"Add team member\" form displays an email autocomplete field which can expose the email addresses of other accounts in the system. </p>\n<p>This vulnerability is mitigated by the fact that to have access to the form, the site must have the Apigee Edge Teams submodule enabled, and the user must have a team role that has the \"Manage team members\" permission. (Note that team roles and permissions are not related to Drupal core roles and permissions).</p>",
+  "details": "The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal. It contains an \"Apigee Edge Teams\" submodule that provides shared app functionality by allowing developers to be organized into teams.\n\nThe \"Apigee Edge Teams\" submodule has an information disclosure vulnerability. The \"Add team member\" form displays an email autocomplete field which can expose the email addresses of other accounts in the system.\n\nThis vulnerability is mitigated by the fact that to have access to the form, the site must have the Apigee Edge Teams submodule enabled, and the user must have a team role that has the \"Manage team members\" permission. (Note that team roles and permissions are not related to Drupal core roles and permissions).",
   "affected": [
     {
       "package": {

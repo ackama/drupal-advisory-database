@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to render a field in an expandable/collapsible region.</p>\n<p>The module doesn't sufficiently sanitize the field content when displaying it to an end user.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role capable of creating content that uses the field formatter.</p>",
+  "details": "This module enables you to render a field in an expandable/collapsible region.\n\nThe module doesn't sufficiently sanitize the field content when displaying it to an end user.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role capable of creating content that uses the field formatter.",
   "affected": [
     {
       "package": {

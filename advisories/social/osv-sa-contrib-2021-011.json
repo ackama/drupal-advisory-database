@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Open Social is a Drupal distribution for online communities. </p>\n<p>The included social_magic_login module doesn't sufficiently validate magic login URLs for user accounts. The lack of validation makes it possible for an adversary to forge valid login URLs and login to such an account.</p>\n<p>This vulnerability is mitigated by the fact the module social_magic_login needs to be enabled.</p>",
+  "details": "Open Social is a Drupal distribution for online communities.\n\nThe included social\\_magic\\_login module doesn't sufficiently validate magic login URLs for user accounts. The lack of validation makes it possible for an adversary to forge valid login URLs and login to such an account.\n\nThis vulnerability is mitigated by the fact the module social\\_magic\\_login needs to be enabled.",
   "affected": [
     {
       "package": {

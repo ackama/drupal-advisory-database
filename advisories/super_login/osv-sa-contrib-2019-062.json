@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module improves the Drupal login page with the new features and layout.</p>\n<p>The module doesn't sufficiently filter input text in the administration pages text configuration inputs. For example, the login text field.</p>\n<p>The vulnerability is mitigated by the fact it can only be exploited by a user with the \"Administer super login\" permission.</p>",
+  "details": "This module improves the Drupal login page with the new features and layout.\n\nThe module doesn't sufficiently filter input text in the administration pages text configuration inputs. For example, the login text field.\n\nThe vulnerability is mitigated by the fact it can only be exploited by a user with the \"Administer super login\" permission.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Chaos tool suite (ctools) module provides a number of APIs and extensions for Drupal, it's 8.x-3.x branch is a start from scratch to evaluate the features of ctools that didn't make it into Drupal Core 8.0.x and port them.</p>\n<p>The module doesn't sufficiently handle access control on its EntityView plugin.</p>\n<p>This vulnerability is mitigated by the fact that successful exploitation requires special conditions in place such as custom solutions that allow injecting the context by means other than the route.</p>",
+  "details": "Chaos tool suite (ctools) module provides a number of APIs and extensions for Drupal, it's 8.x-3.x branch is a start from scratch to evaluate the features of ctools that didn't make it into Drupal Core 8.0.x and port them.\n\nThe module doesn't sufficiently handle access control on its EntityView plugin.\n\nThis vulnerability is mitigated by the fact that successful exploitation requires special conditions in place such as custom solutions that allow injecting the context by means other than the route.",
   "affected": [
     {
       "package": {

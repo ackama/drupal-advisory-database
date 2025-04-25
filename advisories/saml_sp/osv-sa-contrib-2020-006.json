@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to authenticate Drupal users using an external SAML Identity Provider. </p>\n<p>If the site is configured to allow visitors to register for user accounts but administrator approval is required, the module doesn't sufficiently enforce the administrative approval requirement, in the case where the requesting user has already authenticated through SAML.</p>\n<p>This vulnerability is mitigated by the fact that user accounts created in this way have only default roles, which may not have access significantly beyond that of an anonymous user. To mitigate the vulnerability without upgrading sites could disable public registration.</p>",
+  "details": "This module enables you to authenticate Drupal users using an external SAML Identity Provider.\n\nIf the site is configured to allow visitors to register for user accounts but administrator approval is required, the module doesn't sufficiently enforce the administrative approval requirement, in the case where the requesting user has already authenticated through SAML.\n\nThis vulnerability is mitigated by the fact that user accounts created in this way have only default roles, which may not have access significantly beyond that of an anonymous user. To mitigate the vulnerability without upgrading sites could disable public registration.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides social media share &amp; follow buttons.</p>\n<p>The module doesn't sufficiently restrict AddToAny block settings to users who have permission to administer AddToAny. This allows users with lower permission to configure malicious code leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".</p>",
+  "details": "This module provides social media share & follow buttons.\n\nThe module doesn't sufficiently restrict AddToAny block settings to users who have permission to administer AddToAny. This allows users with lower permission to configure malicious code leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {
       "package": {

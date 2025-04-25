@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Bat module provides a foundation through which a wide range of availability management, reservation and booking use cases can be addressed.</p>\n<p>The routes used to view events don't sufficiently guard access for non-privileged users. Specifically, a user with the 'View own' permission for bat events can view others' events as well.</p>",
+  "details": "The Bat module provides a foundation through which a wide range of availability management, reservation and booking use cases can be addressed.\n\nThe routes used to view events don't sufficiently guard access for non-privileged users. Specifically, a user with the 'View own' permission for bat events can view others' events as well.",
   "affected": [
     {
       "package": {

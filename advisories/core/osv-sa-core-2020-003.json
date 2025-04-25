@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal 7 has an Open Redirect vulnerability. For example, a user could be tricked into visiting a specially crafted link which would redirect them to an arbitrary external URL.</p>\n<p>The vulnerability is caused by insufficient validation of the <code class=\"language-php\">destination</code> query parameter in the <code class=\"language-php\">drupal_goto()</code> function.</p>\n<p>Other versions of Drupal core are not vulnerable.</p>",
+  "details": "Drupal 7 has an Open Redirect vulnerability. For example, a user could be tricked into visiting a specially crafted link which would redirect them to an arbitrary external URL.\n\nThe vulnerability is caused by insufficient validation of the `destination` query parameter in the `drupal_goto()` function.\n\nOther versions of Drupal core are not vulnerable.",
   "affected": [
     {
       "package": {

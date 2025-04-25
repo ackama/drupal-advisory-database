@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The File Example submodule within the Examples project does not properly sanitize certain filenames as described in <a href=\"https://www.drupal.org/sa-core-2020-012\" rel=\"nofollow\">SA-CORE-2020-012</a>, along with other related vulnerabilities.</p>\n<p>Therefore, File Example so is being removed from Examples until a version demonstrating file security best practices can added back in the future.</p>",
+  "details": "The File Example submodule within the Examples project does not properly sanitize certain filenames as described in [SA-CORE-2020-012](https://www.drupal.org/sa-core-2020-012), along with other related vulnerabilities.\n\nTherefore, File Example so is being removed from Examples until a version demonstrating file security best practices can added back in the future.",
   "affected": [
     {
       "package": {

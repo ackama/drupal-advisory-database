@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module lets you craft and expose a GraphQL web service API.</p>\n<p>The module does not sufficiently protect arbitrary exception and error messages thereby exposing an information disclosure vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that a GraphQL server must be enabled and a data producer be configured that throws exceptions with confidential error messages that must not be exposed over the GraphQL API.</p>",
+  "details": "This module lets you craft and expose a GraphQL web service API.\n\nThe module does not sufficiently protect arbitrary exception and error messages thereby exposing an information disclosure vulnerability.\n\nThis vulnerability is mitigated by the fact that a GraphQL server must be enabled and a data producer be configured that throws exceptions with confidential error messages that must not be exposed over the GraphQL API.",
   "affected": [
     {
       "package": {

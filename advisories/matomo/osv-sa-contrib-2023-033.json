@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add the Matomo web statistics tracking system to your website.</p>\n<p>The module does not check the Matomo JS code loaded on the website. So a user could configure the module to load JS from a malicious website.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer matomo\" or \"administer matomo tag manager\" (D8+ only) to access the settings forms where this can be configured.</p>",
+  "details": "This module enables you to add the Matomo web statistics tracking system to your website.\n\nThe module does not check the Matomo JS code loaded on the website. So a user could configure the module to load JS from a malicious website.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer matomo\" or \"administer matomo tag manager\" (D8+ only) to access the settings forms where this can be configured.",
   "affected": [
     {
       "package": {

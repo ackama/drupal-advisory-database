@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>SVG Image module allows to upload SVG files.</p>\n<p>The module did not sufficiently protect against malicious code inside SVG files leading to a Cross Site Scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have permission to upload an SVG file.</p>",
+  "details": "SVG Image module allows to upload SVG files.\n\nThe module did not sufficiently protect against malicious code inside SVG files leading to a Cross Site Scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to upload an SVG file.",
   "affected": [
     {
       "package": {

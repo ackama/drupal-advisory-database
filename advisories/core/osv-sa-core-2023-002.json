@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Media module does not properly check entity access in some circumstances. This may result in users seeing thumbnails of media items they do not have access to, including for private files.</p>\n<p>This release was coordinated with <a href=\"https://www.drupal.org/sa-contrib-2023-010\" rel=\"nofollow\">SA-CONTRIB-2023-010</a>.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "The Media module does not properly check entity access in some circumstances. This may result in users seeing thumbnails of media items they do not have access to, including for private files.\n\nThis release was coordinated with [SA-CONTRIB-2023-010](https://www.drupal.org/sa-contrib-2023-010).\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to generate PDF versions of content.</p>\n<p>Some installations of the module make use of the dompdf/dompdf third-party dependency.</p>\n<p>Security vulnerabilities exist for versions of dompdf/dompdf before 2.0.0 as described in the <a href=\"https://github.com/dompdf/dompdf/releases/tag/v2.0.0\" rel=\"nofollow\">2.0.0 release notes.</a></p>",
+  "details": "This module enables you to generate PDF versions of content.\n\nSome installations of the module make use of the dompdf/dompdf third-party dependency.\n\nSecurity vulnerabilities exist for versions of dompdf/dompdf before 2.0.0 as described in the [2.0.0 release notes.](https://github.com/dompdf/dompdf/releases/tag/v2.0.0)",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module allows you to attach tabular data to an entity.</p>\n<p>There is insufficient access checking for users with the ability to \"Export Tablefield Data as CSV\". They can export data from unpublished nodes or otherwise inaccessible entities.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Export Tablefield Data as CSV\".</p>",
+  "details": "This module allows you to attach tabular data to an entity.\n\nThere is insufficient access checking for users with the ability to \"Export Tablefield Data as CSV\". They can export data from unpublished nodes or otherwise inaccessible entities.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Export Tablefield Data as CSV\".",
   "affected": [
     {
       "package": {

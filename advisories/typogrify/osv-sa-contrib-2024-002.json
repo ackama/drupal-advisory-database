@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Typogrify module brings the typographic refinements of Typogrify to Drupal. It provides a text filter and a Twig filter.</p>\n<p>The typogrify Twig filter can be used to bypass the Twig auto-escape feature, leading to a persistent Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that it is only exposed when the twig filter is specifically used in a template to render content.</p>",
+  "details": "The Typogrify module brings the typographic refinements of Typogrify to Drupal. It provides a text filter and a Twig filter.\n\nThe typogrify Twig filter can be used to bypass the Twig auto-escape feature, leading to a persistent Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that it is only exposed when the twig filter is specifically used in a template to render content.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module helps in exporting and importing Menu Items via the administrative interface.</p>\n<p>The module does not properly restrict access to administrative pages, allowing anonymous users to export and import menu links.</p>\n<p>There is no mitigation for this vulnerability.</p>",
+  "details": "This module helps in exporting and importing Menu Items via the administrative interface.\n\nThe module does not properly restrict access to administrative pages, allowing anonymous users to export and import menu links.\n\nThere is no mitigation for this vulnerability.",
   "affected": [
     {
       "package": {

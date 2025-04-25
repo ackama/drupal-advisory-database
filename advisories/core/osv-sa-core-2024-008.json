@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Remote Code Execution. It is not directly exploitable.</p>\n<p>This issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to <code class=\"language-php\">unserialize()</code>. There are no such known exploits in Drupal core.</p>\n<p>To help protect against this potential vulnerability, some additional checks have been added to Drupal core's database code. If you use a third-party database driver, check the release notes for additional configuration steps that may be required in certain cases.</p>",
+  "details": "Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Remote Code Execution. It is not directly exploitable.\n\nThis issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.\n\nTo help protect against this potential vulnerability, some additional checks have been added to Drupal core's database code. If you use a third-party database driver, check the release notes for additional configuration steps that may be required in certain cases.",
   "affected": [
     {
       "package": {

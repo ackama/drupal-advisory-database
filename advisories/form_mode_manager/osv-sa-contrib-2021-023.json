@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a user interface that allows the implementation and use of <em>Form modes</em> without custom development.</p>\n<p>The module does not sufficiently respect access restrictions to entity forms for routes it creates to use specific form modes.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission to use a specific form mode, for example <code class=\"language-php\">use X form mode</code>.</p>",
+  "details": "This module provides a user interface that allows the implementation and use of *Form modes* without custom development.\n\nThe module does not sufficiently respect access restrictions to entity forms for routes it creates to use specific form modes.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to use a specific form mode, for example `use X form mode`.",
   "affected": [
     {
       "package": {

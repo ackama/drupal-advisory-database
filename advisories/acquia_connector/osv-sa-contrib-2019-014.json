@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Acquia Connector facilitates sending certain telemetry data to Acquia for the purposes of analysis. The module automates the collection of site information to speed support communication and issue resolution. It is required for use with the Acquia Insight service.</p>\n<p>The module does not properly enforce access control in a specific case, which can lead to disclosing information.</p>\n<p>The vulnerability is mitigated by requiring the module diff feature to be enabled. This feature is enabled by default.</p>",
+  "details": "Acquia Connector facilitates sending certain telemetry data to Acquia for the purposes of analysis. The module automates the collection of site information to speed support communication and issue resolution. It is required for use with the Acquia Insight service.\n\nThe module does not properly enforce access control in a specific case, which can lead to disclosing information.\n\nThe vulnerability is mitigated by requiring the module diff feature to be enabled. This feature is enabled by default.",
   "affected": [
     {
       "package": {

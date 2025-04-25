@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Open Social is a Drupal distribution for online communities, which ships with a default (optional) module social_file_private to ensure the images and files provided by the distribution are stored in the private instead of the public filesystem.</p>\n<p>For installations of Open Social prior to version 11.8.0, after updating to 11.8.0 or higher, newly uploaded files were no longer stored in the private file system as intended. Instead, they were stored in the public file system.</p>",
+  "details": "Open Social is a Drupal distribution for online communities, which ships with a default (optional) module social\\_file\\_private to ensure the images and files provided by the distribution are stored in the private instead of the public filesystem.\n\nFor installations of Open Social prior to version 11.8.0, after updating to 11.8.0 or higher, newly uploaded files were no longer stored in the private file system as intended. Instead, they were stored in the public file system.",
   "affected": [
     {
       "package": {

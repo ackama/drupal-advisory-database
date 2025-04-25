@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This project is related to Opigno LMS distribution. It implements the group manager in the Opigno LMS. </p>\n<p>The module does not set X-Frame-Options and blocks ability of other modules (e.g <a href=\"https://www.drupal.org/project/seckit\" rel=\"nofollow\">Security Kit</a>) to add them, leaving it vulnerable to Clickjacking.</p>",
+  "details": "This project is related to Opigno LMS distribution. It implements the group manager in the Opigno LMS.\n\nThe module does not set X-Frame-Options and blocks ability of other modules (e.g [Security Kit](https://www.drupal.org/project/seckit)) to add them, leaving it vulnerable to Clickjacking.",
   "affected": [
     {
       "package": {

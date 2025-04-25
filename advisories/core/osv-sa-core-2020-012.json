@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p><em>Update November 18: Documented longer list of dangerous file extensions</em></p>\n<p>Drupal core does not properly sanitize certain filenames on uploaded files, which can lead to files being interpreted as the incorrect extension and served as the wrong MIME type or executed as PHP for certain hosting configurations.</p>",
+  "details": "*Update November 18: Documented longer list of dangerous file extensions*\n\nDrupal core does not properly sanitize certain filenames on uploaded files, which can lead to files being interpreted as the incorrect extension and served as the wrong MIME type or executed as PHP for certain hosting configurations.",
   "affected": [
     {
       "package": {

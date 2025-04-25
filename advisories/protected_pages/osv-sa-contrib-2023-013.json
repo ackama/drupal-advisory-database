@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to secure any page with a password.</p>\n<p>The module does not sufficiently restrict access to the page content.</p>",
+  "details": "This module enables you to secure any page with a password.\n\nThe module does not sufficiently restrict access to the page content.",
   "affected": [
     {
       "package": {

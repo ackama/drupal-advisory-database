@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Opigno Learning Path module enables you to manage group content. </p>\n<p>Administrative forms allow uploading malicious files which may contain arbitrary code (RCE) or cross site scriptiong (XSS). These forms were not adequately controlled with permissions that communicate the severity of the permission.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Manage group content in any group\".</p>",
+  "details": "The Opigno Learning Path module enables you to manage group content.\n\nAdministrative forms allow uploading malicious files which may contain arbitrary code (RCE) or cross site scriptiong (XSS). These forms were not adequately controlled with permissions that communicate the severity of the permission.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Manage group content in any group\".",
   "affected": [
     {
       "package": {

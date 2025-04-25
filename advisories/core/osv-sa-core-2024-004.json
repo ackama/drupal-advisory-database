@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.</p>\n<p>As a result, a user may be able to register with the same email address as another user.</p>\n<p>This may lead to data integrity issues.</p>",
+  "details": "Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.\n\nAs a result, a user may be able to register with the same email address as another user.\n\nThis may lead to data integrity issues.",
   "affected": [
     {
       "package": {

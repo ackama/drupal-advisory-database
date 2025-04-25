@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to have a separate permission only for creating users.</p>\n<p>The module doesn't respect Drupal's setting for \"Who can register accounts?\" when set to \"Visitors, but administrator approval is required\".</p>\n<p>When this option is chosen, the module overrides the setting, and makes it possible to register accounts with no approval.</p>\n<p>This vulnerability can be mitigated by having other settings in place for account registration, such as requiring email verification for new accounts, or permitting account creation for \"Administrators only\".</p>",
+  "details": "This module enables you to have a separate permission only for creating users.\n\nThe module doesn't respect Drupal's setting for \"Who can register accounts?\" when set to \"Visitors, but administrator approval is required\".\n\nWhen this option is chosen, the module overrides the setting, and makes it possible to register accounts with no approval.\n\nThis vulnerability can be mitigated by having other settings in place for account registration, such as requiring email verification for new accounts, or permitting account creation for \"Administrators only\".",
   "affected": [
     {
       "package": {

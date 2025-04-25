@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The GOV.UK Theme (<code class=\"language-php\">govuk_theme</code>) is a Drupal theme for the GOV.UK Design System.</p>\n<p>The theme doesn't sanitize user input in certain cases, which leads to Cross-Site-Scripting (XSS) vulnerabilities. An attacker that can create or edit certain entities or configuration may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities to target visitors of the site, including site admins with privileged access.</p>\n<p>The vulnerability is mitigated by the facts, that:</p>\n<ul>\n<li>An attacker must have one of several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.</li>\n<li>For some of the vulnerabilities, certain contributed modules must be enabled.</li>\n</ul>",
+  "details": "The GOV.UK Theme (`govuk_theme`) is a Drupal theme for the GOV.UK Design System.\n\nThe theme doesn't sanitize user input in certain cases, which leads to Cross-Site-Scripting (XSS) vulnerabilities. An attacker that can create or edit certain entities or configuration may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities to target visitors of the site, including site admins with privileged access.\n\nThe vulnerability is mitigated by the facts, that:\n\n* An attacker must have one of several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.\n* For some of the vulnerabilities, certain contributed modules must be enabled.",
   "affected": [
     {
       "package": {

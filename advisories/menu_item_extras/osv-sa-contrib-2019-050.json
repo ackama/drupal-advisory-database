@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to handle fields for Custom Menu Links.<br />\nThe module doesn't sufficiently check requests to one of the module controllers if the user has permission 'administer menu'.<br />\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create content.</p>",
+  "details": "This module enables you to handle fields for Custom Menu Links.  \nThe module doesn't sufficiently check requests to one of the module controllers if the user has permission 'administer menu'.  \nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create content.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Group module enables you to hand out permissions on a smaller subset, section or community of your website.</p>\n<p>Under very specific circumstances, where two group types support the same content, yet hand out different permissions, non-members of the first group type may use the set of permissions of the 2nd group type for the grouped content.</p>\n<p>This vulnerability is mitigated by the fact that you must already have a rare set-up and the two group types are configured in a way where one is more permissive than the other over the same type of content.</p>",
+  "details": "The Group module enables you to hand out permissions on a smaller subset, section or community of your website.\n\nUnder very specific circumstances, where two group types support the same content, yet hand out different permissions, non-members of the first group type may use the set of permissions of the 2nd group type for the grouped content.\n\nThis vulnerability is mitigated by the fact that you must already have a rare set-up and the two group types are configured in a way where one is more permissive than the other over the same type of content.",
   "affected": [
     {
       "package": {

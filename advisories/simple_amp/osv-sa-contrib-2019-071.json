@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module allows display of a site's content in AMP format.</p>\n<p>The module doesn't sufficiently check access on unpublished or restricted content.</p>",
+  "details": "This module allows display of a site's content in AMP format.\n\nThe module doesn't sufficiently check access on unpublished or restricted content.",
   "affected": [
     {
       "package": {

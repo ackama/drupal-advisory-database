@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to remain logged in separately from session timeouts.</p>\n<p>The module doesn't sufficiently check a user's disabled status when validating cookies.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have an unexpired cookie from a previous successful login.</p>",
+  "details": "This module enables users to remain logged in separately from session timeouts.\n\nThe module doesn't sufficiently check a user's disabled status when validating cookies.\n\nThis vulnerability is mitigated by the fact that an attacker must have an unexpired cookie from a previous successful login.",
   "affected": [
     {
       "package": {

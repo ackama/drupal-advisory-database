@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>\nA remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x.  This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being completely compromised.\n</p>\n<p>\nThe security team has written an <a href=\"https://groups.drupal.org/security/faq-2018-002\" rel=\"nofollow\"> FAQ</a> about this issue.\n</p>\n<p><em>Edited 2020, February 13 to fix links to patch files.</em></p>",
+  "details": "A remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x. This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being completely compromised.\n\nThe security team has written an  [FAQ](https://groups.drupal.org/security/faq-2018-002) about this issue.\n\n*Edited 2020, February 13 to fix links to patch files.*",
   "affected": [
     {
       "package": {

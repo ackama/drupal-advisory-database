@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add or overwrite PHP configuration on a drupal website.</p>\n<p>The module doesn't sufficiently allow access to set these configurations, leading to arbitrary PHP configuration execution by an attacker.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer phpconfig\".</p>\n<p>After updating the module, it's important to review the permissions of your website and if 'administer phpconfig' permission is given to a not fully trusted user role, we advise to revoke it.</p>",
+  "details": "This module enables you to add or overwrite PHP configuration on a drupal website.\n\nThe module doesn't sufficiently allow access to set these configurations, leading to arbitrary PHP configuration execution by an attacker.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer phpconfig\".\n\nAfter updating the module, it's important to review the permissions of your website and if 'administer phpconfig' permission is given to a not fully trusted user role, we advise to revoke it.",
   "affected": [
     {
       "package": {

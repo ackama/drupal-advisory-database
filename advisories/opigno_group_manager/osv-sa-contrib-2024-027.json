@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Opigno group manager project is related to Opigno LMS distribution. It allows to build the contents of learning paths, by combining together modules, courses, and other activities, ordering them, and defining conditional rules for the transitions from one step to the next one.</p>\n<p>An administration form allows execution of arbitrary code.</p>\n<p>This issue is mitigated by several factors. First, it requires the attacker have the permission \"update group learning_path\". Additionally, it requires several steps and depends on other data in the system to be in place.</p>",
+  "details": "The Opigno group manager project is related to Opigno LMS distribution. It allows to build the contents of learning paths, by combining together modules, courses, and other activities, ordering them, and defining conditional rules for the transitions from one step to the next one.\n\nAn administration form allows execution of arbitrary code.\n\nThis issue is mitigated by several factors. First, it requires the attacker have the permission \"update group learning\\_path\". Additionally, it requires several steps and depends on other data in the system to be in place.",
   "affected": [
     {
       "package": {

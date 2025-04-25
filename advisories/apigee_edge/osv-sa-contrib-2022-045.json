@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal. The developers (user) can view API keys for their respective Apps.</p>\n<p>The module discloses information by allowing attackers to view cached information of API Keys from the browser cache for a limited time frame after the user login on the same computer.</p>",
+  "details": "The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal. The developers (user) can view API keys for their respective Apps.\n\nThe module discloses information by allowing attackers to view cached information of API Keys from the browser cache for a limited time frame after the user login on the same computer.",
   "affected": [
     {
       "package": {

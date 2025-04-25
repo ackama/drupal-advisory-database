@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add the Matomo web statistics tracking system to your website.</p>\n<p>The Matomo Analytics Tag Manager sub-module allows you to add one or more Matomo tag containers on your website.</p>\n<p>The module does not protect against Cross Site Request Forgeries on routes to enable or disable containers.</p>\n<p>This vulnerability is mitigated by the fact that:</p>\n<ul>\n<li>The website needs to have the submodule \"Matomo Analytics Tag Manager\" enabled.</li>\n<li>An attacker must know the machine name of the container.</li>\n</ul>",
+  "details": "This module enables you to add the Matomo web statistics tracking system to your website.\n\nThe Matomo Analytics Tag Manager sub-module allows you to add one or more Matomo tag containers on your website.\n\nThe module does not protect against Cross Site Request Forgeries on routes to enable or disable containers.\n\nThis vulnerability is mitigated by the fact that:\n\n* The website needs to have the submodule \"Matomo Analytics Tag Manager\" enabled.\n* An attacker must know the machine name of the container.",
   "affected": [
     {
       "package": {

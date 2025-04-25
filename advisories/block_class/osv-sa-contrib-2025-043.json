@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Block Class enables you to add custom attributes to blocks.</p>\n<p>The module did not sufficiently sanitize custom attribute input, allowing for potential XSS attacks when malicious JavaScript was injected as a custom attribute.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer block classes\".</p>",
+  "details": "Block Class enables you to add custom attributes to blocks.\n\nThe module did not sufficiently sanitize custom attribute input, allowing for potential XSS attacks when malicious JavaScript was injected as a custom attribute.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer block classes\".",
   "affected": [
     {
       "package": {

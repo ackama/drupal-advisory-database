@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to output a field as a slideshow.</p>\n<p>The module doesn't sufficiently filter strings added to the fields leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have the ability to create content which is output as a slideshow.</p>",
+  "details": "This module enables you to output a field as a slideshow.\n\nThe module doesn't sufficiently filter strings added to the fields leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have the ability to create content which is output as a slideshow.",
   "affected": [
     {
       "package": {

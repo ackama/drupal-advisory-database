@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Permissions by Term module extends Drupal by functionality for restricting access to single nodes via taxonomy terms.</p>\n<p>The module doesn't sufficiently restrict access to node previews, when the Search API module is used to display nodes in search result lists.</p>",
+  "details": "The Permissions by Term module extends Drupal by functionality for restricting access to single nodes via taxonomy terms.\n\nThe module doesn't sufficiently restrict access to node previews, when the Search API module is used to display nodes in search result lists.",
   "affected": [
     {
       "package": {

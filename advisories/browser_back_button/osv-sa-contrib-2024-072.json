@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a block that renders a link providing the functionality of a browser's back button.</p>\n<p>The module does not sufficiently escape text entered by an administrator, resulting in a cross scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".</p>",
+  "details": "This module provides a block that renders a link providing the functionality of a browser's back button.\n\nThe module does not sufficiently escape text entered by an administrator, resulting in a cross scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {
       "package": {

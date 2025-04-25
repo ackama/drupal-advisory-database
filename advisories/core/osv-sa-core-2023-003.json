@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.</p>\n<p>The URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.\n\nThe URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

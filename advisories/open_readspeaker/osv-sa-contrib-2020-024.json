@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add a configured ReadSpeaker button for text-to-speech for your site visitors.</p>\n<p>The module doesn't sufficiently sanitize block configuration causing a Cross Site Scripting (XSS) vulnerability. </p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".</p>",
+  "details": "This module enables you to add a configured ReadSpeaker button for text-to-speech for your site visitors.\n\nThe module doesn't sufficiently sanitize block configuration causing a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {
       "package": {

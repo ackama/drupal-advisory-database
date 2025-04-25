@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This project enables administrators to create modal dialogs.</p>\n<p>The routes used by the module lacked proper permissions, allowing untrusted users to access, create and modify modal configurations.</p>",
+  "details": "This project enables administrators to create modal dialogs.\n\nThe routes used by the module lacked proper permissions, allowing untrusted users to access, create and modify modal configurations.",
   "affected": [
     {
       "package": {

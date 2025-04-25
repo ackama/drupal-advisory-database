@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Media Library module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.</p>\n<p>The vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "The Media Library module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.\n\nThe vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

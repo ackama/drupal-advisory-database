@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This advisory addresses a similar issue to <a href=\"https://www.drupal.org/sa-core-2021-006\" rel=\"nofollow\">Drupal core - Moderately critical - Cross Site Request Forgery - SA-CORE-2021-006</a>.</p>\n<p>The Entity Embed module provides a filter to allow embedding entities in content fields. In certain circumstances, the filter could allow an unprivileged user to inject HTML into a page when it is accessed by a trusted user with permission to embed entities. In some cases, this could lead to cross-site scripting.</p>",
+  "details": "This advisory addresses a similar issue to [Drupal core - Moderately critical - Cross Site Request Forgery - SA-CORE-2021-006](https://www.drupal.org/sa-core-2021-006).\n\nThe Entity Embed module provides a filter to allow embedding entities in content fields. In certain circumstances, the filter could allow an unprivileged user to inject HTML into a page when it is accessed by a trusted user with permission to embed entities. In some cases, this could lead to cross-site scripting.",
   "affected": [
     {
       "package": {

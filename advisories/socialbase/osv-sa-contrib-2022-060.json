@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>\nThe Social Base theme is designed as a base theme for Open Social. This base<br />\ntheme holds has a lot of sensible defaults. It doesn't however contain much<br />\nstyling. We expect developers to want to change this for their own project.\n</p>\n<p>When content within the Open Social distribution is placed within a group then the Socialbase theme renders a link to that group on the content view page.</p>\n<p>The link to groups was rendered without sufficiently checking that the viewing user has access to the group. When creating public content in a non-public group this could lead to exposing the existence of the group and the group title to unauthorized users. The group itself remained inaccessible.</p>",
+  "details": "The Social Base theme is designed as a base theme for Open Social. This base  \ntheme holds has a lot of sensible defaults. It doesn't however contain much  \nstyling. We expect developers to want to change this for their own project.\n\nWhen content within the Open Social distribution is placed within a group then the Socialbase theme renders a link to that group on the content view page.\n\nThe link to groups was rendered without sufficiently checking that the viewing user has access to the group. When creating public content in a non-public group this could lead to exposing the existence of the group and the group title to unauthorized users. The group itself remained inaccessible.",
   "affected": [
     {
       "package": {

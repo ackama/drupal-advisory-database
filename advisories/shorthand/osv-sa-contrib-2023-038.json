@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides integration with Shorthand, an application which describes itself as \"beautifully simple storytelling\".</p>\n<p>The module does not check appropriate permissions when displaying a list of all shorthand stories.</p>",
+  "details": "This module provides integration with Shorthand, an application which describes itself as \"beautifully simple storytelling\".\n\nThe module does not check appropriate permissions when displaying a list of all shorthand stories.",
   "affected": [
     {
       "package": {

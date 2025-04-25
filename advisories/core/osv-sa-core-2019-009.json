@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>A visit to <code class=\"language-php\">install.php</code> can cause cached data to become corrupted. This could cause a site to be impaired until caches are rebuilt.</p>",
+  "details": "A visit to `install.php` can cause cached data to become corrupted. This could cause a site to be impaired until caches are rebuilt.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you login into any OAuth 2.0 compliant application using Drupal credentials.</p>\n<p>The 8.x branch of the module is vulnerable to SQL injection.</p>",
+  "details": "This module enables you login into any OAuth 2.0 compliant application using Drupal credentials.\n\nThe 8.x branch of the module is vulnerable to SQL injection.",
   "affected": [
     {
       "package": {

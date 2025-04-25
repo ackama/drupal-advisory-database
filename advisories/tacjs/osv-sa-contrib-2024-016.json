@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables sites to comply with the European cookie law using tarteaucitron.js.</p>\n<p>The module doesn't sufficiently filter user-supplied markup inside of content leading to a persistent Cross Site Scripting (XSS) vulnerability. More details are available in <a href=\"https://nvd.nist.gov/vuln/detail/CVE-2023-3620\" rel=\"nofollow\">CVE-2023-3620</a>.</p>\n<p>This vulnerability is mitigated by the fact that an attacker needs to be able to write content in the page, a feature commonly available on Drupal sites.</p>",
+  "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to a persistent Cross Site Scripting (XSS) vulnerability. More details are available in [CVE-2023-3620](https://nvd.nist.gov/vuln/detail/CVE-2023-3620).\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to write content in the page, a feature commonly available on Drupal sites.",
   "affected": [
     {
       "package": {

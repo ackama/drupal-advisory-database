@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add social sharing buttons to a site.</p>\n<p>The module doesn't sufficiently sanitize the weight and ratio values entered in the module or block configuration.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".</p>",
+  "details": "This module enables you to add social sharing buttons to a site.\n\nThe module doesn't sufficiently sanitize the weight and ratio values entered in the module or block configuration.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {
       "package": {

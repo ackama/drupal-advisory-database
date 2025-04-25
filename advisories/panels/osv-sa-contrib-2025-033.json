@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Panels enables administrators to add page variants within page manager, panelizer, etc to create custom pages.</p>\n<p>The module doesn't sufficiently protect sensitive routes, allowing an attacker to view and modify blocks within variants without requiring appropriate permission.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the machine name of the variant and underlying page, which is not available within the source code of a page. Additionally, only simple blocks can be added or edited, as a more complex block will trigger an error due to missing permissions.</p>",
+  "details": "Panels enables administrators to add page variants within page manager, panelizer, etc to create custom pages.\n\nThe module doesn't sufficiently protect sensitive routes, allowing an attacker to view and modify blocks within variants without requiring appropriate permission.\n\nThis vulnerability is mitigated by the fact that an attacker must know the machine name of the variant and underlying page, which is not available within the source code of a page. Additionally, only simple blocks can be added or edited, as a more complex block will trigger an error due to missing permissions.",
   "affected": [
     {
       "package": {

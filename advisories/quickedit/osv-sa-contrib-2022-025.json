@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This advisory addresses a similar issue to <a href=\"https://www.drupal.org/sa-core-2022-004\" rel=\"nofollow\">Drupal core - Moderately critical - Information disclosure - SA-CORE-2022-004</a>.</p>\n<p>The Quick Edit module does not properly check entity access in some circumstances. This could result in users with the \"access in-place editing\" permission viewing some content they are are not authorized to access.</p>",
+  "details": "This advisory addresses a similar issue to [Drupal core - Moderately critical - Information disclosure - SA-CORE-2022-004](https://www.drupal.org/sa-core-2022-004).\n\nThe Quick Edit module does not properly check entity access in some circumstances. This could result in users with the \"access in-place editing\" permission viewing some content they are are not authorized to access.",
   "affected": [
     {
       "package": {

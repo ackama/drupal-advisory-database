@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to monitor and manage any number of remote Drupal sites and aggregate useful information for administrators in a central dashboard.</p>\n<p>The modules (DRD and DRD Agent) encrypt the data which is exchanged between them but in order to do so, they use the PHP serialize/unserialize functions instead of the json_encode/json_decode combination. As the unserialize function is called on unauthenticated content, this introduces a PHP object injection vulnerability.</p>",
+  "details": "This module enables you to monitor and manage any number of remote Drupal sites and aggregate useful information for administrators in a central dashboard.\n\nThe modules (DRD and DRD Agent) encrypt the data which is exchanged between them but in order to do so, they use the PHP serialize/unserialize functions instead of the json\\_encode/json\\_decode combination. As the unserialize function is called on unauthenticated content, this introduces a PHP object injection vulnerability.",
   "affected": [
     {
       "package": {

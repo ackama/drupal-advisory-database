@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to hide email addresses from bots and site scrapers by using the rot13 strategy.</p>\n<p>The module doesn't sufficiently escape the data attribute under the scenario a user has access to manipulate that value.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with permissions to allow data attributes in content on a site.</p>",
+  "details": "This module enables you to hide email addresses from bots and site scrapers by using the rot13 strategy.\n\nThe module doesn't sufficiently escape the data attribute under the scenario a user has access to manipulate that value.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permissions to allow data attributes in content on a site.",
   "affected": [
     {
       "package": {

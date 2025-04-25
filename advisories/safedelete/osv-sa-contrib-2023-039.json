@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module aims to prevent broken content references by informing content editors either on delete or archive moderation. </p>\n<p>The module provides an \"orphaned content\" report for broken references, which may reveal titles of unpublished content.</p>",
+  "details": "This module aims to prevent broken content references by informing content editors either on delete or archive moderation.\n\nThe module provides an \"orphaned content\" report for broken references, which may reveal titles of unpublished content.",
   "affected": [
     {
       "package": {

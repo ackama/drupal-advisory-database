@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to control access to content based on taxonomy terms. The module doesn't sufficiently check if a given entity should be access controlled, defaulting to allowing access even to unpublished nodes.</p>\n<p>The vulnerability is mitigated by the fact that the submodule Permissions by Entity must also be enabled.</p>",
+  "details": "This module enables you to control access to content based on taxonomy terms. The module doesn't sufficiently check if a given entity should be access controlled, defaulting to allowing access even to unpublished nodes.\n\nThe vulnerability is mitigated by the fact that the submodule Permissions by Entity must also be enabled.",
   "affected": [
     {
       "package": {

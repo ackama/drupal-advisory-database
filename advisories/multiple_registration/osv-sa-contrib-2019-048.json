@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to use special routes for user registration with special roles and custom field sets defined for the role.</p>\n<p>The module doesn't sufficiently check which user roles can be registered under the scenario when the user tries to register the user with the administrator role.</p>\n<p>This vulnerability is mitigated on sites where account approval is required as the user starts as blocked but still gets the \"Administrator\" role.</p>",
+  "details": "This module enables you to use special routes for user registration with special roles and custom field sets defined for the role.\n\nThe module doesn't sufficiently check which user roles can be registered under the scenario when the user tries to register the user with the administrator role.\n\nThis vulnerability is mitigated on sites where account approval is required as the user starts as blocked but still gets the \"Administrator\" role.",
   "affected": [
     {
       "package": {

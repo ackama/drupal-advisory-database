@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to login with an email address.</p>\n<p>The module doesn't sufficiently check if a user account is active when using email login.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have an account in the website that is blocked.</p>",
+  "details": "This module enables you to login with an email address.\n\nThe module doesn't sufficiently check if a user account is active when using email login.\n\nThis vulnerability is mitigated by the fact that an attacker must have an account in the website that is blocked.",
   "affected": [
     {
       "package": {

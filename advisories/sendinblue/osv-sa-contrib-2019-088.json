@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p><strong>Update:</strong> This module had an access bypass vulnerability which has now been addressed by the module\u2019s current maintainers.</p>\n<h3>Original description</h3>\n<p>The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <a href=\"https://www.drupal.org/node/251466#procedure---own-project---unsupported\" rel=\"nofollow\">https://www.drupal.org/node/251466#procedure---own-project---unsupported</a></p>",
+  "details": "**Update:** This module had an access bypass vulnerability which has now been addressed by the module\u2019s current maintainers.\n\n### Original description\n\nThe security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
   "affected": [
     {
       "package": {

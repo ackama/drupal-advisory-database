@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Webform module allows site builders to create forms.</p>\n<p>The module doesn't sufficiently prevent malicious code from being render via an options elements (i.e select menu, checkboxes, radios, etc...) under the scenario where the site builder allows the raw option value to be displayed.</p>\n<p>This vulnerability is mitigated by the fact that site builder must be allowed to build webform and select raw as the options element's submission display.</p>",
+  "details": "The Webform module allows site builders to create forms.\n\nThe module doesn't sufficiently prevent malicious code from being render via an options elements (i.e select menu, checkboxes, radios, etc...) under the scenario where the site builder allows the raw option value to be displayed.\n\nThis vulnerability is mitigated by the fact that site builder must be allowed to build webform and select raw as the options element's submission display.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables your users residing at a SAML 2.0 compliant Identity Provider to login to your Drupal website.</p>\n<p>The module has two Authentication Bypass vulnerabilities.</p>",
+  "details": "This module enables your users residing at a SAML 2.0 compliant Identity Provider to login to your Drupal website.\n\nThe module has two Authentication Bypass vulnerabilities.",
   "affected": [
     {
       "package": {

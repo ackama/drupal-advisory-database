@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Media Library module has a security vulnerability whereby it doesn't sufficiently restrict access to media items in certain configurations.</p>",
+  "details": "The Media Library module has a security vulnerability whereby it doesn't sufficiently restrict access to media items in certain configurations.",
   "affected": [
     {
       "package": {

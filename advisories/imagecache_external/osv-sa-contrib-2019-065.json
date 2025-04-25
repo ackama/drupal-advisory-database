@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module that allows you to store external images on your server and apply your own Image Styles.</p>\n<p>The module exposes cookies to external sites when making external image requests.</p>\n<p>This vulnerability is mitigated by using the whitelisted host feature to restrict external image requests from trusted sources.</p>",
+  "details": "This module that allows you to store external images on your server and apply your own Image Styles.\n\nThe module exposes cookies to external sites when making external image requests.\n\nThis vulnerability is mitigated by using the whitelisted host feature to restrict external image requests from trusted sources.",
   "affected": [
     {
       "package": {

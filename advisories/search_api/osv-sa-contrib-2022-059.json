@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to build searches using a wide range of features, data sources and backends.</p>\n<p>The module doesn't in all cases correctly detect whether a given search is active on the current page, leading to potential information disclosure for some setups.</p>\n<p>This vulnerability is mitigated by the fact that only very specific setups will have this problem and there is no way for an attacker to trigger it.</p>",
+  "details": "This module enables you to build searches using a wide range of features, data sources and backends.\n\nThe module doesn't in all cases correctly detect whether a given search is active on the current page, leading to potential information disclosure for some setups.\n\nThis vulnerability is mitigated by the fact that only very specific setups will have this problem and there is no way for an attacker to trigger it.",
   "affected": [
     {
       "package": {

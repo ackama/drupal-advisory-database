@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Module to restrict access from anonymous and regular users to configured pre-defined pages.</p>\n<p>The module does not adequately handle protecting certain types of URLs.</p>",
+  "details": "Module to restrict access from anonymous and regular users to configured pre-defined pages.\n\nThe module does not adequately handle protecting certain types of URLs.",
   "affected": [
     {
       "package": {

@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to log in using a short access code instead of providing a username/password combination.</p>\n<p>The module doesn't sufficiently protect against brute force attacks to guess a user's access code.</p>\n<p>This vulnerability is mitigated by the fact that access code based logins are off by default and only enabled for accounts that enable it. Sites could mitigate the issue without updating by:</p>\n<ol>\n<li>disabling the access code login method for critical accounts</li>\n<li>monitor and prevent brute force attacks in other ways (for example, with a Web Application Firewall)</li>\n</ol>",
+  "details": "This module enables users to log in using a short access code instead of providing a username/password combination.\n\nThe module doesn't sufficiently protect against brute force attacks to guess a user's access code.\n\nThis vulnerability is mitigated by the fact that access code based logins are off by default and only enabled for accounts that enable it. Sites could mitigate the issue without updating by:\n\n1. disabling the access code login method for critical accounts\n2. monitor and prevent brute force attacks in other ways (for example, with a Web Application Firewall)",
   "affected": [
     {
       "package": {

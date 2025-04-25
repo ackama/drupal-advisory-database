@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a field on user profiles which allows users to get a notification when their account logs in to the site. The notification e-mail includes a link which will terminate all sessions for that user. This is useful in the case of unauthorised access to the account.</p>\n<p>The module doesn't employ sufficient randomness in the generation of URLs, which represents an Access Bypass vulnerability.</p>",
+  "details": "This module provides a field on user profiles which allows users to get a notification when their account logs in to the site. The notification e-mail includes a link which will terminate all sessions for that user. This is useful in the case of unauthorised access to the account.\n\nThe module doesn't employ sufficient randomness in the generation of URLs, which represents an Access Bypass vulnerability.",
   "affected": [
     {
       "package": {

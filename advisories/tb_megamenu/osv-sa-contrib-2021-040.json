@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.</p>\n<p>The module does not use CSRF tokens to protect routes for saving menu configurations.</p>\n<p>This vulnerability can be exploited by an anonymous user.</p>",
+  "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nThe module does not use CSRF tokens to protect routes for saving menu configurations.\n\nThis vulnerability can be exploited by an anonymous user.",
   "affected": [
     {
       "package": {

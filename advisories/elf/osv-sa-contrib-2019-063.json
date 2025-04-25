@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The External Link Filter module provides an input filter that replaces external links by a local link that redirects to the target URL.</p>\n<p>The module did not have protection for the Redirect URL to go where content authors intended.</p>",
+  "details": "The External Link Filter module provides an input filter that replaces external links by a local link that redirects to the target URL.\n\nThe module did not have protection for the Redirect URL to go where content authors intended.",
   "affected": [
     {
       "package": {

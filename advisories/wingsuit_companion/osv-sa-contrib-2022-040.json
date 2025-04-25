@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Wingsuit module enables site builders to build UI Patterns (and|or) Twig Components with Storybook and use them without any mapping code in Drupal.</p>\n<p>The module doesn't have an access check for the admin form allowing an attacker to view and modify the Wingsuit configuration.</p>",
+  "details": "The Wingsuit module enables site builders to build UI Patterns (and|or) Twig Components with Storybook and use them without any mapping code in Drupal.\n\nThe module doesn't have an access check for the admin form allowing an attacker to view and modify the Wingsuit configuration.",
   "affected": [
     {
       "package": {

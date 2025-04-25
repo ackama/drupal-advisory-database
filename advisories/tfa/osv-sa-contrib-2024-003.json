@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to allow and/or require users to use a second authentication method in addition to password authentication.</p>\n<p>In some cases, the module allows users to log in with an authentication plugin that an administrator has disabled.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must obtain a valid first-factor login credential, that an administrator must enable and then disable an authentication plugin, and that an attacker must obtain the valid second factor credential for the disabled plugin.</p>",
+  "details": "This module enables you to allow and/or require users to use a second authentication method in addition to password authentication.\n\nIn some cases, the module allows users to log in with an authentication plugin that an administrator has disabled.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain a valid first-factor login credential, that an administrator must enable and then disable an authentication plugin, and that an attacker must obtain the valid second factor credential for the disabled plugin.",
   "affected": [
     {
       "package": {

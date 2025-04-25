@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to restrict content via taxonomy terms and related permissions.</p>\n<p>The module doesn't sufficiently restrict cached content in certain circumstances.</p>\n<p>This vulnerability is mitigated by the fact that it only occurs when multiple entity types are enabled in the module.</p>",
+  "details": "This module enables you to restrict content via taxonomy terms and related permissions.\n\nThe module doesn't sufficiently restrict cached content in certain circumstances.\n\nThis vulnerability is mitigated by the fact that it only occurs when multiple entity types are enabled in the module.",
   "affected": [
     {
       "package": {

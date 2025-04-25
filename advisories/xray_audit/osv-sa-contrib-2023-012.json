@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module is a tool for developers, analysts, and administrators that allows them to generate reports on a given Drupal installation.</p>\n<p>The module does not sufficiently sanitize some data presented in its reports. </p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with permissions to administer an impacted content type.</p>",
+  "details": "This module is a tool for developers, analysts, and administrators that allows them to generate reports on a given Drupal installation.\n\nThe module does not sufficiently sanitize some data presented in its reports.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permissions to administer an impacted content type.",
   "affected": [
     {
       "package": {

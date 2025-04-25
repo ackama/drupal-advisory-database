@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to build forms and surveys in Drupal.</p>\n<p>The Webform Node sub-module allows these forms to be associated with a Drupal node. The Webform Node module does not implement access checking in the same manner as other nodes and entities. As such, writers of custom modules which implement webform_node, node, or entity access checks may not achieve the intended access results for Webform Node content. </p>\n<p>There is no known exploit of this vulnerability and the vulnerability only exists on sites with custom code and a node access module in use.</p>",
+  "details": "This module enables you to build forms and surveys in Drupal.\n\nThe Webform Node sub-module allows these forms to be associated with a Drupal node. The Webform Node module does not implement access checking in the same manner as other nodes and entities. As such, writers of custom modules which implement webform\\_node, node, or entity access checks may not achieve the intended access results for Webform Node content.\n\nThere is no known exploit of this vulnerability and the vulnerability only exists on sites with custom code and a node access module in use.",
   "affected": [
     {
       "package": {

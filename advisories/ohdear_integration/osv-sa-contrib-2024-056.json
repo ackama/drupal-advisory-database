@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Integrates your Drupal website with the Oh Dear monitoring app.</p>\n<p>Cached data of monitoring results is accessible to non-logged in users when caching is enabled on the module. </p>\n<p>This vulnerability is mitigated by the fact that it only affects sites where caching is enabled for OhDear report healthcheck endpoint. It is not enabled by default and there's no UI option to do it. It has to be done directly in the ohdear_integration.settings.yml.</p>",
+  "details": "Integrates your Drupal website with the Oh Dear monitoring app.\n\nCached data of monitoring results is accessible to non-logged in users when caching is enabled on the module.\n\nThis vulnerability is mitigated by the fact that it only affects sites where caching is enabled for OhDear report healthcheck endpoint. It is not enabled by default and there's no UI option to do it. It has to be done directly in the ohdear\\_integration.settings.yml.",
   "affected": [
     {
       "package": {

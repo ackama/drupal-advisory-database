@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides integration with Mailchimp, a popular email delivery service.</p>\n<p>A route related to OAuth authentication is not protected against a Cross Site Request Forgery attack.</p>",
+  "details": "This module provides integration with Mailchimp, a popular email delivery service.\n\nA route related to OAuth authentication is not protected against a Cross Site Request Forgery attack.",
   "affected": [
     {
       "package": {

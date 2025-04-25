@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>In certain configuration cases, when a learning path is configured as semi-private, anonymous users are allowed to join a learning path when they should not.</p>",
+  "details": "In certain configuration cases, when a learning path is configured as semi-private, anonymous users are allowed to join a learning path when they should not.",
   "affected": [
     {
       "package": {

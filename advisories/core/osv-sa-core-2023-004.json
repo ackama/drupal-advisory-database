@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core provides a page that outputs the markup from <code class=\"language-php\">phpinfo()</code> to assist with diagnosing PHP configuration.</p>\n<p>If an attacker was able to achieve an XSS exploit against a privileged user, they may be able to use the phpinfo page to access sensitive information that could be used to escalate the attack.</p>\n<p>This vulnerability is mitigated by the fact that a successful XSS exploit is required in order to exploit it.</p>",
+  "details": "Drupal core provides a page that outputs the markup from `phpinfo()` to assist with diagnosing PHP configuration.\n\nIf an attacker was able to achieve an XSS exploit against a privileged user, they may be able to use the phpinfo page to access sensitive information that could be used to escalate the attack.\n\nThis vulnerability is mitigated by the fact that a successful XSS exploit is required in order to exploit it.",
   "affected": [
     {
       "package": {

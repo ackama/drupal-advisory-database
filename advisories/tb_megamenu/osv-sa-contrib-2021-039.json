@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.</p>\n<p>It does not sufficiently sanitize user input such that an admin with permissions to edit a menu may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have permission to administer mega menus and/or create or edit menu links, to inject the XSS. </p>",
+  "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nIt does not sufficiently sanitize user input such that an admin with permissions to edit a menu may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to administer mega menus and/or create or edit menu links, to inject the XSS.",
   "affected": [
     {
       "package": {

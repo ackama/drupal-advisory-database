@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Drupal project uses the third-party library <a href=\"https://pear.php.net/package/Archive_Tar/\" rel=\"nofollow\">Archive_Tar</a>, which has released a security improvement that is needed to protect some Drupal configurations.\n</p>\n<p>Multiple vulnerabilities are possible if Drupal is configured to allow <code class=\"language-php\">.tar</code>, <code class=\"language-php\">.tar.gz</code>, <code class=\"language-php\">.bz2</code> or <code class=\"language-php\">.tlz</code> file uploads and processes them.</p>\n<p>The latest versions of Drupal update <code class=\"language-php\">Archive_Tar</code> to 1.4.9 to mitigate the file processing vulnerabilities.</p>\n<p><em>Edited to clarify the nature of the upstream release.</em></p>",
+  "details": "The Drupal project uses the third-party library [Archive\\_Tar](https://pear.php.net/package/Archive_Tar/), which has released a security improvement that is needed to protect some Drupal configurations.\n\nMultiple vulnerabilities are possible if Drupal is configured to allow `.tar`, `.tar.gz`, `.bz2` or `.tlz` file uploads and processes them.\n\nThe latest versions of Drupal update `Archive_Tar` to 1.4.9 to mitigate the file processing vulnerabilities.\n\n*Edited to clarify the nature of the upstream release.*",
   "affected": [
     {
       "package": {

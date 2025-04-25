@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Modal form module is a toolset for quick start of using forms in modal windows.</p>\n<p>Any form is available for view and submit when the <code class=\"language-php\">modal_form</code> module is installed. The only requirement is to know the form's fully-qualified class name.</p>",
+  "details": "The Modal form module is a toolset for quick start of using forms in modal windows.\n\nAny form is available for view and submit when the `modal_form` module is installed. The only requirement is to know the form's fully-qualified class name.",
   "affected": [
     {
       "package": {

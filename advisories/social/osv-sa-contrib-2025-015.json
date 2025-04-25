@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Open Social is a Drupal distribution for online communities, which ships with a default module to invite users to groups and events.</p>\n<p>Invites for a specific user can be seen under certain conditions. </p>\n<p>The issue is mitigated for events by the fact that social_event_max_enroll has to be enabled.</p>",
+  "details": "Open Social is a Drupal distribution for online communities, which ships with a default module to invite users to groups and events.\n\nInvites for a specific user can be seen under certain conditions.\n\nThe issue is mitigated for events by the fact that social\\_event\\_max\\_enroll has to be enabled.",
   "affected": [
     {
       "package": {

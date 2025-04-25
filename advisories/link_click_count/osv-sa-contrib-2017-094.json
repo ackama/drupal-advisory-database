@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Link Click Count module helps you to monitor the traffic to your website by creating link fields. These link fields can be individual links or internal/external links that can be added to the content type.</p>\n<p>The security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. The security team takes action in cases like this without regard to the severity of the security issue in question. If you would like to maintain this module, please read: <a href=\"https://www.drupal.org/node/251466\" rel=\"nofollow\">https://www.drupal.org/node/251466</a>\n</p>\n<p>\nAll projects that are being marked unsupported are given a score of critical. Code that is no longer maintained poses a threat to securing sites.</p>",
+  "details": "The Link Click Count module helps you to monitor the traffic to your website by creating link fields. These link fields can be individual links or internal/external links that can be added to the content type.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. The security team takes action in cases like this without regard to the severity of the security issue in question. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>\n\nAll projects that are being marked unsupported are given a score of critical. Code that is no longer maintained poses a threat to securing sites.",
   "affected": [
     {
       "package": {

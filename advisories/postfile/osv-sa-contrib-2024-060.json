@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The module creates an endpoint on the site at /postfile/upload that accepts a POST request for uploading a single file into a specified file system (public, private, etc).</p>\n<p>This module accepts any uploaded file extension, including dangerous file formats so it can be used to bypass the allow_insecure_uploads config.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"postfile upload\".</p>",
+  "details": "The module creates an endpoint on the site at /postfile/upload that accepts a POST request for uploading a single file into a specified file system (public, private, etc).\n\nThis module accepts any uploaded file extension, including dangerous file formats so it can be used to bypass the allow\\_insecure\\_uploads config.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"postfile upload\".",
   "affected": [
     {
       "package": {

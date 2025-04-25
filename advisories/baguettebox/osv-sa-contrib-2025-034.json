@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The baguetteBox.js module provides integration with baguetteBox.js library. </p>\n<p>The module doesn't sufficiently sanitize user-supplied text values leading to a cross site scripting vulnerability.</p>",
+  "details": "The baguetteBox.js module provides integration with baguetteBox.js library.\n\nThe module doesn't sufficiently sanitize user-supplied text values leading to a cross site scripting vulnerability.",
   "affected": [
     {
       "package": {

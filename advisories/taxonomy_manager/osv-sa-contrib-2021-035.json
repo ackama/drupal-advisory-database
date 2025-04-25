@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a powerful interface for managing a taxonomy vocabulary. A vocabulary gets displayed in a dynamic tree view, where parent terms can be expanded to list their nested child terms or can be collapsed.</p>\n<p>The module does not take the correct user permissions into account, allowing an attacker to delete and move terms.</p>\n<p>The issue is mitigated by the fact that an attacker must have permission to create terms in the targeted vocabulary.</p>",
+  "details": "This module provides a powerful interface for managing a taxonomy vocabulary. A vocabulary gets displayed in a dynamic tree view, where parent terms can be expanded to list their nested child terms or can be collapsed.\n\nThe module does not take the correct user permissions into account, allowing an attacker to delete and move terms.\n\nThe issue is mitigated by the fact that an attacker must have permission to create terms in the targeted vocabulary.",
   "affected": [
     {
       "package": {

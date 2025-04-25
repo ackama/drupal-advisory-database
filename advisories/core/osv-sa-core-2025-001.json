@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core doesn't sufficiently filter error messages under certain circumstances, leading to a reflected Cross Site Scripting vulnerability (XSS).</p>\n<p>Sites are encouraged to update. There are not yet public documented steps to exploit this, but there may be soon given the nature of this issue.</p>\n<p>This issue is being protected by <a href=\"https://www.drupal.org/steward\" rel=\"nofollow\">Drupal Steward</a>. Sites that use Drupal Steward are already protected, but are still encouraged to upgrade in the near future.</p>",
+  "details": "Drupal core doesn't sufficiently filter error messages under certain circumstances, leading to a reflected Cross Site Scripting vulnerability (XSS).\n\nSites are encouraged to update. There are not yet public documented steps to exploit this, but there may be soon given the nature of this issue.\n\nThis issue is being protected by [Drupal Steward](https://www.drupal.org/steward). Sites that use Drupal Steward are already protected, but are still encouraged to upgrade in the near future.",
   "affected": [
     {
       "package": {

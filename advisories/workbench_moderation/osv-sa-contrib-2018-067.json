@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Workbench Moderation module adds arbitrary moderation states to Drupal core's \"unpublished\" and \"published\" node states, and affects the behavior of node revisions when nodes are published.</p>\n<p>In some conditions, content moderation fails to check a users access to use certain transitions, leading to an access bypass.</p>\n<p>This issue is related to the Drupal Core release <a href=\"https://www.drupal.org/sa-core-2018-006\" rel=\"nofollow\">SA-CORE-2018-006</a>.</p>",
+  "details": "The Workbench Moderation module adds arbitrary moderation states to Drupal core's \"unpublished\" and \"published\" node states, and affects the behavior of node revisions when nodes are published.\n\nIn some conditions, content moderation fails to check a users access to use certain transitions, leading to an access bypass.\n\nThis issue is related to the Drupal Core release [SA-CORE-2018-006](https://www.drupal.org/sa-core-2018-006).",
   "affected": [
     {
       "package": {

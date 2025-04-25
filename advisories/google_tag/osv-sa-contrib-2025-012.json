@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to integrate the site with the Google Tag Manager (GTM) application.</p>\n<p>The module doesn't sufficiently validate the enabling or disabling of a tag container. The routes involved are not protected against Cross Site Request Forgery (CSRF).</p>\n<p>This vulnerability is mitigated by the fact that an attacker needs to know the machine name of the container. The machine name is a random string, making an attack more difficult.</p>",
+  "details": "This module enables you to integrate the site with the Google Tag Manager (GTM) application.\n\nThe module doesn't sufficiently validate the enabling or disabling of a tag container. The routes involved are not protected against Cross Site Request Forgery (CSRF).\n\nThis vulnerability is mitigated by the fact that an attacker needs to know the machine name of the container. The machine name is a random string, making an attack more difficult.",
   "affected": [
     {
       "package": {

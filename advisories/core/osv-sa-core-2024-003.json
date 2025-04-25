@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal uses JavaScript to render status messages in some cases and configurations. In certain situations, the status messages are not adequately sanitized.</p>",
+  "details": "Drupal uses JavaScript to render status messages in some cases and configurations. In certain situations, the status messages are not adequately sanitized.",
   "affected": [
     {
       "package": {

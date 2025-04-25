@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Entity Browser module allows you to select entities from entity reference fields using a custom entity browser widget.</p>\n<p>Entity Browser does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about entities they are not authorized to access.</p>\n<p>The vulnerability is mitigated by the fact that the inaccessible entities will only be visible to users who can already edit content using Entity Browser.</p>",
+  "details": "The Entity Browser module allows you to select entities from entity reference fields using a custom entity browser widget.\n\nEntity Browser does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about entities they are not authorized to access.\n\nThe vulnerability is mitigated by the fact that the inaccessible entities will only be visible to users who can already edit content using Entity Browser.",
   "affected": [
     {
       "package": {

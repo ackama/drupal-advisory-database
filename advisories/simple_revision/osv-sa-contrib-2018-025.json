@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Simple Taxonomy Revision module enables revisions for taxonomy terms for Drupal 8.</p>\n<p>The security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. If you would like to maintain this module, please read: <a href=\"https://www.drupal.org/node/251466\" rel=\"nofollow\">https://www.drupal.org/node/251466</a>.</p>\n<p>The security team marks all unsupported modules critical by default.</p>",
+  "details": "Simple Taxonomy Revision module enables revisions for taxonomy terms for Drupal 8.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported modules critical by default.",
   "affected": [
     {
       "package": {

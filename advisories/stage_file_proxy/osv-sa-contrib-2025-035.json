@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Stage File Proxy is a general solution for getting production files on a development server on demand.</p>\n<p>The module doesn't sufficiently validate the existence of remote files prior to attempting to download and create them. An attacker could send many requests and exhaust disk resources.</p>\n<p>This vulnerability is mitigated by the fact it only affects sites where the Origin is configured with a trailing slash. Sites that cannot upgrade immediately can confirm they do not have a trailing slash or remove the trailing slash to mitigate the issue.</p>",
+  "details": "Stage File Proxy is a general solution for getting production files on a development server on demand.\n\nThe module doesn't sufficiently validate the existence of remote files prior to attempting to download and create them. An attacker could send many requests and exhaust disk resources.\n\nThis vulnerability is mitigated by the fact it only affects sites where the Origin is configured with a trailing slash. Sites that cannot upgrade immediately can confirm they do not have a trailing slash or remove the trailing slash to mitigate the issue.",
   "affected": [
     {
       "package": {

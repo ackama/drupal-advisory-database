@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables aklump/loft_data_grids to be used as a Drupal module.</p>\n<p>Excel support was provided by <a href=\"https://packagist.org/packages/phpoffice/phpexcel\" rel=\"nofollow\">https://packagist.org/packages/phpoffice/phpexcel</a>, which is abandoned and there are known security vulnerabilities: [CVE-2018-19277]: PHPOffice/PhpSpreadsheet#771.  Excel support has since been replaced with the newer <a href=\"https://github.com/PHPOffice/PhpSpreadsheet\" rel=\"nofollow\">https://github.com/PHPOffice/PhpSpreadsheet</a> library.</p>\n<p>This module provides an API and This vulnerability is not exploitable in the module itself. This vulnerability only exists if custom code or another module uses the API of this module to read a spreadsheet.</p>",
+  "details": "This module enables aklump/loft\\_data\\_grids to be used as a Drupal module.\n\nExcel support was provided by <https://packagist.org/packages/phpoffice/phpexcel>, which is abandoned and there are known security vulnerabilities: [CVE-2018-19277]: PHPOffice/PhpSpreadsheet#771. Excel support has since been replaced with the newer <https://github.com/PHPOffice/PhpSpreadsheet> library.\n\nThis module provides an API and This vulnerability is not exploitable in the module itself. This vulnerability only exists if custom code or another module uses the API of this module to read a spreadsheet.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to create fields for storing decimal values as two integers (numerator and denominator) for maximum precision.</p>\n<p>The module doesn't sufficiently filter XSS strings out of field labels.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the ability to manage field configuration.</p>",
+  "details": "This module enables you to create fields for storing decimal values as two integers (numerator and denominator) for maximum precision.\n\nThe module doesn't sufficiently filter XSS strings out of field labels.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the ability to manage field configuration.",
   "affected": [
     {
       "package": {

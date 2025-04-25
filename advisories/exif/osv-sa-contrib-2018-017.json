@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to retrieve image metadata and use them in fields or title.</p>\n<p>The module doesn't sufficiently restrict access to module setting pages thereby causing an access bypass vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have permission to create entities of certain content entity types.</p>",
+  "details": "This module enables you to retrieve image metadata and use them in fields or title.\n\nThe module doesn't sufficiently restrict access to module setting pages thereby causing an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to create entities of certain content entity types.",
   "affected": [
     {
       "package": {

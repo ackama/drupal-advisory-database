@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to build eCommerce websites and applications with Drupal.</p>\n<p>The module doesn't sufficiently check access for some of its entity types.</p>",
+  "details": "This module enables you to build eCommerce websites and applications with Drupal.\n\nThe module doesn't sufficiently check access for some of its entity types.",
   "affected": [
     {
       "package": {

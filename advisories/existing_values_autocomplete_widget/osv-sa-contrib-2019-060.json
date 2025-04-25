@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides an autocomplete widget for text fields that suggests all existing (previously entered) values for that field.</p>\n<p>The module doesn't sufficiently check for proper access permission before returning autocomplete results.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the route to the autocomplete callback controller though this is easily known.</p>",
+  "details": "This module provides an autocomplete widget for text fields that suggests all existing (previously entered) values for that field.\n\nThe module doesn't sufficiently check for proper access permission before returning autocomplete results.\n\nThis vulnerability is mitigated by the fact that an attacker must know the route to the autocomplete callback controller though this is easily known.",
   "affected": [
     {
       "package": {

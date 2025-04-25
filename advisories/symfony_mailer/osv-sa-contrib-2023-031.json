@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The module doesn\u2019t sufficiently protect against malicious links, which means an attacker can trick an administrator into performing unwanted actions.</p>\n<p>This vulnerability is mitigated by the fact that the set of unwanted actions is limited to specific configurations.</p>",
+  "details": "The module doesn\u2019t sufficiently protect against malicious links, which means an attacker can trick an administrator into performing unwanted actions.\n\nThis vulnerability is mitigated by the fact that the set of unwanted actions is limited to specific configurations.",
   "affected": [
     {
       "package": {

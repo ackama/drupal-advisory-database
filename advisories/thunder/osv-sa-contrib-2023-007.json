@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Thunder is a Drupal distribution for professional publishing. The thunder distribution ships the thunder_gqls module which provides a graphql interface.</p>\n<p>The module doesn't sufficiently check access when serving user data via graphql leading to an access bypass vulnerability potentially exposing email addresses.</p>",
+  "details": "Thunder is a Drupal distribution for professional publishing. The thunder distribution ships the thunder\\_gqls module which provides a graphql interface.\n\nThe module doesn't sufficiently check access when serving user data via graphql leading to an access bypass vulnerability potentially exposing email addresses.",
   "affected": [
     {
       "package": {

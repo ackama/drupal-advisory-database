@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a widget to transform entity reference fields into a more user-friendly tags input component with a great performance.</p>\n<p>The module doesn't sufficiently check access for the add operation. Users with permission to edit content can view and reference unpublished terms. The edit form may expose term data that users could not otherwise see, since there is no term view route by default.</p>\n<p>This vulnerability is slightly mitigated by the fact that an attacker must have a role with the permission \"access content\", so may not be accessible to anonymous users on all sites.</p>",
+  "details": "This module provides a widget to transform entity reference fields into a more user-friendly tags input component with a great performance.\n\nThe module doesn't sufficiently check access for the add operation. Users with permission to edit content can view and reference unpublished terms. The edit form may expose term data that users could not otherwise see, since there is no term view route by default.\n\nThis vulnerability is slightly mitigated by the fact that an attacker must have a role with the permission \"access content\", so may not be accessible to anonymous users on all sites.",
   "affected": [
     {
       "package": {

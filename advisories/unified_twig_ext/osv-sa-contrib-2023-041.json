@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module makes PatternLab's custom Twig functions available to Drupal theming.</p>\n<p>The module's included examples don't sufficiently filter data.</p>\n<p>This vulnerability is mitigated by the fact that the included examples must have been copied to a site's theme.</p>",
+  "details": "This module makes PatternLab's custom Twig functions available to Drupal theming.\n\nThe module's included examples don't sufficiently filter data.\n\nThis vulnerability is mitigated by the fact that the included examples must have been copied to a site's theme.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to create dynamic layouts and add sample color palettes for color selection hints via its UI.</p>\n<p>The module doesn't sufficiently sanitize the module's settings in certain scenarios leading to a Cross Site Scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permissions \"administer gridstack\".</p>",
+  "details": "This module enables you to create dynamic layouts and add sample color palettes for color selection hints via its UI.\n\nThe module doesn't sufficiently sanitize the module's settings in certain scenarios leading to a Cross Site Scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permissions \"administer gridstack\".",
   "affected": [
     {
       "package": {

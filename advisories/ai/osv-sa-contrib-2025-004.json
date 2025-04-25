@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The AI logging sub-module enables you to log AI requests and responses for debugging and auditing purposes.</p>\n<p>The module doesn't sufficiently check for access to view the preview listing of the logs. Full log details are correctly protected, and API keys are never logged.\n</p>\n<p>This vulnerability is mitigated by the fact that it only affects sites using the AI Logging sub-module with 'Log requests' enabled in the AI Logging configuration page.</p>",
+  "details": "The AI logging sub-module enables you to log AI requests and responses for debugging and auditing purposes.\n\nThe module doesn't sufficiently check for access to view the preview listing of the logs. Full log details are correctly protected, and API keys are never logged.\n\nThis vulnerability is mitigated by the fact that it only affects sites using the AI Logging sub-module with 'Log requests' enabled in the AI Logging configuration page.",
   "affected": [
     {
       "package": {
