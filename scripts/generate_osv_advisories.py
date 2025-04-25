@@ -94,7 +94,7 @@ def parse_version_constraint(versions: str) -> list[osv.Event]:
 def build_affected_range(constraint: str) -> osv.Range:
   return {
     'type': 'ECOSYSTEM',
-    'events': sort_affected_versions(parse_version_constraint(constraint)),
+    'events': parse_version_constraint(constraint),
     'database_specific': {'constraint': constraint},
   }
 
@@ -164,25 +164,6 @@ def semver_for_sorting(semver: typing.Any) -> str:
   semver_minor = semver[1]
   semver_patch = semver[2]
   return f'{semver_major}.{semver_minor}.{semver_patch}'
-
-
-def sort_affected_versions(affected_versions: list[osv.Event]) -> list[osv.Event]:
-  sorted_versions = {}
-  return_values = []
-  for affected in affected_versions:
-    if 'introduced' in affected:
-      sorted_versions[semver_for_sorting(affected['introduced'])] = affected
-    if 'fixed' in affected:
-      sorted_versions[semver_for_sorting(affected['fixed'])] = affected
-
-  # sort the dict by the keys assuming the keys are semver strings.
-  sorted_versions = dict(
-    sorted(sorted_versions.items(), key=lambda item: semver.parse_version_info(item[0]))
-  )
-  for key in sorted_versions:
-    return_values.append(sorted_versions[key])
-
-  return return_values
 
 
 def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
