@@ -9,6 +9,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 import json
 import os
 import re
+import tomllib
 import typing
 from datetime import UTC, datetime
 
@@ -325,6 +326,31 @@ def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
   return f'drupal/{project_name}'
 
 
+class DrupalAdvisoryPatch(typing.TypedDict):
+  field_affected_versions: tuple[str, str]
+
+
+with open('patches.toml', 'rb') as fi:
+  patches: dict[str, DrupalAdvisoryPatch] = tomllib.load(fi)
+
+
+def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
+  """
+  Attempts to apply any patches to the advisory that are defined in patches.toml
+  """
+  if sa_id in patches:
+    before, after = patches[sa_id]['field_affected_versions']
+
+    if before == sa_advisory['field_affected_versions']:
+      sa_advisory['field_affected_versions'] = after
+      print('  \\- patched affected versions')
+      return True
+    print(
+      f'  \\- skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"'
+    )
+  return False
+
+
 def unix_timestamp_to_rfc3339(unix: int) -> str:
   return datetime.fromtimestamp(int(unix), tz=UTC).strftime('%Y-%m-%dT%H:%M:%S.000Z')
 
@@ -336,6 +362,8 @@ def build_osv_advisory(
   """
   Builds a representation of the given Drupal SA advisory in OSV format
   """
+
+  patched = patch_advisory(sa_id, sa_advisory)
 
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
@@ -378,6 +406,10 @@ def build_osv_advisory(
     'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
     'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
   }
+
+  if patched:
+    for affected in osv_advisory['affected']:
+      affected['database_specific']['patched'] = True
 
   return osv_advisory
 
