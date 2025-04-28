@@ -1,4 +1,10 @@
-.mypy_cache
-.ruff_cache
+.idea/
+.vscode/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
 advisories/
 cache/
+node_modules/
+vendor/

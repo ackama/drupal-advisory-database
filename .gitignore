@@ -1,7 +1,9 @@
-cvelistV5
-drupal-security-advisories.xml
-dsa-contrib.xml
-dsa-core.xml
-files
-schema.json
+.idea/
+.vscode/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
 cache/
+node_modules/
+vendor/
