@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to configure a wiki-like input filter that allows users to create links to site and external content.</p>\n<p>The module doesn't sufficiently check if a user has access to some URLs before rendering them as links.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access content\" (which is commonly assigned to all roles), and the site must be configured to disallow access to certain content.</p>",
+  "details": "This module enables you to configure a wiki-like input filter that allows users to create links to site and external content.\n\nThe module doesn't sufficiently check if a user has access to some URLs before rendering them as links.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access content\" (which is commonly assigned to all roles), and the site must be configured to disallow access to certain content.",
   "affected": [
     {
       "package": {

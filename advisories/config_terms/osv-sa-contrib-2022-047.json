@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to create and manage a version of taxonomy based on configuration entities instead of content.  This allows the terms, vocabularies, and their structure to be exported, imported, and managed as site configuration.</p>\n<p>The module doesn't sufficiently check access for the edit and delete operations. Users with \"access content\" permission can edit or delete any term. The edit form may expose term data that users could not otherwise see, since there is no term view route by default.</p>\n<p>This vulnerability is slightly mitigated by the fact that an attacker must have a role with the permission \"access content\", so may not be accessible to anonymous users on all sites.</p>",
+  "details": "This module enables you to create and manage a version of taxonomy based on configuration entities instead of content. This allows the terms, vocabularies, and their structure to be exported, imported, and managed as site configuration.\n\nThe module doesn't sufficiently check access for the edit and delete operations. Users with \"access content\" permission can edit or delete any term. The edit form may expose term data that users could not otherwise see, since there is no term view route by default.\n\nThis vulnerability is slightly mitigated by the fact that an attacker must have a role with the permission \"access content\", so may not be accessible to anonymous users on all sites.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add groups to other groups in a tree structure where access can be inherited up or down the tree.</p>\n<p>When you configure Subgroup to have a tree with at least three levels, users may inadvertently get permissions in a group that is an uncle or cousin of the source group, rather than a direct ancestor or descendant. Trees with only multiple nodes at the lowest tier (or nowhere) are unaffected.</p>",
+  "details": "This module enables you to add groups to other groups in a tree structure where access can be inherited up or down the tree.\n\nWhen you configure Subgroup to have a tree with at least three levels, users may inadvertently get permissions in a group that is an uncle or cousin of the source group, rather than a direct ancestor or descendant. Trees with only multiple nodes at the lowest tier (or nowhere) are unaffected.",
   "affected": [
     {
       "package": {

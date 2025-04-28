@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This modules enables users to login via email address.</p>\n<p>This module does not sufficiently check user status when authenticating.</p>",
+  "details": "This modules enables users to login via email address.\n\nThis module does not sufficiently check user status when authenticating.",
   "affected": [
     {
       "package": {

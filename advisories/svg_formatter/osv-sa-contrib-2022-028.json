@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>SVG Formatter module provides support for using SVG images on your website.</p>\n<p>Our dependency library enshrined/svg-sanitize has a cross-site scripting vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with permission that enables them to upload SVG images.</p>",
+  "details": "SVG Formatter module provides support for using SVG images on your website.\n\nOur dependency library enshrined/svg-sanitize has a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission that enables them to upload SVG images.",
   "affected": [
     {
       "package": {

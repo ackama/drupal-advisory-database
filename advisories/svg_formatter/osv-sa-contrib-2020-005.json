@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>SVG Formatter module provides support for using SVG images on your website.</p>\n<p>This security release fixes third-party dependencies included in or required by SVG Formatter. <a href=\"https://github.com/darylldoyle/svg-sanitizer/issues/31\" rel=\"nofollow\">XSS bypass using entities and tab</a>.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to upload SVG files.</p>",
+  "details": "SVG Formatter module provides support for using SVG images on your website.\n\nThis security release fixes third-party dependencies included in or required by SVG Formatter. [XSS bypass using entities and tab](https://github.com/darylldoyle/svg-sanitizer/issues/31).\n\nThis vulnerability is mitigated by the fact that an attacker must be able to upload SVG files.",
   "affected": [
     {
       "package": {

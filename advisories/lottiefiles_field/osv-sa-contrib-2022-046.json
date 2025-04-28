@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Lottiefiles Field module enables you to integrate the lottiefiles features into your page.</p>\n<p>The module does not sufficiently filter user-provided text on output, resulting in a Cross-Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission to create or edit content that has lottiefiles fields.</p>",
+  "details": "The Lottiefiles Field module enables you to integrate the lottiefiles features into your page.\n\nThe module does not sufficiently filter user-provided text on output, resulting in a Cross-Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create or edit content that has lottiefiles fields.",
   "affected": [
     {
       "package": {

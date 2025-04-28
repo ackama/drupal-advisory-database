@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This resolves issues described in <a href=\"https://www.drupal.org/sa-core-2019-003\" rel=\"nofollow\">SA-CORE-2019-003</a> for this module. Not all configurations are affected. See <a href=\"https://www.drupal.org/sa-core-2019-003\" rel=\"nofollow\">SA-CORE-2019-003</a> for details.</p>",
+  "details": "This resolves issues described in [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for this module. Not all configurations are affected. See [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for details.",
   "affected": [
     {
       "package": {

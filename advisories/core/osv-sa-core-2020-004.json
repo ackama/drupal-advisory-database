@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Drupal core Form API does not properly handle certain form input from cross-site requests, which can lead to other vulnerabilities.</p>",
+  "details": "The Drupal core Form API does not properly handle certain form input from cross-site requests, which can lead to other vulnerabilities.",
   "affected": [
     {
       "package": {

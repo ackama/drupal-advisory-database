@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Arbitrary File Inclusion. Techniques exist to escalate this attack to Remote Code Execution. It is not directly exploitable.</p>\n<p>This issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to <code class=\"language-php\">unserialize()</code>. There are no such known exploits in Drupal core.</p>",
+  "details": "Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Arbitrary File Inclusion. Techniques exist to escalate this attack to Remote Code Execution. It is not directly exploitable.\n\nThis issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.",
   "affected": [
     {
       "package": {

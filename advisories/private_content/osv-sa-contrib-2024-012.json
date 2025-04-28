@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module gives each node a 'private' checkbox. If it's set, the node can only be seen by the node author, or users with the 'access private content' permission. </p>\n<p>The module incorrectly grants access to private nodes under certain specific circumstances. This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Access private content\".</p>",
+  "details": "This module gives each node a 'private' checkbox. If it's set, the node can only be seen by the node author, or users with the 'access private content' permission.\n\nThe module incorrectly grants access to private nodes under certain specific circumstances. This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Access private content\".",
   "affected": [
     {
       "package": {

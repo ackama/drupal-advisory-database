@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides social media share &amp; follow buttons.</p>\n<p>The module doesn't sufficiently check access to a node when retrieving the label of an AddToAny block.</p>\n<p>This vulnerability is mitigated by the fact it requires the node ID to be passed via the route, requiring another module or specific configuration to provide this ID, as the /node/{id} page doesn't provide this value on an access denied.</p>",
+  "details": "This module provides social media share & follow buttons.\n\nThe module doesn't sufficiently check access to a node when retrieving the label of an AddToAny block.\n\nThis vulnerability is mitigated by the fact it requires the node ID to be passed via the route, requiring another module or specific configuration to provide this ID, as the /node/{id} page doesn't provide this value on an access denied.",
   "affected": [
     {
       "package": {

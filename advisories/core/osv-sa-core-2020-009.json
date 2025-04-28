@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal 8 and 9 have a reflected cross-site scripting (XSS) vulnerability under certain circumstances.</p>\n<p>An attacker could leverage the way that HTML is rendered for affected forms in order to exploit the vulnerability.</p>",
+  "details": "Drupal 8 and 9 have a reflected cross-site scripting (XSS) vulnerability under certain circumstances.\n\nAn attacker could leverage the way that HTML is rendered for affected forms in order to exploit the vulnerability.",
   "affected": [
     {
       "package": {

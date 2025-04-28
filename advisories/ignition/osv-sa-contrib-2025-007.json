@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to render error pages using the Ignition package.</p>\n<p>The module disables certain Drupal core code and does not perform sufficient filtering, allowing HTML to be injected in certain situations leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that this module is for development purposes and is not intended to be installed on production environments.</p>",
+  "details": "This module enables you to render error pages using the Ignition package.\n\nThe module disables certain Drupal core code and does not perform sufficient filtering, allowing HTML to be injected in certain situations leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that this module is for development purposes and is not intended to be installed on production environments.",
   "affected": [
     {
       "package": {

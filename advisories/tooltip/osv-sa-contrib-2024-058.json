@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add any HTML content you want in a tooltip displayed on mouse hover.</p>\n<p>The module does not sufficiently escape the markup inserted in the tooltip block.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".</p>",
+  "details": "This module enables you to add any HTML content you want in a tooltip displayed on mouse hover.\n\nThe module does not sufficiently escape the markup inserted in the tooltip block.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {
       "package": {

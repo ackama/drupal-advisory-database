@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Social Flexible Group is an Open Social extension that allows users to create groups with many different configurations. </p>\n<p>In specific uncommon scenarios, where a platform doesn't have any flexible groups with the \"Group members only (secret)\" visibility, community groups are visible to anonymous users on the /all-groups page. No other group information is revealed since group access is not affected by this issue.</p>\n<p>This vulnerability is mitigated by creating a Flexible Group with visibility \"Group members only (secret)\".</p>",
+  "details": "Social Flexible Group is an Open Social extension that allows users to create groups with many different configurations.\n\nIn specific uncommon scenarios, where a platform doesn't have any flexible groups with the \"Group members only (secret)\" visibility, community groups are visible to anonymous users on the /all-groups page. No other group information is revealed since group access is not affected by this issue.\n\nThis vulnerability is mitigated by creating a Flexible Group with visibility \"Group members only (secret)\".",
   "affected": [
     {
       "package": {

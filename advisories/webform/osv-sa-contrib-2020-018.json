@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This webform module enables you to build a 'Term checkboxes' element.</p>\n<p>The module doesn't sufficiently check term 'view' access when rendering 'Term checkboxes' elements. Unpublished terms will always appear in the 'Term checkboxes' element.</p>",
+  "details": "This webform module enables you to build a 'Term checkboxes' element.\n\nThe module doesn't sufficiently check term 'view' access when rendering 'Term checkboxes' elements. Unpublished terms will always appear in the 'Term checkboxes' element.",
   "affected": [
     {
       "package": {

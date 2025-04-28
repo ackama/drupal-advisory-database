@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Open Social is a Drupal distribution for online communities.</p>\n<p>The included optional social_group_flexible_group module doesn't sufficiently validate group updates. The lack of validation makes it possible to have content inside the group changing it's visibility, which could lead to that content being shown to a broader audience than intended.</p>\n<p>This vulnerability is mitigated by the fact the module social_group_flexible_group needs to be enabled.</p>",
+  "details": "Open Social is a Drupal distribution for online communities.\n\nThe included optional social\\_group\\_flexible\\_group module doesn't sufficiently validate group updates. The lack of validation makes it possible to have content inside the group changing it's visibility, which could lead to that content being shown to a broader audience than intended.\n\nThis vulnerability is mitigated by the fact the module social\\_group\\_flexible\\_group needs to be enabled.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module changes your forum administration page to allow you to set forums private. You can control what user roles can view, edit, delete, and post to each forum. You can also give each forum a list of users who have administrative access on that forum (AKA moderators). This module requires the ACL module.</p>\n<p>The module processes user input in a way that could be unsafe. This can lead to Remote Code Execution via Object Injection.</p>\n<p>This vulnerability is mitigated by the fact that an attacker needs the \"administer forums\" permission.</p>\n<p>This Security Advisory is being released in coordination with <a href=\"https://www.drupal.org/sa-contrib-2023-034\" rel=\"nofollow\">SA-CONTRIB-2023-034</a> for the ACL module, on which Forum Access depends.</p>",
+  "details": "This module changes your forum administration page to allow you to set forums private. You can control what user roles can view, edit, delete, and post to each forum. You can also give each forum a list of users who have administrative access on that forum (AKA moderators). This module requires the ACL module.\n\nThe module processes user input in a way that could be unsafe. This can lead to Remote Code Execution via Object Injection.\n\nThis vulnerability is mitigated by the fact that an attacker needs the \"administer forums\" permission.\n\nThis Security Advisory is being released in coordination with [SA-CONTRIB-2023-034](https://www.drupal.org/sa-contrib-2023-034) for the ACL module, on which Forum Access depends.",
   "affected": [
     {
       "package": {

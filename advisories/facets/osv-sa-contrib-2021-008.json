@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add customizable facets on search pages, from core search or searches provided by Search API.</p>\n<p>The module doesn't sufficiently filter all output in certain circumstances.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer facets\".</p>",
+  "details": "This module enables you to add customizable facets on search pages, from core search or searches provided by Search API.\n\nThe module doesn't sufficiently filter all output in certain circumstances.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer facets\".",
   "affected": [
     {
       "package": {

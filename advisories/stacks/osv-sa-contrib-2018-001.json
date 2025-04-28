@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables content editors to create complex pages and layouts on the fly without the help from a developer, using reusable widgets.</p>\n<p>The module does not sufficiently filter values posted to its AJAX endpoint, which leads to the instantiation of an arbitrary PHP class.</p>\n<p>This vulnerability is mitigated by the fact that only sites with the Stacks - Content Feed submodule enabled are affected.</p>",
+  "details": "This module enables content editors to create complex pages and layouts on the fly without the help from a developer, using reusable widgets.\n\nThe module does not sufficiently filter values posted to its AJAX endpoint, which leads to the instantiation of an arbitrary PHP class.\n\nThis vulnerability is mitigated by the fact that only sites with the Stacks - Content Feed submodule enabled are affected.",
   "affected": [
     {
       "package": {

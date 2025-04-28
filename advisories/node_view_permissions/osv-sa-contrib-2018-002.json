@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Node view permissions module enables the \"View own content\" and \"View any content\" permissions for each content type on the permissions page.</p>\n<p>This module has a vulnerability that allows users with these permissions to view unpublished content that they are not otherwise authorized to view.</p>\n<p><b> This issue was fixed by the maintainer outside of the normal security team protocols. Some issues were patched in 2014 for the 7.x version of this module.  The 8.x release was updated within the last 6 months. Both are now flagged as security updates.</b>  </p>",
+  "details": "The Node view permissions module enables the \"View own content\" and \"View any content\" permissions for each content type on the permissions page.\n\nThis module has a vulnerability that allows users with these permissions to view unpublished content that they are not otherwise authorized to view.\n\n**This issue was fixed by the maintainer outside of the normal security team protocols. Some issues were patched in 2014 for the 7.x version of this module. The 8.x release was updated within the last 6 months. Both are now flagged as security updates.**",
   "affected": [
     {
       "package": {

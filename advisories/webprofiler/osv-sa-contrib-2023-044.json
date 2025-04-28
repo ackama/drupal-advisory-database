@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Webprofiler module provides a way of displaying the Symfony profile debugging tool at the bottom of each page.</p>\n<p>The abbr_class Twig filter can be used to bypass the Twig auto-escape feature.</p>\n<p>This vulnerability is mitigated by the fact that it is only exposed when the filter is specifically used in a theme to render content that contains an attack vector.</p>",
+  "details": "The Webprofiler module provides a way of displaying the Symfony profile debugging tool at the bottom of each page.\n\nThe abbr\\_class Twig filter can be used to bypass the Twig auto-escape feature.\n\nThis vulnerability is mitigated by the fact that it is only exposed when the filter is specifically used in a theme to render content that contains an attack vector.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a new UI experience for node editing - Gutenberg editor.</p>\n<p>The routes used by the Gutenberg editor lack proper permissions allowing untrusted users to view and modify some content they should not be able to view or modify.</p>",
+  "details": "This module provides a new UI experience for node editing - Gutenberg editor.\n\nThe routes used by the Gutenberg editor lack proper permissions allowing untrusted users to view and modify some content they should not be able to view or modify.",
   "affected": [
     {
       "package": {

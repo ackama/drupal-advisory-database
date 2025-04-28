@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.</p>\n<p>The module doesn't sufficiently check access when viewing related resources or relationships, thereby causing an access bypass vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be allowed to view the related data, otherwise all they can glean is an entity type UUID and a UUID, which are meaningless by themselves.</p>",
+  "details": "This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.\n\nThe module doesn't sufficiently check access when viewing related resources or relationships, thereby causing an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must be allowed to view the related data, otherwise all they can glean is an entity type UUID and a UUID, which are meaningless by themselves.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a solution to authenticate visitors using existing SAML providers.</p>\n<p>Certain non-default configurations allow a malicious user to login as any chosen user.</p>\n<p>The vulnerability is mitigated by the module's default settings which require the options \"Either sign SAML assertions\" and \"x509 certificate\".</p>",
+  "details": "This module provides a solution to authenticate visitors using existing SAML providers.\n\nCertain non-default configurations allow a malicious user to login as any chosen user.\n\nThe vulnerability is mitigated by the module's default settings which require the options \"Either sign SAML assertions\" and \"x509 certificate\".",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to create 'private' vocabularies.</p>\n<p>The module doesn't sufficiently check user access permissions when attempting to view, edit, or add terms to vocabularies, including vocabularies not managed by the module.</p>\n<p>Partial mitigation is available by requiring users have been granted at least  \"Administer own taxonomy\", \"Edit own terms in vocabulary_name\" or  \"Delete own terms in vocabulary_name\" permissions, however this does not mitigate all known issues.</p>",
+  "details": "This module enables users to create 'private' vocabularies.\n\nThe module doesn't sufficiently check user access permissions when attempting to view, edit, or add terms to vocabularies, including vocabularies not managed by the module.\n\nPartial mitigation is available by requiring users have been granted at least \"Administer own taxonomy\", \"Edit own terms in vocabulary\\_name\" or \"Delete own terms in vocabulary\\_name\" permissions, however this does not mitigate all known issues.",
   "affected": [
     {
       "package": {

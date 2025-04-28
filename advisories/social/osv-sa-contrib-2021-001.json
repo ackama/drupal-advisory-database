@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The optional Social Auth Extra module enables you to use the single sign-on methods provided by Open Social e.g. Facebook, LinkedIn, Google and Twitter.</p>\n<p>The module doesn't implement a proper cache strategy for anonymous users allowing the registration form to be cached with disclosed information in certain scenarios. The information is usually only available for logged-in users of the community.</p>\n<p>This vulnerability is mitigated by the fact that <code class=\"language-php\">social_auth_extra</code> needs to be enabled, one of the single sign-on methods needs to be configured. There is no impact for regular registration without single sign-on.</p>\n<p>Removing the single sign-on providers from configuration will allow this vulnerability to be blocked. </p>",
+  "details": "The optional Social Auth Extra module enables you to use the single sign-on methods provided by Open Social e.g. Facebook, LinkedIn, Google and Twitter.\n\nThe module doesn't implement a proper cache strategy for anonymous users allowing the registration form to be cached with disclosed information in certain scenarios. The information is usually only available for logged-in users of the community.\n\nThis vulnerability is mitigated by the fact that `social_auth_extra` needs to be enabled, one of the single sign-on methods needs to be configured. There is no impact for regular registration without single sign-on.\n\nRemoving the single sign-on providers from configuration will allow this vulnerability to be blocked.",
   "affected": [
     {
       "package": {

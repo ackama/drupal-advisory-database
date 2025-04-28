@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.</p>\n<p>This module has a vulnerability whereby users can select blocks as a menu item they don't have permission to view.</p>\n<p>The vulnerability  is mitigated by the fact that it can only be exploited by an attacker with the \"Administer TB Mega Menu\" permission.</p>",
+  "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nThis module has a vulnerability whereby users can select blocks as a menu item they don't have permission to view.\n\nThe vulnerability is mitigated by the fact that it can only be exploited by an attacker with the \"Administer TB Mega Menu\" permission.",
   "affected": [
     {
       "package": {

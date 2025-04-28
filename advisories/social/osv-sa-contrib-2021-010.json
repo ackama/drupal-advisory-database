@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This Open Social distribution provides a turn-key system for building customized social networks.</p>\n<p>The module doesn't sufficiently process data in certain circumstances.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access mentions\".</p>",
+  "details": "This Open Social distribution provides a turn-key system for building customized social networks.\n\nThe module doesn't sufficiently process data in certain circumstances.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access mentions\".",
   "affected": [
     {
       "package": {

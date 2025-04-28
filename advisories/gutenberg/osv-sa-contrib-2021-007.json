@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a new UI experience for node editing using the Gutenberg Editor library.</p>\n<p>The module did not correctly validate access rules in certain situations allowing anonymous users to delete blocks.</p>",
+  "details": "This module provides a new UI experience for node editing using the Gutenberg Editor library.\n\nThe module did not correctly validate access rules in certain situations allowing anonymous users to delete blocks.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Views Bulk Operations provides enhancements to running bulk actions on views.</p>\n<p>The module contains an access bypass vulnerability that might allow users to execute views actions that they should not have access to.</p>\n<p>This vulnerability is mitigated by the fact that it only occurs in the case of customised action access (by means of hook_action_info_alter).</p>",
+  "details": "Views Bulk Operations provides enhancements to running bulk actions on views.\n\nThe module contains an access bypass vulnerability that might allow users to execute views actions that they should not have access to.\n\nThis vulnerability is mitigated by the fact that it only occurs in the case of customised action access (by means of hook\\_action\\_info\\_alter).",
   "affected": [
     {
       "package": {

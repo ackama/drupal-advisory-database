@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to associate Forums as Group 1.x content and use Group access permissions.</p>\n<p>Previous versions of the module incorrectly set node access on creation, and did not correctly restrict access to lists of forum topics.</p>",
+  "details": "This module enables you to associate Forums as Group 1.x content and use Group access permissions.\n\nPrevious versions of the module incorrectly set node access on creation, and did not correctly restrict access to lists of forum topics.",
   "affected": [
     {
       "package": {

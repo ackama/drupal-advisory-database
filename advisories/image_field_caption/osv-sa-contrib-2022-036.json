@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Image Field Caption (<code class=\"language-php\">image_field_caption</code>) adds an extra text area for captions on image fields.</p>\n<p>The module doesn't sanitize user input in certain cases, which leads to a Cross-Site-Scripting (XSS) vulnerability.</p>\n<p>The vulnerability is mitigated by several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.</p>",
+  "details": "Image Field Caption (`image_field_caption`) adds an extra text area for captions on image fields.\n\nThe module doesn't sanitize user input in certain cases, which leads to a Cross-Site-Scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.",
   "affected": [
     {
       "package": {

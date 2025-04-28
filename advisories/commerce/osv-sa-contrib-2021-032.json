@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a system for building an ecommerce solution in their Drupal site.</p>\n<p>The module doesn't sufficiently verify access to profile data in certain circumstances.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have permission to perform the checkout operation.</p>",
+  "details": "This module provides a system for building an ecommerce solution in their Drupal site.\n\nThe module doesn't sufficiently verify access to profile data in certain circumstances.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to perform the checkout operation.",
   "affected": [
     {
       "package": {

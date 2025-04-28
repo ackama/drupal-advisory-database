@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables themers to get partial data from field render arrays. It gives them more control over the output without drilling deep into the render array or using preprocess functions.</p>\n<p>The module doesn't sufficiently apply access restrictions when using the filters field_label, field_value, field_raw and field_target_entity.</p>\n<p>This vulnerability is mitigated by the fact that these filters must be used in combination with either unpublished content or access control modules.</p>",
+  "details": "This module enables themers to get partial data from field render arrays. It gives them more control over the output without drilling deep into the render array or using preprocess functions.\n\nThe module doesn't sufficiently apply access restrictions when using the filters field\\_label, field\\_value, field\\_raw and field\\_target\\_entity.\n\nThis vulnerability is mitigated by the fact that these filters must be used in combination with either unpublished content or access control modules.",
   "affected": [
     {
       "package": {

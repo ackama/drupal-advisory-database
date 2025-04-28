@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to drag and drop or paste images into CKEditor.<br />\nThe module does not sufficiently verify users permissions, which leads to anonymous users being able to upload files to the server.</p>",
+  "details": "This module enables you to drag and drop or paste images into CKEditor.  \nThe module does not sufficiently verify users permissions, which leads to anonymous users being able to upload files to the server.",
   "affected": [
     {
       "package": {

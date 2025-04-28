@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to force a password update when using password reset link.<br />\nThe module doesn't sufficiently validate the login URL allowing a malicious user to use a specially crafted URL to log in as another user.\n</p>",
+  "details": "This module enables you to force a password update when using password reset link.  \nThe module doesn't sufficiently validate the login URL allowing a malicious user to use a specially crafted URL to log in as another user.",
   "affected": [
     {
       "package": {

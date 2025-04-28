@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>JSON:API PATCH requests may bypass validation for certain fields.</p>\n<p>By default, JSON:API works in a read-only mode which makes it impossible to exploit the vulnerability. Only sites that have the <code class=\"language-php\">read_only</code> set to <code class=\"language-php\">FALSE</code> under <code class=\"language-php\">jsonapi.settings</code> config are vulnerable.</p>",
+  "details": "JSON:API PATCH requests may bypass validation for certain fields.\n\nBy default, JSON:API works in a read-only mode which makes it impossible to exploit the vulnerability. Only sites that have the `read_only` set to `FALSE` under `jsonapi.settings` config are vulnerable.",
   "affected": [
     {
       "package": {

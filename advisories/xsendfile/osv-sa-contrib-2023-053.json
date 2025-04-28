@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Xsendfile module enables fast transfer for private files in Drupal.</p>\n<p>In order to control private file downloads, the module overrides <code class=\"language-php\">ImageStyleDownloadController</code>, for which a vulnerability was disclosed in <a href=\"https://www.drupal.org/sa-core-2023-005\" rel=\"nofollow\">SA-CORE-2023-005</a>. The Xsendfile module was still based on an insecure version of <code class=\"language-php\">ImageStyleDownloadController</code>.</p>",
+  "details": "The Xsendfile module enables fast transfer for private files in Drupal.\n\nIn order to control private file downloads, the module overrides `ImageStyleDownloadController`, for which a vulnerability was disclosed in [SA-CORE-2023-005](https://www.drupal.org/sa-core-2023-005). The Xsendfile module was still based on an insecure version of `ImageStyleDownloadController`.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to accept payments from the Elavon payment provider.</p>\n<p>The module doesn't sufficiently verify that it's communicating with the correct server when using the <strong>Elavon (On-site)</strong> payment gateway, which could lead to leaking valid payment details as well as accepting invalid payment details.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to spoof the Elavon DNS received by your site.</p>",
+  "details": "This module enables you to accept payments from the Elavon payment provider.\n\nThe module doesn't sufficiently verify that it's communicating with the correct server when using the **Elavon (On-site)** payment gateway, which could lead to leaking valid payment details as well as accepting invalid payment details.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to spoof the Elavon DNS received by your site.",
   "affected": [
     {
       "package": {

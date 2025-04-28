@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>A remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x. This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being compromised. This vulnerability is related to <a href=\"/sa-core-2018-002\">Drupal core - Highly critical - Remote Code Execution - SA-CORE-2018-002</a>. Both SA-CORE-2018-002 and this vulnerability are being exploited in the wild.</p>\n<p><em>Updated \u2014 this vulnerability is being exploited in the wild.</em></p>\n",
+  "details": "A remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x. This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being compromised. This vulnerability is related to [Drupal core - Highly critical - Remote Code Execution - SA-CORE-2018-002](/sa-core-2018-002). Both SA-CORE-2018-002 and this vulnerability are being exploited in the wild.\n\n*Updated \u2014 this vulnerability is being exploited in the wild.*",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.</p>\n<p>The module doesn't provide CSRF protection when processing authenticated traffic using cookie-based authentication.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be allowed to create or modify entities of a certain type, and a very specific and uncommon CORS configuration that allows all other pre-checks to be skipped.</p>",
+  "details": "This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.\n\nThe module doesn't provide CSRF protection when processing authenticated traffic using cookie-based authentication.\n\nThis vulnerability is mitigated by the fact that an attacker must be allowed to create or modify entities of a certain type, and a very specific and uncommon CORS configuration that allows all other pre-checks to be skipped.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to authenticate through their Microsoft Azure AD account.</p>\n<p>The module does not sufficiently check authorization before updating user profile information in certain non-default configurations. This could lead a user being able to hijack another existing account.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have knowledge of user accounts that have the administrator role or accounts with the 'Set a password for local authentication' permission. In addition the site must be configured with the 'Update email address in user profile' setting turned on.</p>",
+  "details": "This module enables users to authenticate through their Microsoft Azure AD account.\n\nThe module does not sufficiently check authorization before updating user profile information in certain non-default configurations. This could lead a user being able to hijack another existing account.\n\nThis vulnerability is mitigated by the fact that an attacker must have knowledge of user accounts that have the administrator role or accounts with the 'Set a password for local authentication' permission. In addition the site must be configured with the 'Update email address in user profile' setting turned on.",
   "affected": [
     {
       "package": {

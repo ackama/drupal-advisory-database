@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to manage blocks from specific modules in the specific themes.</p>\n<p>The module doesn't sufficiently check permissions under the scenario when a block is added using the form \"/admin/structure/block/add/{plugin_id}/{theme}\" (route \"block.admin_add\"). The attacker can add the block to the theme where they can't manage blocks. </p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks provided by [provider]\".</p>",
+  "details": "This module enables you to manage blocks from specific modules in the specific themes.\n\nThe module doesn't sufficiently check permissions under the scenario when a block is added using the form \"/admin/structure/block/add/{plugin\\_id}/{theme}\" (route \"block.admin\\_add\"). The attacker can add the block to the theme where they can't manage blocks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks provided by [provider]\".",
   "affected": [
     {
       "package": {

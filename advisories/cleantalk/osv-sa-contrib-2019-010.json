@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Anti-spam module by CleanTalk to protect your Drupal sites from spambot registration and spam comments publications thru comment and contact forms.</p>\n<p>This module does not sufficiently filter submitted content in certain circumstances.</p>\n<p><a name=\"cve-identifiers-issued\" id=\"cve-identifiers-issued\" rel=\"nofollow\"></a></p>",
+  "details": "Anti-spam module by CleanTalk to protect your Drupal sites from spambot registration and spam comments publications thru comment and contact forms.\n\nThis module does not sufficiently filter submitted content in certain circumstances.",
   "affected": [
     {
       "package": {

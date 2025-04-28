@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to manage and delete files.</p>\n<p>The module doesn't sufficiently protect unmanaged files from view under the scenario unauthenticated user knows path to visit the view and can attempt to delete files which results in duplicate files being created.</p>\n<p>To mitigate this issue without deploying code, review all views that are based on Fancy File Delete and ensure they have an access control set to use the permission \"administer unmanaged files entities\".</p>",
+  "details": "This module enables you to manage and delete files.\n\nThe module doesn't sufficiently protect unmanaged files from view under the scenario unauthenticated user knows path to visit the view and can attempt to delete files which results in duplicate files being created.\n\nTo mitigate this issue without deploying code, review all views that are based on Fancy File Delete and ensure they have an access control set to use the permission \"administer unmanaged files entities\".",
   "affected": [
     {
       "package": {

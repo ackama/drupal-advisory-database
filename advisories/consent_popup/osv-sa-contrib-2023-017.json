@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Consent Popup provides a configurable popup that requires acceptance of a question before the visitor can continue, typically used for age consent.</p>\n<p>The module doesn't sufficiently sanitizes the text on the block leading to a cross site scripting (XSS) vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission to create blocks.</p>",
+  "details": "The Consent Popup provides a configurable popup that requires acceptance of a question before the visitor can continue, typically used for age consent.\n\nThe module doesn't sufficiently sanitizes the text on the block leading to a cross site scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create blocks.",
   "affected": [
     {
       "package": {

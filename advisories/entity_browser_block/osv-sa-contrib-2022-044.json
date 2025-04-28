@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Entity Browser Block provides a Block Plugin for every Entity Browser on your site.</p>\n<p>The module didn't sufficiently check entity view access in the block form.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must be able to place a block - either through the core \"Block Layout\" page or via a module like Layout Builder.</p>",
+  "details": "Entity Browser Block provides a Block Plugin for every Entity Browser on your site.\n\nThe module didn't sufficiently check entity view access in the block form.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to place a block - either through the core \"Block Layout\" page or via a module like Layout Builder.",
   "affected": [
     {
       "package": {

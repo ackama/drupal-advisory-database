@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Email Contact module provides email field display formatters that can display the field as a link to the contact form, or as an inline contact form.</p>\n<p>The module does not sufficiently handle restricted entity or field access to the mail sending form, when the \"Email contact link\" formatter is used.</p>\n<p>This vulnerability is mitigated by the fact that it requires the \"Email contact link\" formatter to be used.</p>",
+  "details": "The Email Contact module provides email field display formatters that can display the field as a link to the contact form, or as an inline contact form.\n\nThe module does not sufficiently handle restricted entity or field access to the mail sending form, when the \"Email contact link\" formatter is used.\n\nThis vulnerability is mitigated by the fact that it requires the \"Email contact link\" formatter to be used.",
   "affected": [
     {
       "package": {

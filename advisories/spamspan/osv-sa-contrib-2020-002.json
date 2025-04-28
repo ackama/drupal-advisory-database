@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The SpamSpan module obfuscates email addresses to help prevent spambots from collecting them.</p>\n<p>This module contains a spamspan twig filter which doesn't sanitize the passed HTML string.</p>\n<p>This vulnerability is mitigated by the fact that sites must have custom twig template files that use the SpamSpan filter on a field that an attacker could populate. By default the SpamSpan module does not use the vulnerable twig filter. </p>\n<p><a name=\"cve-identifiers-issued\" id=\"cve-identifiers-issued\" rel=\"nofollow\"></a></p>",
+  "details": "The SpamSpan module obfuscates email addresses to help prevent spambots from collecting them.\n\nThis module contains a spamspan twig filter which doesn't sanitize the passed HTML string.\n\nThis vulnerability is mitigated by the fact that sites must have custom twig template files that use the SpamSpan filter on a field that an attacker could populate. By default the SpamSpan module does not use the vulnerable twig filter.",
   "affected": [
     {
       "package": {

@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Media oEmbed iframe route does not properly validate the iframe domain setting, which allows embeds to be displayed in the context of the primary domain. Under certain circumstances, this could lead to cross-site scripting, leaked cookies, or other vulnerabilities.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "The Media oEmbed iframe route does not properly validate the iframe domain setting, which allows embeds to be displayed in the context of the primary domain. Under certain circumstances, this could lead to cross-site scripting, leaked cookies, or other vulnerabilities.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Preview Link module enables you to generate preview links so anonymous users can access unpublished revisions of content.<br />\nThe last release of the module introduced an access bypass allowing users to present invalid tokens but still access unpublished content.</p>",
+  "details": "The Preview Link module enables you to generate preview links so anonymous users can access unpublished revisions of content.  \nThe last release of the module introduced an access bypass allowing users to present invalid tokens but still access unpublished content.",
   "affected": [
     {
       "package": {

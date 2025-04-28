@@ -13,6 +13,7 @@ from datetime import datetime
 
 import requests
 import semver
+from markdownify import markdownify
 
 from typings import drupal, osv
 
@@ -245,7 +246,7 @@ def build_osv_advisory(
     'aliases': sa_advisory['field_sa_cve'],
     'related': [],
     'summary': '',
-    'details': sa_advisory['field_sa_description']['value'],
+    'details': markdownify(sa_advisory['field_sa_description']['value']),
     'affected': [
       {
         'package': {'ecosystem': 'Drupal', 'name': ''},

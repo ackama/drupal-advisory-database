@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Social Private Message module allows users on the platform to allow users to send private messages to each other.</p>\n<p>The module does not properly perform the correct access checks for certain operations.</p>",
+  "details": "Social Private Message module allows users on the platform to allow users to send private messages to each other.\n\nThe module does not properly perform the correct access checks for certain operations.",
   "affected": [
     {
       "package": {

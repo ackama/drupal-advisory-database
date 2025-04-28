@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables sites to define a domain from Domain Access that points directly to a group page.</p>\n<p>The module doesn't sufficiently manage the access to content administrative paths allowing an attacker to see and take actions on content (nodes) they should be allowed to.</p>",
+  "details": "This module enables sites to define a domain from Domain Access that points directly to a group page.\n\nThe module doesn't sufficiently manage the access to content administrative paths allowing an attacker to see and take actions on content (nodes) they should be allowed to.",
   "affected": [
     {
       "package": {

@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Entity Delete Log module tracks the deletion of configured entity types, such as node or comments.</p>\n<p>It does not add sufficient permission to the log report page, allowing an attacker to view information from deleted entities.</p>",
+  "details": "The Entity Delete Log module tracks the deletion of configured entity types, such as node or comments.\n\nIt does not add sufficient permission to the log report page, allowing an attacker to view information from deleted entities.",
   "affected": [
     {
       "package": {

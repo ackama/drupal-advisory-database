@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Profile module enables you to allow users to have configurable user profiles.</p>\n<p>The module doesn't sufficiently check access when creating a user profile. Users with the \"create profiles\" permission could create profiles for any users.</p>",
+  "details": "The Profile module enables you to allow users to have configurable user profiles.\n\nThe module doesn't sufficiently check access when creating a user profile. Users with the \"create profiles\" permission could create profiles for any users.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables users to create 'private' vocabularies.</p>\n<p>The module doesn't enforce permissions appropriately for the taxonomy overview page and overview form.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer own taxonomy\" or \"View private taxonomies\" </p>",
+  "details": "This module enables users to create 'private' vocabularies.\n\nThe module doesn't enforce permissions appropriately for the taxonomy overview page and overview form.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer own taxonomy\" or \"View private taxonomies\"",
   "affected": [
     {
       "package": {

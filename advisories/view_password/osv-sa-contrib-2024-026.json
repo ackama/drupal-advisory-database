@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The View Password module enables you to add a help icon button next to the password input field to toggle the password visibility. The administrative user is allowed to add classes to this icon for styling purposes.</p>\n<p>The module doesn't validate the content of classes. A malicious user with access to the View Password Settings Form could add malicious code in the classes field.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer view password\".</p>",
+  "details": "The View Password module enables you to add a help icon button next to the password input field to toggle the password visibility. The administrative user is allowed to add classes to this icon for styling purposes.\n\nThe module doesn't validate the content of classes. A malicious user with access to the View Password Settings Form could add malicious code in the classes field.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer view password\".",
   "affected": [
     {
       "package": {

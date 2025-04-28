@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to do Two-Factor Authentication by email, using a user registered email to send a verification code to the user's email every time the user tries to log in to your site.</p>\n<p>The module did not sufficiently protect against brute force attacks, allowing an attacker to bypass the second factor.</p>\n<p>This vulnerability is mitigated by the fact the attacker must be able to present the username and first factor (i.e. password).</p>",
+  "details": "This module enables you to do Two-Factor Authentication by email, using a user registered email to send a verification code to the user's email every time the user tries to log in to your site.\n\nThe module did not sufficiently protect against brute force attacks, allowing an attacker to bypass the second factor.\n\nThis vulnerability is mitigated by the fact the attacker must be able to present the username and first factor (i.e. password).",
   "affected": [
     {
       "package": {

@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Registration role module lets an administrator select a role (or multiple roles) to automatically assign to new users. The selected role (or roles) will be assigned to new registrants.</p>\n<p>The module has a logic error when handling sites that upgraded code and did not run the Drupal update process (e.g. update.php).</p>\n<p>This vulnerability is mitigated by the fact that the problem does not exist on sites that followed the process of updating code and running the standard updates.</p>",
+  "details": "The Registration role module lets an administrator select a role (or multiple roles) to automatically assign to new users. The selected role (or roles) will be assigned to new registrants.\n\nThe module has a logic error when handling sites that upgraded code and did not run the Drupal update process (e.g. update.php).\n\nThis vulnerability is mitigated by the fact that the problem does not exist on sites that followed the process of updating code and running the standard updates.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Social User Export module enables users within Open Social to create an export of users and download this to a CSV file.</p>\n<p>The module doesn't sufficiently check access when building the CSV file, allowing logged-in users without the <code class=\"language-php\">manage members</code> permission to be able to export all data from a selected user in certain scenarios.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have the authenticated user role and the site must have the configuration set in such a way a logged in user is able to export users.</p>",
+  "details": "The Social User Export module enables users within Open Social to create an export of users and download this to a CSV file.\n\nThe module doesn't sufficiently check access when building the CSV file, allowing logged-in users without the `manage members` permission to be able to export all data from a selected user in certain scenarios.\n\nThis vulnerability is mitigated by the fact that an attacker must have the authenticated user role and the site must have the configuration set in such a way a logged in user is able to export users.",
   "affected": [
     {
       "package": {

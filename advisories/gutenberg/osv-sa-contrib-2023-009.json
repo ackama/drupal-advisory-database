@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a new UI experience for node editing - Gutenberg editor.</p>\n<p>This vulnerability can cause DoS by using reusable blocks improperly. </p>\n<p>This vulnerability is mitigated by the fact an attacker must have \"use gutenberg\" permission to exploit it.</p>",
+  "details": "This module provides a new UI experience for node editing - Gutenberg editor.\n\nThis vulnerability can cause DoS by using reusable blocks improperly.\n\nThis vulnerability is mitigated by the fact an attacker must have \"use gutenberg\" permission to exploit it.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Next.js module provides an inline preview for content. Authenticated requests are made to Drupal to fetch JSON:API content and render them in an iframe from the decoupled Next.js site.</p>\n<p>The current implementation doesn\u2019t sufficiently check access for fetching data. All requests made to Drupal are authenticated using a single scope with elevated content access. Users without access to content could be exposed to unauthorized content.</p>",
+  "details": "The Next.js module provides an inline preview for content. Authenticated requests are made to Drupal to fetch JSON:API content and render them in an iframe from the decoupled Next.js site.\n\nThe current implementation doesn\u2019t sufficiently check access for fetching data. All requests made to Drupal are authenticated using a single scope with elevated content access. Users without access to content could be exposed to unauthorized content.",
   "affected": [
     {
       "package": {

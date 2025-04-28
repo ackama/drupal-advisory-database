@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to use the media library in custom forms without the Media Library Widget.</p>\n<p>The module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.</p>\n<p>The vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.</p>",
+  "details": "This module enables you to use the media library in custom forms without the Media Library Widget.\n\nThe module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.\n\nThe vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.",
   "affected": [
     {
       "package": {

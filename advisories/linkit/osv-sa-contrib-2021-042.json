@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Linkit provides an easy interface for internal and external linking with WYSIWYG editors by using an autocomplete field.</p>\n<p>It does not sufficiently sanitize user input.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission to create or edit an entity bundle.</p>",
+  "details": "Linkit provides an easy interface for internal and external linking with WYSIWYG editors by using an autocomplete field.\n\nIt does not sufficiently sanitize user input.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create or edit an entity bundle.",
   "affected": [
     {
       "package": {

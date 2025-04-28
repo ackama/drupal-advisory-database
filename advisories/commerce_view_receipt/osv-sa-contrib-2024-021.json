@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Commerce View Receipts module enables you to view commerce order receipts in the browser.</p>\n<p>The module doesn't sufficiently check access permissions, allowing an unauthorised user to view the private information of other customers.</p>",
+  "details": "The Commerce View Receipts module enables you to view commerce order receipts in the browser.\n\nThe module doesn't sufficiently check access permissions, allowing an unauthorised user to view the private information of other customers.",
   "affected": [
     {
       "package": {

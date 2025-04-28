@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core's built-in CKEditor image caption functionality is vulnerable to XSS.</p>",
+  "details": "Drupal core's built-in CKEditor image caption functionality is vulnerable to XSS.",
   "affected": [
     {
       "package": {

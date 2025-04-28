@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The module creates an endpoint on the site at /postfile/upload that accepts a POST request for uploading a single file into a specified file system (public, private, etc).</p>\n<p>The module doesn't sufficiently protect against Cross Site Request Forgery<br />\nunder allowing an attacker to trick a site user into uploading a file.</p>",
+  "details": "The module creates an endpoint on the site at /postfile/upload that accepts a POST request for uploading a single file into a specified file system (public, private, etc).\n\nThe module doesn't sufficiently protect against Cross Site Request Forgery  \nunder allowing an attacker to trick a site user into uploading a file.",
   "affected": [
     {
       "package": {

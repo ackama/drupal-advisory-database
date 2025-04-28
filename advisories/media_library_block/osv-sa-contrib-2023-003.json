@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Media Library Block module allows you to render a media entity in a block.</p>\n<p>The module does not properly check media access in some circumstances. This may result in unauthorized users (including anonymous users) seeing media items they are not authorized to access if a block containing a restricted media item is placed on the page.</p>\n<p>Administrators may mitigate this vulnerability by removing blocks referencing media items that have access restrictions.</p>",
+  "details": "The Media Library Block module allows you to render a media entity in a block.\n\nThe module does not properly check media access in some circumstances. This may result in unauthorized users (including anonymous users) seeing media items they are not authorized to access if a block containing a restricted media item is placed on the page.\n\nAdministrators may mitigate this vulnerability by removing blocks referencing media items that have access restrictions.",
   "affected": [
     {
       "package": {

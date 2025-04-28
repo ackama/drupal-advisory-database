@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.</p>\n<ul>\n<li>The module doesn't sufficiently associate cacheability metadata in certain situations thereby causing an access bypass vulnerability.\n<p>This vulnerability is mitigated by the fact that an attacker cannot trigger an exploitable situation themselves.\n</p>\n</li>\n<li>The module doesn't sufficiently check access in certain situations.\n<p>This vulnerability is mitigated by the fact that an attacker must have permission to create entities of certain content entity types.\n</p>\n</li>\n</ul>\n<p></p><h4>Update: This is fixed in 8.x-1.10 not 8.x-1.9</h4>",
+  "details": "This module provides a JSON API standards-compliant API for accessing and manipulating Drupal content and configuration entities.\n\n* The module doesn't sufficiently associate cacheability metadata in certain situations thereby causing an access bypass vulnerability.\n\n  This vulnerability is mitigated by the fact that an attacker cannot trigger an exploitable situation themselves.\n* The module doesn't sufficiently check access in certain situations.\n\n  This vulnerability is mitigated by the fact that an attacker must have permission to create entities of certain content entity types.\n\n#### Update: This is fixed in 8.x-1.10 not 8.x-1.9",
   "affected": [
     {
       "package": {

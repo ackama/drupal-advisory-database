@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to create responsive image styles that depend on the parent element's width. </p>\n<p>The module doesn't sufficiently check access to rendered images, resulting in access bypass vulnerabilities in specific scenarios.</p>",
+  "details": "This module enables you to create responsive image styles that depend on the parent element's width.\n\nThe module doesn't sufficiently check access to rendered images, resulting in access bypass vulnerabilities in specific scenarios.",
   "affected": [
     {
       "package": {

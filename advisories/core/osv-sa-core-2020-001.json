@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Drupal project uses the third-party library <a href=\"https://github.com/ckeditor/ckeditor4\" rel=\"nofollow\">CKEditor</a>, which has released a <a href=\"https://ckeditor.com/blog/CKEditor-4.14-with-Paste-from-LibreOffice-released/#security-issues-fixed\" rel=\"nofollow\">security improvement</a> that is needed to protect some Drupal configurations.</p>\n<p>Vulnerabilities are possible if Drupal is configured to use the WYSIWYG CKEditor for your site's users. An attacker that can create or edit content may be able to exploit this Cross Site Scripting (XSS) vulnerability to target users with access to the WYSIWYG CKEditor, and this may include site admins with privileged access.</p>\n<p>The latest versions of Drupal update CKEditor to 4.14 to mitigate the vulnerabilities.</p>",
+  "details": "The Drupal project uses the third-party library [CKEditor](https://github.com/ckeditor/ckeditor4), which has released a [security improvement](https://ckeditor.com/blog/CKEditor-4.14-with-Paste-from-LibreOffice-released/#security-issues-fixed) that is needed to protect some Drupal configurations.\n\nVulnerabilities are possible if Drupal is configured to use the WYSIWYG CKEditor for your site's users. An attacker that can create or edit content may be able to exploit this Cross Site Scripting (XSS) vulnerability to target users with access to the WYSIWYG CKEditor, and this may include site admins with privileged access.\n\nThe latest versions of Drupal update CKEditor to 4.14 to mitigate the vulnerabilities.",
   "affected": [
     {
       "package": {

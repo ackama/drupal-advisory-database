@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to pay online via Mollie.</p>\n<p>The module might not properly load the correct order to update the payment status when Mollie redirects to the redirect URL. This can allow an attacker to apply other people's orders to their own, getting credit without paying.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have some knowledge about the module's internal functionality. The issue only affects installations that use the Mollie for Drupal Commerce submodule.</p>",
+  "details": "This module enables you to pay online via Mollie.\n\nThe module might not properly load the correct order to update the payment status when Mollie redirects to the redirect URL. This can allow an attacker to apply other people's orders to their own, getting credit without paying.\n\nThis vulnerability is mitigated by the fact that an attacker must have some knowledge about the module's internal functionality. The issue only affects installations that use the Mollie for Drupal Commerce submodule.",
   "affected": [
     {
       "package": {

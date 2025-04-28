@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal core uses the third-party PEAR Archive_Tar library. This library has released a security update which impacts some Drupal configurations. Refer to <a href=\"https://nvd.nist.gov/vuln/detail/CVE-2018-1000888\" rel=\"nofollow\">CVE-2018-1000888</a> for details.</p>",
+  "details": "Drupal core uses the third-party PEAR Archive\\_Tar library. This library has released a security update which impacts some Drupal configurations. Refer to [CVE-2018-1000888](https://nvd.nist.gov/vuln/detail/CVE-2018-1000888) for details.",
   "affected": [
     {
       "package": {

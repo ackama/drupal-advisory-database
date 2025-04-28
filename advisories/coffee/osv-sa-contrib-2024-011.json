@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Coffee module helps you to navigate through the Drupal admin menus faster with a shortcut popup.</p>\n<p>The module doesn't sufficiently escape menu names when displaying them in the popup, thereby exposing a XSS vulnerability.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer menus and menu links\".</p>",
+  "details": "The Coffee module helps you to navigate through the Drupal admin menus faster with a shortcut popup.\n\nThe module doesn't sufficiently escape menu names when displaying them in the popup, thereby exposing a XSS vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer menus and menu links\".",
   "affected": [
     {
       "package": {

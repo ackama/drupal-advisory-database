@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Drupal project uses the pear Archive_Tar library, which has released a security update that impacts Drupal.</p>\n<p>The vulnerability is mitigated by the fact that Drupal core's use of the Archive_Tar library is not vulnerable, as it does not permit symlinks.</p>\n<p>Exploitation may be possible if contrib or custom code uses the library to extract tar archives (for example .tar, .tar.gz, .bz2, or .tlz) which come from a potentially untrusted source.</p>\n<p>This advisory is not covered by <a href=\"/steward\" rel=\"nofollow\">Drupal Steward</a>.</p>",
+  "details": "The Drupal project uses the pear Archive\\_Tar library, which has released a security update that impacts Drupal.\n\nThe vulnerability is mitigated by the fact that Drupal core's use of the Archive\\_Tar library is not vulnerable, as it does not permit symlinks.\n\nExploitation may be possible if contrib or custom code uses the library to extract tar archives (for example .tar, .tar.gz, .bz2, or .tlz) which come from a potentially untrusted source.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {
       "package": {

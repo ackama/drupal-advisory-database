@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The reCaptcha v3 module enables you to protect your forms using the Google reCaptcha V3.</p>\n<p>If the reCaptcha v3 challenge succeeds, all the other form validations are bypassed. This makes it possible for attackers to submit invalid or incomplete forms.</p>\n<p>This vulnerability only affects forms that are protected by reCaptcha v3 and have server side validation steps (e.g required field or custom validation functions).</p>",
+  "details": "The reCaptcha v3 module enables you to protect your forms using the Google reCaptcha V3.\n\nIf the reCaptcha v3 challenge succeeds, all the other form validations are bypassed. This makes it possible for attackers to submit invalid or incomplete forms.\n\nThis vulnerability only affects forms that are protected by reCaptcha v3 and have server side validation steps (e.g required field or custom validation functions).",
   "affected": [
     {
       "package": {

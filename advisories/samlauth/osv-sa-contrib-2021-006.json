@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The <a href=\"https://www.drupal.org/project/samlauth\" rel=\"nofollow\">SAML Authentication module</a> allows users to authenticate against a SAML identity provider to login to your Drupal site.</p>\n<p>The module doesn't sufficiently protect against unauthorized local access, by way of using the 'password reset' facility, for users who are supposed to only be able to log in through the identity provider. This creates a scenario where after such a user is blocked from logging in through the identity provider but not explicitly blocked in Drupal, they are still able to log in by sending themselves a Drupal 'password reset' e-mail.</p>",
+  "details": "The [SAML Authentication module](https://www.drupal.org/project/samlauth) allows users to authenticate against a SAML identity provider to login to your Drupal site.\n\nThe module doesn't sufficiently protect against unauthorized local access, by way of using the 'password reset' facility, for users who are supposed to only be able to log in through the identity provider. This creates a scenario where after such a user is blocked from logging in through the identity provider but not explicitly blocked in Drupal, they are still able to log in by sending themselves a Drupal 'password reset' e-mail.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Carefully crafted input by an attacker will not be sanitized by this module, which can result in a script injection.</p>",
+  "details": "Carefully crafted input by an attacker will not be sanitized by this module, which can result in a script injection.",
   "affected": [
     {
       "package": {

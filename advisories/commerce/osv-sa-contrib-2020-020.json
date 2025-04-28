@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Drupal Commerce is used to build eCommerce websites and applications. It's possible to configure commerce to permit orders by anonymous users. In this configuration, customers who do not choose to create an account upon checkout completion remain anonymous, and the resulting orders are never assigned an owner.</p>\n<p>When anonymous users are granted the \"View own orders\" permission, they are able to see any such anonymous order via direct navigation to its view page. The module does not include extra access control necessary to ensure anonymous users are only able to view their own previously placed orders. </p>\n<p>This vulnerability is mitigated by the fact that a site must be configured to permit anonymous checkout and an attacker must be an anonymous user with the permission \"View own orders\".</p>",
+  "details": "Drupal Commerce is used to build eCommerce websites and applications. It's possible to configure commerce to permit orders by anonymous users. In this configuration, customers who do not choose to create an account upon checkout completion remain anonymous, and the resulting orders are never assigned an owner.\n\nWhen anonymous users are granted the \"View own orders\" permission, they are able to see any such anonymous order via direct navigation to its view page. The module does not include extra access control necessary to ensure anonymous users are only able to view their own previously placed orders.\n\nThis vulnerability is mitigated by the fact that a site must be configured to permit anonymous checkout and an attacker must be an anonymous user with the permission \"View own orders\".",
   "affected": [
     {
       "package": {

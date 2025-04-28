@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to add and manage additional custom permissions through the administration UI.</p>\n<p>The module doesn't sufficiently check for the proper access permissions to this page.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must know the route of the Custom Permissions administration form though this is easily known.</p>",
+  "details": "This module enables you to add and manage additional custom permissions through the administration UI.\n\nThe module doesn't sufficiently check for the proper access permissions to this page.\n\nThis vulnerability is mitigated by the fact that an attacker must know the route of the Custom Permissions administration form though this is easily known.",
   "affected": [
     {
       "package": {

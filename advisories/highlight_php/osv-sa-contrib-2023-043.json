@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>Provides <a href=\"https://github.com/scrivo/highlight.php\" title=\"highlight.php\" rel=\"nofollow\">highlight.php</a> integration to Drupal, allowing &lt;code&gt; blocks to be automatically highlighted with the correct language.</p>\n<p>The module's Twig function doesn't sufficiently filter user-entered data.</p>",
+  "details": "Provides [highlight.php](https://github.com/scrivo/highlight.php \"highlight.php\") integration to Drupal, allowing <code> blocks to be automatically highlighted with the correct language.\n\nThe module's Twig function doesn't sufficiently filter user-entered data.",
   "affected": [
     {
       "package": {

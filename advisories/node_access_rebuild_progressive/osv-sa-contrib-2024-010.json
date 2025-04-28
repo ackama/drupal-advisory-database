@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides an alternative mean of rebuilding the Content Access table.</p>\n<p>The module doesn't sufficiently reset the state of content access when the module is uninstalled.</p>",
+  "details": "This module provides an alternative mean of rebuilding the Content Access table.\n\nThe module doesn't sufficiently reset the state of content access when the module is uninstalled.",
   "affected": [
     {
       "package": {

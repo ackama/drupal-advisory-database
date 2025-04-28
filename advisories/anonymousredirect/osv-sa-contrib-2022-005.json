@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <a href=\"https://www.drupal.org/node/251466#procedure---own-project---unsupported\" rel=\"nofollow\">https://www.drupal.org/node/251466#procedure---own-project---unsupported</a></p>",
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
   "affected": [
     {
       "package": {

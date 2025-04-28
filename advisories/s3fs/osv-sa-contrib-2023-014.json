@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>S3 File System (s3fs) provides an additional file system to your Drupal site, which stores files in Amazon's Simple Storage Service (S3) or any other S3-compatible storage service.</p>\n<p>This module may fail to validate that a file being requested to be moved to storage was uploaded during the same web request, possibly allowing an attacker to move files that should normally be inaccessible to them.</p>\n<p>This vulnerability is mitigated by the fact that another vulnerability must already exist outside of s3fs.</p>",
+  "details": "S3 File System (s3fs) provides an additional file system to your Drupal site, which stores files in Amazon's Simple Storage Service (S3) or any other S3-compatible storage service.\n\nThis module may fail to validate that a file being requested to be moved to storage was uploaded during the same web request, possibly allowing an attacker to move files that should normally be inaccessible to them.\n\nThis vulnerability is mitigated by the fact that another vulnerability must already exist outside of s3fs.",
   "affected": [
     {
       "package": {

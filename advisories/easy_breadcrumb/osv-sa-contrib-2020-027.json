@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to use the current URL (path alias) and the current page's title to automatically extract the breadcrumb's segments and its respective links then show them as breadcrumbs on your website.</p>\n<p>The module doesn't sufficiently sanitize editor input in certain circumstances leading to a Cross Site Scripting (XSS) vulnerability.</p>\n<p>This vulnerability requires the user have 'administer Easy Breadcrumb settings permission'.</p>",
+  "details": "This module enables you to use the current URL (path alias) and the current page's title to automatically extract the breadcrumb's segments and its respective links then show them as breadcrumbs on your website.\n\nThe module doesn't sufficiently sanitize editor input in certain circumstances leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability requires the user have 'administer Easy Breadcrumb settings permission'.",
   "affected": [
     {
       "package": {

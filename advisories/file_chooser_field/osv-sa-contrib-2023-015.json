@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The File Chooser Field allows users to upload files using 3rd party plugins such as Google Drive and Dropbox. </p>\n<p>This module fails to validate user input sufficiently which could under certain circumstances lead to a Server Side Request Forgery (SSRF) vulnerability leading to Information Disclosure. In uncommon configurations and scenarios, it might lead to Remote Code Execution.</p>",
+  "details": "The File Chooser Field allows users to upload files using 3rd party plugins such as Google Drive and Dropbox.\n\nThis module fails to validate user input sufficiently which could under certain circumstances lead to a Server Side Request Forgery (SSRF) vulnerability leading to Information Disclosure. In uncommon configurations and scenarios, it might lead to Remote Code Execution.",
   "affected": [
     {
       "package": {

@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to group nodes within pages that have a highly-granular, distributed permissions structure.</p>\n<p>In certain cases the module doesn't sufficiently sanitize data before passing it to PHP's unserialize() function, which can result in arbitrary code execution.</p>",
+  "details": "This module enables you to group nodes within pages that have a highly-granular, distributed permissions structure.\n\nIn certain cases the module doesn't sufficiently sanitize data before passing it to PHP's unserialize() function, which can result in arbitrary code execution.",
   "affected": [
     {
       "package": {

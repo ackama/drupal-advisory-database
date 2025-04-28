@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module allows you to turn various data sources (Eg CSV or JSON file) into interactive visualisation. The DVF module provides a field (storage, widget &amp; formatter) that can be added to any entity. </p>\n<p>This module uses two third-party JS libraries having from low to medium vulnerabilities. One of the vulnerabilities is a Cross Site Scripting vulnerability that may affect Drupal sites as a Persistent Cross Site Scripting vulnerability (i.e. not reflected). This release updates the libraries.</p>\n<p>The issue is mitigated by the fact an attacker needs the permission to create or edit content that is displayed using the Data Visualization Framework.</p>",
+  "details": "This module allows you to turn various data sources (Eg CSV or JSON file) into interactive visualisation. The DVF module provides a field (storage, widget & formatter) that can be added to any entity.\n\nThis module uses two third-party JS libraries having from low to medium vulnerabilities. One of the vulnerabilities is a Cross Site Scripting vulnerability that may affect Drupal sites as a Persistent Cross Site Scripting vulnerability (i.e. not reflected). This release updates the libraries.\n\nThe issue is mitigated by the fact an attacker needs the permission to create or edit content that is displayed using the Data Visualization Framework.",
   "affected": [
     {
       "package": {

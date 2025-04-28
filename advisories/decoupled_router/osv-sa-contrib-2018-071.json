@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to resolve the provided Drupal path in order to find the canonical path and information about the resolved entity. This information includes entity type ID, entity ID, entity UUID and entity label.</p>\n<p>The module doesn't sufficiently check access before displaying entity labels. This leads to the display of labels on entities that are not be accessible, for example; titles of unpublished content.</p>",
+  "details": "This module enables you to resolve the provided Drupal path in order to find the canonical path and information about the resolved entity. This information includes entity type ID, entity ID, entity UUID and entity label.\n\nThe module doesn't sufficiently check access before displaying entity labels. This leads to the display of labels on entities that are not be accessible, for example; titles of unpublished content.",
   "affected": [
     {
       "package": {

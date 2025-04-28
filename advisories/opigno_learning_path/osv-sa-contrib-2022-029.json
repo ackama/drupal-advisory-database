@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module is used as part of the Opigno LMS distribution and implements learning paths for the LMS.</p>\n<p>The module was providing too much user information about users such as the list of groups a uid is in. </p>",
+  "details": "This module is used as part of the Opigno LMS distribution and implements learning paths for the LMS.\n\nThe module was providing too much user information about users such as the list of groups a uid is in.",
   "affected": [
     {
       "package": {

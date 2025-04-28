@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to show referenced entities in tabs.</p>\n<p>The module doesn't sufficiently sanitize the body fields of the referenced entities when it prints them to the tabs.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the permission create/edit content of the content type that is referenced.</p>",
+  "details": "This module enables you to show referenced entities in tabs.\n\nThe module doesn't sufficiently sanitize the body fields of the referenced entities when it prints them to the tabs.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission create/edit content of the content type that is referenced.",
   "affected": [
     {
       "package": {

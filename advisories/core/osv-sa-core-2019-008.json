@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>In Drupal 8.7.4, when the <a href=\"https://www.drupal.org/core/experimental#beta\" rel=\"nofollow\">experimental</a> Workspaces module is enabled, an access bypass condition is created. </p>\n<p>This can be mitigated by disabling the Workspaces module. It does not affect any release other than Drupal 8.7.4.</p>\n<p>Drupal 8.7.3 and earlier, Drupal 8.6.x and earlier, and Drupal 7.x are <b>not</b> affected.</p>",
+  "details": "In Drupal 8.7.4, when the [experimental](https://www.drupal.org/core/experimental#beta) Workspaces module is enabled, an access bypass condition is created.\n\nThis can be mitigated by disabling the Workspaces module. It does not affect any release other than Drupal 8.7.4.\n\nDrupal 8.7.3 and earlier, Drupal 8.6.x and earlier, and Drupal 7.x are **not** affected.",
   "affected": [
     {
       "package": {

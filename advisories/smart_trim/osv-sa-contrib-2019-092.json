@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Smart Trim module allows site builders additional control with text summary fields.</p>\n<p>The module doesn't sufficiently filter text when certain options are selected.</p>\n<p>This vulnerability is mitigated by the fact that an attacker must have a role with the ability to create content on the site when certain options are selected for the trimmed output.</p>",
+  "details": "The Smart Trim module allows site builders additional control with text summary fields.\n\nThe module doesn't sufficiently filter text when certain options are selected.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the ability to create content on the site when certain options are selected for the trimmed output.",
   "affected": [
     {
       "package": {

@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to customize meta tags to help with a site's search engine ranking and improve the display of page summaries when shared on social networks.</p>\n<p>The module doesn't sufficiently check for a site being in maintenance mode.</p>\n<p>This vulnerability is mitigated by the fact that the site must be configured to disallow access to certain content, and must be put into maintenance mode.</p>\n<p><a name=\"cve-identifiers-issued\" id=\"cve-identifiers-issued\" rel=\"nofollow\"></a></p>",
+  "details": "This module enables you to customize meta tags to help with a site's search engine ranking and improve the display of page summaries when shared on social networks.\n\nThe module doesn't sufficiently check for a site being in maintenance mode.\n\nThis vulnerability is mitigated by the fact that the site must be configured to disallow access to certain content, and must be put into maintenance mode.",
   "affected": [
     {
       "package": {

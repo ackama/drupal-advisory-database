@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal. </p>\n<p>The module did not properly validate user access for data creation in certain circumstances.</p>",
+  "details": "The Apigee Edge module allows connecting a Drupal site to Apigee Edge in order to build a developer portal.\n\nThe module did not properly validate user access for data creation in certain circumstances.",
   "affected": [
     {
       "package": {

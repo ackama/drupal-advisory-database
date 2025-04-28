@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Paragraphs module allows Drupal Site Builders to make content organization cleaner so that you can give more editing power to end-users.</p>\n<p>The module doesn't sufficiently check access to create new paragraph entities which can cause access bypass issues when used in combination with other contributed modules.</p>",
+  "details": "The Paragraphs module allows Drupal Site Builders to make content organization cleaner so that you can give more editing power to end-users.\n\nThe module doesn't sufficiently check access to create new paragraph entities which can cause access bypass issues when used in combination with other contributed modules.",
   "affected": [
     {
       "package": {

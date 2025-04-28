@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>jQuery UI is a third-party library used by Drupal. The jQuery UI Checkboxradio module provides the jQuery UI Checkboxradio library (which was previously in Drupal 8 core, but has since been removed from core and moved to this module).</p>\n<p>As part of the jQuery UI 1.13.2 update, the jQuery UI project disclosed following security issue that may affect sites using the jQuery UI Checkboxradio module:</p>\n<ul>\n<li>\nCVE-2022-31160: <a href=\"https://github.com/jquery/jquery-ui/security/advisories/GHSA-h6gj-6jjq-h8g9\" rel=\"nofollow\">XSS when refreshing a checkboxradio with an HTML-like initial text label<br />\n</a>\n</li>\n</ul>",
+  "details": "jQuery UI is a third-party library used by Drupal. The jQuery UI Checkboxradio module provides the jQuery UI Checkboxradio library (which was previously in Drupal 8 core, but has since been removed from core and moved to this module).\n\nAs part of the jQuery UI 1.13.2 update, the jQuery UI project disclosed following security issue that may affect sites using the jQuery UI Checkboxradio module:\n\n* CVE-2022-31160: [XSS when refreshing a checkboxradio with an HTML-like initial text label](https://github.com/jquery/jquery-ui/security/advisories/GHSA-h6gj-6jjq-h8g9)",
   "affected": [
     {
       "package": {

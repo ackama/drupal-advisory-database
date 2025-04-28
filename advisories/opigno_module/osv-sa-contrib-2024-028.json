@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>The Opigno module is related to Opigno LMS distribution. It implements the module entity, that is a sub-part of a training.</p>\n<p>In the opigno_module module, uploaded files were not sufficiently validated to prevent arbitrary file uploads, which could lead to Remote Code Execution (RCE) and/or Cross Site Scripting (XSS). </p>\n<p>This vulnerability is mitigated by the fact that it requires the attacker have a role with the permission \"create opigno tincan activities\".</p>",
+  "details": "The Opigno module is related to Opigno LMS distribution. It implements the module entity, that is a sub-part of a training.\n\nIn the opigno\\_module module, uploaded files were not sufficiently validated to prevent arbitrary file uploads, which could lead to Remote Code Execution (RCE) and/or Cross Site Scripting (XSS).\n\nThis vulnerability is mitigated by the fact that it requires the attacker have a role with the permission \"create opigno tincan activities\".",
   "affected": [
     {
       "package": {

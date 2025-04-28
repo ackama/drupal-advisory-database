@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module provides integration with the CleanTalk spam protection service.</p>\n<p>The module does not properly filter data in certain circumstances.</p>\n<p><b>Update: 2022-03-31 - fix release node links</b></p>",
+  "details": "This module provides integration with the CleanTalk spam protection service.\n\nThe module does not properly filter data in certain circumstances.\n\n**Update: 2022-03-31 - fix release node links**",
   "affected": [
     {
       "package": {

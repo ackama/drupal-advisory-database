@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to view all paragraph entities in an admin view.<br />\nThe module contains an access bypass that allows non admin users to access the view.<br />\nThe vulnerability can be mitigated by editing the view to change the permission required to access the page.</p>",
+  "details": "This module enables you to view all paragraph entities in an admin view.  \nThe module contains an access bypass that allows non admin users to access the view.  \nThe vulnerability can be mitigated by editing the view to change the permission required to access the page.",
   "affected": [
     {
       "package": {

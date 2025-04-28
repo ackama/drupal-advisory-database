@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>\nCKEditor, a third-party JavaScript library included in Drupal core, has <a href=\"https://ckeditor.com/blog/CKEditor-4.9.2-with-a-security-patch-released/\" rel=\"nofollow\">fixed a cross-site scripting (XSS) vulnerability</a>.  The vulnerability stemmed from the fact that it was possible to execute XSS inside CKEditor when using the <code class=\"language-php\">image2</code> plugin (which Drupal 8 core also uses).\n</p>\n<p>\nWe would like to thank the CKEditor team for patching the vulnerability and coordinating the fix and release process, and matching the Drupal core security window.\n</p>",
+  "details": "CKEditor, a third-party JavaScript library included in Drupal core, has [fixed a cross-site scripting (XSS) vulnerability](https://ckeditor.com/blog/CKEditor-4.9.2-with-a-security-patch-released/). The vulnerability stemmed from the fact that it was possible to execute XSS inside CKEditor when using the `image2` plugin (which Drupal 8 core also uses).\n\nWe would like to thank the CKEditor team for patching the vulnerability and coordinating the fix and release process, and matching the Drupal core security window.",
   "affected": [
     {
       "package": {

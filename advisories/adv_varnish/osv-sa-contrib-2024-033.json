@@ -8,7 +8,7 @@
   ],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to cache pages for logged in users at the Varnish level.</p>\n<p>The Varnish bin names may be guessable when no hashing noise configuration is set on the module configuration page, which would ultimately allow any user to view cached pages that were intended for other roles when guessing such a bin name.</p>",
+  "details": "This module enables you to cache pages for logged in users at the Varnish level.\n\nThe Varnish bin names may be guessable when no hashing noise configuration is set on the module configuration page, which would ultimately allow any user to view cached pages that were intended for other roles when guessing such a bin name.",
   "affected": [
     {
       "package": {

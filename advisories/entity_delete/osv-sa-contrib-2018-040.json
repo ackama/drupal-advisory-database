@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>This module enables you to delete any types of entities in bulk.</p>\n<p>The module doesn't sufficiently verify access permissions under its use cases, leading to access bypass. The module also does not protect against Cross Site Request Forgeries on its delete process.</p>\n<p>The access bypass vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access content\". There is no additional mitigation for the Cross Site Request Forgery vulnerability.</p>",
+  "details": "This module enables you to delete any types of entities in bulk.\n\nThe module doesn't sufficiently verify access permissions under its use cases, leading to access bypass. The module also does not protect against Cross Site Request Forgeries on its delete process.\n\nThe access bypass vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access content\". There is no additional mitigation for the Cross Site Request Forgery vulnerability.",
   "affected": [
     {
       "package": {

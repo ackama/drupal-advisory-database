@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Data Field module provides a way of building field types that are made up of other fields, a simpler alternative to e.g. the Paragraphs system.</p>\n<p>Access to these forms isn't properly validated, allowing a user with the \"access content\" permission to view and edit fields on entities.</p>",
+  "details": "The Data Field module provides a way of building field types that are made up of other fields, a simpler alternative to e.g. the Paragraphs system.\n\nAccess to these forms isn't properly validated, allowing a user with the \"access content\" permission to view and edit fields on entities.",
   "affected": [
     {
       "package": {

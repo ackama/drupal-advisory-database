@@ -6,7 +6,7 @@
   "aliases": [],
   "related": [],
   "summary": "",
-  "details": "<p>The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal. </p>\n<p>Previous module versions did not support entity query level access checking, which could have led to information disclosure or access bypass in various places. </p>",
+  "details": "The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal.\n\nPrevious module versions did not support entity query level access checking, which could have led to information disclosure or access bypass in various places.",
   "affected": [
     {
       "package": {
