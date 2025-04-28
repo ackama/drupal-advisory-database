@@ -49,6 +49,9 @@
           "type": "ECOSYSTEM",
           "events": [
             {
+              "introduced": "13.0.0"
+            },
+            {
               "fixed": "13.0.0-alpha11"
             }
           ],
