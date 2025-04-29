@@ -75,7 +75,7 @@ jobs:
           python-version-file: '.python-version'
       - run: pipx install poetry~=2.0
       - run: poetry install
-      - run: scripts/validate_advisories.py
+      - run: poetry run scripts/validate_advisories.py
   prettier:
     permissions:
       contents: read # to fetch (actions/checkout)
