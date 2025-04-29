@@ -24,12 +24,12 @@ in `pyproject.toml` using
 
 ```shell
 # 1. download the Drupal SA advisories from drupal.org
-scripts/download_sa_advisories.py
+poetry run scripts/download_sa_advisories.py
 
 # 2. download nodes from drupal.org related to the advisories
 # (this is not required, but will significantly improve performance of the next step)
-scripts/precache_nodes.py
+poetry run scripts/precache_nodes.py
 
 # 3. generate the OSV advisories based on the Drupal advisories
-scripts/generate_osv_advisories.py
+poetry run scripts/generate_osv_advisories.py
 ```
