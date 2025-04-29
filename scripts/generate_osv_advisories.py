@@ -18,8 +18,6 @@ from markdownify import markdownify
 from typings import drupal, osv
 
 osv_dir_name = 'advisories'
-# Not all fields pass the schema test as there are elements that are not yet present in the OSV schema.
-full_proposed_entry = False
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
@@ -125,16 +123,6 @@ def event_to_semver_for_sorting(event: osv.Event) -> semver.Version:
   return semver.Version.parse(semver_for_sorting(version))
 
 
-def fake_ecosystem(osv_advisory: osv.Vulnerability) -> osv.Vulnerability:
-  if not full_proposed_entry:
-    # Fake the package.ecosystem so a schema validator doesn't complain.
-    for affected in osv_advisory['affected']:
-      affected['package']['ecosystem'] = 'Packagist'
-    # Fake the ID so it passes the schema validation.
-    osv_advisory['id'] = f'OSV-{osv_advisory["id"]}'
-  return osv_advisory
-
-
 def semver_for_sorting(semver: typing.Any) -> str:
   decrement_semver = False
   if semver == '':
@@ -217,7 +205,7 @@ def build_osv_advisory(
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.3.0',
-    'id': sa_id,
+    'id': f'OSV-{sa_id}',
     'modified': datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
       '%Y-%m-%dT%H:%M:%S.000Z'
     ),
@@ -230,8 +218,13 @@ def build_osv_advisory(
     'details': markdownify(sa_advisory['field_sa_description']['value']),
     'affected': [
       {
-        'package': {'ecosystem': 'Drupal', 'name': ''},
-        'severity': [{'type': 'NIST_CMSS', 'score': ''}],
+        # todo: figure out if we need a dedicated ecosystem i.e. Drupal, Drupal8, etc
+        'package': {'ecosystem': 'Packagist', 'name': ''},
+        # todo: figure out how to map field_sa_criticality to severity
+        #  https://ossf.github.io/osv-schema/#severitytype-field
+        #  https://www.drupal.org/drupal-security-team/security-risk-levels-defined
+        #  https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
+        'severity': [],
         'ranges': build_affected_ranges(sa_advisory),
         'database_specific': {
           'affected_versions': sa_advisory['field_affected_versions']
@@ -245,20 +238,7 @@ def build_osv_advisory(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
 
-  # TODO: Add the severity to the OSV entry.
-  # https://ossf.github.io/osv-schema/#severitytype-field
-  # https://www.drupal.org/drupal-security-team/security-risk-levels-defined
-  # https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
-  if full_proposed_entry:
-    osv_advisory['affected'][0]['severity'][0]['score'] = sa_advisory[
-      'field_sa_criticality'
-    ]
-  else:
-    osv_advisory['affected'][0]['severity'] = []
-
   osv_advisory['affected'][0]['package']['name'] = composer_package(project)
-
-  fake_ecosystem(osv_advisory)
 
   return osv_advisory
 
