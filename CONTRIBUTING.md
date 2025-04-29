@@ -3,6 +3,14 @@
 This codebase requires Python 3.13 and uses [Poetry](https://python-poetry.org/)
 to manage dependencies.
 
+# Testing
+
+We use `pytest` for testing, which can be run with:
+
+```shell
+poetry run pytest
+```
+
 # Type checking
 
 We use `mypy` to do strict type checking of Python scripts, which can be run

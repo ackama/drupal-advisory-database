@@ -16,5 +16,6 @@ select = [
 
 [lint.isort]
 known-first-party = [
+  'generate_osv_advisories',
   'typings'
 ]

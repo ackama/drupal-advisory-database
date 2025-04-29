@@ -8,6 +8,7 @@ The advisories should be downloaded using the `scripts/download_sa_advisories.py
 
 import json
 import os
+import re
 import typing
 from datetime import datetime
 
@@ -58,41 +59,228 @@ def expand_version(version: str) -> str:
   return '.'.join(components) + build
 
 
-def parse_version_constraint(versions: str) -> list[osv.Event]:
+class ComposerVersionConstraintPart:
+  def __init__(self, part: str):
+    result = re.match(
+      r'^(?P<operator>[<>]=?|=|[~^])?(?P<major>\d+)(?:\.(?P<minor>\d+|\*))?(?:\.(?P<patch>\d+|\*))?(?P<stability>.+)?$',
+      part,
+    )
+
+    if result is None:
+      # todo: ensure this is handled appropriately
+      raise Exception(f'"{part}" is not a valid version constraint')
+
+    self.operator: str = result.group('operator') or ''
+    self.first_component: str | None = result.group('major')
+    self.second_component: str | None = result.group('minor')
+    self.third_component: str | None = result.group('patch')
+    self.stability: str = result.group('stability') or ''
+
+    # prefer representing stable implicitly
+    if self.stability == '-stable':
+      self.stability = ''
+
+  def next_version(self, part: str) -> str:
+    next_version = str(semver.Version.parse(str(self)).next_version(part))
+
+    # semver.Version does not seem to increment the prerelease version if it does
+    # not have a number already, so we've got to add that manually
+    #
+    # todo: this is possibly a bug in the semver library, though also it might be
+    #  something we should warn on?
+    #  see https://github.com/python-semver/python-semver/issues/369
+    if (
+      part == 'prerelease'
+      and self.stability != ''
+      and not self.stability[-1:].isdigit()
+    ):
+      next_version += '1'
+    return next_version
+
+  def __str__(self) -> str:
+    first_component = int(self.first_component or '0')
+    second_component = int(self.second_component or '0')
+    third_component = int(self.third_component or '0')
+
+    return f'{first_component}.{second_component}.{third_component}{self.stability}'
+
+
+def weigh_stability(stability: str) -> int:
+  """
+  Weighs the given stability based on the order specified in
+  https://getcomposer.org/doc/04-schema.md#version
+  """
+  stability = stability.removeprefix('-')
+
+  if stability.startswith('RC'):
+    return 3
+
+  # the '#' is used when a version is pointed at a VSC repository
+  # and takes priority over patch versions but not anything else
+  for i, start in enumerate(['p', '#', 'rc', 'b', 'a', 'dev']):
+    if stability.startswith(start):
+      return i
+  return 0
+
+
+# noinspection PyDefaultArgument
+def parse_version_constraint(
+  constraint: str,
+  extra_warnings: typing.Sequence[str] = [],
+) -> tuple[list[osv.Event], list[str]]:
   """
   Parses a version constraint into a series of events that express what versions
-  are and are not affected by the advisory the constraint was sourced from
+  are and are not affected by the advisory the constraint was sourced from,
+  along with any warnings about the constraints validity
   """
-  events: list[osv.Event] = []
-  # split version on space and append the first element to the affected list after removing any > or >= characters.
-  versions = (
-    versions.replace('>=', '')
-    .replace('>', '')
-    .replace('< ', '<')
-    .replace('= ', '=')
-    .strip()
-  )
-  parts = [part.strip() for part in versions.split()]
-  introduced = parts[0]
-  if introduced[0] == '<':
-    introduced = '0'
-  introduced = introduced.replace('*', '0')
-  events.append({'introduced': expand_version(introduced)})
-  if len(parts) > 1:
-    # It looks like Core does not have field_fixed_in populated. Add a
-    # fixed version from this string if we can.
-    fixed = parts[1].replace('<', '').replace('=', '').strip()
-    events.append({'fixed': expand_version(fixed)})
-  elif parts[0][0] == '<':
-    events.append({'fixed': expand_version(parts[0][1:])})
+  constraint = re.sub(r'([<>]=?) +', r'\1', re.sub(r' +', ' ', constraint.strip()))
 
-  return events
+  # todo: make sure this doesn't generate an empty range?
+  if constraint == '':
+    return [], ['constraint is empty']
+
+  if constraint == '*':
+    return [typing.cast(osv.Event, {'introduced': '0'})], []
+
+  events: list[osv.Event] = []
+  warnings: list[str] = list(extra_warnings)
+  parts = [ComposerVersionConstraintPart(part) for part in constraint.split()]
+
+  for part in parts:
+    if part.operator == '=':
+      part.operator = ''
+      warnings.append(
+        'the = operator is not real, and will be treated as an exact version'
+      )
+    for component in [
+      part.first_component or '',
+      part.second_component or '',
+      part.third_component or '',
+    ]:
+      if len(component) > 1 and component.startswith('0'):
+        warnings.append('components should not be prefixed with leading zeros')
+
+  # https://getcomposer.org/doc/articles/versions.md#wildcard-version-range-
+  if parts[0].second_component == '*' or parts[0].third_component == '*':
+    if len(parts) > 1:
+      warnings.append('the * operator should not be paired with a second part')
+    if parts[0].operator != '':
+      warnings.append('the * operator should not be mixed with other operators')
+    # todo: this is probably true, though the docs don't come close to mentioning it
+    #  it might be worth trying to double check, but for now it should be safe to do
+    if parts[0].stability != '':
+      warnings.append('the * operator should not be mixed with a stability suffix')
+
+    lower = parts[0].first_component or '0'
+    if parts[0].second_component == '*':
+      if parts[0].third_component is not None:
+        warnings.append('the * operator should be the last component of the version')
+      lower += '.0'
+      upper = str(int(parts[0].first_component or '0') + 1)
+    else:
+      lower += f'.{parts[0].second_component}'
+      upper = (
+        f'{parts[0].first_component or "0"}.{int(parts[0].second_component or "0") + 1}'
+      )
+
+    return parse_version_constraint(f'>={lower} <{upper}', warnings)
+
+  # https://getcomposer.org/doc/articles/versions.md#tilde-version-range-
+  if parts[0].operator == '~':
+    if len(parts) > 1:
+      warnings.append('the ~ operator should not be paired with a second part')
+
+    upper = str(
+      parts[0].next_version(
+        'major'  # bump the major version, unless we're dealing with a x.y.z version
+        if parts[0].third_component is None
+        else 'minor'  # else bump the minor version
+      )
+    )
+    return parse_version_constraint(f'>={parts[0]} <{upper}', warnings)
+
+  # https://getcomposer.org/doc/articles/versions.md#caret-version-range-
+  if parts[0].operator == '^':
+    if len(parts) > 1:
+      warnings.append('the ^ operator should not be paired with a second part')
+
+    upper = str(
+      parts[0].next_version(
+        'major'  # bump the major version, unless we're dealing with a 0.x version
+        if int(parts[0].first_component or '0') != 0
+        else 'minor'  # else bump the minor version, unless we're dealing with a 0.0.x version
+        if int(parts[0].second_component or '0') != 0
+        else 'patch'  # else bump the patch version
+      )
+    )
+
+    return parse_version_constraint(f'>={parts[0]} <{upper}', warnings)
+
+  # determine the first event, which will be an "introduced"
+  introduced = str(parts[0])
+  if parts[0].operator == '<' or parts[0].operator == '<=':
+    introduced = '0'
+  elif parts[0].operator == '>':
+    warnings.append(
+      'the > operator should be avoided as it does not provide a concrete version'
+    )
+    introduced = parts[0].next_version(
+      'patch' if parts[0].stability == '' else 'prerelease'
+    )
+  events.append({'introduced': introduced})
+
+  # determine the second event, which will be either "fixed" or "last_affected"
+  if parts[0].operator == '' or parts[0].operator.startswith('<'):
+    if parts[0].operator == '' and (
+      parts[0].first_component is None
+      or parts[0].second_component is None
+      or parts[0].third_component is None
+    ):
+      warnings.append('exact versions should not omit components')
+
+    if len(parts) > 1:
+      operator = (
+        'exact versions'
+        if parts[0].operator == ''
+        else f'the {parts[0].operator} operator'
+      )
+      warnings.append(f'{operator} should not be paired with other parts')
+
+    if parts[0].operator == '<':
+      events.append({'fixed': str(parts[0])})
+    else:
+      events.append({'last_affected': str(parts[0])})
+  elif len(parts) > 1:
+    if len(parts) > 2:
+      warnings.append('there should not be more than two parts in a version constraint')
+
+    if (
+      parts[1].operator.startswith('<')
+      and parts[0].operator.startswith('>')
+      and weigh_stability(parts[0].stability) < weigh_stability(parts[1].stability)
+    ):
+      parts[0].stability = '-dev'
+      events[0]['introduced'] = str(parts[0])
+      warnings.append('stability does not make sense, using -dev instead')
+
+    if parts[1].operator == '<':
+      events.append({'fixed': str(parts[1])})
+    elif parts[1].operator == '<=':
+      events.append({'last_affected': str(parts[1])})
+    else:
+      warnings.append(
+        f'the {parts[1].operator} operator should not be used for the second part'
+      )
+
+  return events, list(dict.fromkeys(warnings))
 
 
 def build_affected_range(constraint: str) -> osv.Range:
+  events, _warnings = parse_version_constraint(constraint)
+
   return {
     'type': 'ECOSYSTEM',
-    'events': parse_version_constraint(constraint),
+    'events': events,
     'database_specific': {'constraint': constraint},
   }
 
@@ -276,4 +464,5 @@ def generate_osv_advisories() -> None:
         f.write('\n')
 
 
-generate_osv_advisories()
+if __name__ == '__main__':
+  generate_osv_advisories()

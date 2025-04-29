@@ -36,6 +36,9 @@
           "events": [
             {
               "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.1.0"
             }
           ],
           "database_specific": {
@@ -47,6 +50,9 @@
           "events": [
             {
               "introduced": "2.1.0"
+            },
+            {
+              "fixed": "2.2.0"
             }
           ],
           "database_specific": {
