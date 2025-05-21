@@ -11,5 +11,11 @@
   "endOfLine": "lf",
   "arrowParens": "avoid",
   "trailingComma": "none",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "schema.json",
+      "options": { "parser": "json-stringify" }
+    }
+  ]
 }

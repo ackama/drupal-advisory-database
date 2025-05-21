@@ -2,12 +2,14 @@
 name = "drupal-advisory-database"
 requires-python = ">= 3.13"
 dependencies = [
+  "jsonschema (>=4.23.0,<5.0.0)",
   "markdownify (>=1.1.0,<2.0.0)",
   "mypy (>=1.15.0,<2.0.0)",
   "pytest (>=8.3.5,<9.0.0)",
   "requests (>=2.32.3,<3.0.0)",
   "ruff ~=0.11.5",
   "semver (>=3.0.4,<4.0.0)",
+  "types-jsonschema (>=4.23.0.20241208,<5.0.0.0)",
   "types-requests (>=2.32.0.20250328,<3.0.0.0)",
 ]
 
