@@ -287,9 +287,7 @@ def build_affected_range(constraint: str) -> osv.Range:
 
 def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
   if sa_advisory['field_affected_versions'] is None:
-    raise Exception(
-      'field_affected_versions must be present to determine affected ranges'
-    )
+    return []
 
   ranges = [
     build_affected_range(constraint.strip())
@@ -384,12 +382,8 @@ def build_osv_advisory(
     print(' \\- skipping as it is a psa? (this should not happen)')
     return None
 
-  # there's not really much we can do if there isn't an affected version
-  # todo: since build_affected_ranges throws if this isn't present, it might
-  #  make more sense to use that, with a custom exception class
   if sa_advisory['field_affected_versions'] is None:
-    print(' \\- skipping as we do not have any affected versions')
-    return None
+    print(' \\- this advisory does not have any affected versions')
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.3.0',
@@ -427,6 +421,13 @@ def build_osv_advisory(
   )
 
   osv_advisory['affected'][0]['package']['name'] = composer_package(project)
+
+  # omit database_specific properties that are empty, including the field itself
+  for affected in osv_advisory['affected']:
+    if affected['database_specific']['affected_versions'] is None:
+      del affected['database_specific']['affected_versions']
+    if len(affected['database_specific']) == 0:
+      del affected['database_specific']
 
   return osv_advisory
 
