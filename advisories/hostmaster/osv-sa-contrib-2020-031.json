@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-031",
+  "modified": "2020-07-30T04:59:34.000Z",
+  "published": "2020-07-30T04:43:54.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "[Aegir](https://www.aegirproject.org/) is a powerful hosting system that sits alongside a LAMP or LEMP server to create, deploy and manage Drupal sites.\n\nGiven that\n\n* Aegir can use both Apache and Nginx Web servers,\n* Apache allows configuration-writing users to escalate their privileges to the superuser `root`, and\n* Aegir's operations are performed by the GNU/Linux user `aegir`,\n\nIt follows that:\n\n* Users with access to the `aegir` account can escalate their privileges to `root`.\n* Any PHP code submitted through the front-end Web UI via enabling modules (such as [PHP](https://www.drupal.org/project/php), [Views PHP](https://www.drupal.org/project/views_php), and [Computed Field](https://www.drupal.org/project/computed_field)) could be run as root though a [cron](https://www.drupal.org/docs/administering-a-drupal-site/cron-automated-tasks/cron-automated-tasks-overview) [hook implementation](https://www.drupal.org/docs/creating-custom-modules/understanding-hooks). (Aegir runs cron through the `aegir` user via [Drush](https://en.wikipedia.org/wiki/Drush).)\n\nThis vulnerability is mitigated by the fact that\n\n* an attacker must have access to the `aegir` account, and\n* the Web server must be Apache.\n\nWhile it was generally assumed that `aegir` access should only be provided to trusted users (i.e. users who also have access to `root`), this wasn't explicitly stated. The documentation has since been updated.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/hostmaster"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-031"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Noam Rathaus ",
+      "contact": [
+        "https://www.drupal.org/user/3645736"
+      ]
+    }
+  ]
+}

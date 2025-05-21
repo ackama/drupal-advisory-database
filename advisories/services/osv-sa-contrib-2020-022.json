@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-022",
+  "modified": "2023-08-12T05:47:26.000Z",
+  "published": "2020-06-04T03:38:55.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a standardized solution for building API's so that external clients can communicate with Drupal.\n\nThe module's taxonomy term index resource doesn't take into consideration certain access control tags provided (but unused) by core, that certain contrib modules depend on.\n\nThis vulnerability is mitigated by the fact your site must have the taxonomy term index resource enabled, your site must have a contributed module enabled which utilizes taxonomy term access control, and an attacker must know your api endpoint's path.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/services"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-022"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Vadym Abramchuk ",
+      "contact": [
+        "https://www.drupal.org/user/3216035"
+      ]
+    }
+  ]
+}

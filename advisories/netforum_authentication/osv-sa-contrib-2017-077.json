@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-077",
+  "modified": "2023-08-22T01:29:02.000Z",
+  "published": "2017-10-12T06:01:01.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The netFORUM Authentication module implements external authentication for users against netFORUM.\n\nThe module does not correctly use flood control making it susceptible to brute force attacks.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/netforum_authentication"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-077"
+    }
+  ],
+  "credits": [
+    {
+      "name": "William Hurley",
+      "contact": [
+        "https://www.drupal.org/u/wwhurley"
+      ]
+    }
+  ]
+}

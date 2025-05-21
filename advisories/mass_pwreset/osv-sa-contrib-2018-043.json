@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-043",
+  "modified": "2023-08-12T09:30:34.000Z",
+  "published": "2018-06-28T05:11:39.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to reset passwords for all users based upon their user role.\n\nThe module doesn't use a strong source of randomness, creating weak and predictable passwords.\n\nThis vulnerability is mitigated by the fact that the site must be configured to reveal the password to the attacker, which is a common configuration.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/mass_pwreset"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Greg Knaddison ",
+      "contact": [
+        "https://www.drupal.org/user/36762"
+      ]
+    }
+  ]
+}

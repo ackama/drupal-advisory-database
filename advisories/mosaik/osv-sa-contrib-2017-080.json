@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-080",
+  "modified": "2023-08-22T01:30:06.000Z",
+  "published": "2017-10-26T05:28:51.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Mosaik module enables you to create pages or complex blocks in Drupal with the logic of a real mosaic and its pieces.\n\nThe module doesn't sufficiently sanitize the titles of fieldsets on its administration pages or the titles of blocks that it creates. This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer mosaik\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/mosaik"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-080"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tatar Balazs Janos",
+      "contact": [
+        "https://www.drupal.org/u/tatarbj"
+      ]
+    }
+  ]
+}

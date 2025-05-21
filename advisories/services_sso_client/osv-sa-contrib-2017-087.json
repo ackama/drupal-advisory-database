@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-087",
+  "modified": "2023-08-22T01:25:36.000Z",
+  "published": "2017-11-30T07:17:08.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module allows users of a remote Services-enabled Drupal site to sign on to a second site with their credentials.\n\nThe module does not sanitize information from the request before displaying it, thereby exposing a cross-site scripting vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/services_sso_client"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-087"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Scott Allison",
+      "contact": [
+        "https://www.drupal.org/u/scottallison"
+      ]
+    }
+  ]
+}

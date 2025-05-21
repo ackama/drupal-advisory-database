@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-072",
+  "modified": "2023-08-12T09:14:04.000Z",
+  "published": "2018-11-01T04:12:23.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The session limit module enables a site administrator to set a policy around the number of active sessions users of the site may have. This is typically set to one so that you can only be logged in once with the same user account.\n\nIn one configuration of the module, when a user logs in with another session elsewhere already active, the module asks the user which session should be closed before they can proceed with login. The module does not sufficiently tokenise the list of sessions so that the user's session keys can be found through inspection of the form.\n\nThis vulnerability is mitigated by the fact that an attacker must already be able to intercept the contents of the HTML page to exploit the issue. That ability to intercept may come from Cross Site Scripting. This makes a Cross Site Scripting vulnerability worse than it would normally be.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/session_limit"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-072"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Simon Kapadia ",
+      "contact": [
+        "https://www.drupal.org/user/3524044"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-041",
+  "modified": "2023-08-12T09:31:05.000Z",
+  "published": "2018-06-14T02:03:44.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Custom Tokens module enables you to create custom tokens for specific replacements that can improve other modules relying on the token API.\n\nThe module doesn't sufficiently identify that its custom permissions are risky and should only be granted to highly trusted roles.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer custom tokens\".\n\nCVE identifier(s) issued\n------------------------\n\n* *A [CVE identifier](http://cve.mitre.org/) will be requested, and added upon issuance, in accordance with Drupal Security Team processes.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/token_custom"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Matt Glaman ",
+      "contact": [
+        "https://www.drupal.org/user/2416470"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-063",
+  "modified": "2023-08-12T09:19:40.000Z",
+  "published": "2018-10-04T07:18:16.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides printer-friendly versions of content, including send by e-mail and PDF versions.\n\nThe module doesn't sufficiently sanitize the arguments passed to the wkhtmltopdf executable, allowing a remote attacker to execute arbitrary shell commands. It also doesn't sufficiently sanitize the HTML content passed to dompdf, allowing a privileged attacker to execute arbitrary PHP code.\n\nThis vulnerability is mitigated by the fact that the site must have either the wkhtmltopdf or dompdf sub-modules enabled and selected as the PDF generation tool. In the case of the dompdf vulnerability, the attacker must be able to write content to the site.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/print"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-063"
+    }
+  ],
+  "credits": [
+    {
+      "name": "yoloClin ",
+      "contact": [
+        "https://www.drupal.org/user/3585171"
+      ]
+    }
+  ]
+}

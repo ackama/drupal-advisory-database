@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-019",
+  "modified": "2025-02-21T07:43:41.000Z",
+  "published": "2024-05-16T03:42:56.000Z",
+  "aliases": [
+    "CVE-2024-13255"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module exposes Drupal resources (e.g. entities) as RESTful web services.\n\nThe module doesn't sufficiently restrict access for user resources.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/restws"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-019"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Fran Garcia-Linares",
+      "contact": [
+        "https://www.drupal.org/user/2495842"
+      ]
+    }
+  ]
+}

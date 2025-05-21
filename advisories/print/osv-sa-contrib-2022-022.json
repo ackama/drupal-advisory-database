@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-022",
+  "modified": "2022-06-02T02:20:02.000Z",
+  "published": "2022-01-26T07:44:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Update 2022-05-31. A past and new maintainers have created a fix and new releases which include fixes for the security issue that caused the module to be unsupported.\n\n~~The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>~~",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/print"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-022"
+    }
+  ],
+  "credits": []
+}

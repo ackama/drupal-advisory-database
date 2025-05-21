@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-024",
+  "modified": "2018-05-10T07:56:09.000Z",
+  "published": "2018-05-10T02:14:08.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "KCFinder is a multi-language file / image manager you can use to easily select, insert, upload and arrange images, flash movies, and other kinds of files.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported modules critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/kcfinder"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-024"
+    }
+  ],
+  "credits": [
+    {
+      "name": " Neil Drumm",
+      "contact": [
+        "/u/drumm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-054",
+  "modified": "2023-08-12T09:24:20.000Z",
+  "published": "2018-07-26T00:38:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables users to select 'other' on certain form elements and a textfield appears for the user to provide a custom value.\n\nThe module doesn't sufficiently escape values of a text field the under the scenario when \"Select or other\" formatter is used.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to edit a field that is displayed through the \"Select or other\" formatter.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/select_or_other"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "bucefal91 ",
+      "contact": [
+        "https://www.drupal.org/user/504128"
+      ]
+    }
+  ]
+}

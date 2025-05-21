@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-095",
+  "modified": "2023-08-22T01:23:10.000Z",
+  "published": "2017-12-21T04:00:48.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to use the comScore Direct analytics system on a site.\n\nThe module doesn't sufficiently sanitize one of the configuration variables prior to rendering it.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer comScore direct\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/comscore_direct"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-095"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tat\u00e1r Bal\u00e1zs J\u00e1nos",
+      "contact": [
+        "https://www.drupal.org/user/649590"
+      ]
+    }
+  ]
+}

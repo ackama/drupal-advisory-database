@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-038",
+  "modified": "2023-08-12T06:43:50.000Z",
+  "published": "2019-03-14T05:49:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Simple hierarchical select defines a new form widget for taxonomy fields to select a term by \"browsing\" through the vocabularies hierarchy. It also allows users to create new taxonomy terms using its widget directly in the node form.\n\nVersion 7.x of Simple hierarchical select doesn't sufficiently checks permission when creating new terms so attackers can create arbitrary taxonomy terms in any vocabularies the victim has access to..  \nThis vulnerability is mitigated by the fact that an attacker must trick a user with permission to create terms to visit a specially prepared web page controlled by the attacker.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/shs"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-038"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ayesh Karunaratne ",
+      "contact": [
+        "https://www.drupal.org/user/796148"
+      ]
+    }
+  ]
+}

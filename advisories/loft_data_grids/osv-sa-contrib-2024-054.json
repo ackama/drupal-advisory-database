@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-054",
+  "modified": "2024-12-11T12:44:58.000Z",
+  "published": "2024-10-24T04:47:26.000Z",
+  "aliases": [
+    "CVE-2024-45048",
+    "CVE-2024-45293   ",
+    "CVE-2024-45292",
+    "CVE-2024-45291 ",
+    "CVE-2024-45290",
+    "CVE-2024-45060",
+    "CVE-2024-45048 ",
+    "CVE-2024-45046 ",
+    " CVE-2018-19277 "
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module provides serialization formats for use by other modules.\n\nThe module includes a version of phpoffice/phpspreadsheet which has multiple known security vulnerabilities.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/loft_data_grids"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Juraj Nemec",
+      "contact": [
+        "https://www.drupal.org/user/272316"
+      ]
+    }
+  ]
+}

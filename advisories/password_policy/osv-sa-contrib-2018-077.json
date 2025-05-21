@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-077",
+  "modified": "2023-08-12T09:16:16.000Z",
+  "published": "2018-12-06T08:21:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Password Policy module makes it possible to set constraints on user passwords which disallow certain passwords.\n\nThe \"digit placement\" constraint is vulnerable to Denial of Service attacks if an attacker submits specially crafted passwords which can cause a site to become unresponsive.\n\nThis vulnerability is mitigated by the fact that a site must have the \"digit placement\" constraint enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/password_policy"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-077"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Sherron ",
+      "contact": [
+        "https://www.drupal.org/user/470070"
+      ]
+    }
+  ]
+}

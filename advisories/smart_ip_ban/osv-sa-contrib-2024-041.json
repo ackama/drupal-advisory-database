@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-041",
+  "modified": "2025-02-21T08:27:26.000Z",
+  "published": "2024-09-19T04:18:01.000Z",
+  "aliases": [
+    "CVE-2024-13277"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Smart IP Ban module enables a site to automatically ban an IP address based upon too many failed authentications.\n\nThe module doesn't sufficiently protect access to certain paths provided by the module allowing a malicious user to view and modify the settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/smart_ip_ban"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Shawn Gants",
+      "contact": [
+        "https://www.drupal.org/user/2351786"
+      ]
+    }
+  ]
+}

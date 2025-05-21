@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-013",
+  "modified": "2025-02-21T08:09:37.000Z",
+  "published": "2024-02-29T07:27:46.000Z",
+  "aliases": [
+    "CVE-2024-13249"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module provides an alternative mean of rebuilding the Content Access table.\n\nThe module doesn't sufficiently reset the state of content access when the module is uninstalled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/node_access_rebuild_progressive"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-013"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jen Lampton",
+      "contact": [
+        "https://www.drupal.org/user/85586"
+      ]
+    }
+  ]
+}

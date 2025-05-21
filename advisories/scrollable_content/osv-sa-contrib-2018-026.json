@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-026",
+  "modified": "2018-05-10T08:32:40.000Z",
+  "published": "2018-05-10T02:19:25.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Scrollable Content provides a scrolling functionality for your content. Scrollable Content will give you a nice content slider preview of your site's nodes, and provides some display options.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported modules critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/scrollable_content"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-026"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Balazs Janos Tatar ",
+      "contact": [
+        "https://www.drupal.org/user/649590"
+      ]
+    }
+  ]
+}

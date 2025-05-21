@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-054",
+  "modified": "2023-08-12T06:39:15.000Z",
+  "published": "2019-06-27T01:42:30.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Advanced Forum builds on and enhances Drupal's core forum module. When used in combination with other Drupal contributed modules, many of which are automatically used by Advanced Forum, you can achieve much of what stand alone software provides.\n\nThe module doesn't sufficiently sanitise user input in specific circumstances. It is not possible to disable the vulnerable functionality.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to create forum content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/advanced_forum"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

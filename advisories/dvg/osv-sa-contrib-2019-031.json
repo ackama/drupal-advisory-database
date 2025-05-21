@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-031",
+  "modified": "2023-08-12T06:49:00.000Z",
+  "published": "2019-03-07T03:51:57.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The DvG distrubition contains the feature module dvg\\_domains to support multiple domains.\n\nWhen the dvg\\_domains feature module is enabled, anonymous users are able to access some administration pages and change the settings exposed on those pages.\n\nThis issue can be mitigated by disabling the dvg\\_domains module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/dvg"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-031"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Bernard Skibinski ",
+      "contact": [
+        "https://www.drupal.org/user/807452"
+      ]
+    }
+  ]
+}

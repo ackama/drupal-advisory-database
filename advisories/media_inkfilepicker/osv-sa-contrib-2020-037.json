@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-037",
+  "modified": "2020-11-19T06:52:09.000Z",
+  "published": "2020-11-19T06:22:24.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer.\n\nIt looks like the 3rd party service that this module integrates with may have been retired.\n\nIf you would like to maintain this project nevertheless, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/media_inkfilepicker"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-037"
+    }
+  ],
+  "credits": []
+}

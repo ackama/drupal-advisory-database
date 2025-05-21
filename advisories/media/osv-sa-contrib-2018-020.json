@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-020",
+  "modified": "2023-08-12T09:36:38.000Z",
+  "published": "2018-04-26T05:23:21.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Media module provides an extensible framework for managing files and multimedia assets, regardless of whether they are hosted on your own site or a third party site.\n\nThe module contained a vulnerability similar to [SA-CORE-2018-004](https://www.drupal.org/sa-core-2018-004), leading to a possible remote code execution (RCE) attack.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/media"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-020"
+    }
+  ],
+  "credits": []
+}

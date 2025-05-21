@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-016",
+  "modified": "2023-08-12T07:23:36.000Z",
+  "published": "2019-02-14T07:25:51.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to allow login into the Drupal websites through an external provider over the OAuth 2.0 protocol.\n\nThe module sets a Drupal variable used for redirection based on unsanitised user input, leading to an Open Redirect vulnerability. It also fails to sanitise user input which is displayed as part of an error message by a test authentication endpoint which is accessible by anonymous users, leading to an XSS vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/miniorange_oauth_client"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber ",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

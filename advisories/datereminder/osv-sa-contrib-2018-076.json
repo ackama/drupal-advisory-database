@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-076",
+  "modified": "2023-08-12T09:15:56.000Z",
+  "published": "2018-11-29T07:01:16.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module allows registered users to request email reminders to be sent at a specified time before an event.\n\nThe module doesn't sufficiently check access to nodes, allowing a user to set a reminder on a node that the user shouldn't be able to access.\n\nThis can be mitigated with configuring DateReminder with Reminder Display: \"Fieldset within a node\" disables the potential exploit.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/datereminder"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-076"
+    }
+  ],
+  "credits": [
+    {
+      "name": " than_nak87",
+      "contact": [
+        "/u/than_nak87"
+      ]
+    }
+  ]
+}

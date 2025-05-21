@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-002",
+  "modified": "2023-08-12T07:25:16.000Z",
+  "published": "2019-01-10T06:49:32.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Aegir is a Web hosting control panel program that provides a Drupal-based graphical interface designed to simplify deploying, managing and upgrading an entire network of Drupal, Wordpress and CiviCRM Web sites. The Provision module is a core piece of the Aegir platform.\n\nThis module doesn't sufficiently shield multi-site installations or the PHP source code.\n\nThis vulnerability is mitigated by the fact that the server must be using Apache. For multi-site installations, the server must host multiple sites on a common platform. Additionally an attacker must have a knowledge about used filenames and the server.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/provision"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-002"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Cristian Segarra",
+      "contact": [
+        "https://www.drupal.org/user/1501376"
+      ]
+    }
+  ]
+}
