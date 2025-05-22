@@ -35,20 +35,6 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "1.2.0"
-            },
-            {
-              "fixed": "1.3.0"
-            }
-          ],
-          "database_specific": {
-            "constraint": "1.2.*"
-          }
-        },
-        {
-          "type": "ECOSYSTEM",
-          "events": [
-            {
               "introduced": "2.0.0"
             },
             {
@@ -71,6 +57,20 @@
           ],
           "database_specific": {
             "constraint": ">=2.1.0 <2.1.7"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.2.0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "1.2.*"
           }
         }
       ],
