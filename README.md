@@ -33,3 +33,27 @@ poetry run scripts/precache_nodes.py
 # 3. generate the OSV advisories based on the Drupal advisories
 poetry run scripts/generate_osv_advisories.py
 ```
+
+## Fixing incorrect data
+
+Sometimes an advisory will have incorrect data, such as an affected version
+range which is syntactically or semantically incorrect; these can be temporarily
+addressed by adding a "patch" for the impacted advisory to the
+[`patches.toml`](./patches.toml) file in the root of this repository.
+
+When patching an advisory, you need to provide a tuple assigned to the SA
+advisory property whose value you wish to replace - the first element in the
+tuple should be the current value, and the second element should be the
+replacement value. The patch will only be applied if the current value matches
+to ensure patches don't mistakenly undo upstream changes (which hopefully are
+the result of the incorrect data being fixed!)
+
+> [!NOTE]
+>
+> Currently, the patcher only supports the `field_affected_versions` property
+> since that's the only property we've needed to patch; feel free to add support
+> for additional properties when needed
+
+The generator will mark advisories that have been patched to make it clear that
+has happened; it will also attempt to identity some types of issues with the
+data, which will be captured as `warnings`.
