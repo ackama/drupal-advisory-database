@@ -42,7 +42,10 @@
             }
           ],
           "database_specific": {
-            "constraint": ">=1.1.0 <1.1.0-beta3"
+            "constraint": ">=1.1.0 <1.1.0-beta3",
+            "warnings": [
+              "stability does not make sense, using -dev instead"
+            ]
           }
         }
       ],

@@ -26,7 +26,10 @@
             }
           ],
           "database_specific": {
-            "constraint": "^1 <= 1.0.0"
+            "constraint": "^1 <= 1.0.0",
+            "warnings": [
+              "the ^ operator should not be paired with a second part"
+            ]
           }
         }
       ],

@@ -28,7 +28,10 @@
             }
           ],
           "database_specific": {
-            "constraint": "<12.05"
+            "constraint": "<12.05",
+            "warnings": [
+              "components should not be prefixed with leading zeros"
+            ]
           }
         }
       ],

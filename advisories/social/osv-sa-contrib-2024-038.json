@@ -56,7 +56,10 @@
             }
           ],
           "database_specific": {
-            "constraint": ">=13.0.0 <13.0.0-alpha11"
+            "constraint": ">=13.0.0 <13.0.0-alpha11",
+            "warnings": [
+              "stability does not make sense, using -dev instead"
+            ]
           }
         }
       ],
