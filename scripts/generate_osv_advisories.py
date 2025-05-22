@@ -281,12 +281,11 @@ def build_affected_range(constraint: str) -> osv.Range:
   ran: osv.Range = {
     'type': 'ECOSYSTEM',
     'events': events,
-    'database_specific': {'constraint': constraint, 'warnings': warnings},
+    'database_specific': {'constraint': constraint},
   }
 
-  # don't retain the warnings property if its empty
-  if len(ran['database_specific']['warnings']) == 0:
-    del ran['database_specific']['warnings']
+  if len(warnings) > 0:
+    ran['database_specific']['warnings'] = warnings
 
   return ran
 
