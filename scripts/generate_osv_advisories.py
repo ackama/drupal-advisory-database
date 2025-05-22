@@ -276,13 +276,19 @@ def parse_version_constraint(
 
 
 def build_affected_range(constraint: str) -> osv.Range:
-  events, _warnings = parse_version_constraint(constraint)
+  events, warnings = parse_version_constraint(constraint)
 
-  return {
+  ran: osv.Range = {
     'type': 'ECOSYSTEM',
     'events': events,
-    'database_specific': {'constraint': constraint},
+    'database_specific': {'constraint': constraint, 'warnings': warnings},
   }
+
+  # don't retain the warnings property if its empty
+  if len(ran['database_specific']['warnings']) == 0:
+    del ran['database_specific']['warnings']
+
+  return ran
 
 
 def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
