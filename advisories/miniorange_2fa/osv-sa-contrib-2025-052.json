@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2025-052",
+  "modified": "2025-05-08T05:16:21.000Z",
+  "published": "2025-05-08T05:07:14.000Z",
+  "aliases": [
+    "CVE-2025-47706"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module doesn't sufficiently check whether the TOTP token is already used or not for authenticator-based second-factor methods.\n\nThis vulnerability is mitigated by the fact that an attacker must have a username, password and TOTP token generated within the last 5 minutes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/miniorange_2fa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.7.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": "5.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=5.0.0 <5.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.7.0 || >=5.0.0 <5.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-052"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "/u/cmlara"
+      ]
+    }
+  ]
+}
