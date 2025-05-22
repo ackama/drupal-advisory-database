@@ -1,8 +1,8 @@
 # Drupal Advisory Database
 
 A community-driven database of known security vulnerabilities in Drupal packages
-sourced from [drupal.org](https://www.drupal.org/security) using the [OSV]
-format.
+sourced from [drupal.org](https://www.drupal.org/security) using the
+[OSV](https://ossf.github.io/osv-schema/) format.
 
 The data is primarily sourced using the drupal.org
 [REST API](https://www.drupal.org/drupalorg/docs/apis/rest-and-other-apis).
