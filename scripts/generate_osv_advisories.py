@@ -152,13 +152,15 @@ def parse_version_constraint(
       warnings.append(
         'the = operator is not real, and will be treated as an exact version'
       )
-    for component in [
-      part.first_component or '',
-      part.second_component or '',
-      part.third_component or '',
-    ]:
-      if len(component) > 1 and component.startswith('0'):
-        warnings.append('components should not be prefixed with leading zeros')
+    warnings.extend(
+      'components should not be prefixed with leading zeros'
+      for component in [
+        part.first_component or '',
+        part.second_component or '',
+        part.third_component or '',
+      ]
+      if len(component) > 1 and component.startswith('0')
+    )
 
   # https://getcomposer.org/doc/articles/versions.md#wildcard-version-range-
   if parts[0].second_component == '*' or parts[0].third_component == '*':
