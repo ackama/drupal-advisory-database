@@ -392,7 +392,7 @@ def build_osv_advisory(
     return None
 
   osv_advisory: osv.Vulnerability = {
-    'schema_version': '1.3.0',
+    'schema_version': '1.7.0',
     'id': f'OSV-{sa_id}',
     'modified': datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
       '%Y-%m-%dT%H:%M:%S.000Z'
