@@ -1,0 +1,50 @@
+on:
+  workflow_dispatch:
+concurrency:
+  # Pushing new changes to a branch will cancel any in-progress CI runs
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# Restrict jobs in this workflow to have no permissions by default; permissions
+# should be granted per job as needed using a dedicated `permissions` block
+permissions: {}
+
+jobs:
+  update:
+    permissions:
+      contents: write # to fetch and commit code
+      actions: write # to manually dispatch checks on the pull request
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+      - run: pipx install poetry~=2.0
+      - run: poetry install
+      - run: poetry run scripts/download_sa_advisories.py
+      - run: poetry run scripts/precache_nodes.py
+      - run: poetry run scripts/generate_osv_advisories.py
+      - uses: gr2m/create-or-update-pull-request-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          title: 'feat: update advisories'
+          body: >
+            🤖 beep boop - looks like there's some changes to the advisories!
+          branch: 'bot/update-advisories'
+          author: |
+            github-actions <41898282+github-actions[bot]@users.noreply.github.com>
+          commit-message: 'feat: update advisories'
+      - uses: octokit/request-action@v2
+        with:
+          route: |
+            POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          workflow_id: ci.yml
+          ref: bot/update-advisories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
