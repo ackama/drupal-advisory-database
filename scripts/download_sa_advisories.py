@@ -15,6 +15,12 @@ import requests
 
 from typings import drupal
 
+user_agent = 'drupal-advisory-database/'
+if 'CI' in os.environ:
+  user_agent += 'ci'
+else:
+  user_agent += 'local'
+
 
 def get_most_recent_changed_timestamp() -> int:
   """
@@ -51,7 +57,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
   fetch_again = True
   while fetch_again:
     print(f'fetching {url}')
-    response = requests.get(url)
+    response = requests.get(url, headers={'user-agent': user_agent})
     if response.status_code == 200:
       data: drupal.ApiResponse[drupal.Advisory] = response.json()
       for item in data['list']:
