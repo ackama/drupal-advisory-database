@@ -15,7 +15,6 @@ import requests
 
 from typings import drupal
 
-osv_dir_name = 'advisories'
 cache_dir_name = 'cache/advisories'
 
 

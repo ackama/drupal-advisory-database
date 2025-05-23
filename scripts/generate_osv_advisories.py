@@ -18,8 +18,6 @@ from markdownify import markdownify
 
 from typings import drupal, osv
 
-osv_dir_name = 'advisories'
-
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
   """
