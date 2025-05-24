@@ -16,6 +16,7 @@ import requests
 from typings import drupal
 from user_agent import user_agent
 
+
 def get_most_recent_changed_timestamp() -> int:
   """
   Determines the timestamp of the most recently changed SA advisory
