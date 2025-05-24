@@ -14,13 +14,7 @@ import typing
 import requests
 
 from typings import drupal
-
-user_agent = 'drupal-advisory-database/'
-if 'CI' in os.environ:
-  user_agent += 'ci'
-else:
-  user_agent += 'local'
-
+from user_agent import user_agent
 
 def get_most_recent_changed_timestamp() -> int:
   """

@@ -17,12 +17,7 @@ import semver
 from markdownify import markdownify
 
 from typings import drupal, osv
-
-user_agent = 'drupal-advisory-database/'
-if 'CI' in os.environ:
-  user_agent += 'ci'
-else:
-  user_agent += 'local'
+from user_agent import user_agent
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:

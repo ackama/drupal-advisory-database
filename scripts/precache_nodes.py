@@ -13,12 +13,7 @@ from itertools import batched
 import requests
 
 from typings import drupal
-
-user_agent = 'drupal-advisory-database/'
-if 'CI' in os.environ:
-  user_agent += 'ci'
-else:
-  user_agent += 'local'
+from user_agent import user_agent
 
 
 def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
