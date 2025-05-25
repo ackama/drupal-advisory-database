@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-033",
+  "modified": "2023-08-11T09:41:52.000Z",
+  "published": "2022-04-13T05:17:03.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Rename Admin Path module provides additional security to Drupal sites by renaming the admin paths. The module has a vulnerability with allows attackers to bypass the protection by using specially crafted URLs.\n\nThe risk is mitigated by the fact that, even though the attacker can bypass the protection offered by this module, all regular permissions still apply.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/rename_admin_paths"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-033"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ivo  Van Geertruyen",
+      "contact": [
+        "https://www.drupal.org/user/383424"
+      ]
+    }
+  ]
+}

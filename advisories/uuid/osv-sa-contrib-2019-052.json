@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-052",
+  "modified": "2023-08-12T06:38:38.000Z",
+  "published": "2019-05-30T05:27:50.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides an API for adding universally unique identifiers (UUID) to Drupal objects, most notably entities.\n\nThe module has a privilege escalation vulnerability when it's used in combination with Services+REST server.\n\nThis vulnerability is mitigated by the fact that an attacker must authenticate to the site, services module must be configured on the site and the user update resource enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/uuid"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-052"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Gustavo I\u00f1iguez Goia ",
+      "contact": [
+        "https://www.drupal.org/user/3419891"
+      ]
+    }
+  ]
+}

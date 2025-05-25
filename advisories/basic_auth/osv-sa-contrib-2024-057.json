@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-057",
+  "modified": "2025-02-21T09:05:49.000Z",
+  "published": "2024-11-07T05:17:55.000Z",
+  "aliases": [
+    "CVE-2024-13291"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The module provides a possibility to restrict access to specific paths using  \nbasic HTTP authentication, in addition to standard Drupal access checks.\n\nIn some cases, the module removes existing access checks from some paths, resulting in an access bypass vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/basic_auth"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-057"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Roderik Muit",
+      "contact": [
+        "https://www.drupal.org/user/8841"
+      ]
+    }
+  ]
+}

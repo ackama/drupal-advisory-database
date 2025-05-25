@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-085",
+  "modified": "2019-11-23T04:38:53.000Z",
+  "published": "2019-11-14T07:07:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "*Updated November 22.*\n\nThis module enables you to collect nodes in an arbitrarily ordered list.\n\nNodequeue's JavaScript can be leveraged to insert HTML from attacker-controlled JSON data. This is exploitable if user-submitted \"Filtered HTML\" content is displayed on a page where nodequeue.js is loaded.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"manipulate queues\".\n\n**Original advisory:**  \n~~The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>~~",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/nodequeue"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-085"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Yonatan Offek ",
+      "contact": [
+        "https://www.drupal.org/user/194009"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-031",
+  "modified": "2018-09-27T05:48:54.000Z",
+  "published": "2018-05-24T02:22:49.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Update - 2018-09-26\n===================\n\nThis maintainer has fixed this security issue. Please install <https://www.drupal.org/project/nucleus/releases/7.x-1.6> to fix the security issue\n\n---\n\nThe security team is marking this theme unsupported. There is a known security issue with the theme that has not been fixed by the maintainer. If you would like to maintain this theme, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported themes and modules critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/nucleus"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-031"
+    }
+  ],
+  "credits": [
+    {
+      "name": " Drew Webber ",
+      "contact": [
+        "/u/mcdruid"
+      ]
+    }
+  ]
+}

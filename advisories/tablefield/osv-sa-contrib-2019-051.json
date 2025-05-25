@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-051",
+  "modified": "2023-08-12T06:38:25.000Z",
+  "published": "2019-05-30T05:11:23.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module allows you to attach tabular data to an entity.\n\n**Access bypass**\n\nThere's no access check for users with an \"Export Tablefield Data as CSV\". They can export data from unpublished nodes or otherwise inaccessible entities.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission 'Export Tablefield Data as CSV'.\n\n**XSS**\n\nWhen \"Raw data (JSON or XML)\" is used in the field's Display settings, it doesn't sanitize JSON output before passing it on to be rendered.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with Edit permissions.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/tablefield"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-051"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Yonatan Offek ",
+      "contact": [
+        "https://www.drupal.org/user/194009"
+      ]
+    }
+  ]
+}

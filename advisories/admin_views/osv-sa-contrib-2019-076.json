@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-076",
+  "modified": "2023-08-12T06:30:19.000Z",
+  "published": "2019-11-14T04:10:54.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module replaces administrative overview/listing pages with actual views for superior usability.\n\nThe module doesn't sufficiently check user access when using the \"Menu system path\" access handler on a Views displays other than \"System\".\n\n**Update:**  \nThis project had been unsupported due to this advisory. The security issue is now fixed and the project is supported again.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/admin_views"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-076"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Rothstein ",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    }
+  ]
+}

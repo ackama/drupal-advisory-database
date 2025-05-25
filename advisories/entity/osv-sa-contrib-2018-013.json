@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-013",
+  "modified": "2023-08-12T09:42:55.000Z",
+  "published": "2018-02-15T09:34:18.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Entity API module extends the entity API of Drupal core in order to provide a unified way to deal with entities and their properties.\n\nThe module prints debugging information to the HTML output in certain error conditions thereby causing an information disclosure vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to trigger the error condition in a way that protected data is exposed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-013"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Klaus Purer ",
+      "contact": [
+        "https://www.drupal.org/user/262198"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2022-020",
+  "modified": "2023-09-26T05:10:44.000Z",
+  "published": "2022-01-26T07:40:53.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "**Update 2022-05-04:** Existing maintainers have updated the project to clarify that the module did not contain a security issue that caused the module to be unsupported.\n\n~~The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>~~",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/remote_stream_wrapper"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-020"
+    }
+  ],
+  "credits": []
+}

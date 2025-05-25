@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-069",
+  "modified": "2023-08-12T09:12:19.000Z",
+  "published": "2018-10-18T07:16:36.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The HTML Mail module lets you theme your messages the same way you theme the rest of your website.\n\nWhen sending email some variables were not being sanitized for shell arguments, which could lead to remote code execution.\n\nThis issue is related to the Drupal Core release [SA-CORE-2018-006](https://www.drupal.org/sa-core-2018-006).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/htmlmail"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-069"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Damien Tournoud ",
+      "contact": [
+        "https://www.drupal.org/user/22211"
+      ]
+    }
+  ]
+}

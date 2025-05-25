@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-057",
+  "modified": "2023-08-12T06:31:31.000Z",
+  "published": "2019-07-18T04:00:30.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Metatags quick is a module that manages meta tags (tags that appear in HTML's head section) as Drupal 7 fields.  \nAdministration page of metatags quick does not sanitize the output of blocks that appear on the same page. This allows an attacker to inject malicious JavaScript in block markup.  \nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/metatags_quick"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-057"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Yonatan Offek ",
+      "contact": [
+        "https://www.drupal.org/user/194009"
+      ]
+    }
+  ]
+}

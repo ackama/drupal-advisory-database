@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-090",
+  "modified": "2019-11-14T07:33:02.000Z",
+  "published": "2019-11-14T07:10:54.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webform_multifile"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-090"
+    }
+  ],
+  "credits": []
+}

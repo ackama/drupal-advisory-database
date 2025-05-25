@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-096",
+  "modified": "2017-12-21T08:21:08.000Z",
+  "published": "2017-12-21T04:06:57.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module adds a new organizational layer to Drupal, making it easy for managing large numbers of files and nodes.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. The security team takes action in cases like this without regard to the severity of the security issue in question. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>\n\nAll projects that are being marked unsupported are given a score of critical. Code that is no longer maintained poses a threat to securing sites.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/odir"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-096"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jean-Francois Hovinne",
+      "contact": [
+        "/u/jfhovinne"
+      ]
+    }
+  ]
+}

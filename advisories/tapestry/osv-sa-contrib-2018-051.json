@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-051",
+  "modified": "2023-08-12T09:23:31.000Z",
+  "published": "2018-07-12T02:41:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This theme provides Drupal users with many advanced features including 20 Different Color Styles, 30 User Regions, Custom Block Theme Templates, Suckerfish Menus, Icon Support, Advanced Page Layout Options, Simple Configuration, Custom Typography...\n\nThe theme doesn't sufficiently sanitize user input.\n\nThis vulnerability is mitigated by the fact that the theme is only exploitable with non-default settings and under certain site configurations.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/tapestry"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-051"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber ",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

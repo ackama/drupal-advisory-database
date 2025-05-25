@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-006",
+  "modified": "2023-08-12T09:47:30.000Z",
+  "published": "2018-02-01T07:15:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides an expandable tree widget for the Taxonomy Term Reference field in Drupal 7.\n\nThe module doesn't sufficiently sanitize the output of its own defined field formatter.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission that allows to edit terms of a taxonomy where the module handles its output.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/term_reference_tree"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tatar Balazs Janos",
+      "contact": [
+        "https://www.drupal.org/u/tatarbj"
+      ]
+    }
+  ]
+}

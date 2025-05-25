@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-007",
+  "modified": "2023-08-12T09:47:48.000Z",
+  "published": "2018-02-08T06:50:22.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to upload files to fields via several sources.\n\nThe module doesn't sufficiently handle access control under the scenario of the autocomplete path of reference sources.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/filefield_sources"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tatar Balazs Janos",
+      "contact": [
+        "https://www.drupal.org/u/tatarbj"
+      ]
+    }
+  ]
+}

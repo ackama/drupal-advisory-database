@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-043",
+  "modified": "2023-08-12T06:45:32.000Z",
+  "published": "2019-04-04T06:46:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a standardized solution for building API's so that external clients can communicate with Drupal.\n\nThe Services module has an access bypass vulnerability in its \"attach\\_file\" resource that allows users who have access to create or update nodes that include file fields to arbitrarily reference files they do not have access to, which can expose private files.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to create or edit a node.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/services"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson ",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

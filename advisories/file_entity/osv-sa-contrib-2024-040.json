@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-040",
+  "modified": "2025-02-21T08:21:59.000Z",
+  "published": "2024-09-12T04:38:11.000Z",
+  "aliases": [
+    "CVE-2024-13276"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to store and manage both private and public files, provides the ability to add fieldable metadata for file\\_entity bundle types in addition to core file\\_managed data.\n\nThe module doesn't sufficiently ensure that folders exist within the private destination prior to writing to them. If the subfolder doesn't exist, the module places the file in a publicly accessible directory.\n\nThis vulnerability only affects sites with private files.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/file_entity"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-040"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Devin Zuczek",
+      "contact": [
+        "https://www.drupal.org/user/701754"
+      ]
+    }
+  ]
+}

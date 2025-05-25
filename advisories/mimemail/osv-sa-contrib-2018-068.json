@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-068",
+  "modified": "2023-08-12T09:11:48.000Z",
+  "published": "2018-10-18T06:06:17.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The MIME Mail module allows to send MIME-encoded e-mail messages with embedded images and attachments.\n\nThe module doesn't sufficiently sanitized some variables for shell arguments when sending email, which could lead to arbitrary remote code execution.\n\nThis issue is related to the Drupal Core release [SA-CORE-2018-006](https://www.drupal.org/sa-core-2018-006).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/mimemail"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-068"
+    }
+  ],
+  "credits": [
+    {
+      "name": "RainbowLyte ",
+      "contact": [
+        "https://www.drupal.org/user/3518785"
+      ]
+    }
+  ]
+}

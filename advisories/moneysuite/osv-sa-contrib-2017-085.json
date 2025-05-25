@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-085",
+  "modified": "2023-08-22T01:24:58.000Z",
+  "published": "2017-11-30T07:09:12.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "MoneySuite provides a set of modules for Drupal sites that rely on the sale of memberships and/or content for revenue.\n\nThe modules have an access bypass vulnerability which allows untrusted users (including anonymous users) to view payments made by users within the system. No data can be modified, nor are any credit card numbers displayed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/moneysuite"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-085"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Anthony Lindsay",
+      "contact": [
+        "https://www.drupal.org/u/anthonylindsay"
+      ]
+    }
+  ]
+}

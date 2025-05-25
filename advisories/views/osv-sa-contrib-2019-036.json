@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-036",
+  "modified": "2023-08-12T06:51:15.000Z",
+  "published": "2019-03-14T03:05:25.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to create customized lists of data.\n\nThe module doesn't sufficiently sanitize certain field types, leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that a view must display a field with the format \"Full data (serialized)\" and an attacker must have the ability to store malicious markup in that field.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/views"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-036"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ralf Stamm ",
+      "contact": [
+        "https://www.drupal.org/user/43568"
+      ]
+    }
+  ]
+}

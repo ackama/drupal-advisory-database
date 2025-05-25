@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2020-026",
+  "modified": "2023-08-12T05:48:43.000Z",
+  "published": "2020-07-02T02:49:46.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The renderkit module contains components which can transform the display of field items sent to it.\n\nSome of these components do not respect the '#access' property on the field render element, and thus can make rendered field values visible to visitors who would otherwise not be allowed to see those field values.\n\nThis only occurs if all of the following conditions are true:\n\n* Your site has a field where viewing access is restricted on field level, e.g. using the \"Field permissions\" module.\n* The access-restricted field is displayed using the \"Field with formatter\" entity display from renderkit, in combination with one of the affected field display processor components.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/renderkit"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-026"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andreas Hennings ",
+      "contact": [
+        "https://www.drupal.org/user/459338"
+      ]
+    }
+  ]
+}

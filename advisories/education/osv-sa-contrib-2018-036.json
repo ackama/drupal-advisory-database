@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-036",
+  "modified": "2018-05-24T03:57:09.000Z",
+  "published": "2018-05-24T02:28:53.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The security team is marking this theme unsupported. There is a known security issue with the theme that has not been fixed by the maintainer. If you would like to maintain this theme, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported themes and modules critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/education"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-036"
+    }
+  ],
+  "credits": [
+    {
+      "name": " Drew Webber ",
+      "contact": [
+        "/u/mcdruid"
+      ]
+    }
+  ]
+}

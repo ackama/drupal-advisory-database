@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-037",
+  "modified": "2023-08-12T06:44:26.000Z",
+  "published": "2019-03-14T05:44:54.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a field where editors can add videos to their content and this module offers functionality to transcode these videos to different sizes and formats.\n\nThe module doesn't sufficiently sanitize some user input on administrative forms.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/video"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-037"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson ",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

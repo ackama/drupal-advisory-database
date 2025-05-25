@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-097",
+  "modified": "2023-08-22T01:23:27.000Z",
+  "published": "2017-12-21T07:47:38.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "'me' module provides shortcut paths to current user's pages, eg user/me, blog/me, user/me/edit, tracker/me etc.\n\nThe way 'me' module handles URL arguments allows an attacker to execute arbitrary code strings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/me"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-097"
+    }
+  ],
+  "credits": [
+    {
+      "name": "ross.linscott",
+      "contact": [
+        "https://www.drupal.org/user/3544915"
+      ]
+    }
+  ]
+}

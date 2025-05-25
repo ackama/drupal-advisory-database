@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2024-053",
+  "modified": "2024-12-11T12:40:05.000Z",
+  "published": "2024-10-24T04:45:53.000Z",
+  "aliases": [
+    " CVE-2022-29248 ",
+    " CVE-2022-31043 ",
+    " CVE-2022-31042 ",
+    " CVE-2022-31091 ",
+    " CVE-2022-31090 "
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Smartling module allows you to translate content in Drupal 7 using the Smartling Translation Management Platform.\n\nThe module includes an outdated version of the Guzzle package (guzzlehttp/guzzle 6.3.3), which has known [security vulnerabilities](https://packagist.org/packages/guzzlehttp/guzzle/advisories?version=2122956).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/smartling"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-053"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

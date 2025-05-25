@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-066",
+  "modified": "2023-08-12T09:21:20.000Z",
+  "published": "2018-10-11T06:02:07.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "NVP field module allows you to create a field type of name/value pairs, with custom  \ntitles and easily editable rendering with customizable HTML/text surrounding the pairs.\n\nThe module doesn't sufficiently handle sanitization of its field formatter's output.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission of creating/editing content where the module defined fields are in use.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/nvp"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-066"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Balazs Janos Tatar ",
+      "contact": [
+        "https://www.drupal.org/user/649590"
+      ]
+    }
+  ]
+}

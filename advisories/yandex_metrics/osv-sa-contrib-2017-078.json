@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2017-078",
+  "modified": "2023-08-22T01:29:34.000Z",
+  "published": "2017-10-19T05:48:52.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Yandex.Metrics module allows you to look for key indicators of your site effectiveness.\n\nThe module doesn't sufficiently let users know a setting page should not be given to untrusted users.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer Yandex.Metrics settings.\"\n\n*Edited October 19, 2017 to add a note about checking permissions.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/yandex_metrics"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-078"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Tatar Balazs Janos",
+      "contact": [
+        "https://www.drupal.org/u/tatarbj"
+      ]
+    }
+  ]
+}

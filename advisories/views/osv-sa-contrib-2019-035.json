@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-035",
+  "modified": "2023-08-12T06:50:59.000Z",
+  "published": "2019-03-14T03:02:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to create customized lists of data.\n\nThe module doesn't sufficiently build queries when used with exposed filters, leading to a possible information disclosure vulnerability in certain rare circumstances.\n\nThis vulnerability is mitigated by the fact that a view must have an exposed filter on a field that is used on multiple entity types, both of which are included in the view.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/views"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-035"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lucas Hedding ",
+      "contact": [
+        "https://www.drupal.org/user/1463982"
+      ]
+    }
+  ]
+}

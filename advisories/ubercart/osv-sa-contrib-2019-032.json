@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-032",
+  "modified": "2023-08-12T06:49:18.000Z",
+  "published": "2019-03-07T03:56:08.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Ubercart module provides a shopping cart and e-commerce features for Drupal.\n\nThe taxes module doesn't sufficiently protect the tax rate cloning feature. A malicious user could trick a store administrator into duplicating an existing tax rate by getting them to visit a specially-crafted URL.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/ubercart"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-032"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ayesh Karunaratne ",
+      "contact": [
+        "https://www.drupal.org/user/796148"
+      ]
+    }
+  ]
+}

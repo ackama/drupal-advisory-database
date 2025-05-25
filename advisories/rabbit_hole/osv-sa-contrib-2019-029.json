@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-029",
+  "modified": "2023-08-12T06:48:17.000Z",
+  "published": "2019-02-28T06:01:41.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Rabbit Hole module allows administrators to control what should happen when a regular user tries to view an entity at its own page; for example, it may deliver a 403 Access Denied or 404 Page Not Found response, or redirect the user to another path.\n\nThe module doesn't respect the Rabbit Hole settings when an entity is being requested with a certain header. This could lead to certain data being exposed even if it shouldn't be. The vulnerability is mitigated by the fact that the user also needs permission to view the content being requested.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/rabbit_hole"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-029"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Fabian Iwand ",
+      "contact": [
+        "https://www.drupal.org/user/1632364"
+      ]
+    }
+  ]
+}

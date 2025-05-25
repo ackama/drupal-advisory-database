@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2018-030",
+  "modified": "2018-06-02T06:33:04.000Z",
+  "published": "2018-05-24T02:02:10.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "Update: 2018-06-01\n------------------\n\nA new maintainer has stepped forward to maintain this module and has put out a new release.\n\nThe security team is marking this module unsupported. There is a known security issue with the module that has not been fixed by the maintainer. If you would like to maintain this module, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported modules critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/simplecrop"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-030"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pere Orga ",
+      "contact": [
+        "https://www.drupal.org/user/2301194"
+      ]
+    }
+  ]
+}

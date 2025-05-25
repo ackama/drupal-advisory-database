@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.3.0",
+  "id": "OSV-SA-CONTRIB-2019-012",
+  "modified": "2023-08-12T07:00:47.000Z",
+  "published": "2019-02-07T06:22:02.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to track download counts of files linked from a Drupal site. Links in Drupal content are rewritten to go through an intermediate page that records download stats and then redirects to the final destination.\n\nThe module did not verify that the links provided to the intermediate page were actually present in the Drupal site content and did not contain checks to prevent external sites from accessing the counter.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/pubdlcnt"
+      },
+      "severity": [],
+      "ranges": []
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-012"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jack Over ",
+      "contact": [
+        "https://www.drupal.org/user/953390"
+      ]
+    }
+  ]
+}
