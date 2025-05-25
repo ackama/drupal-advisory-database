@@ -15,9 +15,6 @@ import requests
 
 from typings import drupal
 
-osv_dir_name = 'advisories'
-cache_dir_name = 'cache/advisories'
-
 
 def get_most_recent_changed_timestamp() -> int:
   """
@@ -25,7 +22,7 @@ def get_most_recent_changed_timestamp() -> int:
   """
   most_recent_changed = 0
   try:
-    for file in os.scandir(cache_dir_name):
+    for file in os.scandir('cache/advisories'):
       if not file.is_file() or not file.name.endswith('.json'):
         continue
       with open(file.path) as f:
@@ -47,7 +44,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
   Downloads the Drupal SA advisories that have been modified since the given
   timestamp using the REST API, storing them on disk as JSON files
   """
-  os.makedirs(cache_dir_name, exist_ok=True)
+  os.makedirs('cache/advisories', exist_ok=True)
 
   print(f'fetching sa advisories modified after {last_modified_timestamp}')
   url = 'https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0'
@@ -62,9 +59,9 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
         if changed > last_modified_timestamp:
           advisory_id = determine_sa_id(item)
           print(
-            f' |- updating {cache_dir_name}/{advisory_id}.json as {item["url"]} has changed'
+            f' |- updating cache/advisories/{advisory_id}.json as {item["url"]} has changed'
           )
-          with open(f'{cache_dir_name}/{advisory_id}.json', 'w') as f:
+          with open(f'cache/advisories/{advisory_id}.json', 'w') as f:
             json.dump(item, f)
             f.write('\n')
         else:
