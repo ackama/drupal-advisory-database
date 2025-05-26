@@ -17,6 +17,7 @@ import semver
 from markdownify import markdownify
 
 from typings import drupal, osv
+from user_agent import user_agent
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
@@ -31,7 +32,10 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
   except FileNotFoundError as e:
     os.makedirs('cache/nodes', exist_ok=True)
     print(f' *- fetching https://www.drupal.org/api-d7/node/{nid}.json')
-    resp = requests.get(f'https://www.drupal.org/api-d7/node/{nid}.json')
+    resp = requests.get(
+      f'https://www.drupal.org/api-d7/node/{nid}.json',
+      headers={'user-agent': user_agent},
+    )
 
     if resp.status_code == 200:
       node: drupal.Node = resp.json()

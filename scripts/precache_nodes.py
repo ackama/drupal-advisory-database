@@ -13,6 +13,7 @@ from itertools import batched
 import requests
 
 from typings import drupal
+from user_agent import user_agent
 
 
 def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
@@ -24,7 +25,7 @@ def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
   for nid in nids:
     url += f'nid[]={nid}&'
 
-  resp = requests.get(url)
+  resp = requests.get(url, headers={'user-agent': user_agent})
 
   if resp.status_code == 200:
     items = typing.cast(drupal.ApiResponse[drupal.Node], resp.json())['list']
