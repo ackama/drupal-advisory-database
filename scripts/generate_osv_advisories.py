@@ -322,7 +322,7 @@ class DrupalCreditsParser(HTMLParser):
     self.names: list[str] = []
 
   def handle_data(self, data: str) -> None:
-    self.names.append(data)
+    self.names.append(data.strip())
 
 
 def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
