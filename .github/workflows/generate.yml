@@ -28,6 +28,7 @@ jobs:
       - run: poetry run scripts/precache_nodes.py
       - run: poetry run scripts/generate_osv_advisories.py
       - uses: gr2m/create-or-update-pull-request-action@v1
+        id: create-or-update-pull-request
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
@@ -39,6 +40,7 @@ jobs:
             github-actions <41898282+github-actions[bot]@users.noreply.github.com>
           commit-message: 'feat: update advisories'
       - uses: octokit/request-action@v2
+        if: steps.create-or-update-pull-request.outputs.result != 'unchanged'
         with:
           route: |
             POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
