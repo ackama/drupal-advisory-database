@@ -314,12 +314,15 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
   return credit_list
 
 
-def composer_package(project: drupal.Project) -> str:
-  project_type = 'drupal'
+def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
+  project = typing.cast(
+    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
+  )
+
   project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
-  return f'{project_type}/{project_name}'
+  return f'drupal/{project_name}'
 
 
 def build_osv_advisory(
@@ -359,7 +362,10 @@ def build_osv_advisory(
     'affected': [
       {
         # todo: figure out if we need a dedicated ecosystem i.e. Drupal, Drupal8, etc
-        'package': {'ecosystem': 'Packagist', 'name': ''},
+        'package': {
+          'ecosystem': 'Packagist',
+          'name': determine_composer_package_name(sa_advisory),
+        },
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
         #  https://www.drupal.org/drupal-security-team/security-risk-levels-defined
@@ -374,11 +380,6 @@ def build_osv_advisory(
     'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
     'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
   }
-  project = typing.cast(
-    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
-  )
-
-  osv_advisory['affected'][0]['package']['name'] = composer_package(project)
 
   return osv_advisory
 
