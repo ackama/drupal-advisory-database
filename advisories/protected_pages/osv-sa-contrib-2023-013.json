@@ -26,7 +26,10 @@
             }
           ],
           "database_specific": {
-            "constraint": "<1.06"
+            "constraint": "<1.06",
+            "warnings": [
+              "components should not be prefixed with leading zeros"
+            ]
           }
         }
       ],

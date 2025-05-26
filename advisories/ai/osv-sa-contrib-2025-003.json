@@ -28,7 +28,10 @@
             }
           ],
           "database_specific": {
-            "constraint": ">1.0.0 <1.0.2"
+            "constraint": ">1.0.0 <1.0.2",
+            "warnings": [
+              "the > operator should be avoided as it does not provide a concrete version"
+            ]
           }
         }
       ],
