@@ -291,55 +291,10 @@ def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
       'field_affected_versions must be present to determine affected ranges'
     )
 
-  ranges = [
+  return [
     build_affected_range(constraint.strip())
     for constraint in sa_advisory['field_affected_versions'].split('||')
   ]
-
-  return sorted(
-    ranges,
-    key=lambda ran: (event_to_semver_for_sorting(ran['events'][0])),
-  )
-
-
-def event_to_semver_for_sorting(event: osv.Event) -> semver.Version:
-  version = '0.0.0'
-  if 'introduced' in event:
-    version = event['introduced']
-  elif 'fixed' in event:
-    version = event['fixed']
-  return semver.Version.parse(semver_for_sorting(version))
-
-
-def semver_for_sorting(semver: typing.Any) -> str:
-  decrement_semver = False
-  if semver == '':
-    return ''
-  # Check if the semver string starts with a '<' character.
-  if semver[0] == '<':
-    decrement_semver = True
-    semver = semver[1:]
-  semver = semver.strip().split('.')
-  # sanity check the length of the introduced value.
-  while len(semver) < 3:
-    semver.append('0')
-
-  for i in range(3):
-    if semver[i].isnumeric():
-      semver[i] = int(semver[i])
-    else:
-      semver[i] = 0
-
-  if decrement_semver:
-    if semver[2] > 0:
-      semver[2] -= 1
-    elif semver[1] > 0:
-      semver[1] -= 1
-
-  semver_major = semver[0]
-  semver_minor = semver[1]
-  semver_patch = semver[2]
-  return f'{semver_major}.{semver_minor}.{semver_patch}'
 
 
 def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
