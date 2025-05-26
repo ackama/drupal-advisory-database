@@ -12,6 +12,7 @@ import re
 import tomllib
 import typing
 from datetime import UTC, datetime
+from html.parser import HTMLParser
 
 import requests
 import semver
@@ -315,8 +316,19 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
   return sorted(credit_list, key=lambda c: c['name'])
 
 
+class DrupalCreditsParser(HTMLParser):
+  def __init__(self) -> None:
+    super().__init__()
+    self.names: list[str] = []
+
+  def handle_data(self, data: str) -> None:
+    self.names.append(data)
+
+
 def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
-  return [{'name': reported_by['value']}]
+  parser = DrupalCreditsParser()
+  parser.feed(reported_by['value'])
+  return [osv.Credit(name=name) for name in parser.names]
 
 
 def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
