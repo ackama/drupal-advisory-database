@@ -49,18 +49,6 @@ def fetch_drupal_node(nid: str) -> drupal.Node:
     ) from e
 
 
-def expand_version(version: str) -> str:
-  # this means "all possible versions"
-  if version == '0':
-    return version
-  parts = version.split('-')
-  build = f'-{parts[1]}' if len(parts) == 2 else ''
-  components = parts[0].split('.')
-  while len(components) < 3:
-    components.append('0')
-  return '.'.join(components) + build
-
-
 class ComposerVersionConstraintPart:
   def __init__(self, part: str):
     result = re.match(
