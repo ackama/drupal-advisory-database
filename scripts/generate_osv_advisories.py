@@ -315,11 +315,14 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
   return sorted(credit_list, key=lambda c: c['name'])
 
 
+def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
+  return [{'name': reported_by['value']}]
+
+
 def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
-
   project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
@@ -404,7 +407,7 @@ def build_osv_advisory(
       }
     ],
     'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
-    'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
+    'credits': build_credits(sa_advisory['field_sa_reported_by']),
   }
 
   if patched:

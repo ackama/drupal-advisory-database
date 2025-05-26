@@ -2,7 +2,7 @@ import typing
 
 import pytest
 
-from generate_osv_advisories import parse_version_constraint
+from generate_osv_advisories import build_credits, parse_version_constraint
 from typings import osv
 
 
@@ -462,3 +462,224 @@ def test_parse_version_constraint(
   constraint: str, events: list[osv.Event], warnings: list[str]
 ) -> None:
   assert parse_version_constraint(constraint) == (events, warnings)
+
+
+def credits_fixtures() -> list[tuple[str, list[osv.Credit]]]:
+  return [
+    (
+      'Bobby Joe',
+      [osv.Credit(name='Bobby Joe')],
+    ),
+    (
+      'Bobby Joe of the Drupal Security Team',
+      [osv.Credit(name='Bobby Joe of the Drupal Security Team')],
+    ),
+    (
+      '<a href="https://www.drupal.org/user/3813415" rel="nofollow">Alice McFee</a>',
+      [osv.Credit(name='Alice McFee')],
+    ),
+    (
+      '<a href="https://www.drupal.org/u/3813415" rel="nofollow">Alice McFee</a>',
+      [osv.Credit(name='Alice McFee')],
+    ),
+    (
+      '<a href="https://www.drupal.org/u/3813415" rel="nofollow">Alice McFee   </a>',
+      [osv.Credit(name='Alice McFee')],
+    ),
+    (
+      '<a href="https://www.drupal.org/u/g-rath" rel="nofollow">Bob McBob</a>',
+      [osv.Credit(name='Bob McBob')],
+    ),
+    (
+      '<a href="https://www.drupal.org/u/g-rath" rel="nofollow"> Bob McBob </a>',
+      [osv.Credit(name='Bob McBob')],
+    ),
+    (
+      '<li>Ted McBoss</li>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
+    (
+      '<li>The amazing Jane Deli of the Drupal Security Team</li>',
+      [osv.Credit(name='The amazing Jane Deli of the Drupal Security Team')],
+    ),
+    (
+      '<li>The amazing <a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a> of the Drupal Security Team</li>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">  Ted McBoss</a></li>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
+    (
+      '<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Ted McBoss</a> of the Drupal Security Team</li>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
+    (
+      '<ul>Jane Deli</ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul><li>Jane Deli</li></ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul><a href="https://www.drupal.org/user/3813415" rel="nofollow">Jane Deli</a></ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul><li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a></li></ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul><li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a> Provisional Security Team member</li></ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul><li>The amazing <a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a> of the Drupal Security Team</li></ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul> <li> <a href="https://www.drupal.org/u/3813415" rel="nofollow"> Jane Deli </a> Provisional Security Team member </li> </ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul>\n<li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<ul>\n<li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<p><a href="/u/g-rath" rel="nofollow">Alice McFee</a> </p>',
+      [osv.Credit(name='Alice McFee')],
+    ),
+    (
+      '<p><a href="/user/3813415" rel="nofollow"> Jane Deli</a> of the Drupal Security Team</p>',
+      [osv.Credit(name='Jane Deli')],
+    ),
+    (
+      '<h2>Reported by</h2>\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Ted McBoss </a></li>\n</ul>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Ted McBoss</a></li>\n\n</ul>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
+    # multiple reporters
+    (
+      '<ul><li>Jane Deli</li><li>Alice McFee</li></ul>',
+      [
+        osv.Credit(name='Alice McFee'),
+        osv.Credit(name='Jane Deli'),
+      ],
+    ),
+    (
+      '<ul>\n<li>Jane Deli</li>\n<li>Alice McFee</li></ul>',
+      [
+        osv.Credit(name='Alice McFee'),
+        osv.Credit(name='Jane Deli'),
+      ],
+    ),
+    (
+      '<ul>\n<li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a></li><li><a href="/user/3813415" rel="nofollow">Ted McBoss</a></li></ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<ul>\n<li><a href="https://www.drupal.org/u/3813415" rel="nofollow">Jane Deli</a></li><li>Ted McBoss</li></ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3><ul><li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Alice M</a></li><li>Ted McBoss</a></li></ul><h3>Cross Site Scripting:</h3><ul><li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li></ul>',
+      [
+        osv.Credit(name='Alice M'),
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3><ul><li>Alice M</li><li>Ted McBoss</a></li></ul><h3>Cross Site Scripting:</h3><ul><li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li></ul>',
+      [
+        osv.Credit(name='Alice M'),
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Alice M</a></li>\n<li>Ted McBoss</a></li>\n</ul>\n<h3>Cross Site Scripting:</h3>\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [
+        osv.Credit(name='Alice M'),
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Alice M</a></li>\n<li>Ted McBoss</a></li>\n</ul>\n\n\n\n\n<h3>Cross Site Scripting:</h3>\n\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [
+        osv.Credit(name='Alice M'),
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    # duplicates
+    (
+      '<ul>\n<li>Jane Deli</li>\n<li>Jane Deli</li></ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+      ],
+    ),
+    (
+      '<ul>\n<li>Jane Deli</li>\n<li>Alice McFee</li><li>Jane Deli</li></ul>',
+      [
+        osv.Credit(name='Alice McFee'),
+        osv.Credit(name='Jane Deli'),
+      ],
+    ),
+    (
+      '<ul>\n<li>Jane Deli</li>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Jane Deli</a></li></ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n<ul>\n<li>Jane Deli</li>\n<li>Ted McBoss</a></li>\n</ul>\n<h3>Cross Site Scripting:</h3>\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Jane Deli</a></li>\n<li>Ted McBoss</a></li>\n</ul>\n<h3>Cross Site Scripting:</h3>\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li>\n</ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<h3>Access Bypass:</h3>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Jane Deli</a></li>\n<li>Ted McBoss</a></li>\n</ul>\n<h3>Cross Site Scripting:</h3>\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a> of the Drupal Security Team</li>\n</ul>',
+      [
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    # ???
+    (
+      '<p>Disclosed publicly.</p>',
+      [
+        osv.Credit(name='Disclosed publicly.'),
+      ],
+    ),
+  ]
+
+
+@pytest.mark.parametrize('reported_by_value,expected_credits', credits_fixtures())
+def test_build_credits(
+  reported_by_value: str, expected_credits: list[osv.Credit]
+) -> None:
+  assert build_credits({'format': '1', 'value': reported_by_value}) == expected_credits
