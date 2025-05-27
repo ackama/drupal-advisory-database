@@ -319,13 +319,13 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
 class DrupalCreditsParser(HTMLParser):
   def __init__(self) -> None:
     super().__init__()
-    self.names: list[str] = []
+    self.names: set[str] = set()
 
   def handle_data(self, data: str) -> None:
     if data.strip() == '':
       return
 
-    self.names.append(data.strip())
+    self.names.add(data.strip())
 
 
 def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
