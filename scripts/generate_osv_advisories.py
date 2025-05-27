@@ -322,6 +322,9 @@ class DrupalCreditsParser(HTMLParser):
     self.names: list[str] = []
 
   def handle_data(self, data: str) -> None:
+    if data.strip() == '':
+      return
+
     self.names.append(data.strip())
 
 
