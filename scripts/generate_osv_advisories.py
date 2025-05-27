@@ -323,24 +323,54 @@ class DrupalCreditsParser(HTMLParser):
   While technically ths information is provided via rich text fields which means they
   can have almost completely arbitrary HTML, in practice they are usually links of
   Drupal user profiles wrapped in either unordered lists or paragraph tags.
+
+  This parser is actually more robust than it needs to be, as it supports extracting
+  names that are not wrapped in links, even though so far all the data has used links
   """
 
   def __init__(self) -> None:
     super().__init__()
+
     self.names: set[str] = set()
-    """The names that have been extracted during parsing"""
-    self.__previous_tag: str = ''
-    """The last tag that was exited"""
+    """List of names that have been extracted during parsing"""
+    self.__current_name = ''
+    """The current name that is being extracted"""
+    self.__current_tag = ''
+    """The current tag that is being parsed"""
+    self.__skip = False
+    """Controls if data should be skipped"""
+
+  def __capture_current_name(self) -> None:
+    self.names.add(self.__current_name)
+    self.__current_name = ''
+
+  def feed(self, data: str) -> None:
+    super().feed(data)
+    # make sure we capture the name if there weren't any li tags
+    if self.__current_name != '':
+      self.__capture_current_name()
+
+  def handle_starttag(self, tag: str, attrs: typing.Any) -> None:
+    self.__current_tag = tag
+    self.__current_name = ''
 
   def handle_endtag(self, tag: str) -> None:
-    self.__previous_tag = tag
+    # leaving a list item means we should have a new name extracted,
+    # so capture that and then stop skipping text data
+    if tag == 'li':
+      self.__capture_current_name()
+      self.__skip = False
 
   def handle_data(self, data: str) -> None:
-    # if we've just been in an <a> tag, then ignore the next immediate text
-    if self.__previous_tag == 'a' or data.strip() == '':
+    if self.__skip or data.strip() == '':
       return
 
-    self.names.add(data.strip())
+    # prioritize the content of <a> tags, ignoring any surrounding text
+    if self.__current_tag == 'a':
+      self.__current_name = ''
+      self.__skip = True
+
+    self.__current_name += data.strip()
 
 
 def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
