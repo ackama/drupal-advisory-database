@@ -373,7 +373,9 @@ class DrupalCreditsParser(HTMLParser):
     self.__current_name += data.strip()
 
 
-def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
+def build_credits(reported_by: drupal.RichTextField | None) -> list[osv.Credit]:
+  if not reported_by:
+    return []
   parser = DrupalCreditsParser()
   parser.feed(reported_by['value'])
   return [osv.Credit(name=name) for name in sorted(parser.names)]
@@ -488,6 +490,8 @@ def generate_osv_advisories() -> None:
 
     with open(file.path) as f:
       sa_advisory: drupal.Advisory = json.load(f)
+      if sa_advisory['field_sa_reported_by'] is list:
+        sa_advisory['field_sa_reported_by'] = None
     print(f'processing {sa_advisory["url"]}')
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
