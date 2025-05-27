@@ -320,9 +320,14 @@ class DrupalCreditsParser(HTMLParser):
   def __init__(self) -> None:
     super().__init__()
     self.names: set[str] = set()
+    self.__previous_tag: str = ''
+
+  def handle_endtag(self, tag: str) -> None:
+    self.__previous_tag = tag
 
   def handle_data(self, data: str) -> None:
-    if data.strip() == '':
+    # if we've just been in an <a> tag, then ignore the next immediate text
+    if self.__previous_tag == 'a' or data.strip() == '':
       return
 
     self.names.add(data.strip())
