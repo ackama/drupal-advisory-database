@@ -317,10 +317,20 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
 
 
 class DrupalCreditsParser(HTMLParser):
+  """
+  A custom HTML parser for extracting the names of people to credit for an advisory.
+
+  While technically ths information is provided via rich text fields which means they
+  can have almost completely arbitrary HTML, in practice they are usually links of
+  Drupal user profiles wrapped in either unordered lists or paragraph tags.
+  """
+
   def __init__(self) -> None:
     super().__init__()
     self.names: set[str] = set()
+    """The names that have been extracted during parsing"""
     self.__previous_tag: str = ''
+    """The last tag that was exited"""
 
   def handle_endtag(self, tag: str) -> None:
     self.__previous_tag = tag
