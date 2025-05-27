@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "arnaudvz ",
-      "contact": [
-        "https://www.drupal.org/user/3628871"
-      ]
-    },
-    {
       "name": "Martijn Vermeulen",
       "contact": [
         "https://www.drupal.org/user/960720"
+      ]
+    },
+    {
+      "name": "arnaudvz ",
+      "contact": [
+        "https://www.drupal.org/user/3628871"
       ]
     }
   ]

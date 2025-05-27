@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "Michael Koza",
-      "contact": [
-        "https://www.drupal.org/user/2110062"
-      ]
-    },
-    {
       "name": "David Rothstein",
       "contact": [
         "https://www.drupal.org/user/124982"
+      ]
+    },
+    {
+      "name": "Michael Koza",
+      "contact": [
+        "https://www.drupal.org/user/2110062"
       ]
     }
   ]

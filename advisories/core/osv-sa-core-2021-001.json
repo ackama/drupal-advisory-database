@@ -85,18 +85,6 @@
   ],
   "credits": [
     {
-      "name": "Richard Sheppard",
-      "contact": [
-        "https://www.drupal.org/user/55284"
-      ]
-    },
-    {
-      "name": "Stephen Cross",
-      "contact": [
-        "https://www.drupal.org/user/2485138"
-      ]
-    },
-    {
       "name": "Jonathan Danaher",
       "contact": [
         "https://www.drupal.org/user/1771466"
@@ -106,6 +94,18 @@
       "name": "Kim Pepper",
       "contact": [
         "https://www.drupal.org/user/370574"
+      ]
+    },
+    {
+      "name": "Richard Sheppard",
+      "contact": [
+        "https://www.drupal.org/user/55284"
+      ]
+    },
+    {
+      "name": "Stephen Cross",
+      "contact": [
+        "https://www.drupal.org/user/2485138"
       ]
     }
   ]

@@ -43,12 +43,6 @@
   ],
   "credits": [
     {
-      "name": "seroton",
-      "contact": [
-        "https://www.drupal.org/user/1473154"
-      ]
-    },
-    {
       "name": "Abhishek Vishwakarma",
       "contact": [
         "https://www.drupal.org/user/896554"
@@ -58,6 +52,12 @@
       "name": "Dmitriy.trt",
       "contact": [
         "https://www.drupal.org/user/329125"
+      ]
+    },
+    {
+      "name": "seroton",
+      "contact": [
+        "https://www.drupal.org/user/1473154"
       ]
     }
   ]

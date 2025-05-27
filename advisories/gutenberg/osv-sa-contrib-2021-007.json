@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "Stephan Zeidler",
-      "contact": [
-        "https://www.drupal.org/user/767652"
-      ]
-    },
-    {
       "name": "Mariusz Andrzejewski",
       "contact": [
         "https://www.drupal.org/user/3517832"
+      ]
+    },
+    {
+      "name": "Stephan Zeidler",
+      "contact": [
+        "https://www.drupal.org/user/767652"
       ]
     }
   ]

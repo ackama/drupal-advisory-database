@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "Melisa Cordero",
-      "contact": [
-        "https://www.drupal.org/user/3655438"
-      ]
-    },
-    {
       "name": "Emil Johnsson",
       "contact": [
         "https://www.drupal.org/user/1868992"
+      ]
+    },
+    {
+      "name": "Melisa Cordero",
+      "contact": [
+        "https://www.drupal.org/user/3655438"
       ]
     }
   ]

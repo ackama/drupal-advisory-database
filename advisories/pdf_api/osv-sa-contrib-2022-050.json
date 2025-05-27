@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "tedfordgif",
-      "contact": [
-        "https://www.drupal.org/user/215631"
-      ]
-    },
-    {
       "name": "David Archuleta",
       "contact": [
         "https://www.drupal.org/user/3569928"
+      ]
+    },
+    {
+      "name": "tedfordgif",
+      "contact": [
+        "https://www.drupal.org/user/215631"
       ]
     }
   ]

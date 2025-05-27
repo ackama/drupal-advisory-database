@@ -59,15 +59,15 @@
   ],
   "credits": [
     {
-      "name": "Pierre Rudloff",
-      "contact": [
-        "https://www.drupal.org/user/3611858"
-      ]
-    },
-    {
       "name": "Florent Torregrosa",
       "contact": [
         "https://www.drupal.org/user/2388214"
+      ]
+    },
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
       ]
     }
   ]

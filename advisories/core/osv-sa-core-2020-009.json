@@ -73,30 +73,6 @@
   ],
   "credits": [
     {
-      "name": "Nuno Ramos ",
-      "contact": [
-        "https://www.drupal.org/user/3522063"
-      ]
-    },
-    {
-      "name": "markwittens ",
-      "contact": [
-        "https://www.drupal.org/user/567198"
-      ]
-    },
-    {
-      "name": "Nathan Dentzau ",
-      "contact": [
-        "https://www.drupal.org/user/3444913"
-      ]
-    },
-    {
-      "name": "Marc Addeo ",
-      "contact": [
-        "https://www.drupal.org/user/3312527"
-      ]
-    },
-    {
       "name": "Alejandro Garza ",
       "contact": [
         "https://www.drupal.org/user/153120"
@@ -106,6 +82,30 @@
       "name": "Drew Webber",
       "contact": [
         "https://www.drupal.org/user/255969"
+      ]
+    },
+    {
+      "name": "Marc Addeo ",
+      "contact": [
+        "https://www.drupal.org/user/3312527"
+      ]
+    },
+    {
+      "name": "Nathan Dentzau ",
+      "contact": [
+        "https://www.drupal.org/user/3444913"
+      ]
+    },
+    {
+      "name": "Nuno Ramos ",
+      "contact": [
+        "https://www.drupal.org/user/3522063"
+      ]
+    },
+    {
+      "name": "markwittens ",
+      "contact": [
+        "https://www.drupal.org/user/567198"
       ]
     }
   ]

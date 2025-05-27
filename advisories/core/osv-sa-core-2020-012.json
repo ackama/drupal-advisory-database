@@ -87,15 +87,9 @@
   ],
   "credits": [
     {
-      "name": "ufku",
+      "name": "Derek Wright",
       "contact": [
-        "https://www.drupal.org/user/9910"
-      ]
-    },
-    {
-      "name": "Mark Ferree",
-      "contact": [
-        "https://www.drupal.org/user/76245"
+        "https://www.drupal.org/user/46549"
       ]
     },
     {
@@ -105,15 +99,21 @@
       ]
     },
     {
+      "name": "Mark Ferree",
+      "contact": [
+        "https://www.drupal.org/user/76245"
+      ]
+    },
+    {
       "name": "Samuel Mortenson",
       "contact": [
         "https://www.drupal.org/user/2582268"
       ]
     },
     {
-      "name": "Derek Wright",
+      "name": "ufku",
       "contact": [
-        "https://www.drupal.org/user/46549"
+        "https://www.drupal.org/user/9910"
       ]
     }
   ]

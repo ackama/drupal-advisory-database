@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "Sean Blommaert",
-      "contact": [
-        "https://www.drupal.org/user/545912"
-      ]
-    },
-    {
       "name": "Martijn Vermeulen",
       "contact": [
         "https://www.drupal.org/user/960720"
+      ]
+    },
+    {
+      "name": "Sean Blommaert",
+      "contact": [
+        "https://www.drupal.org/user/545912"
       ]
     }
   ]

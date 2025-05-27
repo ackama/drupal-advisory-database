@@ -45,15 +45,15 @@
   ],
   "credits": [
     {
-      "name": "Marcin Grabias",
-      "contact": [
-        "https://www.drupal.org/user/1599440"
-      ]
-    },
-    {
       "name": " catch",
       "contact": [
         "https://www.drupal.org/user/35733"
+      ]
+    },
+    {
+      "name": "Marcin Grabias",
+      "contact": [
+        "https://www.drupal.org/user/1599440"
       ]
     }
   ]
