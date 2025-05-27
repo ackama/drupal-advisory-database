@@ -331,7 +331,7 @@ class DrupalCreditsParser(HTMLParser):
 def build_credits(reported_by: drupal.RichTextField) -> list[osv.Credit]:
   parser = DrupalCreditsParser()
   parser.feed(reported_by['value'])
-  return [osv.Credit(name=name) for name in parser.names]
+  return [osv.Credit(name=name) for name in sorted(parser.names)]
 
 
 def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
