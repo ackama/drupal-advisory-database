@@ -322,7 +322,8 @@ class DrupalCreditsParser(HTMLParser):
 
   While technically ths information is provided via rich text fields which means they
   can have almost completely arbitrary HTML, in practice they are usually links of
-  Drupal user profiles wrapped in either unordered lists or paragraph tags.
+  Drupal user profiles wrapped in either unordered lists or paragraph tags, with
+  the occasional header tag for advisories that cover multiple vulnerabilities.
 
   This parser is actually more robust than it needs to be, as it supports extracting
   names that are not wrapped in links, even though so far all the data has used links
@@ -341,6 +342,8 @@ class DrupalCreditsParser(HTMLParser):
     """Controls if data should be skipped"""
 
   def __capture_current_name(self) -> None:
+    if self.__current_name == '':
+      return
     self.names.add(self.__current_name)
     self.__current_name = ''
 
@@ -362,7 +365,8 @@ class DrupalCreditsParser(HTMLParser):
       self.__skip = False
 
   def handle_data(self, data: str) -> None:
-    if self.__skip or data.strip() == '':
+    # header tags never contain people, so we can just always skip them
+    if self.__skip or data.strip() == '' or self.__current_tag.startswith('h'):
       return
 
     # prioritize the content of <a> tags, ignoring any surrounding text

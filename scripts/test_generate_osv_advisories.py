@@ -566,6 +566,22 @@ def credits_fixtures() -> list[tuple[str, list[osv.Credit]]]:
       '<h3>Access Bypass:</h3>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Ted McBoss</a></li>\n\n</ul>',
       [osv.Credit(name='Ted McBoss')],
     ),
+    (
+      '<h4> Comment reply form allows access to restricted content - Critical -  Drupal 8</h4>\nTed McBoss',
+      []
+    ),
+    (
+      '<h4> Comment reply form allows access to restricted content - Critical -  Drupal 8</h4>\n<a>Ted McBoss</a>',
+      [osv.Credit(name='Ted McBoss')]
+    ),
+    (
+      '<ul>\n<li>\n<h4> Serious issue #1 </h4>\n<ul>\n<li>Alice McFee</li>\n</ul>\n</li>\n</ul>',
+      [osv.Credit(name='Alice McFee')],
+    ),
+    (
+      '<ul>\n<li>\n<h4> Serious issue #1 </h4>\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Ted McBoss</a></li>\n</ul>\n</li>\n</ul>',
+      [osv.Credit(name='Ted McBoss')],
+    ),
     # multiple reporters
     (
       '<ul><li>Jane Deli</li><li>Alice McFee</li></ul>',
@@ -623,6 +639,14 @@ def credits_fixtures() -> list[tuple[str, list[osv.Credit]]]:
       '<h3>Access Bypass:</h3>\n\n<ul>\n<li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Alice M</a></li>\n<li>Ted McBoss</a></li>\n</ul>\n\n\n\n\n<h3>Cross Site Scripting:</h3>\n\n<ul>\n<li><a href="https://www.drupal.org/u/g-rath" rel="nofollow">Jane Deli</a></li>\n</ul>',
       [
         osv.Credit(name='Alice M'),
+        osv.Credit(name='Jane Deli'),
+        osv.Credit(name='Ted McBoss'),
+      ],
+    ),
+    (
+      '<ul>  <li><h4> Serious issue #1 </h4>    <ul>      <li><a href="https://www.drupal.org/user/556138" rel="nofollow">Jane Deli</a></li></ul></li><li>    <h4>Serious issue #2</h4><ul>      <li><a href="https://www.drupal.org/user/3813415" rel="nofollow">Ted McBoss </a></li></ul>  </li>  <li>    <h4>Serious issue #3</h4><ul>      <li><a href="https://www.drupal.org/user/855656" rel="nofollow">Alice McFee</a></li></ul>  </li></ul>',
+      [
+        osv.Credit(name='Alice McFee'),
         osv.Credit(name='Jane Deli'),
         osv.Credit(name='Ted McBoss'),
       ],
