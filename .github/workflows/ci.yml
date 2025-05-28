@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 concurrency:
   # Pushing new changes to a branch will cancel any in-progress CI runs of this workflow
   group: ${{ github.workflow }}-${{ github.ref }}
