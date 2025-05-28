@@ -45,15 +45,15 @@
   ],
   "credits": [
     {
-      "name": "Pierre Rudloff",
-      "contact": [
-        "https://www.drupal.org/user/3611858"
-      ]
-    },
-    {
       "name": "Jeroen Tubex",
       "contact": [
         "https://www.drupal.org/user/2228934"
+      ]
+    },
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
       ]
     }
   ]

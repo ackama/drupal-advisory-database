@@ -87,15 +87,15 @@
   ],
   "credits": [
     {
-      "name": "Samuel Mortenson ",
-      "contact": [
-        "https://www.drupal.org/user/2582268"
-      ]
-    },
-    {
       "name": "Dor Tumarkin ",
       "contact": [
         "https://www.drupal.org/user/3648639"
+      ]
+    },
+    {
+      "name": "Samuel Mortenson ",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
       ]
     }
   ]

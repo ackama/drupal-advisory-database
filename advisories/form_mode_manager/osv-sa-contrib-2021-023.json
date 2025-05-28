@@ -43,6 +43,12 @@
   ],
   "credits": [
     {
+      "name": "Bec ",
+      "contact": [
+        "https://www.drupal.org/user/81067"
+      ]
+    },
+    {
       "name": "Byron Duvall",
       "contact": [
         "https://www.drupal.org/user/1279040"
@@ -52,12 +58,6 @@
       "name": "Jason Partyka",
       "contact": [
         "https://www.drupal.org/user/344048"
-      ]
-    },
-    {
-      "name": "Bec ",
-      "contact": [
-        "https://www.drupal.org/user/81067"
       ]
     }
   ]

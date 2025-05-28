@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "Lee Rowlands",
-      "contact": [
-        "https://www.drupal.org/user/395439"
-      ]
-    },
-    {
       "name": "Dan Flanagan",
       "contact": [
         "https://www.drupal.org/user/3615359"
+      ]
+    },
+    {
+      "name": "Lee Rowlands",
+      "contact": [
+        "https://www.drupal.org/user/395439"
       ]
     }
   ]

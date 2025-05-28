@@ -283,12 +283,6 @@
   ],
   "credits": [
     {
-      "name": "Heine",
-      "contact": [
-        "https://www.drupal.org/user/17943"
-      ]
-    },
-    {
       "name": "Conrad Lara",
       "contact": [
         "https://www.drupal.org/user/1790054"
@@ -298,6 +292,12 @@
       "name": "Guy Elsmore-Paddock",
       "contact": [
         "https://www.drupal.org/user/156932"
+      ]
+    },
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
       ]
     }
   ]

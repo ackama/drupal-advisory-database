@@ -93,12 +93,6 @@
       ]
     },
     {
-      "name": "bdanin",
-      "contact": [
-        "/u/bdanin"
-      ]
-    },
-    {
       "name": "Douglas Groene (dgroene)",
       "contact": [
         "/u/dgroene"
@@ -129,12 +123,6 @@
       ]
     },
     {
-      "name": "nuwans",
-      "contact": [
-        "/u/nuwans"
-      ]
-    },
-    {
       "name": "Sven Decabooter (svendecabooter)",
       "contact": [
         "/u/svendecabooter"
@@ -144,6 +132,18 @@
       "name": "Will Gunn (wgunn_e)",
       "contact": [
         "/u/wgunn_e"
+      ]
+    },
+    {
+      "name": "bdanin",
+      "contact": [
+        "/u/bdanin"
+      ]
+    },
+    {
+      "name": "nuwans",
+      "contact": [
+        "/u/nuwans"
       ]
     }
   ]

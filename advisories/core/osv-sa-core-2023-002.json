@@ -71,15 +71,15 @@
   ],
   "credits": [
     {
-      "name": "James Williams",
-      "contact": [
-        "https://www.drupal.org/user/592268"
-      ]
-    },
-    {
       "name": "Dan Flanagan",
       "contact": [
         "https://www.drupal.org/user/3615359"
+      ]
+    },
+    {
+      "name": "James Williams",
+      "contact": [
+        "https://www.drupal.org/user/592268"
       ]
     }
   ]

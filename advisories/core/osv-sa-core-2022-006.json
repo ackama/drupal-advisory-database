@@ -59,15 +59,15 @@
   ],
   "credits": [
     {
-      "name": "Jeroen Tubex",
-      "contact": [
-        "https://www.drupal.org/user/2228934"
-      ]
-    },
-    {
       "name": "Damien McKenna",
       "contact": [
         "https://www.drupal.org/user/108450"
+      ]
+    },
+    {
+      "name": "Jeroen Tubex",
+      "contact": [
+        "https://www.drupal.org/user/2228934"
       ]
     }
   ]

@@ -43,15 +43,15 @@
   ],
   "credits": [
     {
-      "name": "szato",
-      "contact": [
-        "https://www.drupal.org/user/389677"
-      ]
-    },
-    {
       "name": "Munavir P k",
       "contact": [
         "https://www.drupal.org/user/3604066"
+      ]
+    },
+    {
+      "name": "szato",
+      "contact": [
+        "https://www.drupal.org/user/389677"
       ]
     }
   ]

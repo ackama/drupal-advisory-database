@@ -45,15 +45,15 @@
   ],
   "credits": [
     {
-      "name": "Patrick Fey",
-      "contact": [
-        "https://www.drupal.org/user/998680"
-      ]
-    },
-    {
       "name": "Mitch Portier",
       "contact": [
         "https://www.drupal.org/user/2284182"
+      ]
+    },
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
       ]
     }
   ]

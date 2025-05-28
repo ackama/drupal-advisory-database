@@ -57,9 +57,15 @@
   ],
   "credits": [
     {
-      "name": "Ivan  ",
+      "name": "Anders Olsson ",
       "contact": [
-        "https://www.drupal.org/user/556138"
+        "https://www.drupal.org/user/855656"
+      ]
+    },
+    {
+      "name": "David Rothstein ",
+      "contact": [
+        "https://www.drupal.org/user/124982"
       ]
     },
     {
@@ -69,15 +75,9 @@
       ]
     },
     {
-      "name": "Anders Olsson ",
+      "name": "Ivan  ",
       "contact": [
-        "https://www.drupal.org/user/855656"
-      ]
-    },
-    {
-      "name": "will c ",
-      "contact": [
-        "https://www.drupal.org/user/2610796"
+        "https://www.drupal.org/user/556138"
       ]
     },
     {
@@ -93,9 +93,9 @@
       ]
     },
     {
-      "name": "David Rothstein ",
+      "name": "will c ",
       "contact": [
-        "https://www.drupal.org/user/124982"
+        "https://www.drupal.org/user/2610796"
       ]
     }
   ]

@@ -57,12 +57,6 @@
   ],
   "credits": [
     {
-      "name": "Ronald te Brake",
-      "contact": [
-        "https://www.drupal.org/user/2314038"
-      ]
-    },
-    {
       "name": "Alexander Varwijk",
       "contact": [
         "https://www.drupal.org/user/1868952"
@@ -72,6 +66,12 @@
       "name": "Robert Ragas",
       "contact": [
         "https://www.drupal.org/user/2723261"
+      ]
+    },
+    {
+      "name": "Ronald te Brake",
+      "contact": [
+        "https://www.drupal.org/user/2314038"
       ]
     }
   ]

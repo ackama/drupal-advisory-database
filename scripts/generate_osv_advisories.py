@@ -311,7 +311,7 @@ def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
       name = credit.split('">')[1].split('</a>')[0]
       credit_list.append({'name': name, 'contact': [href]})
 
-  return credit_list
+  return sorted(credit_list, key=lambda c: c['name'])
 
 
 def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
