@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CONTRIB-2024-027",
-  "modified": "2025-02-21T08:12:37.000Z",
-  "published": "2024-08-08T05:19:30.000Z",
+  "modified": "2025-02-20T19:12:37.000Z",
+  "published": "2024-08-07T17:19:30.000Z",
   "aliases": [
     "CVE-2024-13263"
   ],

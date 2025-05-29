@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CORE-2025-001",
-  "modified": "2025-04-01T10:57:06.000Z",
-  "published": "2025-02-20T05:49:28.000Z",
+  "modified": "2025-03-31T21:57:06.000Z",
+  "published": "2025-02-19T16:49:28.000Z",
   "aliases": [
     "CVE-2025-3057"
   ],

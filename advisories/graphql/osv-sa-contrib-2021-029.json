@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CONTRIB-2021-029",
-  "modified": "2023-08-12T05:03:09.000Z",
-  "published": "2021-09-16T03:30:15.000Z",
+  "modified": "2023-08-11T17:03:09.000Z",
+  "published": "2021-09-15T15:30:15.000Z",
   "aliases": [
     "CVE-2020-13675"
   ],

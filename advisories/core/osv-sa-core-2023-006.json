@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CORE-2023-006",
-  "modified": "2024-11-22T21:00:59.000Z",
-  "published": "2023-09-21T04:23:05.000Z",
+  "modified": "2024-11-22T08:00:59.000Z",
+  "published": "2023-09-20T16:23:05.000Z",
   "aliases": [
     "CVE-2023-5256"
   ],

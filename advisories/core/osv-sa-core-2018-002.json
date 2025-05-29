@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CORE-2018-002",
-  "modified": "2022-08-22T07:48:41.000Z",
-  "published": "2018-03-29T07:14:10.000Z",
+  "modified": "2022-08-21T19:48:41.000Z",
+  "published": "2018-03-28T18:14:10.000Z",
   "aliases": [
     "CVE-2018-7600"
   ],
