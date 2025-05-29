@@ -295,11 +295,13 @@ def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
   ]
 
 
-def get_credits_from_sa(credits: drupal.RichTextField) -> list[osv.Credit]:
+def get_credits_from_sa(
+  credits: drupal.RichTextField | list[typing.Never],
+) -> list[osv.Credit]:
   credit_list: list[osv.Credit] = []
 
   # Sanity checks.
-  if len(credits) == 0 or 'value' not in credits:
+  if not isinstance(credits, dict):
     return credit_list
   # The credits['value'] is a sting with an ordered list of credits.
   # A credit is a link to the user's profile on drupal.org with the user's name as the link text.
