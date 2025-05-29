@@ -31,7 +31,7 @@ jobs:
       - uses: gr2m/create-or-update-pull-request-action@v1
         id: create-or-update-pull-request
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GENERATOR_GH_TOKEN }}
         with:
           title: 'feat: update advisories'
           body: >
