@@ -47,22 +47,20 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "13.0.0-dev"
+              "introduced": "13.0.0-alpha1"
             },
             {
               "fixed": "13.0.0-alpha11"
             }
           ],
           "database_specific": {
-            "constraint": ">=13.0.0 <13.0.0-alpha11",
-            "warnings": [
-              "stability does not make sense, using -dev instead"
-            ]
+            "constraint": ">=13.0.0-alpha1 <13.0.0-alpha11"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<12.3.8 || >=12.4.0 <12.4.5 || >=13.0.0 <13.0.0-alpha11"
+        "affected_versions": "<12.3.8 || >=12.4.0 <12.4.5 || >=13.0.0-alpha1 <13.0.0-alpha11",
+        "patched": true
       }
     }
   ],

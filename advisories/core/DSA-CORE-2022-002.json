@@ -17,22 +17,20 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "7.0.1"
+              "introduced": "7.0.0"
             },
             {
               "last_affected": "7.86.0"
             }
           ],
           "database_specific": {
-            "constraint": ">7.0 <=7.86",
-            "warnings": [
-              "the > operator should be avoided as it does not provide a concrete version"
-            ]
+            "constraint": ">=7.0 <=7.86"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": ">7.0 <=7.86"
+        "affected_versions": ">=7.0 <=7.86",
+        "patched": true
       }
     }
   ],

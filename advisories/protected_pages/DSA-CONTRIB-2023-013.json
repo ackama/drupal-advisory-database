@@ -24,15 +24,13 @@
             }
           ],
           "database_specific": {
-            "constraint": "<1.06",
-            "warnings": [
-              "components should not be prefixed with leading zeros"
-            ]
+            "constraint": "<1.6"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<1.06"
+        "affected_versions": "<1.6",
+        "patched": true
       }
     }
   ],
