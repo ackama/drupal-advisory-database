@@ -10,7 +10,7 @@ import json
 import os
 import re
 import typing
-from datetime import datetime
+from datetime import UTC, datetime
 
 import requests
 import semver
@@ -325,6 +325,10 @@ def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
   return f'drupal/{project_name}'
 
 
+def unix_timestamp_to_rfc3339(unix: int) -> str:
+  return datetime.fromtimestamp(int(unix), tz=UTC).strftime('%Y-%m-%dT%H:%M:%S.000Z')
+
+
 def build_osv_advisory(
   sa_id: str,
   sa_advisory: drupal.Advisory,
@@ -349,12 +353,8 @@ def build_osv_advisory(
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
     'id': f'D{sa_id}',
-    'modified': datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
-      '%Y-%m-%dT%H:%M:%S.000Z'
-    ),
-    'published': datetime.fromtimestamp(int(sa_advisory['created'])).strftime(
-      '%Y-%m-%dT%H:%M:%S.000Z'
-    ),
+    'modified': unix_timestamp_to_rfc3339(int(sa_advisory['changed'])),
+    'published': unix_timestamp_to_rfc3339(int(sa_advisory['created'])),
     'aliases': sa_advisory['field_sa_cve'],
     'related': [],
     'summary': '',
