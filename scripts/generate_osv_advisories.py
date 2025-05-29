@@ -356,8 +356,6 @@ def build_osv_advisory(
     'modified': unix_timestamp_to_rfc3339(int(sa_advisory['changed'])),
     'published': unix_timestamp_to_rfc3339(int(sa_advisory['created'])),
     'aliases': sa_advisory['field_sa_cve'],
-    'related': [],
-    'summary': '',
     'details': markdownify(sa_advisory['field_sa_description']['value']),
     'affected': [
       {
