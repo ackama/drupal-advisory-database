@@ -29,11 +29,9 @@ jobs:
       - run: poetry run scripts/download_sa_advisories.py
       - run: poetry run scripts/precache_nodes.py
       - run: poetry run scripts/generate_osv_advisories.py
-      - uses: gr2m/create-or-update-pull-request-action@v1
-        id: create-or-update-pull-request
-        env:
-          GITHUB_TOKEN: ${{ secrets.GENERATOR_GH_TOKEN }}
+      - uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.GENERATOR_GH_TOKEN }}
           title: 'feat: update advisories'
           body: >
             🤖 beep boop - looks like there's some changes to the advisories!
