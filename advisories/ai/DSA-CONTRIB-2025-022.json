@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-022",
-  "modified": "2025-04-01T11:06:45.000Z",
-  "published": "2025-03-06T06:27:19.000Z",
+  "modified": "2025-03-31T22:06:45.000Z",
+  "published": "2025-03-05T17:27:19.000Z",
   "aliases": [
     "CVE-2025-31693"
   ],

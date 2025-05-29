@@ -1,8 +1,8 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2024-014",
-  "modified": "2025-02-21T08:09:20.000Z",
-  "published": "2024-02-29T07:36:35.000Z",
+  "modified": "2025-02-20T19:09:20.000Z",
+  "published": "2024-02-28T18:36:35.000Z",
   "aliases": [
     "CVE-2024-13250"
   ],
