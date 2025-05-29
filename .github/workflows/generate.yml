@@ -41,14 +41,3 @@ jobs:
           author: |
             github-actions <41898282+github-actions[bot]@users.noreply.github.com>
           commit-message: 'feat: update advisories'
-      - uses: octokit/request-action@v2.4.0
-        if: steps.create-or-update-pull-request.outputs.result != 'unchanged'
-        with:
-          route: |
-            POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.event.repository.name }}
-          workflow_id: ci.yml
-          ref: bot/update-advisories
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
