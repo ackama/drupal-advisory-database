@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "OSV-SA-CONTRIB-2025-070",
-  "modified": "2025-05-28T17:41:20.000Z",
+  "modified": "2025-05-29T18:17:25.000Z",
   "published": "2025-05-28T17:41:20.000Z",
   "aliases": [
     "CVE-2025-48916"
