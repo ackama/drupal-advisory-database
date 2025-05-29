@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2024-006",
+  "modified": "2024-12-10T12:24:48.000Z",
+  "published": "2024-11-21T06:25:47.000Z",
+  "aliases": [
+    "CVE-2024-55636"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Artbitrary File Deletion. It is not directly exploitable.\n\nThis issue is mitigated by the fact that in order to be exploitable, a separate vulnerability must be present that allows an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.\n\nTo help protect against this vulnerability, types have been added to properties in some of Drupal core's classes. If an application extends those classes, the same types may need to be specified on the subclass to avoid a `TypeError`.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.2.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.2.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.3.0"
+            },
+            {
+              "fixed": "10.3.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.3.0 < 10.3.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.0.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9 || >= 11.0.0 < 11.0.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2024-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

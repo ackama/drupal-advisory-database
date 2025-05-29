@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2020-005",
+  "modified": "2022-08-22T07:11:59.000Z",
+  "published": "2020-06-18T06:06:23.000Z",
+  "aliases": [
+    "CVE-2020-13664"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Drupal 8 and 9 have a remote code execution vulnerability under certain circumstances.\n\nAn attacker could trick an administrator into visiting a malicious site that could result in creating a carefully named directory on the file system. With this directory in place, an attacker could attempt to brute force a remote code execution vulnerability.\n\nWindows servers are most likely to be affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.8.8"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 <8.9.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.0.0 <9.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.8.8 || >= 8.9.0 <8.9.1 || >=9.0.0 <9.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lorenzo G",
+      "contact": [
+        "https://www.drupal.org/user/3644903"
+      ]
+    },
+    {
+      "name": "Sam Thomas",
+      "contact": [
+        "https://www.drupal.org/user/3603418"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2019-068",
+  "modified": "2023-08-12T06:25:53.000Z",
+  "published": "2019-09-26T02:43:49.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to control access to content based on taxonomy terms. The module doesn't sufficiently check if a given entity should be access controlled, defaulting to allowing access even to unpublished nodes.\n\nThe vulnerability is mitigated by the fact that the submodule Permissions by Entity must also be enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/permissions_by_term"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.11.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.11.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.11.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-068"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jimmy Henderickx",
+      "contact": [
+        "https://www.drupal.org/user/462700"
+      ]
+    }
+  ]
+}

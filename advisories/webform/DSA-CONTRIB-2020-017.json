@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2020-017",
+  "modified": "2023-08-12T05:54:03.000Z",
+  "published": "2020-05-07T05:02:39.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to build forms and surveys in Drupal.\n\nThe Webform Node sub-module allows these forms to be associated with a Drupal node. The Webform Node module does not implement access checking in the same manner as other nodes and entities. As such, writers of custom modules which implement webform\\_node, node, or entity access checks may not achieve the intended access results for Webform Node content.\n\nThere is no known exploit of this vulnerability and the vulnerability only exists on sites with custom code and a node access module in use.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "5.11.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<5.11.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<5.11.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-017"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dan Chadwick",
+      "contact": [
+        "https://www.drupal.org/user/504278"
+      ]
+    }
+  ]
+}

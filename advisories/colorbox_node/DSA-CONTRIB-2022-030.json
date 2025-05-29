@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-030",
+  "modified": "2023-08-11T09:37:13.000Z",
+  "published": "2022-03-24T05:36:10.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>\n\n*This module was unsupported on 2022-01-26, however, the SA was missed in publishing them at that time.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/colorbox_node"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-030"
+    }
+  ],
+  "credits": []
+}

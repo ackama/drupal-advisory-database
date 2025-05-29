@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2023-016",
+  "modified": "2023-08-11T01:58:03.000Z",
+  "published": "2023-06-01T01:14:25.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Iubenda Integration module provides a custom block to provide a link to the Iubenda privacy policy. On this block, a custom prefix and suffix text can be entered.\n\nThe module does not sufficiently filter the block text fields on output, resulting in a Cross-Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to use the layout builder on content, edit the layout, or with the \"Administer blocks\" permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/iubenda_integration"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    }
+  ]
+}

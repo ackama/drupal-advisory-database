@@ -1,0 +1,304 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2023-005",
+  "modified": "2025-01-10T10:09:52.000Z",
+  "published": "2023-04-20T05:06:18.000Z",
+  "aliases": [
+    "CVE-2023-31250"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The file download facility doesn't sufficiently sanitize file paths in certain situations. This may result in users gaining access to private files that they should not have access to.\n\nSome sites may require configuration changes following this security release. Review the release notes for your Drupal version if you have issues accessing private files after updating.\n\nThis advisory **is** covered by [Drupal Steward](/steward). Because this vulnerability is not mass exploitable, your Steward partner may respond by monitoring-only, rather than enforcing a new WAF rule.\n\nWe would normally not apply for a release of this severity. However, in this case we have chosen to apply Drupal Steward security coverage to test our processes.\n\n#### Drupal 7\n\n* All Drupal 7 sites on Windows web servers are vulnerable.\n* Drupal 7 sites on Linux web servers are vulnerable with certain file directory structures, or if a vulnerable contributed or custom file access module is installed.\n\n#### Drupal 9 and 10\n\nDrupal 9 and 10 sites are only vulnerable if certain contributed or custom file access modules are installed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "7.96.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<7.96.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.4.0"
+            },
+            {
+              "fixed": "9.4.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.4.0 <9.4.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.5.0"
+            },
+            {
+              "fixed": "9.5.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.5.0 <9.5.8"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.0.0"
+            },
+            {
+              "fixed": "10.0.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.0.0 <10.0.8"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1.0"
+            },
+            {
+              "fixed": "8.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.1.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.2.0"
+            },
+            {
+              "fixed": "8.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.2.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.3.0"
+            },
+            {
+              "fixed": "8.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.3.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.4.0"
+            },
+            {
+              "fixed": "8.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.4.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.5.0"
+            },
+            {
+              "fixed": "8.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.5.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.6.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.7.0"
+            },
+            {
+              "fixed": "8.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.7.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.8.0"
+            },
+            {
+              "fixed": "8.9.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.8.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.10.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "8.9.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "9.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "9.1.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.2.0"
+            },
+            {
+              "fixed": "9.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "9.2.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.3.0"
+            },
+            {
+              "fixed": "9.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "9.3.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<7.96.0 || >=9.4.0 <9.4.14 || >=9.5.0 <9.5.8 || >=10.0.0 <10.0.8 || 8.0.* || 8.1.* || 8.2.* || 8.3.* || 8.4.* || 8.5.* || 8.6.* || 8.7.* || 8.8.* || 8.9.* || 9.0.* || 9.1.* || 9.2.* || 9.3.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2023-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    },
+    {
+      "name": "Guy Elsmore-Paddock",
+      "contact": [
+        "https://www.drupal.org/user/156932"
+      ]
+    },
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    }
+  ]
+}

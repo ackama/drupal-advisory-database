@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2020-008",
+  "modified": "2022-08-22T07:08:18.000Z",
+  "published": "2020-09-17T04:32:12.000Z",
+  "aliases": [
+    "CVE-2020-13667"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The experimental Workspaces module allows you to create multiple workspaces on your site in which draft content can be edited before being published to the live workspace.\n\nThe Workspaces module doesn't sufficiently check access permissions when switching workspaces, leading to an access bypass vulnerability. An attacker might be able to see content before the site owner intends people to see the content.\n\nThis vulnerability is mitigated by the fact that sites are only vulnerable if they have installed the experimental Workspaces module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.8.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 <8.9.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.0.0 <9.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.8.10 || >= 8.9.0 <8.9.6 || >=9.0.0 <9.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andrei Mateescu",
+      "contact": [
+        "https://www.drupal.org/user/729614"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-067",
+  "modified": "2025-05-22T05:28:55.000Z",
+  "published": "2025-05-22T05:28:55.000Z",
+  "aliases": [
+    "CVE-2025-48446"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to pay for Commerce order to an environment provided and secured by the bank\n\nThe module doesn't sufficiently verify the payment status on canceled orders. An attacker can issue a specially crafted request to update the order status to completed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/commerce_alphabank_redirect"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-067"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marios Tsalkidis (silios)",
+      "contact": [
+        "/u/silios"
+      ]
+    }
+  ]
+}

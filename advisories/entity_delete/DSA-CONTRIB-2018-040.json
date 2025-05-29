@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2018-040",
+  "modified": "2023-08-12T09:31:17.000Z",
+  "published": "2018-06-07T01:05:27.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to delete any types of entities in bulk.\n\nThe module doesn't sufficiently verify access permissions under its use cases, leading to access bypass. The module also does not protect against Cross Site Request Forgeries on its delete process.\n\nThe access bypass vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access content\". There is no additional mitigation for the Cross Site Request Forgery vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_delete"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-040"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Balazs Janos Tatar",
+      "contact": [
+        "https://www.drupal.org/user/649590"
+      ]
+    }
+  ]
+}

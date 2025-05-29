@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-038",
+  "modified": "2023-08-11T09:00:44.000Z",
+  "published": "2022-05-05T04:26:47.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The module adds a \"Clone\" tab to a node. When clicked, a new node is created and fields from the previous node are populated into the new fields. This module supports paragraphs, groups, and other referenced entities.\n\nThe module has a vulnerability which allows attackers to bypass the protection to clone any group content with an access check. Users are allowed to copy other group's nodes, and if they do that, the node gets added to groups they don't have access to.\n\nThis vulnerability is mitigated by the fact it only affects sites that also use the Groups contributed module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/quick_node_clone"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.15.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.15.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.15.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-038"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Benjamin Rasmussen",
+      "contact": [
+        "https://www.drupal.org/user/3191699"
+      ]
+    }
+  ]
+}

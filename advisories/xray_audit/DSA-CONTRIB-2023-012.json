@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2023-012",
+  "modified": "2023-08-11T02:19:50.000Z",
+  "published": "2023-03-30T06:44:58.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module is a tool for developers, analysts, and administrators that allows them to generate reports on a given Drupal installation.\n\nThe module does not sufficiently sanitize some data presented in its reports.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permissions to administer an impacted content type.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/xray_audit"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-012"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-008",
+  "modified": "2025-02-21T07:37:40.000Z",
+  "published": "2024-02-08T06:56:55.000Z",
+  "aliases": [
+    "CVE-2024-13244"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Migrate Tools module provides tools for running and managing Drupal migrations.\n\nThe module doesn't sufficiently protect against Cross Site Request Forgery under specific scenarios allowing an attacker to trick an authenticated administrator into initiating a migration.\n\nThis vulnerability is mitigated by the fact that an attacker must know the name of the migration.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/migrate_tools"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andreas Hennings",
+      "contact": [
+        "https://www.drupal.org/user/459338"
+      ]
+    }
+  ]
+}

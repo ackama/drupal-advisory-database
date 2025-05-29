@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-019",
+  "modified": "2025-04-01T11:06:12.000Z",
+  "published": "2025-02-27T07:35:11.000Z",
+  "aliases": [
+    "CVE-2025-31690"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Cache Utility module provides an ability to view status and flush various caches.\n\nThe module doesn't sufficiently protect against Cross Site Request Forgery (CSRF) attacks by validating user identity and intent when flushing a cache.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/cache_utility"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-019"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

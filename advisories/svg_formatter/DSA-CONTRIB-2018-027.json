@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2018-027",
+  "modified": "2023-08-12T09:40:01.000Z",
+  "published": "2018-05-10T08:28:16.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module adds a new formatter for the file fields, which allows any file extension to be uploaded.  \nThe module doesn't sufficiently handle sanitization under the scenario uploaded SVG files.  \nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission create or edit on certain content types that allows SVG files to be uploaded.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/svg_formatter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-027"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Balazs Janos Tatar",
+      "contact": [
+        "https://www.drupal.org/user/649590"
+      ]
+    }
+  ]
+}

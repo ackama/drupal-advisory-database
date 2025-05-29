@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2021-007",
+  "modified": "2023-08-12T05:17:34.000Z",
+  "published": "2021-05-13T04:08:34.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a new UI experience for node editing using the Gutenberg Editor library.\n\nThe module did not correctly validate access rules in certain situations allowing anonymous users to delete blocks.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/gutenberg"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.12.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.12.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.12.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mariusz Andrzejewski",
+      "contact": [
+        "https://www.drupal.org/user/3517832"
+      ]
+    },
+    {
+      "name": "Stephan Zeidler",
+      "contact": [
+        "https://www.drupal.org/user/767652"
+      ]
+    }
+  ]
+}

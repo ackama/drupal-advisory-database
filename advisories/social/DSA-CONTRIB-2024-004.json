@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-004",
+  "modified": "2025-02-21T07:39:20.000Z",
+  "published": "2024-01-25T04:45:49.000Z",
+  "aliases": [
+    "CVE-2024-13240"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Content within Open Social can have different visibilities. It is possible for a user to create public content even when this should not be allowed.  \nThis vulnerability is mitigated by the fact that the site must have public visibility disabled on a global level.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "12.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<12.05",
+            "warnings": [
+              "components should not be prefixed with leading zeros"
+            ]
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<12.05"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Corn696",
+      "contact": [
+        "https://www.drupal.org/user/3544002"
+      ]
+    }
+  ]
+}

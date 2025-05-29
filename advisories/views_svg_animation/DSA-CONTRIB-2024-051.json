@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-051",
+  "modified": "2025-02-21T09:08:44.000Z",
+  "published": "2024-10-24T04:45:41.000Z",
+  "aliases": [
+    "CVE-2024-13287"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to animate an SVG graphic by selecting certain rows in a view.\n\nThe module doesn't sufficiently sanitize the SVG file before embedding it into the html.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to upload SVG files.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/views_svg_animation"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-051"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

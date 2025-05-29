@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-072",
+  "modified": "2025-02-21T09:08:00.000Z",
+  "published": "2024-12-11T20:44:40.000Z",
+  "aliases": [
+    "CVE-2024-13308"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a block that renders a link providing the functionality of a browser's back button.\n\nThe module does not sufficiently escape text entered by an administrator, resulting in a cross scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/browser_back_button"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.0.0 <2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=1.0.0 <2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-072"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier",
+      "contact": [
+        "https://www.drupal.org/user/2284182"
+      ]
+    },
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
+      ]
+    }
+  ]
+}

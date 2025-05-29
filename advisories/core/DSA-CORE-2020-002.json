@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2020-002",
+  "modified": "2022-08-22T07:19:09.000Z",
+  "published": "2020-05-21T03:18:53.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The jQuery project released version 3.5.0, and as part of that, disclosed two security vulnerabilities that affect all prior versions. As mentioned in the [jQuery blog](https://blog.jquery.com/2020/05/04/jquery-3-5-1-released-fixing-a-regression/), both are\n\n> [...] security issues in jQuery\u2019s DOM manipulation methods, as in `.html()`, `.append()`, and the others. Security advisories for both of these issues have been published on GitHub.\n\nThose advisories are:\n\n* [CVE-2020-11022](https://github.com/jquery/jquery/security/advisories/GHSA-gxr4-xjj5-5px2)\n* [CVE-2020-11023](https://github.com/jquery/jquery/security/advisories/GHSA-jpcq-cgw6-v4j6)\n\nThese vulnerabilities may be exploitable on some Drupal sites. This Drupal security release backports the fixes to the relevant jQuery functions, without making any other changes to the jQuery version that is included in Drupal core or running on the site via some other module such as [jQuery Update](https://www.drupal.org/project/jquery_update). It is not necessary to update jquery\\_update on Drupal 7 sites that have the module installed.\n\nBackwards-compatibility code has also been added to minimize regressions to Drupal sites that might rely on jQuery's prior behavior. With jQuery 3.5, incorrect self-closing HTML tags in JavaScript for elements where end tags are normally required will encounter [a change in what jQuery returns or inserts](https://jquery.com/upgrade-guide/3.5/#description-of-the-change). To minimize that disruption in 8.8.x and earlier, this security release retains jQuery's prior behavior for most safe tags. There may still be regressions for edge cases, including invalidly self-closed [custom elements](https://html.spec.whatwg.org/multipage/custom-elements.html) on Internet Explorer.\n\n(Note: the backwards compatibility layer will not be included in the upcoming Drupal 8.9 and 9.0 releases, so Drupal 8 and 9 modules, themes, and sites should correct tags in JavaScript to properly use closing tags.)\n\nIf you find a [regression](https://en.wikipedia.org/wiki/Software_regression) caused by the jQuery changes, please report it in [Drupal core's issue queue](https://www.drupal.org/project/issues/drupal) (or that of the relevant contrib project). However, if you believe you have found a security issue, please [report it privately to the Drupal Security Team](https://www.drupal.org/security-team/report-issue).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.70.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.70"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.7.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.7.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.8.0"
+            },
+            {
+              "fixed": "8.8.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.8.0 <8.8.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.70 || >= 8.0.0 <8.7.14 || >= 8.8.0 <8.8.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-002"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    },
+    {
+      "name": "Emerson Jair Reis Oliveira da Silva",
+      "contact": [
+        "https://www.drupal.org/user/3580914"
+      ]
+    }
+  ]
+}

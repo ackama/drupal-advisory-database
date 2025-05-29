@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-046",
+  "modified": "2023-08-11T09:35:30.000Z",
+  "published": "2022-06-30T04:51:17.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Lottiefiles Field module enables you to integrate the lottiefiles features into your page.\n\nThe module does not sufficiently filter user-provided text on output, resulting in a Cross-Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to create or edit content that has lottiefiles fields.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/lottiefiles_field"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-046"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    }
+  ]
+}

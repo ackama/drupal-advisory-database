@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-027",
+  "modified": "2025-02-21T08:12:37.000Z",
+  "published": "2024-08-08T05:19:30.000Z",
+  "aliases": [
+    "CVE-2024-13263"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Opigno group manager project is related to Opigno LMS distribution. It allows to build the contents of learning paths, by combining together modules, courses, and other activities, ordering them, and defining conditional rules for the transitions from one step to the next one.\n\nAn administration form allows execution of arbitrary code.\n\nThis issue is mitigated by several factors. First, it requires the attacker have the permission \"update group learning\\_path\". Additionally, it requires several steps and depends on other data in the system to be in place.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/opigno_group_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-027"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcin Grabias",
+      "contact": [
+        "https://www.drupal.org/user/1599440"
+      ]
+    },
+    {
+      "name": "catch",
+      "contact": [
+        "https://www.drupal.org/user/35733"
+      ]
+    }
+  ]
+}

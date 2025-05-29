@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2020-006",
+  "modified": "2022-08-22T07:11:31.000Z",
+  "published": "2020-06-18T06:10:58.000Z",
+  "aliases": [
+    "CVE-2020-13665 "
+  ],
+  "related": [],
+  "summary": "",
+  "details": "JSON:API PATCH requests may bypass validation for certain fields.\n\nBy default, JSON:API works in a read-only mode which makes it impossible to exploit the vulnerability. Only sites that have the `read_only` set to `FALSE` under `jsonapi.settings` config are vulnerable.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.8.8"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 <8.9.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.0.0 <9.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.8.8 || >= 8.9.0 <8.9.1 || >=9.0.0 <9.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sergii Bondarenko",
+      "contact": [
+        "https://www.drupal.org/user/2802285"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2018-074",
+  "modified": "2023-08-12T09:15:17.000Z",
+  "published": "2018-11-29T06:32:56.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This base theme bridges the gap between Drupal and the Bootstrap Framework.\n\nThe theme doesn't sufficiently filter valid targets under the scenario of opening modals, popovers, and tooltips.\n\nThis vulnerability is mitigated by the fact that an attacker must already have the ability to either:\n\n1. Edit/save custom content that supplies a value for the `data-target` attribute by injecting malicious code.\n2. Inject custom markup onto the page that further exploits the `data-target` attribute by injecting malicious code. This method of attack is highly unlikely if they already have this level of access.\n\nNote: while the base-theme does not provide either of these opportunities to do this out-of-the-box; a custom sub-theme may, however, be susceptible if it didn't sanitize or filter user provided input for XSS properly.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/bootstrap"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.14.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.14.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.14.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-074"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Gomez_in_the_South",
+      "contact": [
+        "https://www.drupal.org/user/153735"
+      ]
+    }
+  ]
+}

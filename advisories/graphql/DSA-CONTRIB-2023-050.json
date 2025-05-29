@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2023-050",
+  "modified": "2023-11-09T06:10:18.000Z",
+  "published": "2023-11-09T04:30:45.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module lets you craft and expose a GraphQL schema for Drupal 9 and 10.\n\nThe module currently does not adequately verify whether a given user has the necessary permissions to access an entity's label creating an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that entity view and entity label access are usually handled by the same access check; developers have to opt-in for supporting different logic on entity types. Additionally your schema must make use of the EntityLabel DataProducer to be affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/graphql"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.4.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.0.0 <4.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.4.0 || >=4.0.0 <4.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-050"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dezs\u0151 Bicz\u00f3",
+      "contact": [
+        "https://www.drupal.org/user/315522"
+      ]
+    }
+  ]
+}

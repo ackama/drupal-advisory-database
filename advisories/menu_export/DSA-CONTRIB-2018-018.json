@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2018-018",
+  "modified": "2023-08-12T09:35:30.000Z",
+  "published": "2018-04-19T03:45:18.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module helps in exporting and importing Menu Items via the administrative interface.\n\nThe module does not properly restrict access to administrative pages, allowing anonymous users to export and import menu links.\n\nThere is no mitigation for this vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/menu_export"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-018"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Nathan Dentzau",
+      "contact": [
+        "https://www.drupal.org/u/nathandentzau"
+      ]
+    }
+  ]
+}

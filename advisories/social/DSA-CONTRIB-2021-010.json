@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2021-010",
+  "modified": "2023-08-12T05:21:33.000Z",
+  "published": "2021-06-03T04:49:49.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This Open Social distribution provides a turn-key system for building customized social networks.\n\nThe module doesn't sufficiently process data in certain circumstances.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"access mentions\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "9.17.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.17.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.0.0"
+            },
+            {
+              "fixed": "10.0.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.0.0 <10.0.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.1.0"
+            },
+            {
+              "fixed": "10.1.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.1.0 <10.1.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<9.17.0 || >=10.0.0 <10.0.13 || >=10.1.0 <10.1.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-010"
+    }
+  ],
+  "credits": [
+    {
+      "name": "mindaugasd",
+      "contact": [
+        "https://www.drupal.org/user/330097"
+      ]
+    }
+  ]
+}

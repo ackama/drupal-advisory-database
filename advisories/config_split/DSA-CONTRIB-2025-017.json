@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-017",
+  "modified": "2025-04-01T11:05:40.000Z",
+  "published": "2025-02-13T06:38:22.000Z",
+  "aliases": [
+    "CVE-2025-31688"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to create super sets of configuration and enable them conditionally, for example have some modules installed only in some environments.\n\nThe module does not use Cross Site Request Forgery (CSRF) tokens to protect routes for enabling or disabling a split.\n\nThis vulnerability is mitigated by the fact that an attacker must know the machine name of a split and deceive a user with the permission to modify it.  \nThe status only takes effect when exporting the configuration (1.x and 2.x) or importing the configuration (1.x only) and the status is not fixed via configuration override, which is the typical setup.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/config_split"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.10.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.10.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.10.0 || >=2.0.0 <2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-017"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Eric Smith (ericgsmith)",
+      "contact": [
+        "/u/ericgsmith"
+      ]
+    }
+  ]
+}

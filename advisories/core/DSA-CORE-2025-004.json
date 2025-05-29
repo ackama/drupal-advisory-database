@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2025-004",
+  "modified": "2025-04-01T10:57:44.000Z",
+  "published": "2025-03-20T07:54:35.000Z",
+  "aliases": [
+    "CVE-2025-31675"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Drupal core Link field attributes are not sufficiently sanitized, which can lead to a Cross Site Scripting vulnerability (XSS).\n\nThis vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.\n\nSites with the Link module disabled or that do not use any link fields are not affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.3.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.3.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.4.0"
+            },
+            {
+              "fixed": "10.4.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.4.0 < 10.4.5"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.0.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.1.0"
+            },
+            {
+              "fixed": "11.1.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.1.0 < 11.1.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.3.14 || >= 10.4.0 < 10.4.5 || >= 11.0.0 < 11.0.13 || >= 11.1.0 < 11.1.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2025-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson (samuel.mortenson)",
+      "contact": [
+        "/u/samuelmortenson"
+      ]
+    }
+  ]
+}

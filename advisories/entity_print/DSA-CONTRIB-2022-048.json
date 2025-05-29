@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-048",
+  "modified": "2023-08-11T09:36:29.000Z",
+  "published": "2022-07-14T03:44:42.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to generate print versions of content.  \nSome installations of the module make use of the dompdf/dompdf third-party dependency.  \nSecurity vulnerabilities exist for versions of dompdf/dompdf < 2.0.0\n\nSee the library release notes for more detail: <https://github.com/dompdf/dompdf/releases/tag/v2.0.0>\n\n### Note on 3rd party vulnerabilities\n\nThis security advisory corresponds to a 3rd party vulnerability. Normally the Drupal Security Team would not issue advisories related to 3rd party code that is shipped separately from a module per our policy (most recent update is [PSA-2019-09-04](https://www.drupal.org/psa-2019-09-04)). In this case, because the module required a specific version and could not be updated without a change to the Drupal module we do issue an advisory.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/entity_print"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-048"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Munavir P k",
+      "contact": [
+        "https://www.drupal.org/user/3604066"
+      ]
+    },
+    {
+      "name": "szato",
+      "contact": [
+        "https://www.drupal.org/user/389677"
+      ]
+    }
+  ]
+}

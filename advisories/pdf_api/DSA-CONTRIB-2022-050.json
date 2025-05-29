@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-050",
+  "modified": "2023-08-11T07:24:22.000Z",
+  "published": "2022-07-28T05:03:38.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to generate PDF versions of content.\n\nSome installations of the module make use of the dompdf/dompdf third-party dependency.\n\nSecurity vulnerabilities exist for versions of dompdf/dompdf before 2.0.0 as described in the [2.0.0 release notes.](https://github.com/dompdf/dompdf/releases/tag/v2.0.0)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/pdf_api"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.2.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.2.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-050"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Archuleta",
+      "contact": [
+        "https://www.drupal.org/user/3569928"
+      ]
+    },
+    {
+      "name": "tedfordgif",
+      "contact": [
+        "https://www.drupal.org/user/215631"
+      ]
+    }
+  ]
+}
