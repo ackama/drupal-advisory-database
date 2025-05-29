@@ -13,6 +13,7 @@ jobs:
   update:
     permissions:
       contents: write # to fetch and commit code
+      pull-requests: write # to create pull requests
       actions: write # to manually dispatch checks on the pull request
     runs-on: ubuntu-latest
     steps:
