@@ -1,3 +1,4 @@
+name: Generate
 on:
   workflow_dispatch:
 concurrency:
