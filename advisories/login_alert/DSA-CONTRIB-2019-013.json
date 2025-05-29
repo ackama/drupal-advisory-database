@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2019-013",
+  "modified": "2023-08-12T07:22:41.000Z",
+  "published": "2019-02-07T06:36:06.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a field on user profiles which allows users to get a notification when their account logs in to the site. The notification e-mail includes a link which will terminate all sessions for that user. This is useful in the case of unauthorised access to the account.\n\nThe module doesn't employ sufficient randomness in the generation of URLs, which represents an Access Bypass vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/login_alert"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-013"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

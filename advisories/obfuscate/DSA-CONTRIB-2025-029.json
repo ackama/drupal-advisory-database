@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-029",
+  "modified": "2025-04-03T06:03:15.000Z",
+  "published": "2025-04-03T06:03:15.000Z",
+  "aliases": [
+    "CVE-2025-3130"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to obfuscate email addresses, to avoid them being easily available to spammers.\n\nThe module doesn't sufficiently sanitise input when ROT13 encoding is used.  \nThis vulnerability is mitigated by the fact that an attacker must have a role with the ability to enter specific HTML tag attributes. In a default Drupal installation this would require the administrator role and use of the Full HTML text format. It also requires that the ROT13 encoding be enabled in Obfuscate settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/obfuscate"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-029"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

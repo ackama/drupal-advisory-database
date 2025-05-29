@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-047",
+  "modified": "2025-02-21T08:26:17.000Z",
+  "published": "2024-10-10T04:54:27.000Z",
+  "aliases": [
+    "CVE-2024-13283"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to to easily create and manage faceted search interfaces.\n\nThe module doesn't sufficiently filter for malicious script leading to a reflected cross site scripting (XSS) vulnerability.\n\nThe vulnerability exists in the Facets Summary submodule. If you do not use that sub module your site is not vulnerable to this issue.\n\n*Edited October 9, 2024: clarified that Facets Summary is where the vulnerability is located*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/facets"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.9"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.9"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-047"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Andrea Racco",
+      "contact": [
+        "https://www.drupal.org/user/2950843"
+      ]
+    }
+  ]
+}

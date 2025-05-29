@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2023-027",
+  "modified": "2023-08-01T09:17:46.000Z",
+  "published": "2023-06-29T05:15:03.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables a UI to display all libraries provided by modules and themes on the Drupal site.\n\nThe module doesn't sufficiently protect the libraries reporting page. It curently is using the 'access content' permission and not a proper administrative/access permission.\n\nThe vulnerability/library information can be exploited by simply visiting/knowing the url of the reporting page. The solution is to protect the page via a module specific permission that must be granted by an administrative user.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/libraries_ui"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-027"
+    }
+  ],
+  "credits": [
+    {
+      "name": "J\u00f6rg Riemenschneider",
+      "contact": [
+        "https://www.drupal.org/user/2809357"
+      ]
+    }
+  ]
+}

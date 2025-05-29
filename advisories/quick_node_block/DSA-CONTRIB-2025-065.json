@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-065",
+  "modified": "2025-05-22T05:28:31.000Z",
+  "published": "2025-05-22T05:28:31.000Z",
+  "aliases": [
+    "CVE-2025-48013"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a block to easily display a rendered node.\n\nAccess to the rendered node isn't validated before rendering the block. Allowing access to node content for users that would normally not be allowed to access the node.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/quick_node_block"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-065"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Mitch Portier (arkener)",
+      "contact": [
+        "/u/arkener"
+      ]
+    }
+  ]
+}

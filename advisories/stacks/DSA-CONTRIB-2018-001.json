@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2018-001",
+  "modified": "2023-08-12T09:45:33.000Z",
+  "published": "2018-01-11T06:57:53.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables content editors to create complex pages and layouts on the fly without the help from a developer, using reusable widgets.\n\nThe module does not sufficiently filter values posted to its AJAX endpoint, which leads to the instantiation of an arbitrary PHP class.\n\nThis vulnerability is mitigated by the fact that only sites with the Stacks - Content Feed submodule enabled are affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/stacks"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jean-Fran\u00e7ois Hovinne",
+      "contact": [
+        "https://www.drupal.org/user/77723"
+      ]
+    }
+  ]
+}

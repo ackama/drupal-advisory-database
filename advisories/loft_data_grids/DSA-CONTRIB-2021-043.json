@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2021-043",
+  "modified": "2023-08-12T04:57:04.000Z",
+  "published": "2021-10-14T05:32:09.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables aklump/loft\\_data\\_grids to be used as a Drupal module.\n\nExcel support was provided by <https://packagist.org/packages/phpoffice/phpexcel>, which is abandoned and there are known security vulnerabilities: [CVE-2018-19277]: PHPOffice/PhpSpreadsheet#771. Excel support has since been replaced with the newer <https://github.com/PHPOffice/PhpSpreadsheet> library.\n\nThis module provides an API and This vulnerability is not exploitable in the module itself. This vulnerability only exists if custom code or another module uses the API of this module to read a spreadsheet.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/loft_data_grids"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-043"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lucas Hedding",
+      "contact": [
+        "https://www.drupal.org/user/1463982"
+      ]
+    }
+  ]
+}

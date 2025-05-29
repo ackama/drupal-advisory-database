@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-073",
+  "modified": "2025-02-21T09:08:10.000Z",
+  "published": "2024-12-12T01:36:29.000Z",
+  "aliases": [
+    "CVE-2024-13309"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to prevent existing users from logging in to your Drupal site unless they know the secret key to add to the end of the ?q=user login form page.\n\nThe Login Disable module does not correctly prevent a user with a disabled login from logging in, allowing those users to by-pass the protection offered by the module.\n\nThis vulnerability is mitigated by the fact that an attacker must already have a user account to log in. This bug therefore allows users to log in even if their login is disabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/login_disable"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.0.0 <2.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-073"
+    }
+  ],
+  "credits": [
+    {
+      "name": "e5sego",
+      "contact": [
+        "https://www.drupal.org/user/261590"
+      ]
+    }
+  ]
+}

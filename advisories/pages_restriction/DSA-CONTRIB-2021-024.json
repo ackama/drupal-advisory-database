@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2021-024",
+  "modified": "2023-08-12T04:58:13.000Z",
+  "published": "2021-07-29T04:39:17.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This project enables administrators to restrict access from anonymous and regular users to pre-defined pages.\n\nThe administration routes used by the project lacked proper permissions, allowing untrusted users to access, create and modify the module's settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/pages_restriction"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-024"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Murilo Marchi",
+      "contact": [
+        "https://www.drupal.org/user/3681454"
+      ]
+    }
+  ]
+}

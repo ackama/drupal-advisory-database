@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2020-014",
+  "modified": "2023-08-12T05:55:18.000Z",
+  "published": "2020-05-07T04:52:16.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to build forms and surveys in Drupal.\n\nThe module doesn't sufficiently filter user input under in the scenario when a webform is edited, namely the message related to character min/max counter does not undergo sufficient filtering and thus allows execution of JavaScript code through it.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Edit own webform\" (or \"Edit any webform\").",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/webform"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "5.11.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<5.11.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<5.11.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Krzysztof Doma\u0144ski",
+      "contact": [
+        "https://www.drupal.org/user/3572982"
+      ]
+    }
+  ]
+}

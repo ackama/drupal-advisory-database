@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-052",
+  "modified": "2025-02-21T09:05:19.000Z",
+  "published": "2024-10-24T04:45:47.000Z",
+  "aliases": [
+    "CVE-2024-13288"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to group nodes within pages that have a highly-granular, distributed permissions structure.\n\nIn certain cases the module doesn't sufficiently sanitize data before passing it to PHP's unserialize() function, which can result in arbitrary code execution.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/monster_menus"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "9.3.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<9.3.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.4.0"
+            },
+            {
+              "fixed": "9.4.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.4.0 <9.4.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<9.3.4 || >=9.4.0 <9.4.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-052"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    }
+  ]
+}

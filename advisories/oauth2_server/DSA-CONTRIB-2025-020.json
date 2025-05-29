@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-020",
+  "modified": "2025-04-01T11:06:18.000Z",
+  "published": "2025-02-27T07:35:21.000Z",
+  "aliases": [
+    "CVE-2025-31691"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Provides OAuth2 server functionality based on the oauth2-server-php library.\n\nThe module does not consistently enforce admin configurations allowing users on a disabled server to still authenticate.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/oauth2_server"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-020"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

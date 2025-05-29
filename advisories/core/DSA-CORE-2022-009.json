@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2022-009",
+  "modified": "2022-08-22T06:45:59.000Z",
+  "published": "2022-04-21T03:07:29.000Z",
+  "aliases": [
+    "CVE-2022-25274"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Drupal 9.3 implemented a generic entity access API for entity revisions. However, this API was not completely integrated with existing permissions, resulting in some possible access bypass for users who have access to use revisions of content generally, but who do not have access to individual items of node and media content.\n\nThis vulnerability only affects sites using Drupal's revision system.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.3.0"
+            },
+            {
+              "fixed": "9.3.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 9.3.0 <9.3.12"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 9.3.0 <9.3.12"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2022-009"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kristiaan Van den Eynde",
+      "contact": [
+        "https://www.drupal.org/user/1345130"
+      ]
+    }
+  ]
+}

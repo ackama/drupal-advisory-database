@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-059",
+  "modified": "2025-05-15T06:04:52.000Z",
+  "published": "2025-05-15T06:04:52.000Z",
+  "aliases": [
+    "CVE-2025-4416"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Events Log Track module enables you to log specific events on a Drupal site.\n\nThe module doesn't sufficiently mitigate resource consumption for certain requests which allows a Denial of Service attack.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/events_log_track"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.0.0 <4.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.11 || >=4.0.0 <4.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-059"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Scott Phillips (scottatdrake)",
+      "contact": [
+        "/u/scottatdrake"
+      ]
+    }
+  ]
+}

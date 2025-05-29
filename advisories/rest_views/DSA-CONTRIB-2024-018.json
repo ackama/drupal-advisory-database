@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2024-018",
+  "modified": "2025-02-21T07:44:08.000Z",
+  "published": "2024-04-25T02:23:34.000Z",
+  "aliases": [
+    "CVE-2024-13254"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Rest views module lets site admins create rest exports in views with additional options for serializing data.\n\nThis module does not accurately check access and may expose paths to unpublished content.\n\nThis vulnerability is mitigated by the fact that there must be a specific content structure to expose.\n\nPaths to unpublished entities (such as nodes) will be exposed if those entities are referenced from other entities listed in a REST display, and the reference field on those listed entities is displayed with the \"Entity path\" formatter.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/rest_views"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-018"
+    }
+  ],
+  "credits": [
+    {
+      "name": "nicxvan",
+      "contact": [
+        "https://www.drupal.org/user/531480"
+      ]
+    }
+  ]
+}

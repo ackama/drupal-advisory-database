@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-026",
+  "modified": "2025-04-01T11:07:23.000Z",
+  "published": "2025-03-20T07:53:42.000Z",
+  "aliases": [
+    "CVE-2025-31697"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Formatter Suite provides a suite of field formatters to help present numbers, dates, times, text, links, entity references, files, and images. The module provides a custom formatter for link fields.\n\nDrupal core does not sufficiently sanitize link element attributes, which can lead to a Cross Site Scripting vulnerability (XSS).\n\nA separate fix for Drupal core has been released but this module requires a concurrent release to make use of the Drupal core fix.\n\nThis vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/formatter_suite"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-026"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Daniel Wehner (dawehner)",
+      "contact": [
+        "/u/dawehner"
+      ]
+    },
+    {
+      "name": "Joseph Zhao (pandaski)",
+      "contact": [
+        "/u/pandaski"
+      ]
+    }
+  ]
+}

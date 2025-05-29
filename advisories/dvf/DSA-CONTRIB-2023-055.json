@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2023-055",
+  "modified": "2023-12-21T06:53:15.000Z",
+  "published": "2023-12-21T06:02:51.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module allows you to turn various data sources (Eg CSV or JSON file) into interactive visualisation. The DVF module provides a field (storage, widget & formatter) that can be added to any entity.\n\nThis module uses two third-party JS libraries having from low to medium vulnerabilities. One of the vulnerabilities is a Cross Site Scripting vulnerability that may affect Drupal sites as a Persistent Cross Site Scripting vulnerability (i.e. not reflected). This release updates the libraries.\n\nThe issue is mitigated by the fact an attacker needs the permission to create or edit content that is displayed using the Data Visualization Framework.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/dvf"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "< 2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "< 2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-055"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Joseph Zhao",
+      "contact": [
+        "https://www.drupal.org/user/1987218"
+      ]
+    }
+  ]
+}

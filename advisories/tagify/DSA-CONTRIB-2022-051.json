@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-051",
+  "modified": "2023-08-11T07:25:28.000Z",
+  "published": "2022-07-28T05:07:39.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a widget to transform entity reference fields into a more user-friendly tags input component with a great performance.\n\nThe module doesn't sufficiently check access for the add operation. Users with permission to edit content can view and reference unpublished terms. The edit form may expose term data that users could not otherwise see, since there is no term view route by default.\n\nThis vulnerability is slightly mitigated by the fact that an attacker must have a role with the permission \"access content\", so may not be accessible to anonymous users on all sites.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/tagify"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-051"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    }
+  ]
+}

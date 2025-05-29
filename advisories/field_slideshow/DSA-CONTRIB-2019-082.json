@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2019-082",
+  "modified": "2023-08-12T06:23:20.000Z",
+  "published": "2019-11-14T07:05:45.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to output a field as a slideshow.\n\nThe module doesn't sufficiently filter strings added to the fields leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have the ability to create content which is output as a slideshow.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/field_slideshow"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.83.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.83.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.83.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-082"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Yonatan Offek",
+      "contact": [
+        "https://www.drupal.org/user/194009"
+      ]
+    }
+  ]
+}

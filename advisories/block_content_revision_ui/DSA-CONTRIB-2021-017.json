@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2021-017",
+  "modified": "2023-08-12T05:09:04.000Z",
+  "published": "2021-06-17T04:15:21.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a revision UI to Block Content entities.\n\nThe module doesn't sufficiently respect access restrictions to certain entities when used in conjunction with specific modules.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with any of the permissions provided by Block Content Revision UI, and another affected module must be enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/block_content_revision_ui"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.127.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.127.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.127.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-017"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Strelan",
+      "contact": [
+        "https://www.drupal.org/user/314289"
+      ]
+    }
+  ]
+}

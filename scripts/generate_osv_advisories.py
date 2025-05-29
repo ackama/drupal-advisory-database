@@ -348,7 +348,7 @@ def build_osv_advisory(
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
-    'id': f'OSV-{sa_id}',
+    'id': f'D{sa_id}',
     'modified': datetime.fromtimestamp(int(sa_advisory['changed'])).strftime(
       '%Y-%m-%dT%H:%M:%S.000Z'
     ),
@@ -410,9 +410,7 @@ def generate_osv_advisories() -> None:
     for affected_package in affected_packages:
       name = affected_package.removeprefix('drupal/')
       os.makedirs(f'advisories/{name}', exist_ok=True)
-      # todo: drop the osv- and keep the uppercasing
-      file_name = f'osv-{sa_id.lower()}'
-      with open(f'advisories/{name}/{file_name}.json', 'w') as f:
+      with open(f'advisories/{name}/D{sa_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
 

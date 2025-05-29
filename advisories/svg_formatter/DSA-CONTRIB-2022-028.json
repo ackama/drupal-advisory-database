@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-028",
+  "modified": "2023-08-11T09:39:01.000Z",
+  "published": "2022-03-10T07:28:39.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "SVG Formatter module provides support for using SVG images on your website.\n\nOur dependency library enshrined/svg-sanitize has a cross-site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission that enables them to upload SVG images.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/svg_formatter"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.17.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.17.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "last_affected": "2.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "=2.0.0",
+            "warnings": [
+              "the = operator is not real, and will be treated as an exact version"
+            ]
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.17.0 || =2.0.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-028"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jeroen Tubex",
+      "contact": [
+        "https://www.drupal.org/user/2228934"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2020-019",
+  "modified": "2023-08-12T05:51:24.000Z",
+  "published": "2020-05-14T04:44:40.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The reCaptcha v3 module enables you to protect your forms using the Google reCaptcha V3.\n\nIf the reCaptcha v3 challenge succeeds, all the other form validations are bypassed. This makes it possible for attackers to submit invalid or incomplete forms.\n\nThis vulnerability only affects forms that are protected by reCaptcha v3 and have server side validation steps (e.g required field or custom validation functions).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/recaptcha_v3"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-019"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Martijn Vermeulen",
+      "contact": [
+        "https://www.drupal.org/user/960720"
+      ]
+    },
+    {
+      "name": "arnaudvz",
+      "contact": [
+        "https://www.drupal.org/user/3628871"
+      ]
+    }
+  ]
+}

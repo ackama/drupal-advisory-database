@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-016",
+  "modified": "2023-10-07T08:27:29.000Z",
+  "published": "2022-01-26T07:39:26.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "**Update**  \nMaintainers stepped forward, fixed the security issue, and Vocabulary Permissions Per Role is supported again.\n\nThe module allows adding to/editing terms of/removing terms from vocabularies per role.\n\nThe module did not properly check access for certain operations allowing an unauthorized malicious user to view, modify and delete terms.\n\n**Original advisory**  \nThe security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/vppr"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-016"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Michael Strelan",
+      "contact": [
+        "https://www.drupal.org/user/314289"
+      ]
+    }
+  ]
+}

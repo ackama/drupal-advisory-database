@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-034",
+  "modified": "2025-04-17T04:24:49.000Z",
+  "published": "2025-04-17T04:24:49.000Z",
+  "aliases": [
+    "CVE-2025-3733"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The baguetteBox.js module provides integration with baguetteBox.js library.\n\nThe module doesn't sufficiently sanitize user-supplied text values leading to a cross site scripting vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/baguettebox"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.4"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.4 || >=3.0.0 <3.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-034"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

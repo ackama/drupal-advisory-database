@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-066",
+  "modified": "2025-05-22T05:28:47.000Z",
+  "published": "2025-05-22T05:28:47.000Z",
+  "aliases": [
+    "CVE-2025-48445"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "This module enables you to pay for Commerce order to an environment provided and secured by the bank\n\nThe module doesn't sufficiently verify the payment status on canceled orders. An attacker can issue a specially crafted request to update the order status to completed.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/commerce_eurobank_redirect"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-066"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marios Tsalkidis (silios)",
+      "contact": [
+        "/u/silios"
+      ]
+    }
+  ]
+}

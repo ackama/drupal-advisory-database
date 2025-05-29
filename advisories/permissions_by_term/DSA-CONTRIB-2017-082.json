@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2017-082",
+  "modified": "2023-08-22T01:31:01.000Z",
+  "published": "2017-11-09T06:16:30.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "The Permissions by Term module extends Drupal by adding functionality for restricting access to single nodes via taxonomy terms.\n\nThe module grants access to nodes that are being blocked by other node access modules and that the Permissions by Term module does not intend to control. Additionally, it grants access to unpublished nodes in node listings to users who should not be able to see them. These problems lead to an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that it only occurs on sites that either have another node access module (besides Permissions by Term) in use, or that have node listings that are accessible to unprivileged users and that don't directly filter out unpublished content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/permissions_by_term"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.35.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.35.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.35.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2017-082"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Rothstein",
+      "contact": [
+        "https://www.drupal.org/u/david_rothstein"
+      ]
+    }
+  ]
+}

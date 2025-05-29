@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2019-025",
+  "modified": "2023-08-12T06:57:13.000Z",
+  "published": "2019-02-21T06:56:44.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This resolves issues described in [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for this module. Not all configurations are affected. See [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for details.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/fontawesome"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.12.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.12.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.12.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-025"
+    }
+  ],
+  "credits": []
+}

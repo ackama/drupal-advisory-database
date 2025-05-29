@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2022-019",
+  "modified": "2023-10-25T05:11:02.000Z",
+  "published": "2022-01-26T07:40:00.000Z",
+  "aliases": [],
+  "related": [],
+  "summary": "",
+  "details": "This module provides a stream wrapper for files located in the vendor directory. Even when the vendor directory is moved outside the webroot, it allows providing publically accessible URLs to these files.\n\nThe module exposes all files that are in the vendor directory, without a site owner's knowledge or intention. This could be undesirable behavior, especially since this module is required as a dependency by other modules.\n\n*Edited October 24, 2023 after the project has been re-supported by new maintainers and this advisory metadata affects composer.*\n\n~~The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>~~",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/vendor_stream_wrapper"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-019"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ross Keatinge",
+      "contact": [
+        "https://www.drupal.org/user/7122"
+      ]
+    }
+  ]
+}

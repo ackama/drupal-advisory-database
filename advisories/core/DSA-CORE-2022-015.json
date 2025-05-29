@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2022-015",
+  "modified": "2022-08-22T06:22:56.000Z",
+  "published": "2022-07-21T03:41:37.000Z",
+  "aliases": [
+    "CVE-2022-25276"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "The Media oEmbed iframe route does not properly validate the iframe domain setting, which allows embeds to be displayed in the context of the primary domain. Under certain circumstances, this could lead to cross-site scripting, leaked cookies, or other vulnerabilities.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.3.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <9.3.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.4.0"
+            },
+            {
+              "fixed": "9.4.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 9.4.0 <9.4.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <9.3.19 || >= 9.4.0 <9.4.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2022-015"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CORE-2020-009",
+  "modified": "2022-08-22T07:09:38.000Z",
+  "published": "2020-09-17T04:11:00.000Z",
+  "aliases": [
+    "CVE-2020-13688"
+  ],
+  "related": [],
+  "summary": "",
+  "details": "Drupal 8 and 9 have a reflected cross-site scripting (XSS) vulnerability under certain circumstances.\n\nAn attacker could leverage the way that HTML is rendered for affected forms in order to exploit the vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.8.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 <8.9.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.0.0 <9.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.8.10 || >= 8.9.0 <8.9.6 || >=9.0.0 <9.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-009"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alejandro Garza",
+      "contact": [
+        "https://www.drupal.org/user/153120"
+      ]
+    },
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    },
+    {
+      "name": "Marc Addeo",
+      "contact": [
+        "https://www.drupal.org/user/3312527"
+      ]
+    },
+    {
+      "name": "Nathan Dentzau",
+      "contact": [
+        "https://www.drupal.org/user/3444913"
+      ]
+    },
+    {
+      "name": "Nuno Ramos",
+      "contact": [
+        "https://www.drupal.org/user/3522063"
+      ]
+    },
+    {
+      "name": "markwittens",
+      "contact": [
+        "https://www.drupal.org/user/567198"
+      ]
+    }
+  ]
+}
