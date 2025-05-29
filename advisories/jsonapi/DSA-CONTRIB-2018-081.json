@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:10:49.000Z",
   "published": "2018-12-19T17:53:49.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides a JSON:API specification-compliant HTTP API for accessing and manipulating Drupal content and configuration entities.\n\nThe module doesn't sufficiently check access when responding to certain filtered collection requests, thereby causing an access bypass vulnerability. (This means certain `GET` requests are vulnerable; no `POST`, `PATCH` or `DELETE` requests are vulnerable.)\n\nIn order to fix this issue, two new hooks were added: `hook_jsonapi_ENTITY_TYPE_filter_access()` and `hook_jsonapi_entity_field_filter_access()`. Sites with custom entity types and/or with entity or field access customizations may need to implement these newly introduced hooks.",
   "affected": [
     {

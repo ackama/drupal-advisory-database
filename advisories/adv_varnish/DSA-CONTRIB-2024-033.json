@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13269"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to cache pages for logged in users at the Varnish level.\n\nThe Varnish bin names may be guessable when no hashing noise configuration is set on the module configuration page, which would ultimately allow any user to view cached pages that were intended for other roles when guessing such a bin name.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-23T18:28:35.000Z",
   "published": "2023-08-23T17:06:18.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module aims to prevent broken content references by informing content editors either on delete or archive moderation.\n\nThe module provides an \"orphaned content\" report for broken references, which may reveal titles of unpublished content.",
   "affected": [
     {

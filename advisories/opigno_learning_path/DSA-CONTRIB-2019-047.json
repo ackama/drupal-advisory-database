@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:35:51.000Z",
   "published": "2019-05-15T17:09:57.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "In certain configuration cases, when a learning path is configured as semi-private, anonymous users are allowed to join a learning path when they should not.",
   "affected": [
     {

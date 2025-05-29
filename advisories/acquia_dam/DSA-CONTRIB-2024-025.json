@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13261"
   ],
-  "related": [],
-  "summary": "",
   "details": "Acquia DAM provides a connection to a third-party asset management system, allowing for images to be managed, linked to, and viewed from Drupal. In order for assets to be managed in Drupal, a site administrator must first authenticate the site to their DAM instance.\n\nThe module doesn't sufficiently protect the ability to disconnect a site from DAM. While disconnected sites do not lose asset data in Drupal, it will prevent site editors from accessing the DAM until a site administrator re-authenticates the site. Some uncached media images may also fail to be fetched while disconnected.",
   "affected": [
     {

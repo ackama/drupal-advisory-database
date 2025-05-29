@@ -4,8 +4,6 @@
   "modified": "2022-08-21T19:26:37.000Z",
   "published": "2019-12-18T18:07:15.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Drupal 8 core's `file_save_upload()` function does not strip the leading and trailing dot ('.') from filenames, like Drupal 7 did.\n\nUsers with the ability to upload files with any extension in conjunction with contributed modules may be able to use this to upload system files such as .htaccess in order to bypass protections afforded by Drupal's default .htaccess file.\n\nAfter this fix, `file_save_upload()` now trims leading and trailing dots from filenames.",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3907"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module provides support for creating searches using the Apache Solr search engine and the Search API Drupal module.\n\nThe module doesn't sufficiently protect certain routes from CSRF attacks.\n\nThis vulnerability is mitigated by the fact that a site admin would have to perform further steps after the attack for it to have any effect.",
   "affected": [
     {

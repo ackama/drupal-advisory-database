@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:13:17.000Z",
   "published": "2018-10-31T14:59:17.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to resolve the provided Drupal path in order to find the canonical path and information about the resolved entity. This information includes entity type ID, entity ID, entity UUID and entity label.\n\nThe module doesn't sufficiently check access before displaying entity labels. This leads to the display of labels on entities that are not be accessible, for example; titles of unpublished content.",
   "affected": [
     {

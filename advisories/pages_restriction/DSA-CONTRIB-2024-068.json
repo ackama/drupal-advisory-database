@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13302"
   ],
-  "related": [],
-  "summary": "",
   "details": "Module to restrict access from anonymous and regular users to configured pre-defined pages.\n\nThe module does not adequately handle protecting certain types of URLs.",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3733"
   ],
-  "related": [],
-  "summary": "",
   "details": "The baguetteBox.js module provides integration with baguetteBox.js library.\n\nThe module doesn't sufficiently sanitize user-supplied text values leading to a cross site scripting vulnerability.",
   "affected": [
     {

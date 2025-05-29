@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3059"
   ],
-  "related": [],
-  "summary": "",
   "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: [https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...](https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons)",
   "affected": [
     {

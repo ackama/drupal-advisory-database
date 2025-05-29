@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47710"
   ],
-  "related": [],
-  "summary": "",
   "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module does not sufficiently ensure that known login routes are protected.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain the user's username and password.",
   "affected": [
     {

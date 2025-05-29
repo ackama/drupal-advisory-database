@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:33:31.000Z",
   "published": "2019-08-14T17:14:00.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module improves the Drupal login page with the new features and layout.\n\nThe module doesn't sufficiently filter input text in the administration pages text configuration inputs. For example, the login text field.\n\nThe vulnerability is mitigated by the fact it can only be exploited by a user with the \"Administer super login\" permission.",
   "affected": [
     {

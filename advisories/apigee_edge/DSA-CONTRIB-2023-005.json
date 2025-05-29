@@ -4,8 +4,6 @@
   "modified": "2023-08-10T14:23:38.000Z",
   "published": "2023-02-01T16:13:42.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Apigee Edge module allows connecting a Drupal site to Apigee X / Edge in order to build a developer portal.\n\nPrevious module versions did not support entity query level access checking, which could have led to information disclosure or access bypass in various places.",
   "affected": [
     {

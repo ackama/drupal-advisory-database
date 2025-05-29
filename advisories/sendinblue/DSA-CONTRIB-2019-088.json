@@ -4,8 +4,6 @@
   "modified": "2023-10-02T19:48:10.000Z",
   "published": "2019-11-13T18:09:57.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "**Update:** This module had an access bypass vulnerability which has now been addressed by the module\u2019s current maintainers.\n\n### Original description\n\nThe security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
   "affected": [
     {

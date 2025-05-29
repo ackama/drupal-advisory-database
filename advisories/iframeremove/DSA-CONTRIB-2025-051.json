@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47705"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to add a filter to text formats (Full HTML, Filtered HTML), which will remove every iframe where the \"src\" is not on the allowlist.\n\nThe module doesn't sufficiently filter these iframes in certain situations.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to edit content that allows iframes.",
   "affected": [
     {

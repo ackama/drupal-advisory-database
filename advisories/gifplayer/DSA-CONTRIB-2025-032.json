@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31128"
   ],
-  "related": [],
-  "summary": "",
   "details": "Gif Player Field creates a simple file field types that allows you to upload the GIF files and configure the output for this using the Field Formatters.\n\nThe module uses [GifPlayer jQuery library](https://github.com/rubentd/gifplayer) to render the GIF according to configured setups for the Field Formatter. The external Gif Player Library doesn't satinize the attributes properly when rendering the widget, allowing a malicious user to run XSS attacks.\n\nThis vulnerability is mitigated by the fact that an attacker would need to have an account on the website and be able to create an image tag with a data-label element. There are no fields that allow that element on a default Drupal site for a user with user-level permissions.",
   "affected": [
     {

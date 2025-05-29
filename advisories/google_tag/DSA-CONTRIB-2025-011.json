@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31682"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to integrate the site with the Google Tag Manager (GTM) application.\n\nThe module doesn't have the \"restrict access\" flag on the \"administer google\\_tag\\_container\" permission. A user with this permission can load a GTM container that completely changes the page or inserts malicious JS, resulting in a cross site scripting vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the aforementioned permission.",
   "affected": [
     {

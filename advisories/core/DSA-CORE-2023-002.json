@@ -4,8 +4,6 @@
   "modified": "2024-11-22T08:03:01.000Z",
   "published": "2023-03-15T16:21:27.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Media module does not properly check entity access in some circumstances. This may result in users seeing thumbnails of media items they do not have access to, including for private files.\n\nThis release was coordinated with [SA-CONTRIB-2023-010](https://www.drupal.org/sa-contrib-2023-010).\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {

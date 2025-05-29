@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2019-6339"
   ],
-  "related": [],
-  "summary": "",
   "details": "A remote code execution vulnerability exists in PHP's built-in phar stream wrapper when performing file operations on an untrusted phar:// URI.\n\nSome Drupal code (core, contrib, and custom) may be performing file operations on insufficiently validated user input, thereby being exposed to this vulnerability.\n\nThis vulnerability is mitigated by the fact that such code paths typically require access to an administrative permission or an atypical configuration.",
   "affected": [
     {

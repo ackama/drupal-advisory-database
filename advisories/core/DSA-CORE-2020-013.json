@@ -7,8 +7,6 @@
     "CVE-2020-28949",
     "CVE-2020-28948"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Drupal project uses the PEAR Archive\\_Tar library. The PEAR Archive\\_Tar library has released a security update that impacts Drupal. For more information please see:\n\n* [CVE-2020-28948](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28948)\n* [CVE-2020-28949](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28949)\n\nMultiple vulnerabilities are possible if Drupal is configured to allow `.tar`, `.tar.gz`, `.bz2`, or `.tlz` file uploads and processes them.\n\n**To mitigate this issue, prevent untrusted users from uploading `.tar`, `.tar.gz`, `.bz2`, or `.tlz` files.**\n\nThis is a different issue than [SA-CORE-2019-012](https://www.drupal.org/sa-core-2019-012). Similar configuration changes may mitigate the problem until you are able to patch.",
   "affected": [
     {

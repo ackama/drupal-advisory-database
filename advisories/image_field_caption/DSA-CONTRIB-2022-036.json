@@ -4,8 +4,6 @@
   "modified": "2023-08-10T21:43:53.000Z",
   "published": "2022-05-04T16:11:07.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Image Field Caption (`image_field_caption`) adds an extra text area for captions on image fields.\n\nThe module doesn't sanitize user input in certain cases, which leads to a Cross-Site-Scripting (XSS) vulnerability.\n\nThe vulnerability is mitigated by several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-55634"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.\n\nAs a result, a user may be able to register with the same email address as another user.\n\nThis may lead to data integrity issues.",
   "affected": [
     {

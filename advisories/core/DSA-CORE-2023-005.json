@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2023-31250"
   ],
-  "related": [],
-  "summary": "",
   "details": "The file download facility doesn't sufficiently sanitize file paths in certain situations. This may result in users gaining access to private files that they should not have access to.\n\nSome sites may require configuration changes following this security release. Review the release notes for your Drupal version if you have issues accessing private files after updating.\n\nThis advisory **is** covered by [Drupal Steward](/steward). Because this vulnerability is not mass exploitable, your Steward partner may respond by monitoring-only, rather than enforcing a new WAF rule.\n\nWe would normally not apply for a release of this severity. However, in this case we have chosen to apply Drupal Steward security coverage to test our processes.\n\n#### Drupal 7\n\n* All Drupal 7 sites on Windows web servers are vulnerable.\n* Drupal 7 sites on Linux web servers are vulnerable with certain file directory structures, or if a vulnerable contributed or custom file access module is installed.\n\n#### Drupal 9 and 10\n\nDrupal 9 and 10 sites are only vulnerable if certain contributed or custom file access modules are installed.",
   "affected": [
     {

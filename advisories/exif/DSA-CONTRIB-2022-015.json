@@ -4,8 +4,6 @@
   "modified": "2023-08-11T14:02:31.000Z",
   "published": "2022-01-25T18:39:13.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to automatically scan images uploaded to the site to extract their meta data and store it in taxonomy structures.\n\nThe module doesn't sufficiently protect against malicious files being used to attack the site.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to upload images to the site.",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48010"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to allow users to include a second authentication method in addition to password authentication.\n\nThe module doesn't sufficiently prevent one time login links from bypassing TFA.\n\nThis vulnerability is mitigated by the fact that an attacker must have access to an email account attached to a user or a valid one time password link for a user.",
   "affected": [
     {

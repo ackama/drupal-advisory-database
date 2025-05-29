@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13667"
   ],
-  "related": [],
-  "summary": "",
   "details": "The experimental Workspaces module allows you to create multiple workspaces on your site in which draft content can be edited before being published to the live workspace.\n\nThe Workspaces module doesn't sufficiently check access permissions when switching workspaces, leading to an access bypass vulnerability. An attacker might be able to see content before the site owner intends people to see the content.\n\nThis vulnerability is mitigated by the fact that sites are only vulnerable if they have installed the experimental Workspaces module.",
   "affected": [
     {

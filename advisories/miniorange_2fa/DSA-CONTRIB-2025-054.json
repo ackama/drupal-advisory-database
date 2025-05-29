@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47708"
   ],
-  "related": [],
-  "summary": "",
   "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module doesn't sufficiently protect certain routes from Cross Site Request Forgery (CSRF) attacks.",
   "affected": [
     {

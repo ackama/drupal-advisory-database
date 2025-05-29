@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31684"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables a developer to create dedicated OAuth2 clients for connecting to external APIs and other OAuth protected resources.\n\nThe module does not use Cross Site Request Forgery (CSRF) tokens to protect routes for enabling a client.\n\nThis vulnerability is mitigated by the fact that an attacker must know the machine name of the client and deceive another user with this permission.",
   "affected": [
     {

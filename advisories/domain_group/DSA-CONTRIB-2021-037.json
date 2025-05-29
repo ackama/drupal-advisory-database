@@ -4,8 +4,6 @@
   "modified": "2023-08-11T16:54:22.000Z",
   "published": "2021-09-22T17:17:05.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables sites to define a domain from Domain Access that points directly to a group page.\n\nThe module doesn't sufficiently manage the access to content administrative paths allowing an attacker to see and take actions on content (nodes) they should be allowed to.",
   "affected": [
     {

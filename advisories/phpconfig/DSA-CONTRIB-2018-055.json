@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:24:54.000Z",
   "published": "2018-08-08T17:14:32.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to add or overwrite PHP configuration on a drupal website.\n\nThe module doesn't sufficiently allow access to set these configurations, leading to arbitrary PHP configuration execution by an attacker.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer phpconfig\".\n\nAfter updating the module, it's important to review the permissions of your website and if 'administer phpconfig' permission is given to a not fully trusted user role, we advise to revoke it.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:39:41.000Z",
   "published": "2019-07-10T16:30:00.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to add and manage additional custom permissions through the administration UI.\n\nThe module doesn't sufficiently check for the proper access permissions to this page.\n\nThis vulnerability is mitigated by the fact that an attacker must know the route of the Custom Permissions administration form though this is easily known.",
   "affected": [
     {

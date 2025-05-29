@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13304"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Minify JS module allows a site administrator to minify all javascript files that exist in the site's code base and use those minified files on the front end of the website.\n\nSeveral administrator routes are unprotected against Cross-Site Request Forgery (CRSF) attacks.",
   "affected": [
     {

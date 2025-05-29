@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:33:56.000Z",
   "published": "2019-08-14T17:26:13.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The External Link Filter module provides an input filter that replaces external links by a local link that redirects to the target URL.\n\nThe module did not have protection for the Redirect URL to go where content authors intended.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:34:31.000Z",
   "published": "2019-08-21T14:52:51.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module that allows you to store external images on your server and apply your own Image Styles.\n\nThe module exposes cookies to external sites when making external image requests.\n\nThis vulnerability is mitigated by using the whitelisted host feature to restrict external image requests from trusted sources.",
   "affected": [
     {

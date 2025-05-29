@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48013"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module provides a block to easily display a rendered node.\n\nAccess to the rendered node isn't validated before rendering the block. Allowing access to node content for users that would normally not be allowed to access the node.",
   "affected": [
     {

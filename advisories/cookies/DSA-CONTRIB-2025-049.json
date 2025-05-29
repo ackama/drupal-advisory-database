@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47703"
   ],
-  "related": [],
-  "summary": "",
   "details": "The COOKIES module protects users from executing JavaScript code provided by third parties, e.g., to display ads or track user data without consent.\n\nThe cookies\\_asset\\_injector module (a sub-module of the COOKiES module) also allows inline JavaScript to be included in consent management. However, this does not adequately check whether the provided JavaScript code originates from authorized users.\n\nA potential attacker would at least need permission to create and publish HTML (e.g. content or comments).",
   "affected": [
     {

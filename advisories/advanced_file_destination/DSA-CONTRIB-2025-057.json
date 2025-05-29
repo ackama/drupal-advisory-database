@@ -4,8 +4,6 @@
   "modified": "2025-05-14T19:39:43.000Z",
   "published": "2025-05-14T18:04:31.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Advanced File Destination module enhances file upload management in Drupal by allowing users to choose and create custom directories during file uploads.\n\nThe module has multiple vulnerabilities that were reported through the Drupal Security Team's coordinated vulnerability process. The project maintainer did not follow the terms and conditions for hosting projects on drupal.org that are opted into security coverage, so the module is losing its security coverage. The private issues may be made public at the discretion of the reporter and maintainer.",
   "affected": [
     {

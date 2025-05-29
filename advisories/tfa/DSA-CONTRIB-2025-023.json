@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31694"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to allow and/or require users to use a second authentication method in addition to password authentication.\n\nThe module does not sufficiently ensure that known login routes are not overridden by third-party modules which can allow an access bypass to occur.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain a first-factor login credential.",
   "affected": [
     {

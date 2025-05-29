@@ -4,8 +4,6 @@
   "modified": "2023-08-10T14:20:35.000Z",
   "published": "2023-03-15T17:22:57.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Media Responsive Thumbnail module allows media reference fields to be rendered as a responsive image.\n\nThis module does not properly check entity access prior to rendering media. This may result in users seeing thumbnails of media items they do not have access to.\n\nThis release was coordinated with [SA-CORE-2023-002](https://www.drupal.org/sa-core-2023-002).",
   "affected": [
     {

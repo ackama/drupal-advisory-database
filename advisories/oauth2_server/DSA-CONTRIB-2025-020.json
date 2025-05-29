@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31691"
   ],
-  "related": [],
-  "summary": "",
   "details": "Provides OAuth2 server functionality based on the oauth2-server-php library.\n\nThe module does not consistently enforce admin configurations allowing users on a disabled server to still authenticate.",
   "affected": [
     {

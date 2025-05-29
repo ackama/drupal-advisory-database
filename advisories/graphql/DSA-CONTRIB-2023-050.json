@@ -4,8 +4,6 @@
   "modified": "2023-11-08T17:10:18.000Z",
   "published": "2023-11-08T15:30:45.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module lets you craft and expose a GraphQL schema for Drupal 9 and 10.\n\nThe module currently does not adequately verify whether a given user has the necessary permissions to access an entity's label creating an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that entity view and entity label access are usually handled by the same access check; developers have to opt-in for supporting different logic on entity types. Additionally your schema must make use of the EntityLabel DataProducer to be affected.",
   "affected": [
     {

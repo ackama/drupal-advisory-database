@@ -4,8 +4,6 @@
   "modified": "2023-08-11T16:55:33.000Z",
   "published": "2021-09-22T17:26:04.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nIt does not sufficiently sanitize user input such that an admin with permissions to edit a menu may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to administer mega menus and/or create or edit menu links, to inject the XSS.",
   "affected": [
     {

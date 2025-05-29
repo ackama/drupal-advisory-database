@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13259"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to create responsive image styles that depend on the parent element's width.\n\nThe module doesn't sufficiently check access to rendered images, resulting in access bypass vulnerabilities in specific scenarios.",
   "affected": [
     {

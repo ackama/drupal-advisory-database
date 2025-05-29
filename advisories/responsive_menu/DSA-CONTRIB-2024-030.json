@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13266"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module integrates the mmenu library with Drupal's menu system with the aim of having an off-canvas mobile menu and a horizontal menu at wider widths.\n\nThe module doesn't respect custom node access restrictions implemented through hook\\_ENTITY\\_TYPE\\_access hooks meaning the titles of restricted nodes can appear in the menu.\n\nOnly sites with modules that implement hook\\_ENTITY\\_TYPE\\_access to restrict access to nodes are effected.",
   "affected": [
     {

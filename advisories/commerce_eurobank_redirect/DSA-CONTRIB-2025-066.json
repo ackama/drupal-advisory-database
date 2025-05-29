@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48445"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to pay for Commerce order to an environment provided and secured by the bank\n\nThe module doesn't sufficiently verify the payment status on canceled orders. An attacker can issue a specially crafted request to update the order status to completed.",
   "affected": [
     {

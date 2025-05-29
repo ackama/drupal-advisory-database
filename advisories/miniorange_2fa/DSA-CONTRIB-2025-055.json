@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47709"
   ],
-  "related": [],
-  "summary": "",
   "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module doesn't sufficiently protect certain sensitive routes, allowing an attacker to view or modify various TFA-related settings.",
   "affected": [
     {

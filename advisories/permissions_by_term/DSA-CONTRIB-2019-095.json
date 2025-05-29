@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:15:27.000Z",
   "published": "2019-12-11T18:59:46.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Permissions by Term module extends Drupal by functionality for restricting access to single nodes via taxonomy terms.\n\nThe module doesn't sufficiently restrict access to node previews, when the Search API module is used to display nodes in search result lists.",
   "affected": [
     {

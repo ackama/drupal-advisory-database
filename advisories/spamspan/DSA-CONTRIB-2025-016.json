@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31687"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables your site to obfuscate Email addresses and prevent spambots to collect them.\n\nThe module doesn't sanitize HTML data attributes when an email address link is transformed to separate span HTML elements and then transformed back by JavaScript leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis is mitigated by the fact an attacker must be able to insert span HTML elements with data attributes in the page.",
   "affected": [
     {

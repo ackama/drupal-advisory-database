@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47706"
   ],
-  "related": [],
-  "summary": "",
   "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module doesn't sufficiently check whether the TOTP token is already used or not for authenticator-based second-factor methods.\n\nThis vulnerability is mitigated by the fact that an attacker must have a username, password and TOTP token generated within the last 5 minutes.",
   "affected": [
     {

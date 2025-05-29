@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3057"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal core doesn't sufficiently filter error messages under certain circumstances, leading to a reflected Cross Site Scripting vulnerability (XSS).\n\nSites are encouraged to update. There are not yet public documented steps to exploit this, but there may be soon given the nature of this issue.\n\nThis issue is being protected by [Drupal Steward](https://www.drupal.org/steward). Sites that use Drupal Steward are already protected, but are still encouraged to upgrade in the near future.",
   "affected": [
     {

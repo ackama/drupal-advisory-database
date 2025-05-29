@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2018-7600"
   ],
-  "related": [],
-  "summary": "",
   "details": "A remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x. This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being completely compromised.\n\nThe security team has written an  [FAQ](https://groups.drupal.org/security/faq-2018-002) about this issue.\n\n*Edited 2020, February 13 to fix links to patch files.*",
   "affected": [
     {

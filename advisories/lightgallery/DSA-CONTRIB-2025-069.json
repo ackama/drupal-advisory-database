@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48447"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module integrates Drupal with LightGallery, enabling the use of the LightGallery library with any image field or view.\n\nThe module does not adequately sanitize user input in the image field\u2019s \"alt\" attribute, potentially allowing cross-site scripting (XSS) attacks when tags or scripts are inserted.\n\nThis vulnerability is partially mitigated by the requirement that an attacker must have permission to create content containing an image field configured to use the LightGallery format.",
   "affected": [
     {

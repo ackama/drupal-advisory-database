@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13298"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module integrates Tarte au citron JS library with Drupal and prevent services to be loaded without user consent. Administrators can enable and configure services which will be managed by Tarte au citron.\n\nWhen Google Tag Manager (GTM) service is enabled, an attacker can load a GTM container that can completely change the page or insert malicious JS.\n\nThis vulnerability is mitigated by the fact that the attacker must have a role with the permission \"administer tarte au citron\".",
   "affected": [
     {

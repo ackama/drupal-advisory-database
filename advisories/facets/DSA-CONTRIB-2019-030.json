@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:48:35.000Z",
   "published": "2019-02-27T17:28:36.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to create facet-filters for results of a search query and exposes them as blocks\n\nThe module doesn't sufficiently escape HTML under the scenario leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by two factors. First, an attacker must have a way to insert results in the dataset that is exposed as a facet before this can happen. The permission to inject malicious strings depends on the site's search configuration but could be available to any user who can create content in a site. Second, the site must be using the Javascript-based dropdown widget.",
   "affected": [
     {

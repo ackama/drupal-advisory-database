@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:38:26.000Z",
   "published": "2018-04-25T17:37:20.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to monitor and manage any number of remote Drupal sites and aggregate useful information for administrators in a central dashboard.\n\nThe modules (DRD and DRD Agent) encrypt the data which is exchanged between them but in order to do so, they use the PHP serialize/unserialize functions instead of the json\\_encode/json\\_decode combination. As the unserialize function is called on unauthenticated content, this introduces a PHP object injection vulnerability.",
   "affected": [
     {

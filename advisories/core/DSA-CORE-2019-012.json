@@ -4,8 +4,6 @@
   "modified": "2022-08-21T19:20:53.000Z",
   "published": "2019-12-18T18:30:18.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Drupal project uses the third-party library [Archive\\_Tar](https://pear.php.net/package/Archive_Tar/), which has released a security improvement that is needed to protect some Drupal configurations.\n\nMultiple vulnerabilities are possible if Drupal is configured to allow `.tar`, `.tar.gz`, `.bz2` or `.tlz` file uploads and processes them.\n\nThe latest versions of Drupal update `Archive_Tar` to 1.4.9 to mitigate the file processing vulnerabilities.\n\n*Edited to clarify the nature of the upstream release.*",
   "affected": [
     {

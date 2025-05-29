@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-47701"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Restrict route by IP module provides an interface to manage route restriction by IP address.\n\nThe module doesn't sufficiently protect certain routes from CSRF attacks.\n\nThis vulnerability is mitigated by the fact that you need to know the route machine name.",
   "affected": [
     {

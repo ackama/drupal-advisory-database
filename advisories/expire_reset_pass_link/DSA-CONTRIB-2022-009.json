@@ -4,8 +4,6 @@
   "modified": "2023-08-11T14:02:59.000Z",
   "published": "2022-01-25T18:36:37.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
   "affected": [
     {

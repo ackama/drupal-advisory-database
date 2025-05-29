@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13258"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal REST & JSON API Authentication module restricts and secures unauthorized access to your Drupal site APIs using different authentication methods including Basic Authentication , API Key Authentication , JWT Authentication , OAuth Authentication , External / Third-Party Provider Authentication, etc.\n\nThe module doesn't sufficiently control user access when using Basic Authentication.",
   "affected": [
     {

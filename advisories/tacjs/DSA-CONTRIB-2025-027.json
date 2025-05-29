@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31476"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to a persistent Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to insert specific data attributes in the page.",
   "affected": [
     {

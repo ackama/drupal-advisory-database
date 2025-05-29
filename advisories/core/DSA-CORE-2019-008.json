@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2019-6342"
   ],
-  "related": [],
-  "summary": "",
   "details": "In Drupal 8.7.4, when the [experimental](https://www.drupal.org/core/experimental#beta) Workspaces module is enabled, an access bypass condition is created.\n\nThis can be mitigated by disabling the Workspaces module. It does not affect any release other than Drupal 8.7.4.\n\nDrupal 8.7.3 and earlier, Drupal 8.6.x and earlier, and Drupal 7.x are **not** affected.",
   "affected": [
     {
