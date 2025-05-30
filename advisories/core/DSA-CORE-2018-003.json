@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2018-9861"
   ],
-  "related": [],
-  "summary": "",
   "details": "CKEditor, a third-party JavaScript library included in Drupal core, has [fixed a cross-site scripting (XSS) vulnerability](https://ckeditor.com/blog/CKEditor-4.9.2-with-a-security-patch-released/). The vulnerability stemmed from the fact that it was possible to execute XSS inside CKEditor when using the `image2` plugin (which Drupal 8 core also uses).\n\nWe would like to thank the CKEditor team for patching the vulnerability and coordinating the fix and release process, and matching the Drupal core security window.",
   "affected": [
     {

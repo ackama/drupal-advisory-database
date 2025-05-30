@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13245"
   ],
-  "related": [],
-  "summary": "",
   "details": "The CKEditor 4 LTS - WYSIWYG HTML editor module uses the CKEditor library for WYSIWYG editing. CKEditor has released a [security update](https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS) that on certain configurations may impact the Drupal module that bundles and integrates this code.\n\nThe vulnerability is mitigated by the fact it requires:\n\n1. [full-page editing](https://ckeditor.com/docs/ckeditor4/latest/features/fullpage.html) mode is enabled\n2. or CDATA elements in Advanced Content Filtering configuration (defaults to script and style elements) are enabled.\n3. An attacker must have a permission with access to the CKEditor instance.\n\nFor more information, see CKEditor's security advisory:  \n[CVE-2024-24815](https://github.com/ckeditor/ckeditor4/security/advisories/GHSA-fq6h-4g8v-qqvm): Cross-site scripting (XSS) vulnerability caused by incorrect CDATA detection",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:34:14.000Z",
   "published": "2019-08-14T17:33:20.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Forms Steps provides an UI to create form workflows using form modes. It creates quick and configurable multisteps forms.\n\nThe module doesn't sufficiently check user permissions to access its workflows entities that allows to see any entities that have been created through the different steps of its multistep forms.\n\nThis vulnerability is mitigated by the fact that you have to know the Forms Steps URL to create a content linked to the flow. Also, all created content is very hard to edit through the same flow as you have to know the URL and the linked hash to the content.",
   "affected": [
     {

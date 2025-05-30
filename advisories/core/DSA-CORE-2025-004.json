@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31675"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal core Link field attributes are not sufficiently sanitized, which can lead to a Cross Site Scripting vulnerability (XSS).\n\nThis vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.\n\nSites with the Link module disabled or that do not use any link fields are not affected.",
   "affected": [
     {

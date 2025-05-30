@@ -4,8 +4,6 @@
   "modified": "2022-08-21T19:25:28.000Z",
   "published": "2019-12-18T18:16:54.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Media Library module has a security vulnerability whereby it doesn't sufficiently restrict access to media items in certain configurations.",
   "affected": [
     {

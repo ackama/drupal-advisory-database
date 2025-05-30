@@ -4,8 +4,6 @@
   "modified": "2023-08-10T21:00:44.000Z",
   "published": "2022-05-04T16:26:47.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The module adds a \"Clone\" tab to a node. When clicked, a new node is created and fields from the previous node are populated into the new fields. This module supports paragraphs, groups, and other referenced entities.\n\nThe module has a vulnerability which allows attackers to bypass the protection to clone any group content with an access check. Users are allowed to copy other group's nodes, and if they do that, the node gets added to groups they don't have access to.\n\nThis vulnerability is mitigated by the fact it only affects sites that also use the Groups contributed module.",
   "affected": [
     {

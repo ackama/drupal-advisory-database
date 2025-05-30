@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-4415"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to add the Piwik Pro web statistics tracking system to your website.\n\nThe module does not check the JS code that is loaded on the website. So a user with the \"Administer Piwik Pro\" permission could configure the module to load JS from a malicious website.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer piwik pro\" to access the settings form where this can be configured.",
   "affected": [
     {

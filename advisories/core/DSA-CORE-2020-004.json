@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13663"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Drupal core Form API does not properly handle certain form input from cross-site requests, which can lead to other vulnerabilities.",
   "affected": [
     {

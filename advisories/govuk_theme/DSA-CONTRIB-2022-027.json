@@ -4,8 +4,6 @@
   "modified": "2023-08-10T21:37:54.000Z",
   "published": "2022-02-23T17:18:07.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The GOV.UK Theme (`govuk_theme`) is a Drupal theme for the GOV.UK Design System.\n\nThe theme doesn't sanitize user input in certain cases, which leads to Cross-Site-Scripting (XSS) vulnerabilities. An attacker that can create or edit certain entities or configuration may be able to exploit one or more Cross-Site-Scripting (XSS) vulnerabilities to target visitors of the site, including site admins with privileged access.\n\nThe vulnerability is mitigated by the facts, that:\n\n* An attacker must have one of several permissions, of which at least some are commonly only assigned to either editors, site builders or administrators.\n* For some of the vulnerabilities, certain contributed modules must be enabled.",
   "affected": [
     {

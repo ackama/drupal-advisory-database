@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13664"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal 8 and 9 have a remote code execution vulnerability under certain circumstances.\n\nAn attacker could trick an administrator into visiting a malicious site that could result in creating a carefully named directory on the file system. With this directory in place, an attacker could attempt to brute force a remote code execution vulnerability.\n\nWindows servers are most likely to be affected.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:01:50.000Z",
   "published": "2020-04-15T15:45:46.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides a JSON API standards-compliant API for accessing and  \nmanipulating Drupal content and configuration entities.\n\nThe security team and module maintainers are marking this project unsupported. Both the `8.x-1.x` and `8.x-2.x` versions are unsupported, and users of either version are strongly encouraged to upgrade to a supported version of Drupal core, which includes a supported version of JSON:API.\n\nThe eventual removal of security coverage for the JSON:API contributed module was [announced with the release of JSON:API 8.x-1.22](https://www.drupal.org/project/jsonapi/releases/8.x-1.22) on 28 June 2018.\n\nAdditionally, there is a known security issue with the 8.x-1.x branch of the project that will not be fixed by the maintainers. That issue is not present in the 8.x-2.x branch of the project, nor is it present in Drupal core.",
   "affected": [
     {

@@ -7,8 +7,6 @@
     "CVE-2022-24728",
     "CVE-2022-24729"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Drupal project uses the [CKEditor](https://github.com/ckeditor/ckeditor4) library for WYSIWYG editing. CKEditor has released [a security update that impacts Drupal](https://ckeditor.com/blog/ckeditor-4.18.0-browser-bugfix-and-security-patches/).\n\nVulnerabilities are possible if Drupal is configured to allow use of the CKEditor library for WYSIWYG editing. An attacker that can create or edit content (even without access to CKEditor themselves) may be able to exploit one or more Cross-Site Scripting (XSS) vulnerabilities to target users with access to the WYSIWYG CKEditor, including site admins with privileged access.\n\nFor more information, see CKEditor's security advisories:\n\n* [CVE-2022-24728: HTML processing vulnerability allowing to execute JavaScript code](https://github.com/ckeditor/ckeditor4/security/advisories/GHSA-4fc4-4p5g-6w89)\n* [CVE-2022-24729: Regular expression Denial of Service in dialog plugin](https://github.com/ckeditor/ckeditor4/security/advisories/GHSA-f6rf-9m92-x2hh)\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {

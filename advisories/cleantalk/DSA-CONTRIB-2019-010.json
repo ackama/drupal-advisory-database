@@ -4,8 +4,6 @@
   "modified": "2023-08-11T19:00:18.000Z",
   "published": "2019-01-23T18:22:41.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Anti-spam module by CleanTalk to protect your Drupal sites from spambot registration and spam comments publications thru comment and contact forms.\n\nThis module does not sufficiently filter submitted content in certain circumstances.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-10T13:56:55.000Z",
   "published": "2023-05-31T13:22:44.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides social media share & follow buttons.\n\nThe module doesn't sufficiently restrict AddToAny block settings to users who have permission to administer AddToAny. This allows users with lower permission to configure malicious code leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31673"
   ],
-  "related": [],
-  "summary": "",
   "details": "Bulk operations allow authorized users to modify several nodes at once from the Content page (`/admin/content`). A site builder can also add bulk operations to other pages using Views.\n\nA bug in the core Actions system allows some users to modify some fields using bulk actions that they do not have permission to modify on individual nodes.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to access `/admin/content` or other, custom views and to edit nodes.\n\nIn particular, the bulk operations\n\n* Make content sticky\n* Make content unsticky\n* Promote content to front page\n* Publish content\n* Remove content from front page\n* Unpublish content\n\nnow require the \"Administer content\" permission.",
   "affected": [
     {

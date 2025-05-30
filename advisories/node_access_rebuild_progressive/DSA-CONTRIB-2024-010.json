@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13246"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module provides an alternative mean of rebuilding the Content Access table.\n\nThe module doesn't sufficiently reset the state of content access when the module is uninstalled.",
   "affected": [
     {

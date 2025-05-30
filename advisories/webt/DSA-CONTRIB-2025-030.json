@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3475"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to translate nodes, configuration, UI strings automatically.\n\nThe module doesn't sufficiently validate the incoming API response when using eTranslation integration, which has an asynchronous workflow. Specially crafted requests could overwrite entities and translations of entities with arbitrary content and create load on the system leading to a Denial of Service.",
   "affected": [
     {

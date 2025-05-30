@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13671"
   ],
-  "related": [],
-  "summary": "",
   "details": "*Update November 18: Documented longer list of dangerous file extensions*\n\nDrupal core does not properly sanitize certain filenames on uploaded files, which can lead to files being interpreted as the incorrect extension and served as the wrong MIME type or executed as PHP for certain hosting configurations.",
   "affected": [
     {

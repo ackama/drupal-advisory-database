@@ -4,8 +4,6 @@
   "modified": "2023-08-11T17:03:36.000Z",
   "published": "2021-09-22T16:43:17.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to create an individual hash for each user. These hashes can be used for authentication instead of the user's password, e.g. for views exporters.\n\nThe module doesn't sufficiently invalidate page output when the page\\_cache module is used.\n\nThis vulnerability is mitigated by the fact that an attacker must have a user hash that grants access to specific content and the attack must be timed to the reset of the page cache.",
   "affected": [
     {

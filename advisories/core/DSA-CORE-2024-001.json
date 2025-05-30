@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-11941"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Comment module allows users to reply to comments. In certain cases, an attacker could make comment reply requests that would trigger a denial of service (DOS).\n\nSites that do not use the Comment module are not affected.",
   "affected": [
     {

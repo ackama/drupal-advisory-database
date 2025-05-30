@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-55635"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal 7 core's Overlay module doesn't safely handle user input, leading to reflected cross-site scripting under certain circumstances.\n\nOnly sites with the Overlay module enabled are affected by this vulnerability.",
   "affected": [
     {

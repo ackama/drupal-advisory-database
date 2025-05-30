@@ -4,8 +4,6 @@
   "modified": "2023-08-11T19:25:48.000Z",
   "published": "2019-01-23T17:01:58.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Preview Link module enables you to generate preview links so anonymous users can access unpublished revisions of content.  \nThe last release of the module introduced an access bypass allowing users to present invalid tokens but still access unpublished content.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-07-26T20:00:09.000Z",
   "published": "2023-07-26T19:19:38.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Carefully crafted input by an attacker will not be sanitized by this module, which can result in a script injection.",
   "affected": [
     {

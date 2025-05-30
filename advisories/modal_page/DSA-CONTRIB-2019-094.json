@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:15:45.000Z",
   "published": "2019-12-11T18:38:32.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This project enables administrators to create modal dialogs.\n\nThe routes used by the module lacked proper permissions, allowing untrusted users to access, create and modify modal configurations.",
   "affected": [
     {

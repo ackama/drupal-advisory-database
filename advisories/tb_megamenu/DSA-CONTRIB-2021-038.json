@@ -4,8 +4,6 @@
   "modified": "2023-08-11T16:54:48.000Z",
   "published": "2021-09-22T17:25:50.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nThe module does not sanitize values for CSS properties that are added by admins and rendered on the front-end, allowing attackers to inject malicious code into the front-end markup.\n\nThis vulnerability is mitigated by the fact that it can only be exploited by an attacker with permissions to administer TB Mega Menu, or a sophisticated anonymous user using a site-specific attack that exploits the Cross Site Request Forgery vulnerability that is fixed by this same release.",
   "affected": [
     {

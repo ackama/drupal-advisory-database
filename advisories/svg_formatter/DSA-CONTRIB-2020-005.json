@@ -4,8 +4,6 @@
   "modified": "2023-08-11T17:59:40.000Z",
   "published": "2020-03-04T17:06:57.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "SVG Formatter module provides support for using SVG images on your website.\n\nThis security release fixes third-party dependencies included in or required by SVG Formatter. [XSS bypass using entities and tab](https://github.com/darylldoyle/svg-sanitizer/issues/31).\n\nThis vulnerability is mitigated by the fact that an attacker must be able to upload SVG files.",
   "affected": [
     {

@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2022-29248"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal uses the third-party Guzzle library for handling HTTP requests and responses to external services. [Guzzle has released a security update](https://github.com/guzzle/guzzle/security/advisories/GHSA-cwmx-hcrq-mhc3) which does not affect Drupal core, but may affect some contributed projects or custom code on Drupal sites.\n\nWe are issuing this security advisory outside our regular [Drupal security release window schedule](https://www.drupal.org/node/1173280) since Guzzle has already published information about the vulnerability, and vulnerabilities might exist in contributed modules or custom modules that use Guzzle for outgoing requests. Guzzle has rated this vulnerability as high-risk.\n\nThis advisory is not covered by Drupal Steward.",
   "affected": [
     {

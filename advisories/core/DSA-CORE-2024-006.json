@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-55636"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Artbitrary File Deletion. It is not directly exploitable.\n\nThis issue is mitigated by the fact that in order to be exploitable, a separate vulnerability must be present that allows an attacker to pass unsafe input to `unserialize()`. There are no such known exploits in Drupal core.\n\nTo help protect against this vulnerability, types have been added to properties in some of Drupal core's classes. If an application extends those classes, the same types may need to be specified on the subclass to avoid a `TypeError`.",
   "affected": [
     {

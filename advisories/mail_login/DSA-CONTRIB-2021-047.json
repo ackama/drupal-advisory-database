@@ -4,8 +4,6 @@
   "modified": "2023-08-11T16:49:16.000Z",
   "published": "2021-12-22T17:47:54.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This modules enables users to login via email address.\n\nThis module does not sufficiently check user status when authenticating.",
   "affected": [
     {

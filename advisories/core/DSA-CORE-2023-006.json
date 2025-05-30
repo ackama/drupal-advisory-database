@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2023-5256"
   ],
-  "related": [],
-  "summary": "",
   "details": "In certain scenarios, Drupal's JSON:API module will output error backtraces. With some configurations, this may cause sensitive information to be cached and made available to anonymous users, leading to privilege escalation.\n\nThis vulnerability only affects sites with the JSON:API module enabled, and can be mitigated by uninstalling JSON:API.\n\nThe core REST and contributed GraphQL modules are not affected.\n\n[Drupal Steward](/steward) partners have been made aware of this issue. Some platforms may provide mitigations. However, not all WAF configurations can mitigate the issue, so it is still recommended to update promptly to this security release if your site uses JSON:API.",
   "affected": [
     {

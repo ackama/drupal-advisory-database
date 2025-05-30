@@ -4,8 +4,6 @@
   "modified": "2023-08-23T18:47:17.000Z",
   "published": "2023-08-23T17:00:14.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides integration with Shorthand, an application which describes itself as \"beautifully simple storytelling\".\n\nThe module does not check appropriate permissions when displaying a list of all shorthand stories.",
   "affected": [
     {

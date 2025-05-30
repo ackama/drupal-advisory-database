@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13301"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to authenticate users through an Identity Provider (IdP) or OAuth Server, allowing them to log in to your Drupal site.\n\nThe module does not sufficiently escape query parameters sent to the callback URL when displaying error messages, particularly if the code parameter is missing in the response.",
   "affected": [
     {

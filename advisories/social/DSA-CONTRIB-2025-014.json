@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31685"
   ],
-  "related": [],
-  "summary": "",
   "details": "Open Social is a Drupal distribution for online communities, which ships with a default (optional) module social\\_language to make your platform multilingual.\n\nSome site administration configuration does not correctly check access when trying to translate allowing unauthorised people to translate these parts.\n\nThe issue is mitigated by the fact that social\\_language needs to be enabled with more than 1 language.",
   "affected": [
     {

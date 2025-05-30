@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3131"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to define automations on your Drupal site.\n\nThe module doesn't sufficiently protect certain routes from CSRF attacks.\n\nThis vulnerability can be mitigated by disabling the \"eca\\_ui\" submodule, which leaves ECA functionality intact, but the vulnerable routes will no longer be available.",
   "affected": [
     {

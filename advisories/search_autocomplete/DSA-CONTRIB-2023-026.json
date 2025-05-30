@@ -4,8 +4,6 @@
   "modified": "2023-08-10T13:49:56.000Z",
   "published": "2023-06-28T17:11:07.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to use complex autocompletion in forms.\n\nThe module doesn't sufficiently filter text in the data it exposes, allowing a malicious user to enter specially crafted tags to exploit a Cross Site Scripting (XSS) attack.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role which allows them to publish the kind of data used in the autocomplete (for instance create nodes if the tool is used to search nodes, comments if the tool is used to search comments, etc...)",
   "affected": [
     {

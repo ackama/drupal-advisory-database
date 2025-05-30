@@ -4,8 +4,6 @@
   "modified": "2023-08-10T19:26:43.000Z",
   "published": "2022-09-07T16:57:28.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Next.js module provides an inline preview for content. Authenticated requests are made to Drupal to fetch JSON:API content and render them in an iframe from the decoupled Next.js site.\n\nThe current implementation doesn\u2019t sufficiently check access for fetching data. All requests made to Drupal are authenticated using a single scope with elevated content access. Users without access to content could be exposed to unauthorized content.",
   "affected": [
     {

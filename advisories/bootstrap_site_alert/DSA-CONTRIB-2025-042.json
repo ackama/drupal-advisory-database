@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3901"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to put a site wide bootstrap themed alert message on the top of every page.\n\nThe module doesn't sufficiently filter text input when leading to a possible XSS attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer bootstrap site alerts\".",
   "affected": [
     {

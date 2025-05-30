@@ -4,8 +4,6 @@
   "modified": "2023-08-11T18:27:09.000Z",
   "published": "2019-10-02T16:29:46.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module allows display of a site's content in AMP format.\n\nThe module doesn't sufficiently check access on unpublished or restricted content.",
   "affected": [
     {

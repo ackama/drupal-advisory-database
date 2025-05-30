@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31681"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module allows a site to setup two factor authentication via QR code using authenticator applications on mobile devices including phones.\n\nThe module does not properly protect its custom paths, allowing one user to access a different user's two factor configuration.",
   "affected": [
     {

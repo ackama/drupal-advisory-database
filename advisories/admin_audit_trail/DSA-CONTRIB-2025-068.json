@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48448"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Admin Audit Trail module tracks logs of specific events that you'd like to review. When the submodule Admin Audit Trail: User Authentication is enabled, it logs user authentication events (login, logout, and password reset requests).\n\nThe module does not sufficiently limit some large values before logging the data.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-10T14:22:08.000Z",
   "published": "2023-03-01T17:11:03.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Thunder is a Drupal distribution for professional publishing. The thunder distribution ships the thunder\\_gqls module which provides a graphql interface.\n\nThe module doesn't sufficiently check access when serving user data via graphql leading to an access bypass vulnerability potentially exposing email addresses.",
   "affected": [
     {

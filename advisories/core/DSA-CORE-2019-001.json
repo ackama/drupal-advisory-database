@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2019-6338"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal core uses the third-party PEAR Archive\\_Tar library. This library has released a security update which impacts some Drupal configurations. Refer to [CVE-2018-1000888](https://nvd.nist.gov/vuln/detail/CVE-2018-1000888) for details.",
   "affected": [
     {

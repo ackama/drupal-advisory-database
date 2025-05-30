@@ -4,8 +4,6 @@
   "modified": "2023-09-06T16:48:26.000Z",
   "published": "2023-09-06T15:23:32.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "Provides [highlight.php](https://github.com/scrivo/highlight.php \"highlight.php\") integration to Drupal, allowing <code> blocks to be automatically highlighted with the correct language.\n\nThe module's Twig function doesn't sufficiently filter user-entered data.",
   "affected": [
     {

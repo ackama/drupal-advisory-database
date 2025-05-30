@@ -4,8 +4,6 @@
   "modified": "2023-08-11T17:49:52.000Z",
   "published": "2020-07-22T18:53:26.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Modal form module is a toolset for quick start of using forms in modal windows.\n\nAny form is available for view and submit when the `modal_form` module is installed. The only requirement is to know the form's fully-qualified class name.",
   "affected": [
     {

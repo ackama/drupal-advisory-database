@@ -4,8 +4,6 @@
   "modified": "2023-08-10T21:41:21.000Z",
   "published": "2022-03-30T18:23:29.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module provides integration with the CleanTalk spam protection service.\n\nThe module does not properly filter data in certain circumstances.\n\n**Update: 2022-03-31 - fix release node links**",
   "affected": [
     {

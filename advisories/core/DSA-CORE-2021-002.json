@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13672"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal core's sanitization API fails to properly filter cross-site scripting under certain circumstances.\n\nNot all sites and users are affected, but configuration changes to prevent the exploit might be impractical and will vary between sites. Therefore, we recommend all sites update to this release as soon as possible.",
   "affected": [
     {

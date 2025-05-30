@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48009"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to seamlessly migrate and deploy content across environments, eliminating manual steps. It simplifies the process by exporting content to a YML file or a ZIP archive, which can be imported into another environment effortlessly.\n\nWhile the export feature rightfully bypasses implemented access controls, enabling it to extract all entity data, including private and confidential information, to the mentioned formats, it fails to adequately safeguard the generated output.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"export single content\" or \"Allow user to export all content\".",
   "affected": [
     {

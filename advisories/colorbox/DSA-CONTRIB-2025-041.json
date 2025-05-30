@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-3900"
   ],
-  "related": [],
-  "summary": "",
   "details": "Colorbox is a module that allows Images, and iframed or inline content to be displayed in a modal above the current page.\n\nThe Colorbox module doesn't sufficiently sanitize data attributes before opening modals.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:18:37.000Z",
   "published": "2018-09-05T17:22:50.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to create fields for storing decimal values as two integers (numerator and denominator) for maximum precision.\n\nThe module doesn't sufficiently filter XSS strings out of field labels.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the ability to manage field configuration.",
   "affected": [
     {

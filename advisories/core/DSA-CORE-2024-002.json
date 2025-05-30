@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-11942"
   ],
-  "related": [],
-  "summary": "",
   "details": "Under certain uncommon site configurations, a bug in the CKEditor 5 module can cause some image uploads to move the entire webroot to a different location on the file system. This could be exploited by a malicious user to take down a site.\n\nThe issue is mitigated by the fact that several non-default site configurations must exist simultaneously for this to occur.",
   "affected": [
     {

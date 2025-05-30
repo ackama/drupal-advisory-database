@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-12393"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal uses JavaScript to render status messages in some cases and configurations. In certain situations, the status messages are not adequately sanitized.",
   "affected": [
     {

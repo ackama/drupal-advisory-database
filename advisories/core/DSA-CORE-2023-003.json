@@ -4,8 +4,6 @@
   "modified": "2024-11-22T08:02:17.000Z",
   "published": "2023-03-15T16:24:29.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.\n\nThe URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
   "affected": [
     {

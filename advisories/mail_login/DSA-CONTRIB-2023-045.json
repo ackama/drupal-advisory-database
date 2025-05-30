@@ -4,8 +4,6 @@
   "modified": "2023-09-13T17:42:33.000Z",
   "published": "2023-09-13T15:47:17.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables users to log in by email address with minimal configurations.\n\nDrupal core contains protection against brute force attacks via a flood control mechanism. This module's functionality did not replicate the flood control, enabling brute force attacks.",
   "affected": [
     {

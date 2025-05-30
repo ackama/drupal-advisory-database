@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13675"
   ],
-  "related": [],
-  "summary": "",
   "details": "This advisory addresses a similar issue to [Drupal core - Moderately critical - Access bypass - SA-CORE-2021-008](https://www.drupal.org/sa-core-2021-008).\n\nThe GraphQL module allows file uploads through its HTTP API. The module does not correctly run all file validation, which causes an access bypass vulnerability. An attacker might be able to upload files that bypass the file validation process implemented by modules on the site.\n\nThis vulnerability is mitigated by four factors:\n\n1. The GraphQL module must be enabled on the site.\n2. The GraphQL schema must expose a file upload by using the helper \"src/GraphQL/Utility/FileUpload.php\" in the module.\n3. An attacker must have access to that file upload via the GraphQL API.\n4. The site must employ a file validation module.",
   "affected": [
     {

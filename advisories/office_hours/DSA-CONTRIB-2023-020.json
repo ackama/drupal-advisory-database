@@ -4,8 +4,6 @@
   "modified": "2023-08-10T13:54:32.000Z",
   "published": "2023-06-14T14:52:36.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to define a 'weekly office hours' field type, and add a field to any Content type, in order to display the weekly opening hours for a location.\n\nThe module doesn't sufficiently filter user-supplied text leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker needs additional permissions. The vulnerability can be exploited by an attacker with a role with the permission \"administer display\" regardless of other configurations. In some scenarios, the vulnerability can be exploited by a user with \"Create content\" or \"Edit content\" for a relevant Content type.",
   "affected": [
     {

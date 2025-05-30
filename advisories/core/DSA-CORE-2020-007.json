@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13666"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Drupal AJAX API does not disable JSONP by default, which can lead to cross-site scripting.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2023-08-23T18:28:12.000Z",
   "published": "2023-08-23T17:24:02.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Data Field module provides a way of building field types that are made up of other fields, a simpler alternative to e.g. the Paragraphs system.\n\nAccess to these forms isn't properly validated, allowing a user with the \"access content\" permission to view and edit fields on entities.",
   "affected": [
     {

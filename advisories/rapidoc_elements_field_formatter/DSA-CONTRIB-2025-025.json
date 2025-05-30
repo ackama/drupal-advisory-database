@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-31696"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module can be used to render Open API Documentation using the RapiDoc library. The module provides a custom formatter for link fields.\n\nDrupal core does not sufficiently sanitize link element attributes, which can lead to a Cross Site Scripting vulnerability (XSS).\n\nA separate fix for Drupal core has been released but this module requires a concurrent release to make use of the Drupal core fix.\n\nThis vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.",
   "affected": [
     {

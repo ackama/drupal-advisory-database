@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13289"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module makes it possible for you to integrate Cookiebot and Google Tag Manager in a fast and simple way.\n\nThe module doesn't sufficiently filter for malicious script leading to a persistent cross site scripting (XSS) vulnerability.",
   "affected": [
     {

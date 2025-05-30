@@ -4,8 +4,6 @@
   "modified": "2023-08-11T21:35:30.000Z",
   "published": "2018-04-18T15:45:18.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module helps in exporting and importing Menu Items via the administrative interface.\n\nThe module does not properly restrict access to administrative pages, allowing anonymous users to export and import menu links.\n\nThere is no mitigation for this vulnerability.",
   "affected": [
     {

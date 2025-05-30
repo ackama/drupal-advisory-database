@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48011"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to allow users to include a second authentication method in addition to password authentication.\n\nThe module doesn't sufficiently prevent TFA from being bypassed when using the REST login routes.\n\nA new requirements check has been added to the status report so other authentication providers can be assessed to check if they also allow for this bypass.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain a valid username/password.",
   "affected": [
     {

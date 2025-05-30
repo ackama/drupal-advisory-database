@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2020-13673"
   ],
-  "related": [],
-  "summary": "",
   "details": "The Drupal core Media module allows embedding internal and external media in content fields. In certain circumstances, the filter could allow an unprivileged user to inject HTML into a page when it is accessed by a trusted user with permission to embed media. In some cases, this could lead to cross-site scripting.\n\nThis advisory is not covered by [Drupal Steward](/steward).\n\nAlso see [Entity Embed - Moderately critical - Cross Site Request Forgery - SA-CONTRIB-2021-028](https://www.drupal.org/sa-contrib-2021-028) which addresses a similar vulnerability for that module.\n\n*Updated 18:15 UTC to clarify text.*",
   "affected": [
     {

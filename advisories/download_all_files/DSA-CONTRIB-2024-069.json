@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2024-13303"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module provides a field formatter for the field type 'file' called `Table of files with download all link` .\n\nThe module had vulnerabilities allowing a user to download files they normally should not be able to download.",
   "affected": [
     {

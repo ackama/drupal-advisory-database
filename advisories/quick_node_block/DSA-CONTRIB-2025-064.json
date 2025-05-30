@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2025-48444"
   ],
-  "related": [],
-  "summary": "",
   "details": "This module provides a block to easily display a rendered node.\n\nThe module doesn't check access to content before displaying it to a visitor, allowing unauthorized users to retrieve a list of labels of all nodes.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2022-08-21T19:04:14.000Z",
   "published": "2021-01-20T17:10:55.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The Drupal project uses the pear Archive\\_Tar library, which has released a security update that impacts Drupal. For more information please see:\n\n* [CVE-2020-36193](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36193)\n\nExploits may be possible if Drupal is configured to allow `.tar`, `.tar.gz`, `.bz2`, or `.tlz` file uploads and processes them.",
   "affected": [
     {

@@ -4,8 +4,6 @@
   "modified": "2022-08-21T19:27:05.000Z",
   "published": "2019-12-18T18:01:37.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "A visit to `install.php` can cause cached data to become corrupted. This could cause a site to be impaired until caches are rebuilt.",
   "affected": [
     {

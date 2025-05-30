@@ -4,8 +4,6 @@
   "modified": "2023-08-10T14:23:53.000Z",
   "published": "2023-01-18T17:49:04.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "This module enables you to use the media library in custom forms without the Media Library Widget.\n\nThe module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.\n\nThe vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.",
   "affected": [
     {

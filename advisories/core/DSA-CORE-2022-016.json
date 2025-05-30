@@ -6,8 +6,6 @@
   "aliases": [
     "CVE-2022-39261"
   ],
-  "related": [],
-  "summary": "",
   "details": "Drupal uses the [Twig](https://twig.symfony.com/) third-party library for content templating and sanitization. [Twig has released a security update](https://symfony.com/blog/twig-security-release-possibility-to-load-a-template-outside-a-configured-directory-when-using-the-filesystem-loader) that affects Drupal. Twig has rated the vulnerability as high severity.\n\nDrupal core's code extending Twig has also been updated to mitigate a related vulnerability.\n\nMultiple vulnerabilities are possible if an untrusted user has access to write Twig code, including potential unauthorized read access to private files, the contents of other files on the server, or database credentials.\n\nThe vulnerability is mitigated by the fact that an exploit is only possible in Drupal core with a restricted access administrative permission. Additional exploit paths for the same vulnerability may exist with contributed or custom code that allows users to write Twig templates.",
   "affected": [
     {

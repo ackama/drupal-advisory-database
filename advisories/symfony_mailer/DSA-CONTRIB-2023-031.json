@@ -4,8 +4,6 @@
   "modified": "2023-07-27T16:05:03.000Z",
   "published": "2023-07-26T19:15:46.000Z",
   "aliases": [],
-  "related": [],
-  "summary": "",
   "details": "The module doesn\u2019t sufficiently protect against malicious links, which means an attacker can trick an administrator into performing unwanted actions.\n\nThis vulnerability is mitigated by the fact that the set of unwanted actions is limited to specific configurations.",
   "affected": [
     {
