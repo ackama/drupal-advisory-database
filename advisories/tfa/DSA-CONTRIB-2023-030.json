@@ -20,19 +20,17 @@
               "introduced": "1.0.0"
             },
             {
-              "fixed": "2.0.0"
+              "fixed": "1.1.0"
             }
           ],
           "database_specific": {
-            "constraint": "^1 <= 1.0.0",
-            "warnings": [
-              "the ^ operator should not be paired with a second part"
-            ]
+            "constraint": ">=1.0.0 <1.1.0"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "^1 <= 1.0.0"
+        "affected_versions": ">=1.0.0 <1.1.0",
+        "patched": true
       }
     }
   ],
