@@ -22,7 +22,7 @@ class Advisory(Node):
   field_affected_versions: str | None
   field_project: EntityReferenceField
   field_fixed_in: list[EntityReferenceField]
-  field_sa_reported_by: RichTextField
+  field_sa_reported_by: RichTextField | list[typing.Never]
   field_sa_criticality: str
   field_sa_cve: list[str]
   field_sa_description: RichTextField
