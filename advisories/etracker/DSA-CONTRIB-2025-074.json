@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-074",
+  "modified": "2025-05-29T18:16:36.000Z",
+  "published": "2025-05-28T17:44:33.000Z",
+  "aliases": [
+    "CVE-2025-48920"
+  ],
+  "details": "The module adds the etracker web statistics tracking system to your website.\n\nThe cookies\\_etracker submodule allows the inline JavaScript to be included in consent management. However, this does not adequately check whether the provided JavaScript code originates from authorized users.\n\nA potential attacker would at least need permission to create and publish HTML (e.g. content or comments).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/etracker"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-074"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

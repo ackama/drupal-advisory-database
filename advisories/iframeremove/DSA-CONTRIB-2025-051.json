@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-051",
-  "modified": "2025-05-07T17:35:33.000Z",
+  "modified": "2025-05-29T18:19:36.000Z",
   "published": "2025-05-07T17:07:03.000Z",
   "aliases": [
     "CVE-2025-47705"
