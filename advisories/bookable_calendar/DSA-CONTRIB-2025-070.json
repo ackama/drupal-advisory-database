@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-070",
+  "modified": "2025-05-29T18:17:25.000Z",
+  "published": "2025-05-28T17:41:20.000Z",
+  "aliases": [
+    "CVE-2025-48916"
+  ],
+  "details": "This module enables you to setup a repeating date rule that users can \"book\" different dates, allowing you to let users register for a variety of different things like conference rooms or guitar lessons.\n\nThis module has a permission of \"view booking\" and \"view booking contact\" which allows you to view them regardless of whether you own them or not. Due to bad naming of the permissions it's likely admins have configured those to users that shouldn't have them.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"view booking\" or \"view booking contact\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/bookable_calendar"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.2.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.2.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-070"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ludo Hartzema (absoludo)",
+      "contact": [
+        "/u/absoludo"
+      ]
+    }
+  ]
+}
