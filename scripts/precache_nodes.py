@@ -12,6 +12,7 @@ from itertools import batched
 
 import requests
 
+import utils
 from typings import drupal
 from user_agent import user_agent
 
@@ -49,9 +50,10 @@ def fetch_and_cache_drupal_nodes() -> None:
     if not file.is_file() or not file.name.endswith('.json'):
       continue
 
-    with open(file.path) as f:
-      sa_advisory: drupal.Advisory = json.load(f)
-    ids.add(sa_advisory['field_project']['id'])
+    sa_advisory = utils.load_sa_advisory(file.path)
+
+    if sa_advisory['field_project'] is not None:
+      ids.add(sa_advisory['field_project']['id'])
 
   for i, batch in enumerate(batched(ids, 50, strict=False)):
     print(f'fetching {len(batch)} nodes ({len(ids) - i * 50 - len(batch)} remaining)')

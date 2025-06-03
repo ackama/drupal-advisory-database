@@ -9,10 +9,10 @@ most recent changed time out of all the existing SA advisories
 
 import json
 import os
-import typing
 
 import requests
 
+import utils
 from typings import drupal
 from user_agent import user_agent
 
@@ -26,11 +26,10 @@ def get_most_recent_changed_timestamp() -> int:
     for file in os.scandir('cache/advisories'):
       if not file.is_file() or not file.name.endswith('.json'):
         continue
-      with open(file.path) as f:
-        advisory = typing.cast(drupal.Advisory, json.load(f))
-        changed = int(advisory['changed'])
-        if changed > most_recent_changed or most_recent_changed == 0:
-          most_recent_changed = changed
+      advisory = utils.load_sa_advisory(file.path)
+      changed = int(advisory['changed'])
+      if changed > most_recent_changed or most_recent_changed == 0:
+        most_recent_changed = changed
   except FileNotFoundError:
     pass
   return most_recent_changed
