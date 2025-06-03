@@ -420,6 +420,18 @@ def fetch_affected_packages(osv_advisory: osv.Vulnerability) -> list[str]:
   return [affected['package']['name'] for affected in osv_advisory['affected']]
 
 
+def is_existing_advisory_ahead(
+  name: str, sa_id: str, proposed_modified_at: str
+) -> bool:
+  try:
+    with open(f'advisories/{name}/D{sa_id}.json') as f:
+      existing_advisory = typing.cast(osv.Vulnerability, json.load(f))
+      # RFC3339 dates are designed to be comparable as strings, so this is safe
+      return existing_advisory['modified'] > proposed_modified_at
+  except FileNotFoundError:
+    return False
+
+
 def generate_osv_advisories() -> None:
   for file in os.scandir('cache/advisories'):
     if not file.is_file() or not file.name.endswith('.json'):
@@ -442,6 +454,12 @@ def generate_osv_advisories() -> None:
     for affected_package in affected_packages:
       name = affected_package.removeprefix('drupal/')
       os.makedirs(f'advisories/{name}', exist_ok=True)
+      if is_existing_advisory_ahead(name, sa_id, osv_advisory['modified']):
+        print(
+          ' \\- error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
+        )
+        exit(1)
+
       with open(f'advisories/{name}/D{sa_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
