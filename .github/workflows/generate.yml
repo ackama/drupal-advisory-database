@@ -1,6 +1,8 @@
 name: Generate
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '27 14 * * *'
 concurrency:
   # Pushing new changes to a branch will cancel any in-progress CI runs
   group: ${{ github.workflow }}-${{ github.ref }}
