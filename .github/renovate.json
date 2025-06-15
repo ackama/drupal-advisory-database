@@ -8,7 +8,6 @@
   "packageRules": [
     {
       "matchCategories": ["github-actions"],
-      "groupName": "workflows",
       "pinDigests": true
     },
     {
