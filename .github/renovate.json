@@ -7,7 +7,7 @@
   "lockFileMaintenance": { "enabled": true },
   "packageRules": [
     {
-      "matchCategories": ["github-actions"],
+      "matchDepTypes": ["action"],
       "pinDigests": true
     },
     {
