@@ -3,10 +3,18 @@
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
+  "extends": [
+    "helpers:pinGitHubActionDigests"
+  ],
   "packageRules": [
     {
       "matchDepTypes": ["github-actions"],
       "groupName": "workflows",
+      "pinDigests": true
+    },
+    {
+      "matchDepTypes": ["pep621"],
+      "groupName": "python",
       "pinDigests": true
     }
   ]
