@@ -11,11 +11,12 @@
   "packageRules": [
     {
       "matchDepTypes": ["github-actions"],
+      "matchCategories": ["github-actions"],
       "groupName": "workflows",
       "pinDigests": true
     },
     {
-      "matchDepTypes": ["pep621"],
+      "matchCategories": ["pep621"],
       "groupName": "python"
     }
   ]
