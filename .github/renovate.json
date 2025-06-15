@@ -5,12 +5,8 @@
   "semanticCommitScope": "deps",
   "updateLockFiles": true,
   "lockFileMaintenance": { "enabled": true },
-  "extends": [
-    "helpers:pinGitHubActionDigests"
-  ],
   "packageRules": [
     {
-      "matchDepTypes": ["github-actions"],
       "matchCategories": ["github-actions"],
       "groupName": "workflows",
       "pinDigests": true
