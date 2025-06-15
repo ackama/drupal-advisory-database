@@ -3,7 +3,8 @@
   "packageRules": [
     {
       "matchFileNames": [".github/**"],
-      "groupName": "workflows"
+      "groupName": "workflows",
+      "pinDigests": true
     }
   ]
 }
