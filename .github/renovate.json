@@ -3,6 +3,8 @@
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
+  "updateLockFiles": true,
+  "lockFileMaintenance": { "enabled": true },
   "extends": [
     "helpers:pinGitHubActionDigests"
   ],
