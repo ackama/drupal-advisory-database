@@ -8,6 +8,7 @@
   "packageRules": [
     {
       "matchDepTypes": ["action"],
+      "groupName": "workflows",
       "pinDigests": true
     },
     {
