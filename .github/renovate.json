@@ -14,8 +14,7 @@
     },
     {
       "matchDepTypes": ["pep621"],
-      "groupName": "python",
-      "pinDigests": true
+      "groupName": "python"
     }
   ]
 }
