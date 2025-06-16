@@ -3,6 +3,7 @@
   "semanticCommits": "enabled",
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
+  "dependencyDashboard": true,
   "lockFileMaintenance": { "enabled": true },
   "packageRules": [
     {
