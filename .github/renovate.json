@@ -12,7 +12,7 @@
       "pinDigests": true
     },
     {
-      "matchCategories": ["pep621"],
+      "matchCategories": ["poetry"],
       "groupName": "python"
     }
   ]
