@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "lockFileMaintenance": { "enabled": true },
+  "packageRules": [
+    {
+      "matchDepTypes": ["action"],
+      "groupName": "workflows",
+      "pinDigests": true
+    },
+    {
+      "matchCategories": ["pep621"],
+      "groupName": "python"
+    }
+  ]
+}
