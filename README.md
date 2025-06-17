@@ -1,5 +1,7 @@
 # Drupal Advisory Database
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/ackama/drupal-advisory-database/badge)](https://scorecard.dev/viewer/?uri=github.com/ackama/drupal-advisory-database)
+
 A community-driven database of known security vulnerabilities in Drupal packages
 sourced from [drupal.org](https://www.drupal.org/security) using the
 [OSV](https://ossf.github.io/osv-schema/) format.
