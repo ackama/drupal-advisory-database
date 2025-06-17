@@ -4,12 +4,15 @@
   "semanticCommitType": "chore",
   "semanticCommitScope": "deps",
   "dependencyDashboard": true,
-  "lockFileMaintenance": { "enabled": true },
   "packageRules": [
     {
       "matchDepTypes": ["action"],
       "groupName": "workflows",
       "pinDigests": true
+    },
+    {
+      "matchFileNames": ["pyproject.toml"],
+      "groupName": "python dependencies"
     }
   ]
 }
