@@ -10,10 +10,6 @@
       "matchDepTypes": ["action"],
       "groupName": "workflows",
       "pinDigests": true
-    },
-    {
-      "matchCategories": ["poetry"],
-      "groupName": "python"
     }
   ]
 }
