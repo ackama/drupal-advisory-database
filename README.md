@@ -13,7 +13,14 @@ This database can be used by any tool that supports ingesting OSV advisories.
 
 If you are using [`osv-detector`](https://github.com/G-Rath/osv-detector), you
 can configure this database as an
-[extra database](https://github.com/G-Rath/osv-detector?tab=readme-ov-file#extra-databases)
+[extra database](https://github.com/G-Rath/osv-detector?tab=readme-ov-file#extra-databases):
+
+```yaml
+extra-databases:
+  - url: https://github.com/ackama/drupal-advisory-database/archive/refs/heads/main.zip
+    name: Drupal Advisory Database
+    working-directory: 'drupal-advisory-database-main/advisories'
+```
 
 ## Updating the advisories
 
