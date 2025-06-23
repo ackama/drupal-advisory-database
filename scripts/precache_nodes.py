@@ -33,7 +33,7 @@ def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
     if len(items) != len(nids):
       raise Exception(f'API returned {len(items)} nodes but expected {len(nids)}')
     return items
-  raise Exception(f'unexpected response when fetching nodes {nids}: {resp.status_code}')
+  raise Exception(f'unexpected {resp.status_code} response when fetching nodes {nids}')
 
 
 def fetch_and_cache_drupal_nodes() -> None:
