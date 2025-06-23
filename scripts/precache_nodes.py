@@ -7,6 +7,7 @@ to help reduce the pressure on the drupal.org api
 
 import json
 import os
+import time
 import typing
 from itertools import batched
 
@@ -16,7 +17,7 @@ from typings import drupal
 from user_agent import user_agent
 
 
-def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
+def fetch_drupal_nodes(nids: list[str], retry: bool = True) -> list[drupal.Node]:
   """
   Fetches a node from drupal.org by its id
   """
@@ -26,6 +27,13 @@ def fetch_drupal_nodes(nids: list[str]) -> list[drupal.Node]:
     url += f'nid[]={nid}&'
 
   resp = requests.get(url, headers={'user-agent': user_agent})
+
+  if retry and resp.status_code == 429:
+    seconds = int(resp.headers.get('Retry-After', 0))
+    print(f' |* (waiting {seconds} seconds before retrying)')
+    time.sleep(seconds)
+
+    return fetch_drupal_nodes(nids, retry=False)
 
   if resp.status_code == 200:
     items = typing.cast(drupal.ApiResponse[drupal.Node], resp.json())['list']
