@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-077",
+  "modified": "2025-06-25T18:41:06.000Z",
+  "published": "2025-06-25T18:41:06.000Z",
+  "aliases": [
+    "CVE-2025-48923"
+  ],
+  "details": "This module enables you to generate Table of content of your pages given a configuration.\n\nThe module doesn't sufficiently sanitise data attributes allowing persistent Cross-site Scripting (XSS) attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes using other modules.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/toc_js"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.2.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.2.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-077"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

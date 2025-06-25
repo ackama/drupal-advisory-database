@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-078",
+  "modified": "2025-06-25T18:41:20.000Z",
+  "published": "2025-06-25T18:41:20.000Z",
+  "aliases": [
+    "CVE-2025-48922"
+  ],
+  "details": "GLightbox module is a pure Javascript lightbox for CKEditor.\n\nThe module doesn't sufficiently filter user-supplied text for the GLightbox Javascript library leading to a Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permissions to edit content that is configured to support the Glightbox module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/glightbox"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.16"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.16"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.16"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-078"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-084",
+  "modified": "2025-06-25T18:43:00.000Z",
+  "published": "2025-06-25T18:43:00.000Z",
+  "aliases": [
+    "CVE-2025-6677"
+  ],
+  "details": "Project Paragraphs table provides a field for a collection table.\n\nThe module doesn't sufficiently sanitise certain data attributes allowing Cross Site Scripting (XSS) attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/paragraphs_table"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.0.0 <2.0.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-084"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "/u/prudloff"
+      ]
+    }
+  ]
+}
