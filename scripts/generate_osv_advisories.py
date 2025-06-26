@@ -12,6 +12,7 @@ import re
 import tomllib
 import typing
 from datetime import UTC, datetime
+from urllib.parse import urljoin
 
 import requests
 import semver
@@ -312,6 +313,10 @@ def get_credits_from_sa(
     if '<a' in credit:
       href = credit.split('href="')[1].split('"')[0]
       name = credit.split('">')[1].split('</a>')[0]
+
+      # ensure the contact link is absolute
+      href = urljoin('https://www.drupal.org', href)
+
       credit_list.append({'name': name.strip(), 'contact': [href]})
 
   return sorted(credit_list, key=lambda c: c['name'])
