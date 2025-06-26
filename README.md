@@ -43,6 +43,23 @@ poetry run scripts/precache_nodes.py
 poetry run scripts/generate_osv_advisories.py
 ```
 
+### Landing automated advisory updates
+
+A
+[GitHub Actions workflow](https://github.com/ackama/drupal-advisory-database/blob/main/.github/workflows/generate.yml)
+runs regularly to regenerate the advisories, opening a pull request if there are
+changes.
+
+Before being landed the changes should be reviewed for accuracy especially with
+the version constraints and ranges - these will usually be flagged by the
+generation script as warnings included in the `database_specific` sections of
+the advisories where relevant.
+
+If an advisory does have a warning, you should aim to have it addressed using
+`patches.toml` described in the next section. This can be done by either pushing
+a new commit directly to the pull request branch, or through a new pull request
+after landing the changes to the advisories.
+
 ## Fixing incorrect data
 
 Sometimes an advisory will have incorrect data, such as an affected version
