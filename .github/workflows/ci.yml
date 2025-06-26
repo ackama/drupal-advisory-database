@@ -14,6 +14,17 @@ concurrency:
 permissions: {}
 
 jobs:
+  audit:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Audit dependencies for security vulnerabilities
+        uses: g-rath/check-with-osv-detector@0e8c0f954d8618a3a4671eca1918b30b2d085af3 # v0.2.0
   ruff:
     permissions:
       contents: read # to fetch code (actions/checkout)
