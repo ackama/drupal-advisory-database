@@ -52,6 +52,12 @@ field_affected_versions = [
   '<1.2.2 || >=1.3.0-beta1 <1.3.0-rc3'
 ]
 
+[SA-CONTRIB-2025-001]
+field_affected_versions = [
+  '>2.0.0 <2.0.3',
+  '>=2.0.0 <2.0.3'
+]
+
 [SA-CONTRIB-2025-003]
 field_affected_versions = [
   '>1.0.0 <1.0.2',
