@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-081",
-  "modified": "2025-06-25T18:42:06.000Z",
+  "modified": "2025-06-26T18:17:29.000Z",
   "published": "2025-06-25T18:42:06.000Z",
   "aliases": [
     "CVE-2025-6674"
@@ -22,16 +22,16 @@
               "introduced": "0"
             },
             {
-              "fixed": "1.0.3"
+              "fixed": "1.0.4"
             }
           ],
           "database_specific": {
-            "constraint": "<1.0.3"
+            "constraint": "<1.0.4"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<1.0.3"
+        "affected_versions": "<1.0.4"
       }
     }
   ],
