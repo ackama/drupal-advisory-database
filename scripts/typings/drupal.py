@@ -17,19 +17,40 @@ class Node(typing.TypedDict):
   type: str
 
 
-class Advisory(Node):
+class AdvisoryBase(Node):
   field_is_psa: typing.Literal['0', '1']
   field_affected_versions: str | None
-  field_project: EntityReferenceField
   field_fixed_in: list[EntityReferenceField]
-  field_sa_reported_by: RichTextField | list[typing.Never]
   field_sa_criticality: str
   field_sa_cve: list[str]
-  field_sa_description: RichTextField
   created: str
   changed: str
   title: str
   url: str
+
+
+class Advisory(AdvisoryBase):
+  """
+  Represents an advisory sourced from the Drupal JSON API that has been
+  transformed to make it easier to work with
+  """
+
+  field_project: EntityReferenceField | None
+  field_sa_reported_by: RichTextField
+  field_sa_description: RichTextField
+
+
+class AdvisoryRaw(AdvisoryBase):
+  """
+  Represents an advisory provided by the Drupal JSON API without any post-processing.
+
+  This mainly means that object fields which don't have a value in the database
+  will be represented by an empty list due to how associated arrays in PHP work
+  """
+
+  field_project: EntityReferenceField | list[typing.Never]
+  field_sa_reported_by: RichTextField | list[typing.Never]
+  field_sa_description: RichTextField | list[typing.Never]
 
 
 class Project(Node):

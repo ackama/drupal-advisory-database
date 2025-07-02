@@ -19,5 +19,6 @@ select = [
 known-first-party = [
   'generate_osv_advisories',
   'user_agent',
-  'typings'
+  'typings',
+  'utils'
 ]
