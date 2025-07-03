@@ -10,6 +10,13 @@ field_affected_versions = [
   '>7.0 <=7.86',
   '>=7.0 <=7.86'
 ]
+
+[SA-CONTRIB-2022-047]
+field_affected_versions = [
+  '<1.0.6',
+  '<1.6.0'
+]
+
 [SA-CONTRIB-2024-042]
 field_affected_versions = [
   '<1.8.0 || >=2.0.0 <2.0.0-beta3',
