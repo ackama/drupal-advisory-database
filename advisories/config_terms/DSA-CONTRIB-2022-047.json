@@ -20,16 +20,17 @@
               "introduced": "0"
             },
             {
-              "fixed": "1.0.6"
+              "fixed": "1.6.0"
             }
           ],
           "database_specific": {
-            "constraint": "<1.0.6"
+            "constraint": "<1.6.0"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<1.0.6"
+        "affected_versions": "<1.6.0",
+        "patched": true
       }
     }
   ],
