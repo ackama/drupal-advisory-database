@@ -31,7 +31,7 @@ field_affected_versions = [
 [SA-CONTRIB-2024-004]
 field_affected_versions = [
   '<12.05',
-  '<12.5'
+  '<12.0.5'
 ]
 
 [SA-CONTRIB-2024-038]
