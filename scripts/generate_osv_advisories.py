@@ -17,6 +17,7 @@ import requests
 import semver
 from markdownify import markdownify
 
+import utils
 from typings import drupal, osv
 from user_agent import user_agent
 
@@ -318,6 +319,9 @@ def get_credits_from_sa(
 
 
 def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
+  if sa_advisory['field_project'] is None:
+    raise Exception('advisory does not have a project!')
+
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
@@ -437,8 +441,7 @@ def generate_osv_advisories() -> None:
     if not file.is_file() or not file.name.endswith('.json'):
       continue
 
-    with open(file.path) as f:
-      sa_advisory: drupal.Advisory = json.load(f)
+    sa_advisory = utils.load_sa_advisory(file.path)
     print(f'processing {sa_advisory["url"]}')
     sa_id = file.name.removesuffix('.json')
     osv_advisory = build_osv_advisory(sa_id, sa_advisory)
