@@ -19,22 +19,20 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "1.0.1"
+              "introduced": "1.0.0"
             },
             {
               "fixed": "1.2.4"
             }
           ],
           "database_specific": {
-            "constraint": ">1.0.0 < 1.2.4",
-            "warnings": [
-              "the > operator should be avoided as it does not provide a concrete version"
-            ]
+            "constraint": ">=1.0.0 <1.2.4"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": ">1.0.0 < 1.2.4"
+        "affected_versions": ">=1.0.0 <1.2.4",
+        "patched": true
       }
     }
   ],

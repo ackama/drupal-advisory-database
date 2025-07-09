@@ -76,3 +76,15 @@ field_affected_versions = [
   '^1 <= 1.0.0',
   '>=1.0.0 <1.1.0'
 ]
+
+[SA-CONTRIB-2025-087]
+field_affected_versions = [
+  '>1.0.0 < 1.2.4',
+  '>=1.0.0 <1.2.4'
+]
+
+[SA-CONTRIB-2025-088]
+field_affected_versions = [
+  '>3.0.0 <3.2.0 || >=4.0.0 <4.2.0',
+  '>=3.0.0 <3.2.0 || >=4.0.0 <4.2.0'
+]
