@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-091",
+  "modified": "2025-07-16T16:53:31.000Z",
+  "published": "2025-07-16T16:46:49.000Z",
+  "aliases": [
+    "CVE-2025-7716"
+  ],
+  "details": "This module enables you to analyze the content that you're authoring for a website. It shows you a preview of what a search result might look like.\n\nThe module doesn't sufficiently escape the metadata from content while rendering the preview, opening up the possibility of a XSS attack.\n\nThis vulnerability is mitigated by the fact that an attacker must be able to author content that is analyzed by the Real-Time SEO module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/yoast_seo"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-091"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
