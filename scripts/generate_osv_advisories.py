@@ -25,6 +25,7 @@ from user_agent import user_agent
 
 colorama_init()
 
+
 def fetch_drupal_node(nid: str) -> drupal.Node:
   """
   Fetches a node from drupal.org by its id
@@ -356,7 +357,10 @@ def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
       print('  \\- ' + success_string('patched affected versions'))
       return True
     print(
-      '  \\- ' + warning_string('skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"')
+      '  \\- '
+      + warning_string(
+        f'skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"'
+      )
     )
   return False
 
@@ -378,7 +382,7 @@ def build_osv_advisory(
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
   if sa_advisory['field_is_psa'] == '1':
-    print(' \\-' + notice_string('skipping as it is a psa? (this should not happen)'))
+    print(' \\-' + error_string('skipping as it is a psa? (this should not happen)'))
     return None
 
   # there's not really much we can do if there isn't an affected version
@@ -464,7 +468,10 @@ def generate_osv_advisories() -> None:
       os.makedirs(f'advisories/{name}', exist_ok=True)
       if is_existing_advisory_ahead(name, sa_id, osv_advisory['modified']):
         print(
-          ' \\- ' + error_string('error: current modified date is ahead of the proposed modified date (is your cache up to date?)')
+          ' \\- '
+          + error_string(
+            'error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
+          )
         )
         exit(1)
 
@@ -472,14 +479,18 @@ def generate_osv_advisories() -> None:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
 
+
 def notice_string(message: str) -> str:
   return Fore.YELLOW + Style.DIM + message + Style.RESET_ALL
+
 
 def success_string(message: str) -> str:
   return Fore.GREEN + message + Style.RESET_ALL
 
+
 def warning_string(message: str) -> str:
   return Fore.YELLOW + message + Style.RESET_ALL
+
 
 def error_string(message: str) -> str:
   return Fore.RED + message + Style.RESET_ALL
