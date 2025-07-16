@@ -481,19 +481,19 @@ def generate_osv_advisories() -> None:
 
 
 def notice_string(message: str) -> str:
-  return Fore.YELLOW + Style.DIM + message + Style.RESET_ALL
+  return f'{Fore.YELLOW}{Style.DIM}{message}{Style.RESET_ALL}'
 
 
 def success_string(message: str) -> str:
-  return Fore.GREEN + message + Style.RESET_ALL
+  return f'{Fore.GREEN}{message}{Style.RESET_ALL}'
 
 
 def warning_string(message: str) -> str:
-  return Fore.YELLOW + message + Style.RESET_ALL
+  return f'{Fore.YELLOW}{message}{Style.RESET_ALL}'
 
 
 def error_string(message: str) -> str:
-  return Fore.RED + message + Style.RESET_ALL
+  return f'{Fore.RED}{message}{Style.RESET_ALL}'
 
 
 if __name__ == '__main__':
