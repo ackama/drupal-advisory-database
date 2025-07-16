@@ -16,14 +16,12 @@ from urllib.parse import urljoin
 
 import requests
 import semver
+from colorama import Fore, Style
+from colorama import init as colorama_init
 from markdownify import markdownify
 
 from typings import drupal, osv
 from user_agent import user_agent
-
-from colorama import init as colorama_init
-from colorama import Fore
-from colorama import Style
 
 colorama_init()
 
@@ -358,7 +356,7 @@ def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
       print('  \\- ' + success_string('patched affected versions'))
       return True
     print(
-      f'  \\- ' + warning_string('skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"')
+      '  \\- ' + warning_string('skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"')
     )
   return False
 
