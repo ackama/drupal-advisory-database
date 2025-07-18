@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-091",
-  "modified": "2025-07-16T16:53:31.000Z",
+  "modified": "2025-07-17T14:42:36.000Z",
   "published": "2025-07-16T16:46:49.000Z",
   "aliases": [
     "CVE-2025-7716"
@@ -19,19 +19,19 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "0"
+              "introduced": "2.0.0"
             },
             {
               "fixed": "2.2.0"
             }
           ],
           "database_specific": {
-            "constraint": "<2.2.0"
+            "constraint": ">=2.0.0 <2.2.0"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": "<2.2.0"
+        "affected_versions": ">=2.0.0 <2.2.0"
       }
     }
   ],
