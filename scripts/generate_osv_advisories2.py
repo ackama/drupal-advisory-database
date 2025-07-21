@@ -11,44 +11,10 @@ import os
 import re
 import tomllib
 import typing
-from datetime import UTC, datetime
-from urllib.parse import urljoin
 
-import requests
 import semver
-from markdownify import markdownify
 
-from typings import drupal, osv
-from user_agent import user_agent
-
-
-def fetch_drupal_node(nid: str) -> drupal.Node:
-  """
-  Fetches a node from drupal.org by its id
-  """
-  sa_file = f'cache/nodes/{nid}.json'
-
-  try:
-    with open(sa_file) as f:
-      return typing.cast(drupal.Node, json.load(f))
-  except FileNotFoundError as e:
-    os.makedirs('cache/nodes', exist_ok=True)
-    print(f' *- fetching https://www.drupal.org/api-d7/node/{nid}.json')
-    resp = requests.get(
-      f'https://www.drupal.org/api-d7/node/{nid}.json',
-      headers={'user-agent': user_agent},
-    )
-
-    if resp.status_code == 200:
-      node: drupal.Node = resp.json()
-
-      with open(sa_file, 'w') as f:
-        json.dump(node, f)
-        f.write('\n')
-      return node
-    raise Exception(
-      f'unexpected response when fetching node {nid}: {resp.status_code}'
-    ) from e
+from typings import composer, osv
 
 
 class ComposerVersionConstraintPart:
@@ -284,53 +250,11 @@ def build_affected_range(constraint: str) -> osv.Range:
   return ran
 
 
-def build_affected_ranges(sa_advisory: drupal.Advisory) -> list[osv.Range]:
-  if sa_advisory['field_affected_versions'] is None:
-    raise Exception(
-      'field_affected_versions must be present to determine affected ranges'
-    )
-
+def build_affected_ranges(composer_advisory: composer.Advisory) -> list[osv.Range]:
   return [
     build_affected_range(constraint.strip())
-    for constraint in sa_advisory['field_affected_versions'].split('||')
+    for constraint in composer_advisory['affectedVersions'].split('||')
   ]
-
-
-def get_credits_from_sa(
-  credits: drupal.RichTextField | list[typing.Never],
-) -> list[osv.Credit]:
-  credit_list: list[osv.Credit] = []
-
-  # Sanity checks.
-  if not isinstance(credits, dict):
-    return credit_list
-  # The credits['value'] is a sting with an ordered list of credits.
-  # A credit is a link to the user's profile on drupal.org with the user's name as the link text.
-  for credit in (
-    credits['value'].replace('<ul>', '').replace('</ul>', '').strip().split('<li>')
-  ):
-    credit = credit.replace('</li>', '').strip()
-    if '<a' in credit:
-      href = credit.split('href="')[1].split('"')[0]
-      name = credit.split('">')[1].split('</a>')[0]
-
-      # ensure the contact link is absolute
-      href = urljoin('https://www.drupal.org', href)
-
-      credit_list.append({'name': name.strip(), 'contact': [href]})
-
-  return sorted(credit_list, key=lambda c: c['name'])
-
-
-def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
-  project = typing.cast(
-    drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
-  )
-
-  project_name = project['field_project_machine_name']
-  if project_name == 'drupal':
-    project_name = 'core'
-  return f'drupal/{project_name}'
 
 
 class DrupalAdvisoryPatch(typing.TypedDict):
@@ -341,78 +265,64 @@ with open('patches.toml', 'rb') as fi:
   patches: dict[str, DrupalAdvisoryPatch] = tomllib.load(fi)
 
 
-def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
+def patch_advisory(sa_id: str, composer_advisory: composer.Advisory) -> bool:
   """
   Attempts to apply any patches to the advisory that are defined in patches.toml
   """
   if sa_id in patches:
     before, after = patches[sa_id]['field_affected_versions']
 
-    if before == sa_advisory['field_affected_versions']:
-      sa_advisory['field_affected_versions'] = after
+    if before == composer_advisory['affectedVersions']:
+      composer_advisory['affectedVersions'] = after
       print('  \\- patched affected versions')
       return True
     print(
-      f'  \\- skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"'
+      f'  \\- skipped patching as affected version is now "{composer_advisory["affectedVersions"]}"'
     )
   return False
 
 
-def unix_timestamp_to_rfc3339(unix: int) -> str:
-  return datetime.fromtimestamp(int(unix), tz=UTC).strftime('%Y-%m-%dT%H:%M:%S.000Z')
-
-
 def build_osv_advisory(
   sa_id: str,
-  sa_advisory: drupal.Advisory,
+  composer_advisory: composer.Advisory,
 ) -> osv.Vulnerability | None:
   """
-  Builds a representation of the given Drupal SA advisory in OSV format
+  Builds a representation of the given Drupal advisory sourced from the composer api in OSV format
   """
 
-  patched = patch_advisory(sa_id, sa_advisory)
-
-  # we expect that the downloader has excluded PSA type entries, but
-  # we still guard against them here just in case one slips through
-  if sa_advisory['field_is_psa'] == '1':
-    print(' \\- skipping as it is a psa? (this should not happen)')
-    return None
-
-  # there's not really much we can do if there isn't an affected version
-  # todo: since build_affected_ranges throws if this isn't present, it might
-  #  make more sense to use that, with a custom exception class
-  if sa_advisory['field_affected_versions'] is None:
-    print(' \\- skipping as we do not have any affected versions')
-    return None
+  patched = patch_advisory(sa_id, composer_advisory)
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
     'id': f'D{sa_id}',
-    'modified': unix_timestamp_to_rfc3339(int(sa_advisory['changed'])),
-    'published': unix_timestamp_to_rfc3339(int(sa_advisory['created'])),
-    'aliases': sa_advisory['field_sa_cve'],
-    'details': markdownify(sa_advisory['field_sa_description']['value']),
+    'modified': '',
+    'published': '',
+    'aliases': [],
+    'details': '',
     'affected': [
       {
         # todo: figure out if we need a dedicated ecosystem i.e. Drupal, Drupal8, etc
         'package': {
           'ecosystem': 'Packagist',
-          'name': determine_composer_package_name(sa_advisory),
+          'name': composer_advisory['packageName'],
         },
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
         #  https://www.drupal.org/drupal-security-team/security-risk-levels-defined
         #  https://www.nist.gov/news-events/news/2012/07/software-features-and-inherent-risks-nists-guide-rating-software
         'severity': [],
-        'ranges': build_affected_ranges(sa_advisory),
+        'ranges': build_affected_ranges(composer_advisory),
         'database_specific': {
-          'affected_versions': sa_advisory['field_affected_versions']
+          'affected_versions': composer_advisory['affectedVersions']
         },
       }
     ],
-    'references': [{'type': 'WEB', 'url': sa_advisory['url']}],
-    'credits': get_credits_from_sa(sa_advisory['field_sa_reported_by']),
+    'references': [{'type': 'WEB', 'url': composer_advisory['link']}],
+    'credits': [],
   }
+
+  if composer_advisory['cve'] is not None:
+    osv_advisory['aliases'] = composer_advisory['cve'].strip().split(' ')
 
   if patched:
     for affected in osv_advisory['affected']:
@@ -438,15 +348,15 @@ def is_existing_advisory_ahead(
 
 
 def generate_osv_advisories() -> None:
-  for file in os.scandir('cache/advisories'):
+  for file in os.scandir('cache/composer'):
     if not file.is_file() or not file.name.endswith('.json'):
       continue
 
     with open(file.path) as f:
-      sa_advisory: drupal.Advisory = json.load(f)
-    print(f'processing {sa_advisory["url"]}')
+      composer_advisory: composer.Advisory = json.load(f)
+    print(f'processing {composer_advisory["link"]}')
     sa_id = file.name.removesuffix('.json')
-    osv_advisory = build_osv_advisory(sa_id, sa_advisory)
+    osv_advisory = build_osv_advisory(sa_id, composer_advisory)
 
     if osv_advisory is None:
       continue

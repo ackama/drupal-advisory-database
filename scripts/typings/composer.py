@@ -13,7 +13,7 @@ class Advisory(typing.TypedDict):
   packageName: str
   title: str
   link: str
-  cve: str
+  cve: str | None
   affectedVersions: str
   sources: list[Source]
   reportedAt: str
