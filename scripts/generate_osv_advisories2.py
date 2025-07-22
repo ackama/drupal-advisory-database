@@ -347,6 +347,37 @@ def is_existing_advisory_ahead(
     return False
 
 
+def merge_with_existing_advisory(
+  new_advisory: osv.Vulnerability, existing_advisory: osv.Vulnerability
+) -> None:
+  if new_advisory.get('modified', '') == '':
+    new_advisory['modified'] = existing_advisory['modified']
+  if new_advisory.get('published', '') == '':
+    new_advisory['published'] = existing_advisory['published']
+  if new_advisory.get('details', '') == '':
+    new_advisory['details'] = existing_advisory['details']
+  if new_advisory.get('credits', []) == []:
+    new_advisory['credits'] = existing_advisory['credits']
+
+
+def merge_with_existing_advisories(sa_id: str, osv_advisory: osv.Vulnerability) -> None:
+  affected_packages = fetch_affected_packages(osv_advisory)
+
+  if len(affected_packages) == 0:
+    raise Exception('osv advisory has no affected packages')
+
+  for affected_package in affected_packages:
+    name = affected_package.removeprefix('drupal/')
+
+    try:
+      with open(f'advisories/{name}/D{sa_id}.json') as f:
+        existing_advisory = typing.cast(osv.Vulnerability, json.load(f))
+
+        merge_with_existing_advisory(osv_advisory, existing_advisory)
+    except FileNotFoundError:
+      continue
+
+
 def generate_osv_advisories() -> None:
   for file in os.scandir('cache/composer'):
     if not file.is_file() or not file.name.endswith('.json'):
@@ -360,6 +391,8 @@ def generate_osv_advisories() -> None:
 
     if osv_advisory is None:
       continue
+
+    merge_with_existing_advisories(sa_id, osv_advisory)
 
     affected_packages = fetch_affected_packages(osv_advisory)
 
