@@ -341,10 +341,12 @@ with open('patches.toml', 'rb') as fi:
   patches: dict[str, DrupalAdvisoryPatch] = tomllib.load(fi)
 
 
-def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
+def patch_advisory(osv_id: str, sa_advisory: drupal.Advisory) -> bool:
   """
   Attempts to apply any patches to the advisory that are defined in patches.toml
   """
+  sa_id = f'SA-{osv_id.removeprefix("DRUPAL-")}'
+
   if sa_id in patches:
     before, after = patches[sa_id]['field_affected_versions']
 
@@ -363,14 +365,14 @@ def unix_timestamp_to_rfc3339(unix: int) -> str:
 
 
 def build_osv_advisory(
-  sa_id: str,
+  osv_id: str,
   sa_advisory: drupal.Advisory,
 ) -> osv.Vulnerability | None:
   """
   Builds a representation of the given Drupal SA advisory in OSV format
   """
 
-  patched = patch_advisory(sa_id, sa_advisory)
+  patched = patch_advisory(osv_id, sa_advisory)
 
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
@@ -387,7 +389,7 @@ def build_osv_advisory(
 
   osv_advisory: osv.Vulnerability = {
     'schema_version': '1.7.0',
-    'id': f'D{sa_id}',
+    'id': osv_id,
     'modified': unix_timestamp_to_rfc3339(int(sa_advisory['changed'])),
     'published': unix_timestamp_to_rfc3339(int(sa_advisory['created'])),
     'aliases': sa_advisory['field_sa_cve'],
@@ -396,7 +398,7 @@ def build_osv_advisory(
       {
         # todo: figure out if we need a dedicated ecosystem i.e. Drupal, Drupal8, etc
         'package': {
-          'ecosystem': 'Packagist',
+          'ecosystem': 'Drupal',
           'name': determine_composer_package_name(sa_advisory),
         },
         # todo: figure out how to map field_sa_criticality to severity
@@ -426,10 +428,10 @@ def fetch_affected_packages(osv_advisory: osv.Vulnerability) -> list[str]:
 
 
 def is_existing_advisory_ahead(
-  name: str, sa_id: str, proposed_modified_at: str
+  name: str, osv_id: str, proposed_modified_at: str
 ) -> bool:
   try:
-    with open(f'advisories/{name}/D{sa_id}.json') as f:
+    with open(f'advisories/{name}/{osv_id}.json') as f:
       existing_advisory = typing.cast(osv.Vulnerability, json.load(f))
       # RFC3339 dates are designed to be comparable as strings, so this is safe
       return existing_advisory['modified'] > proposed_modified_at
@@ -445,8 +447,8 @@ def generate_osv_advisories() -> None:
     with open(file.path) as f:
       sa_advisory: drupal.Advisory = json.load(f)
     print(f'processing {sa_advisory["url"]}')
-    sa_id = file.name.removesuffix('.json')
-    osv_advisory = build_osv_advisory(sa_id, sa_advisory)
+    osv_id = f'DRUPAL-{file.name.removeprefix("SA-").removesuffix(".json")}'
+    osv_advisory = build_osv_advisory(osv_id, sa_advisory)
 
     if osv_advisory is None:
       continue
@@ -459,13 +461,13 @@ def generate_osv_advisories() -> None:
     for affected_package in affected_packages:
       name = affected_package.removeprefix('drupal/')
       os.makedirs(f'advisories/{name}', exist_ok=True)
-      if is_existing_advisory_ahead(name, sa_id, osv_advisory['modified']):
+      if is_existing_advisory_ahead(name, osv_id, osv_advisory['modified']):
         print(
           ' \\- error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
         )
         exit(1)
 
-      with open(f'advisories/{name}/D{sa_id}.json', 'w') as f:
+      with open(f'advisories/{name}/{osv_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
 
