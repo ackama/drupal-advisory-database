@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-082",
+  "modified": "2025-06-25T18:42:17.000Z",
+  "published": "2025-06-25T18:42:17.000Z",
+  "aliases": [
+    "CVE-2025-6675"
+  ],
+  "details": "The module enables you to add second-factor authentication on top of the default Drupal login.\n\nThe module does not sufficiently ensure that known authorization routes are protected.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain the user's username and password.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/miniorange_2fa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.8.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.2.0"
+            },
+            {
+              "fixed": "5.2.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=5.2.0 <5.2.1"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": "5.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "5.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.1.0"
+            },
+            {
+              "fixed": "5.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "5.1.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.8.0 || >=5.2.0 <5.2.1 || 5.0.* || 5.1.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-082"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "https://www.drupal.org/u/cmlara"
+      ]
+    }
+  ]
+}

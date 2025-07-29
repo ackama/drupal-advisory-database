@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2024-005",
+  "modified": "2024-12-09T23:23:54.000Z",
+  "published": "2024-11-20T17:24:02.000Z",
+  "aliases": [
+    "CVE-2024-55635"
+  ],
+  "details": "Drupal 7 core's Overlay module doesn't safely handle user input, leading to reflected cross-site scripting under certain circumstances.\n\nOnly sites with the Overlay module enabled are affected by this vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.102.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.102"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.102"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2024-005"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Cesar",
+      "contact": [
+        "https://www.drupal.org/user/3546810"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-053",
+  "modified": "2023-11-29T18:08:04.000Z",
+  "published": "2023-11-29T15:27:05.000Z",
+  "aliases": [],
+  "details": "The Xsendfile module enables fast transfer for private files in Drupal.\n\nIn order to control private file downloads, the module overrides `ImageStyleDownloadController`, for which a vulnerability was disclosed in [SA-CORE-2023-005](https://www.drupal.org/sa-core-2023-005). The Xsendfile module was still based on an insecure version of `ImageStyleDownloadController`.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/xsendfile"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-053"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

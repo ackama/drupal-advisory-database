@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-006",
+  "modified": "2023-08-11T14:56:17.000Z",
+  "published": "2022-01-25T18:35:55.000Z",
+  "aliases": [],
+  "details": "Update 2022-03-01. New maintainers have volunteered for the project and created a new release which includes fixes for the 3 security issues that caused the module to be unsupported.\n\n~~The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>~~",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tac_lite"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-006"
+    }
+  ],
+  "credits": []
+}

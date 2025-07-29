@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2018-004",
+  "modified": "2022-08-21T19:46:05.000Z",
+  "published": "2018-04-25T16:13:58.000Z",
+  "aliases": [
+    "CVE-2018-7602"
+  ],
+  "details": "A remote code execution vulnerability exists within multiple subsystems of Drupal 7.x and 8.x. This potentially allows attackers to exploit multiple attack vectors on a Drupal site, which could result in the site being compromised. This vulnerability is related to [Drupal core - Highly critical - Remote Code Execution - SA-CORE-2018-002](/sa-core-2018-002). Both SA-CORE-2018-002 and this vulnerability are being exploited in the wild.\n\n*Updated \u2014 this vulnerability is being exploited in the wild.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.59.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.59"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.4.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.4.8"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.5.0"
+            },
+            {
+              "fixed": "8.5.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.5.0 <8.5.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.59 || >= 8.0.0 <8.4.8 || >=8.5.0 <8.5.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2018-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Alex Pott",
+      "contact": [
+        "https://www.drupal.org/user/157725"
+      ]
+    },
+    {
+      "name": "David Rothstein",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    },
+    {
+      "name": "Heine Deelstra",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    },
+    {
+      "name": "Jasper Mattsson",
+      "contact": [
+        "https://www.drupal.org/user/521118"
+      ]
+    }
+  ]
+}

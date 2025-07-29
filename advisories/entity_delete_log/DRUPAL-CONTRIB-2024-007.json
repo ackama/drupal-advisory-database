@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-007",
+  "modified": "2025-02-20T18:38:01.000Z",
+  "published": "2024-01-31T17:22:36.000Z",
+  "aliases": [
+    "CVE-2024-13243"
+  ],
+  "details": "The Entity Delete Log module tracks the deletion of configured entity types, such as node or comments.\n\nIt does not add sufficient permission to the log report page, allowing an attacker to view information from deleted entities.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/entity_delete_log"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-007"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ryan Szrama",
+      "contact": [
+        "https://www.drupal.org/user/49344"
+      ]
+    }
+  ]
+}
