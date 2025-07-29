@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-075",
+  "modified": "2023-08-11T18:30:06.000Z",
+  "published": "2019-11-06T16:10:25.000Z",
+  "aliases": [],
+  "details": "Open Social is a Drupal distribution for online communities. The included social\\_magic\\_login module doesn't sufficiently validate magic login URLs for user accounts that do not have a local password, but login via external systems. The lack of validation makes it possible for an adversary to forge valid login URLs and login to such an account.\n\nThis vulnerability is mitigated by the fact the module social\\_magic\\_login needs to be enabled.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/social"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.5.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0.0 <7.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.5.0 || >=7.0.0 <7.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-075"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-058",
+  "modified": "2025-02-20T20:05:57.000Z",
+  "published": "2024-11-06T16:28:56.000Z",
+  "aliases": [
+    "CVE-2024-13292"
+  ],
+  "details": "This module enables you to add any HTML content you want in a tooltip displayed on mouse hover.\n\nThe module does not sufficiently escape the markup inserted in the tooltip block.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer blocks\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tooltip"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-058"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

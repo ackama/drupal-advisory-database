@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-059",
+  "modified": "2025-02-20T20:06:05.000Z",
+  "published": "2024-11-13T17:36:48.000Z",
+  "aliases": [
+    "CVE-2024-13293"
+  ],
+  "details": "The module creates an endpoint on the site at /postfile/upload that accepts a POST request for uploading a single file into a specified file system (public, private, etc).\n\nThe module doesn't sufficiently protect against Cross Site Request Forgery  \nunder allowing an attacker to trick a site user into uploading a file.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/postfile"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-059"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

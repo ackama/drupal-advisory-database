@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-033",
+  "modified": "2023-08-11T17:05:59.000Z",
+  "published": "2021-09-22T16:55:24.000Z",
+  "aliases": [],
+  "details": "This module enables you to extract the textual content of files for use on a website, e.g. to display it or use it in search indexes.\n\nThe module doesn't sufficiently protect the administrator-defined commands that are executed on the server, which leads to post-authentication remote code execution by a limited set of users.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer File Extractor\" to access the settings form. Sites are encouraged to review which roles have that permission and which users have that role, to ensure that only trusted users have that permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/file_extractor"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.3"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "last_affected": "3.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "3.0.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "last_affected": "4.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "4.0.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.3 || 3.0.0 || 4.0.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-033"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Florent Torregrosa",
+      "contact": [
+        "https://www.drupal.org/user/2388214"
+      ]
+    }
+  ]
+}

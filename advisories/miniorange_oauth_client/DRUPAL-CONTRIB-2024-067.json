@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-067",
+  "modified": "2025-02-20T20:07:11.000Z",
+  "published": "2024-12-04T14:40:50.000Z",
+  "aliases": [
+    "CVE-2024-13301"
+  ],
+  "details": "This module enables you to authenticate users through an Identity Provider (IdP) or OAuth Server, allowing them to log in to your Drupal site.\n\nThe module does not sufficiently escape query parameters sent to the callback URL when displaying error messages, particularly if the code parameter is missing in the response.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/miniorange_oauth_client"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.44.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.44.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "4.0.0"
+            },
+            {
+              "fixed": "4.0.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=4.0.0 <4.0.19"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=3.0.0 <3.44.0 || >=4.0.0 <4.0.19"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-067"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Borut Piletic",
+      "contact": [
+        "https://www.drupal.org/user/2714887"
+      ]
+    }
+  ]
+}

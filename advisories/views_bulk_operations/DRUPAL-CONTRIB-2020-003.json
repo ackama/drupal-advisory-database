@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2020-003",
+  "modified": "2023-08-11T17:58:52.000Z",
+  "published": "2020-02-05T16:59:21.000Z",
+  "aliases": [],
+  "details": "Views Bulk Operations provides enhancements to running bulk actions on views.\n\nThe module contains an access bypass vulnerability that might allow users to execute views actions that they should not have access to.\n\nThis vulnerability is mitigated by the fact that it only occurs in the case of customised action access (by means of hook\\_action\\_info\\_alter).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/views_bulk_operations"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.6.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.6.0 || >=3.0.0 <3.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Adam Shepherd",
+      "contact": [
+        "https://www.drupal.org/user/2650563"
+      ]
+    }
+  ]
+}

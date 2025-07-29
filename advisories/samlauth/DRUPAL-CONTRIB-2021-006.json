@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-006",
+  "modified": "2023-08-11T17:16:38.000Z",
+  "published": "2021-04-28T16:47:09.000Z",
+  "aliases": [],
+  "details": "The [SAML Authentication module](https://www.drupal.org/project/samlauth) allows users to authenticate against a SAML identity provider to login to your Drupal site.\n\nThe module doesn't sufficiently protect against unauthorized local access, by way of using the 'password reset' facility, for users who are supposed to only be able to log in through the identity provider. This creates a scenario where after such a user is blocked from logging in through the identity provider but not explicitly blocked in Drupal, they are still able to log in by sending themselves a Drupal 'password reset' e-mail.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/samlauth"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Bobby Gryzynger",
+      "contact": [
+        "https://www.drupal.org/user/3311649"
+      ]
+    },
+    {
+      "name": "Mark Shropshire",
+      "contact": [
+        "https://www.drupal.org/user/14767"
+      ]
+    }
+  ]
+}

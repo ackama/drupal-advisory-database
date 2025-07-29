@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-018",
+  "modified": "2023-08-11T13:46:46.000Z",
+  "published": "2022-01-25T18:39:50.000Z",
+  "aliases": [],
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466#procedure---own-project---unsupported>",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/cog"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-018"
+    }
+  ],
+  "credits": []
+}

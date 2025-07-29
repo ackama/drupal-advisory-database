@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2024-004",
+  "modified": "2024-12-09T23:22:01.000Z",
+  "published": "2024-11-20T17:21:58.000Z",
+  "aliases": [
+    "CVE-2024-55634"
+  ],
+  "details": "Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.\n\nAs a result, a user may be able to register with the same email address as another user.\n\nThis may lead to data integrity issues.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "10.2.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 < 10.2.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.3.0"
+            },
+            {
+              "fixed": "10.3.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.3.0 < 10.3.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.0.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 < 10.2.11 || >= 10.3.0 < 10.3.9 || >= 11.0.0 < 11.0.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2024-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Wayne Eaker",
+      "contact": [
+        "https://www.drupal.org/user/326925"
+      ]
+    }
+  ]
+}

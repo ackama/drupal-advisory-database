@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-054",
+  "modified": "2023-12-07T02:47:34.000Z",
+  "published": "2023-12-06T16:16:28.000Z",
+  "aliases": [],
+  "details": "The Group module has the ability to make content private to specific groups. When viewing a list of entities, e.g. nodes, a visitor should only see those entities that are either not attached to a group or that they have group access to.\n\nThe module doesn't sufficiently enforce list access under the scenario where two users have the same outsider and insider permissions, but are members of different groups without any individual roles being assigned to said memberships. In such a scenario, the permissions hash for both will be the same even though it should differ.\n\nThis vulnerability is mitigated by the fact that an attacker must have the same hash as someone else, which is quite rare yet not unthinkable.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/group"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.2.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "3.0.0"
+            },
+            {
+              "fixed": "3.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=3.0.0 <3.2.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.0.0 <2.2.2 || >=3.0.0 <3.2.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dylan Donkersgoed",
+      "contact": [
+        "https://www.drupal.org/user/2803351"
+      ]
+    }
+  ]
+}

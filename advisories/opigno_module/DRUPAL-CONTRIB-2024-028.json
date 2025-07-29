@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-028",
+  "modified": "2025-02-20T19:12:22.000Z",
+  "published": "2024-08-07T17:30:20.000Z",
+  "aliases": [
+    "CVE-2024-13264"
+  ],
+  "details": "The Opigno module is related to Opigno LMS distribution. It implements the module entity, that is a sub-part of a training.\n\nIn the opigno\\_module module, uploaded files were not sufficiently validated to prevent arbitrary file uploads, which could lead to Remote Code Execution (RCE) and/or Cross Site Scripting (XSS).\n\nThis vulnerability is mitigated by the fact that it requires the attacker have a role with the permission \"create opigno tincan activities\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/opigno_module"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-028"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcin Grabias",
+      "contact": [
+        "https://www.drupal.org/user/1599440"
+      ]
+    },
+    {
+      "name": "catch",
+      "contact": [
+        "https://www.drupal.org/user/35733"
+      ]
+    }
+  ]
+}

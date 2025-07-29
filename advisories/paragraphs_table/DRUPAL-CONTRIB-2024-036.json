@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-036",
+  "modified": "2025-02-20T19:23:09.000Z",
+  "published": "2024-09-04T15:42:05.000Z",
+  "aliases": [
+    "CVE-2024-13272"
+  ],
+  "details": "This module enables field collections to be displayed as tables. It supports display suite and field permissions and provides operations (modify, delete, duplicate).\n\nThis module has multiple vulnerabilities due to the requirements on the routes it provides not being restrictive enough.\n\nInformation disclosure\n----------------------\n\nSeveral routes *only* checked for the 'access content' permission before displaying a paragraph, and did not check whether the user should actually have access to view the paragraph in question.\n\nAccess bypass\n-------------\n\nThe `paragraphs_item.add_page` route previously allowed anyone with the 'access content' permission to add paragraphs to any content regardless of permissions to be able to edit the host field or content, or any other hooks for adjusting access to add paragraphs of that type.\n\nThese vulnerabilities are mitigated by the fact that an attacker must have a role with the permission \"access content\" which is commonly assigned to all roles.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/paragraphs_table"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.23.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.23.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.23.0 || >=2.0.0 <2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-036"
+    }
+  ],
+  "credits": [
+    {
+      "name": "James Williams",
+      "contact": [
+        "https://www.drupal.org/user/592268"
+      ]
+    }
+  ]
+}

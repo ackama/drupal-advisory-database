@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2020-020",
+  "modified": "2023-08-11T17:51:01.000Z",
+  "published": "2020-05-27T15:32:52.000Z",
+  "aliases": [],
+  "details": "Drupal Commerce is used to build eCommerce websites and applications. It's possible to configure commerce to permit orders by anonymous users. In this configuration, customers who do not choose to create an account upon checkout completion remain anonymous, and the resulting orders are never assigned an owner.\n\nWhen anonymous users are granted the \"View own orders\" permission, they are able to see any such anonymous order via direct navigation to its view page. The module does not include extra access control necessary to ensure anonymous users are only able to view their own previously placed orders.\n\nThis vulnerability is mitigated by the fact that a site must be configured to permit anonymous checkout and an attacker must be an anonymous user with the permission \"View own orders\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/commerce"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.18.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.18.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.18.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-020"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Honza Pobo\u0159il",
+      "contact": [
+        "https://www.drupal.org/user/123612"
+      ]
+    },
+    {
+      "name": "Joe Kersey",
+      "contact": [
+        "https://www.drupal.org/user/2229066"
+      ]
+    }
+  ]
+}

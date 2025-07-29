@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-009",
+  "modified": "2023-08-11T17:18:42.000Z",
+  "published": "2021-05-12T16:23:23.000Z",
+  "aliases": [],
+  "details": "Chaos tool suite (ctools) module provides a number of APIs and extensions for Drupal, it's 8.x-3.x branch is a start from scratch to evaluate the features of ctools that didn't make it into Drupal Core 8.0.x and port them.\n\nThe module doesn't sufficiently handle access control on its EntityView plugin.\n\nThis vulnerability is mitigated by the fact that successful exploitation requires special conditions in place such as custom solutions that allow injecting the context by means other than the route.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/ctools"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.6.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.6.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-009"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jonathan Hedstrom",
+      "contact": [
+        "https://www.drupal.org/user/208732"
+      ]
+    }
+  ]
+}

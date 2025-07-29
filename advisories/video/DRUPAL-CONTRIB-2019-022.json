@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-022",
+  "modified": "2023-08-11T18:55:29.000Z",
+  "published": "2019-02-20T17:44:08.000Z",
+  "aliases": [],
+  "details": "This resolves issues described in [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for this module. Not all configurations are affected. See [SA-CORE-2019-003](https://www.drupal.org/sa-core-2019-003) for details.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/video"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-022"
+    }
+  ],
+  "credits": []
+}

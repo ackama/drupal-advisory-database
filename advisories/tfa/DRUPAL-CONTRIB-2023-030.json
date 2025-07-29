@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-030",
+  "modified": "2023-07-12T18:39:39.000Z",
+  "published": "2023-07-12T18:19:42.000Z",
+  "aliases": [],
+  "details": "This module enables you to allow and/or require users to use a second authentication method in addition to password authentication.\n\nThe module doesn't sufficiently ensure all core login routes, including the password reset page, require a second factor credential.\n\nThis vulnerability is mitigated by the fact that an attacker must obtain a first-factor login credential.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tfa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.0.0 <1.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=1.0.0 <1.1.0",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-030"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Benji Fisher",
+      "contact": [
+        "https://www.drupal.org/user/683300"
+      ]
+    },
+    {
+      "name": "Conrad Lara",
+      "contact": [
+        "https://www.drupal.org/user/1790054"
+      ]
+    }
+  ]
+}

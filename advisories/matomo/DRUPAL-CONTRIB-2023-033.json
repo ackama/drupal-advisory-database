@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-033",
+  "modified": "2023-08-02T19:52:35.000Z",
+  "published": "2023-08-02T18:59:27.000Z",
+  "aliases": [],
+  "details": "This module enables you to add the Matomo web statistics tracking system to your website.\n\nThe module does not check the Matomo JS code loaded on the website. So a user could configure the module to load JS from a malicious website.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"administer matomo\" or \"administer matomo tag manager\" (D8+ only) to access the settings forms where this can be configured.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/matomo"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.22.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.22.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.22.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-033"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

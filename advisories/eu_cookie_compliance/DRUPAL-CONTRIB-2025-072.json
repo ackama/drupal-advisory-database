@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-072",
+  "modified": "2025-05-29T18:16:59.000Z",
+  "published": "2025-05-28T17:43:44.000Z",
+  "aliases": [
+    "CVE-2025-48917"
+  ],
+  "details": "This module addresses the General Data Protection Regulation (GDPR) and the EU Directive on Privacy and Electronic Communications.\n\nThe module doesn't sufficiently verify whether \"disabled JavaScript\" entries are valid or correspond to actual scripts on the page. As a result, an attacker could inject and execute arbitrary JavaScript by adding invalid or non-existent entries, which the module then attempts to process.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer EU Cookie Compliance banner\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/eu_cookie_compliance"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.26.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.26.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.26.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-072"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

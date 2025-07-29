@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-090",
+  "modified": "2025-07-16T16:46:26.000Z",
+  "published": "2025-07-16T16:46:26.000Z",
+  "aliases": [
+    "CVE-2025-7715"
+  ],
+  "details": "This module allows you to define custom attributes for a block. You can specify an attribute name to be added to the block in a predefined format.\n\nThe module does not sufficiently validate the provided attributes, which makes it possible to insert JavaScript event attributes such as `onmouseover`, `onkeyup`, etc. These attributes can execute JavaScript code when the page is rendered, leading to cross-site scripting (XSS) vulnerabilities.\n\nThis vulnerability is partially mitigated by the requirement to manually add the specific attributes and corresponding JavaScript code to the form after the attribute has been created.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/block_attributes"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.0 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-090"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

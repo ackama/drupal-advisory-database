@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-033",
+  "modified": "2023-08-11T18:50:05.000Z",
+  "published": "2019-03-06T18:16:22.000Z",
+  "aliases": [],
+  "details": "This module addresses the General Data Protection Regulation (GDPR) that came into effect 25th May 2018, and the EU Directive on Privacy and Electronic Communications from 2012. It provides a banner where you can gather consent from the user when the website stores cookies on their computer or otherwise handles their personal information.\n\nThe module doesn't sufficiently sanitize data for some interface labels and strings shown in the cookie policy banner, opening up possibility of Cross Site Scripting exploits that can be created by somebody that has access to the admin interface of the module.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Administer EU Cookie Compliance banner\". For Drupal 8, the vulnerability also requires access to a text format that doesn't sanitize data.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/eu_cookie_compliance"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-033"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Yonatan Offek",
+      "contact": [
+        "https://www.drupal.org/user/194009"
+      ]
+    }
+  ]
+}

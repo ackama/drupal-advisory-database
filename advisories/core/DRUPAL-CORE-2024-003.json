@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2024-003",
+  "modified": "2024-12-09T23:22:21.000Z",
+  "published": "2024-11-20T17:20:16.000Z",
+  "aliases": [
+    "CVE-2024-12393"
+  ],
+  "details": "Drupal uses JavaScript to render status messages in some cases and configurations. In certain situations, the status messages are not adequately sanitized.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.8.0"
+            },
+            {
+              "fixed": "10.2.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.8.0 < 10.2.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.3.0"
+            },
+            {
+              "fixed": "10.3.9"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 10.3.0 < 10.3.9"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11.0.0"
+            },
+            {
+              "fixed": "11.0.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 11.0.0 < 11.0.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.8.0 < 10.2.11 || >= 10.3.0 < 10.3.9 || >= 11.0.0 < 11.0.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2024-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jay Beaton",
+      "contact": [
+        "https://www.drupal.org/user/352123"
+      ]
+    }
+  ]
+}

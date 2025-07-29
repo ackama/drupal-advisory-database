@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-054",
+  "modified": "2023-08-10T19:26:43.000Z",
+  "published": "2022-09-07T16:57:28.000Z",
+  "aliases": [],
+  "details": "The Next.js module provides an inline preview for content. Authenticated requests are made to Drupal to fetch JSON:API content and render them in an iframe from the decoupled Next.js site.\n\nThe current implementation doesn\u2019t sufficiently check access for fetching data. All requests made to Drupal are authenticated using a single scope with elevated content access. Users without access to content could be exposed to unauthorized content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/next"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-054"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lauri Eskola",
+      "contact": [
+        "https://www.drupal.org/user/1078742"
+      ]
+    }
+  ]
+}

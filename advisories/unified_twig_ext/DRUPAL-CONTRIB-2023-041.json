@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-041",
+  "modified": "2023-08-30T18:51:23.000Z",
+  "published": "2023-08-30T16:22:06.000Z",
+  "aliases": [],
+  "details": "This module makes PatternLab's custom Twig functions available to Drupal theming.\n\nThe module's included examples don't sufficiently filter data.\n\nThis vulnerability is mitigated by the fact that the included examples must have been copied to a site's theme.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/unified_twig_ext"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff",
+      "contact": [
+        "https://www.drupal.org/user/3611858"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-094",
+  "modified": "2025-07-30T16:31:23.000Z",
+  "published": "2025-07-30T16:31:23.000Z",
+  "aliases": [
+    "CVE-2025-8362"
+  ],
+  "details": "This module enables you to integrate Google Tag Manager (GTM) into your Drupal site by allowing administrators to configure and embed GTM container snippets.\n\nThe module doesn't sufficiently sanitize the GTM container ID under the scenario where a user with the *Administer gtm* permission enters malicious input into the *GTM-ID* field. This value is directly inserted into a `<script>` tag, making the site vulnerable to Cross-site Scripting (XSS) attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission *Administer gtm*, and the input field is limited to 20 characters.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/gtm"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.10.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.10.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.10.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-094"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
