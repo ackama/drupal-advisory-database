@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2023-003",
+  "modified": "2024-11-22T08:02:17.000Z",
+  "published": "2023-03-15T16:24:29.000Z",
+  "aliases": [],
+  "details": "The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.\n\nThe URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.\n\nThis advisory is not covered by [Drupal Steward](/steward).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "9.4.12"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.0.0 <9.4.12"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.5.0"
+            },
+            {
+              "fixed": "9.5.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.5.0 <9.5.5"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10.0.0"
+            },
+            {
+              "fixed": "10.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=10.0.0 <10.0.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=8.0.0 <9.4.12 || >=9.5.0 <9.5.5 || >=10.0.0 <10.0.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2023-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jan Kellermann",
+      "contact": [
+        "https://www.drupal.org/user/371731"
+      ]
+    }
+  ]
+}

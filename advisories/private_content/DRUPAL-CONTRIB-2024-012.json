@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-012",
+  "modified": "2025-02-20T19:09:55.000Z",
+  "published": "2024-02-28T18:19:01.000Z",
+  "aliases": [
+    "CVE-2024-13248"
+  ],
+  "details": "This module gives each node a 'private' checkbox. If it's set, the node can only be seen by the node author, or users with the 'access private content' permission.\n\nThe module incorrectly grants access to private nodes under certain specific circumstances. This vulnerability is mitigated by the fact that an attacker must have a role with the permission \"Access private content\".",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/private_content"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-012"
+    }
+  ],
+  "credits": [
+    {
+      "name": "kiwimind",
+      "contact": [
+        "https://www.drupal.org/user/749470"
+      ]
+    }
+  ]
+}

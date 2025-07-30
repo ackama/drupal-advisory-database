@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-001",
+  "modified": "2025-06-19T22:05:09.000Z",
+  "published": "2025-01-08T17:22:11.000Z",
+  "aliases": [
+    "CVE-2025-31676"
+  ],
+  "details": "This module enables you to do Two-Factor Authentication by email, using a user registered email to send a verification code to the user's email every time the user tries to log in to your site.\n\nThe module did not sufficiently protect against brute force attacks, allowing an attacker to bypass the second factor.\n\nThis vulnerability is mitigated by the fact the attacker must be able to present the username and first factor (i.e. password).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/email_tfa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.0.0 <2.0.3",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ursin Cola",
+      "contact": [
+        "https://www.drupal.org/user/679260"
+      ]
+    }
+  ]
+}

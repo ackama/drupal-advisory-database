@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-008",
+  "modified": "2023-08-10T14:21:21.000Z",
+  "published": "2023-03-01T17:38:09.000Z",
+  "aliases": [],
+  "details": "This module enables you to associate Forums as Group 1.x content and use Group access permissions.\n\nPrevious versions of the module incorrectly set node access on creation, and did not correctly restrict access to lists of forum topics.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/group_forum"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.0.0 <2.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "ekes",
+      "contact": [
+        "https://www.drupal.org/user/10083"
+      ]
+    }
+  ]
+}

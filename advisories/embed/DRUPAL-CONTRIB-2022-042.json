@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-042",
+  "modified": "2023-08-10T21:02:21.000Z",
+  "published": "2022-05-25T16:45:17.000Z",
+  "aliases": [],
+  "details": "The Drupal Embed module provides a filter to allow embedding various embeddable items like entities in content fields.\n\nIn certain circumstances, the filter could allow an unprivileged user to inject HTML into a page when it is accessed by a trusted user with permission to embed items. In some cases, this could lead to Cross-Site Request Forgery.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/embed"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-042"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Aaron Zinck",
+      "contact": [
+        "https://www.drupal.org/user/518662"
+      ]
+    }
+  ]
+}

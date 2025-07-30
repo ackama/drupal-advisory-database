@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2020-021",
+  "modified": "2023-08-11T17:47:04.000Z",
+  "published": "2020-05-27T15:47:10.000Z",
+  "aliases": [],
+  "details": "This module enables you to force a password update when using password reset link.  \nThe module doesn't sufficiently validate the login URL allowing a malicious user to use a specially crafted URL to log in as another user.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/prlp"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2020-021"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kyle Einecker",
+      "contact": [
+        "https://www.drupal.org/user/2824963"
+      ]
+    },
+    {
+      "name": "Seth Hill",
+      "contact": [
+        "https://www.drupal.org/user/676480"
+      ]
+    }
+  ]
+}

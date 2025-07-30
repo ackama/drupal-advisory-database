@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-015",
+  "modified": "2023-08-11T14:02:31.000Z",
+  "published": "2022-01-25T18:39:13.000Z",
+  "aliases": [],
+  "details": "This module enables you to automatically scan images uploaded to the site to extract their meta data and store it in taxonomy structures.\n\nThe module doesn't sufficiently protect against malicious files being used to attack the site.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to upload images to the site.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/exif"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.3.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.3.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.3.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.3.0 || >=2.0.0 <2.3.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-015"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
+      ]
+    }
+  ]
+}

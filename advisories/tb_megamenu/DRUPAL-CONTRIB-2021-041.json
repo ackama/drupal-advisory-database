@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-041",
+  "modified": "2023-08-11T16:55:59.000Z",
+  "published": "2021-09-22T17:26:20.000Z",
+  "aliases": [],
+  "details": "This module provides an admin interface for creating drop down menus that combine Drupal menu items with rich media content.\n\nThis module has a vulnerability whereby users can select blocks as a menu item they don't have permission to view.\n\nThe vulnerability is mitigated by the fact that it can only be exploited by an attacker with the \"Administer TB Mega Menu\" permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tb_megamenu"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Patrick Fey",
+      "contact": [
+        "https://www.drupal.org/user/998680"
+      ]
+    }
+  ]
+}

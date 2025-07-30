@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-086",
+  "modified": "2025-07-02T17:37:13.000Z",
+  "published": "2025-07-02T17:37:13.000Z",
+  "aliases": [
+    "CVE-2025-7031"
+  ],
+  "details": "This module enables you to use [config\\_pages](https://www.drupal.org/project/config_pages) as a content entity.\n\nThe module doesn't check permission or entity access before rendering config\\_pages content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/config_pages_viewer"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-086"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

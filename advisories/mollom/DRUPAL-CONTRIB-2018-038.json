@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2018-038",
+  "modified": "2023-08-11T21:28:55.000Z",
+  "published": "2018-06-06T12:58:31.000Z",
+  "aliases": [],
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: <https://www.drupal.org/node/251466>.\n\nThe security team marks all unsupported projects critical by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/mollom"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-038"
+    }
+  ],
+  "credits": [
+    {
+      "name": "St\u00e9phane Corlosquet",
+      "contact": [
+        "https://www.drupal.org/u/scor"
+      ]
+    }
+  ]
+}

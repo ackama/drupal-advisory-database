@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2021-001",
+  "modified": "2022-08-21T19:04:14.000Z",
+  "published": "2021-01-20T17:10:55.000Z",
+  "aliases": [],
+  "details": "The Drupal project uses the pear Archive\\_Tar library, which has released a security update that impacts Drupal. For more information please see:\n\n* [CVE-2020-36193](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-36193)\n\nExploits may be possible if Drupal is configured to allow `.tar`, `.tar.gz`, `.bz2`, or `.tlz` file uploads and processes them.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.78.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.78"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.9.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 9.0.0 <9.0.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.1.0 <9.1.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.78 || >= 8.0.0 <8.9.13 || >= 9.0.0 <9.0.11 || >=9.1.0 <9.1.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jonathan Danaher",
+      "contact": [
+        "https://www.drupal.org/user/1771466"
+      ]
+    },
+    {
+      "name": "Kim Pepper",
+      "contact": [
+        "https://www.drupal.org/user/370574"
+      ]
+    },
+    {
+      "name": "Richard Sheppard",
+      "contact": [
+        "https://www.drupal.org/user/55284"
+      ]
+    },
+    {
+      "name": "Stephen Cross",
+      "contact": [
+        "https://www.drupal.org/user/2485138"
+      ]
+    }
+  ]
+}
