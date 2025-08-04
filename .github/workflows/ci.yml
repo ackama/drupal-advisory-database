@@ -76,7 +76,7 @@ jobs:
         # - https://github.com/python-poetry/poetry/issues/10490
         # - https://github.com/actions/setup-python/issues/1167
         run: pip install virtualenv==20.32
-      - run: pipx install poetry~=2.0
+      - run: pipx install poetry
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version-file: '.python-version'
