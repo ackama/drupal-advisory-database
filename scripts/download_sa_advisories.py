@@ -58,8 +58,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
     data: drupal.ApiResponse[drupal.Advisory] = response.json()
     url = data.get('next', '').replace('api-d7/node?', 'api-d7/node.json?')
     for item in data['list']:
-      changed = int(item['changed'])
-      if changed <= last_modified_timestamp:
+      if int(item['changed']) <= last_modified_timestamp:
         # We have reached the last modified entry.
         url = ''
         break
