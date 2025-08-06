@@ -49,20 +49,18 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
 
   print(f'fetching sa advisories modified after {last_modified_timestamp}')
   url = 'https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0'
-  fetch_again = True
-  while fetch_again:
+  while url != '':
     print(f'fetching {url}')
     response = requests.get(url, headers={'user-agent': user_agent})
     if response.status_code != 200:
       print(f'X API responded {response.status_code}')
-      fetch_again = False
-      continue
+      break
     data: drupal.ApiResponse[drupal.Advisory] = response.json()
     for item in data['list']:
       changed = int(item['changed'])
       if changed <= last_modified_timestamp:
         # We have reached the last modified entry.
-        fetch_again = False
+        url = ''
         break
       advisory_id = determine_sa_id(item)
       print(
@@ -76,7 +74,6 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
       url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
     else:
       print('finished processing new and updated advisories')
-      fetch_again = False
 
 
 most_recent_changed_time = get_most_recent_changed_timestamp()
