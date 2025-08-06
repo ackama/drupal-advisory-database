@@ -56,6 +56,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
       print(f'X API responded {response.status_code}')
       break
     data: drupal.ApiResponse[drupal.Advisory] = response.json()
+    url = data.get('next', '').replace('api-d7/node?', 'api-d7/node.json?')
     for item in data['list']:
       changed = int(item['changed'])
       if changed <= last_modified_timestamp:
@@ -70,8 +71,6 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
         json.dump(item, f)
         f.write('\n')
     print(' \\- finished processing page')
-    if 'next' in data and data['next'] != '':
-      url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
   print('finished processing new and updated advisories')
 
 
