@@ -72,8 +72,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
     print(' \\- finished processing page')
     if 'next' in data and data['next'] != '':
       url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
-    else:
-      print('finished processing new and updated advisories')
+  print('finished processing new and updated advisories')
 
 
 most_recent_changed_time = get_most_recent_changed_timestamp()
