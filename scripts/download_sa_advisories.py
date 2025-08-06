@@ -53,29 +53,29 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
   while fetch_again:
     print(f'fetching {url}')
     response = requests.get(url, headers={'user-agent': user_agent})
-    if response.status_code == 200:
-      data: drupal.ApiResponse[drupal.Advisory] = response.json()
-      for item in data['list']:
-        changed = int(item['changed'])
-        if changed > last_modified_timestamp:
-          advisory_id = determine_sa_id(item)
-          print(
-            f' |- updating cache/advisories/{advisory_id}.json as {item["url"]} has changed'
-          )
-          with open(f'cache/advisories/{advisory_id}.json', 'w') as f:
-            json.dump(item, f)
-            f.write('\n')
-        else:
-          # We have reached the last modified entry.
-          fetch_again = False
-      print(' \\- finished processing page')
-      if 'next' in data and data['next'] != '':
-        url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
-      else:
-        print('finished processing new and updated advisories')
-        fetch_again = False
-    else:
+    if response.status_code != 200:
       print(f'X API responded {response.status_code}')
+      fetch_again = False
+      continue
+    data: drupal.ApiResponse[drupal.Advisory] = response.json()
+    for item in data['list']:
+      changed = int(item['changed'])
+      if changed <= last_modified_timestamp:
+        # We have reached the last modified entry.
+        fetch_again = False
+        break
+      advisory_id = determine_sa_id(item)
+      print(
+        f' |- updating cache/advisories/{advisory_id}.json as {item["url"]} has changed'
+      )
+      with open(f'cache/advisories/{advisory_id}.json', 'w') as f:
+        json.dump(item, f)
+        f.write('\n')
+    print(' \\- finished processing page')
+    if 'next' in data and data['next'] != '':
+      url = data['next'].replace('api-d7/node?', 'api-d7/node.json?')
+    else:
+      print('finished processing new and updated advisories')
       fetch_again = False
 
 
