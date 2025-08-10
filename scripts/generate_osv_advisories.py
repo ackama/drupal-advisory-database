@@ -322,15 +322,23 @@ def get_credits_from_sa(
   return sorted(credit_list, key=lambda c: c['name'])
 
 
-def determine_composer_package_name(sa_advisory: drupal.Advisory) -> str:
+def build_affected_package(sa_advisory: drupal.Advisory) -> osv.Package:
   project = typing.cast(
     drupal.Project, fetch_drupal_node(sa_advisory['field_project']['id'])
   )
 
+  package_ecosystem = 'Drupal'
+
   project_name = project['field_project_machine_name']
   if project_name == 'drupal':
     project_name = 'core'
-  return f'drupal/{project_name}'
+
+    # drupal/core is provided by the Packagist repository, so it actually belongs to the Packagist ecosystem
+    # todo: there are other drupal/* packages that published like this which should be supported
+    package_ecosystem = 'Packagist'
+  package_name = f'drupal/{project_name}'
+
+  return {'ecosystem': package_ecosystem, 'name': package_name}
 
 
 class DrupalAdvisoryPatch(typing.TypedDict):
@@ -396,11 +404,7 @@ def build_osv_advisory(
     'details': markdownify(sa_advisory['field_sa_description']['value']),
     'affected': [
       {
-        # todo: figure out if we need a dedicated ecosystem i.e. Drupal, Drupal8, etc
-        'package': {
-          'ecosystem': 'Drupal',
-          'name': determine_composer_package_name(sa_advisory),
-        },
+        'package': build_affected_package(sa_advisory),
         # todo: figure out how to map field_sa_criticality to severity
         #  https://ossf.github.io/osv-schema/#severitytype-field
         #  https://www.drupal.org/drupal-security-team/security-risk-levels-defined

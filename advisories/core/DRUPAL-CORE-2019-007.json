@@ -10,7 +10,7 @@
   "affected": [
     {
       "package": {
-        "ecosystem": "Drupal",
+        "ecosystem": "Packagist",
         "name": "drupal/core"
       },
       "severity": [],
