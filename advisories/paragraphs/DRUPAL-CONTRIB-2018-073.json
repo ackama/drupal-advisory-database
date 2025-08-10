@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2018-073",
+  "modified": "2023-08-11T21:14:25.000Z",
+  "published": "2018-10-31T17:53:57.000Z",
+  "aliases": [],
+  "details": "The Paragraphs module allows Drupal Site Builders to make content organization cleaner so that you can give more editing power to end-users.\n\nThe module doesn't sufficiently check access to create new paragraph entities which can cause access bypass issues when used in combination with other contributed modules.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/paragraphs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2018-073"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sam Becker",
+      "contact": [
+        "https://www.drupal.org/user/1485048"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-032",
+  "modified": "2023-08-10T21:41:21.000Z",
+  "published": "2022-03-30T18:23:29.000Z",
+  "aliases": [],
+  "details": "This module provides integration with the CleanTalk spam protection service.\n\nThe module does not properly filter data in certain circumstances.\n\n**Update: 2022-03-31 - fix release node links**",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/cleantalk"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.15.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.15.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.21"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.1.0 <9.1.21"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.15.0 || >=9.1.0 <9.1.21"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-032"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Glomberg",
+      "contact": [
+        "https://www.drupal.org/user/3624869"
+      ]
+    },
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    }
+  ]
+}

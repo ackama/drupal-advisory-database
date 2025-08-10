@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-013",
+  "modified": "2023-08-10T14:19:21.000Z",
+  "published": "2023-04-12T16:09:25.000Z",
+  "aliases": [],
+  "details": "This module enables you to secure any page with a password.\n\nThe module does not sufficiently restrict access to the page content.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/protected_pages"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.6.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.6",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-013"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Shelane French",
+      "contact": [
+        "https://www.drupal.org/user/2674989"
+      ]
+    }
+  ]
+}

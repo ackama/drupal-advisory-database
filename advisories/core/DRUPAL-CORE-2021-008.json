@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2021-008",
+  "modified": "2022-08-21T18:57:18.000Z",
+  "published": "2021-09-15T15:22:27.000Z",
+  "aliases": [
+    "CVE-2020-13675"
+  ],
+  "details": "Drupal's JSON:API and REST/File modules allow file uploads through their HTTP APIs. The modules do not correctly run all file validation, which causes an access bypass vulnerability. An attacker might be able to upload files that bypass the file validation process implemented by modules on the site.\n\nThis vulnerability is mitigated by three factors:\n\n1. The JSON:API or REST File upload modules must be enabled on the site.\n2. An attacker must have access to a file upload via JSON:API or REST.\n3. The site must employ a file validation module.\n\nThis advisory is not covered by [Drupal Steward](/steward).\n\nAlso see [GraphQL - Moderately critical - Access bypass - SA-CONTRIB-2021-029](https://www.drupal.org/sa-contrib-2021-029) which addresses a similar vulnerability for that module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.9.19"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.9.19"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.1.0"
+            },
+            {
+              "fixed": "9.1.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 9.1.0 <9.1.13"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.2.0"
+            },
+            {
+              "fixed": "9.2.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.2.0 <9.2.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.9.19 || >= 9.1.0 <9.1.13 || >=9.2.0 <9.2.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2021-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Klaus Purer",
+      "contact": [
+        "https://www.drupal.org/user/262198"
+      ]
+    }
+  ]
+}

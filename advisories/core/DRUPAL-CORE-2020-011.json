@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2020-011",
+  "modified": "2022-08-21T19:07:45.000Z",
+  "published": "2020-09-16T16:45:26.000Z",
+  "aliases": [
+    "CVE-2020-13670"
+  ],
+  "details": "A vulnerability exists in the File module which allows an attacker to gain access to the file metadata of a permanent private file that they do not have access to by guessing the ID of the file.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.8.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.8.10"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.9.0"
+            },
+            {
+              "fixed": "8.9.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.9.0 <8.9.6"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9.0.0"
+            },
+            {
+              "fixed": "9.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=9.0.0 <9.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.8.10 || >= 8.9.0 <8.9.6 || >=9.0.0 <9.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2020-011"
+    }
+  ],
+  "credits": [
+    {
+      "name": "David Rothstein",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    },
+    {
+      "name": "Ivan",
+      "contact": [
+        "https://www.drupal.org/user/556138"
+      ]
+    },
+    {
+      "name": "Mori Sugimoto",
+      "contact": [
+        "https://www.drupal.org/user/82971"
+      ]
+    },
+    {
+      "name": "elarlang",
+      "contact": [
+        "https://www.drupal.org/user/3583903"
+      ]
+    },
+    {
+      "name": "kyk",
+      "contact": [
+        "https://www.drupal.org/user/29822"
+      ]
+    },
+    {
+      "name": "njbooher",
+      "contact": [
+        "https://www.drupal.org/u/njbooher"
+      ]
+    }
+  ]
+}

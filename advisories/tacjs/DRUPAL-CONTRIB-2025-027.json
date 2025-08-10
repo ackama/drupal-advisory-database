@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-027",
+  "modified": "2025-04-02T17:01:45.000Z",
+  "published": "2025-04-02T17:01:45.000Z",
+  "aliases": [
+    "CVE-2025-31476"
+  ],
+  "details": "This module enables sites to comply with the European cookie law using tarteaucitron.js.\n\nThe module doesn't sufficiently filter user-supplied markup inside of content leading to a persistent Cross Site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker needs to be able to insert specific data attributes in the page.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tacjs"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "6.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<6.7.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<6.7.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-027"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

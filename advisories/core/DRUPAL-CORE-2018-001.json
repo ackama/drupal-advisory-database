@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2018-001",
+  "modified": "2022-08-21T19:44:07.000Z",
+  "published": "2018-02-21T17:10:55.000Z",
+  "aliases": [],
+  "details": "This security advisory fixes multiple vulnerabilities in both Drupal 7 and Drupal 8. See below for a list.\n\n#### Comment reply form allows access to restricted content - Critical - Drupal 8 - CVE-2017-6926\n\nUsers with permission to post comments are able to view content and comments they do not have access to, and are also able to add comments to this content.\n\nThis vulnerability is mitigated by the fact that the comment system must be enabled and the attacker must have permission to post comments.\n\n#### JavaScript cross-site scripting prevention is incomplete - Critical - Drupal 7 and Drupal 8 - CVE-2017-6927\n\nDrupal has a `Drupal.checkPlain()` JavaScript function which is used to escape potentially dangerous text before outputting it to HTML (as JavaScript output is not auto-escaped by either Drupal 7 or Drupal 8). This function does not correctly handle all methods of injecting malicious HTML, leading to a cross-site scripting vulnerability under certain circumstances.\n\nThe PHP functions which Drupal provides for HTML escaping are not affected.\n\n#### Private file access bypass - Moderately Critical - Drupal 7 - CVE-2017-6928\n\nWhen using Drupal's private file system, Drupal will check to make sure a user has access to a file before allowing the user to view or download it. This check fails under certain conditions in which one module is trying to grant access to the file and another is trying to deny it, leading to an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that it only occurs for unusual site configurations.\n\n#### jQuery vulnerability with untrusted domains - Moderately Critical - Drupal 7 - CVE-2017-6929\n\nA jQuery cross site scripting vulnerability is present when making Ajax requests to untrusted domains (the CVE for this issue in jQuery is CVE-2015-9251). This vulnerability is mitigated by the fact that it requires contributed or custom modules in order to exploit.\n\nFor Drupal 8, this vulnerability was already fixed in Drupal 8.4.0 in the Drupal core upgrade to jQuery 3. For Drupal 7, it is fixed in the current release (Drupal 7.57) for jQuery 1.4.4 (the version that ships with Drupal 7 core) as well as for other newer versions of jQuery that might be used on the site, for example using the [jQuery Update module](https://www.drupal.org/project/jquery_update).\n\n#### Language fallback can be incorrect on multilingual sites with node access restrictions - Moderately Critical - Drupal 8 - CVE-2017-6930\n\nWhen using node access controls with a multilingual site, Drupal marks the untranslated version of a node as the default fallback for access queries. This fallback is used for languages that do not yet have a translated version of the created node. This can result in an access bypass vulnerability.\n\nThis issue is mitigated by the fact that it only applies to sites that a) use the Content Translation module; and b) use a node access module such as Domain Access which implement `hook_node_access_records()`.\n\n*Note that the update will mark the node access tables as needing a rebuild, which will take a long time on sites with a large number of nodes.*\n\n#### Settings Tray access bypass - Moderately Critical - Drupal 8 - CVE-2017-6931\n\nThe Settings Tray module has a vulnerability that allows users to update certain data that they do not have the permissions for.\n\nIf you have implemented a Settings Tray form in contrib or a custom module, the correct access checks should be added. This release fixes the only two implementations in core, but does not harden against other such bypasses.\n\nThis vulnerability can be mitigated by disabling the Settings Tray module.\n\n#### External link injection on 404 pages when linking to the current page - Less Critical - Drupal 7 - CVE-2017-6932\n\nDrupal core has an external link injection vulnerability when the language switcher block is used. A similar vulnerability exists in various custom and contributed modules. This vulnerability could allow an attacker to trick users into unwillingly navigating to an external site.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.57.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.57"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.4.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.4.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.57 || >= 8.0.0 <8.4.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2018-001"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Anders Olsson",
+      "contact": [
+        "https://www.drupal.org/user/855656"
+      ]
+    },
+    {
+      "name": "David Rothstein",
+      "contact": [
+        "https://www.drupal.org/user/124982"
+      ]
+    },
+    {
+      "name": "Grant Gaudet",
+      "contact": [
+        "https://www.drupal.org/user/360002"
+      ]
+    },
+    {
+      "name": "Ivan",
+      "contact": [
+        "https://www.drupal.org/user/556138"
+      ]
+    },
+    {
+      "name": "Ken Rickard",
+      "contact": [
+        "https://www.drupal.org/user/20975"
+      ]
+    },
+    {
+      "name": "Ted Bowman",
+      "contact": [
+        "https://www.drupal.org/user/240860"
+      ]
+    },
+    {
+      "name": "will c",
+      "contact": [
+        "https://www.drupal.org/user/2610796"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2019-003",
+  "modified": "2022-08-21T19:40:55.000Z",
+  "published": "2019-02-20T19:18:48.000Z",
+  "aliases": [
+    "CVE-2019-6340"
+  ],
+  "details": "Some field types do not properly sanitize data from non-form sources. This can lead to arbitrary PHP code execution in some cases.\n\nA site is only affected by this if one of the following conditions is met:\n\n* The site has the Drupal 8 core RESTful Web Services (rest) module enabled and allows **GET**, PATCH or POST requests, or\n* the site has another web services module enabled, like [JSON:API](https://www.drupal.org/project/jsonapi) in Drupal 8, or [Services](https://www.drupal.org/project/services) or [RESTful Web Services](https://www.drupal.org/project/restws) in Drupal 7.\n\n(*Note: The Drupal 7 Services module itself does not require an update at this time, but you should still apply other contributed updates associated with this advisory if Services is in use.*)\n\nUpdates\n-------\n\n* **2019-02-22**: Updated risk score given new information; see [PSA-2019-02-22](https://www.drupal.org/psa-2019-02-22). The security risk score has been updated to 23/25 as there are now known exploits in the wild. In addition, any enabled REST resource end-point, **even if it only accepts GET requests**, is also vulnerable. Note this does not include REST exports from Views module.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.11"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.5.11"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.6.10"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.6.0 <8.6.10"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">= 8.0.0 <8.5.11 || >=8.6.0 <8.6.10"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-003"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

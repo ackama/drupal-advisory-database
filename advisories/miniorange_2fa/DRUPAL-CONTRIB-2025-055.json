@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-055",
+  "modified": "2025-05-07T17:16:36.000Z",
+  "published": "2025-05-07T17:07:46.000Z",
+  "aliases": [
+    "CVE-2025-47709"
+  ],
+  "details": "The module enables you to add second-factor authentication in addition to the default Drupal login.\n\nThe module doesn't sufficiently protect certain sensitive routes, allowing an attacker to view or modify various TFA-related settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/miniorange_2fa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.7.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<4.7.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "5.0.0"
+            },
+            {
+              "fixed": "5.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=5.0.0 <5.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<4.7.0 || >=5.0.0 <5.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-055"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Juraj Nemec (poker10)",
+      "contact": [
+        "https://www.drupal.org/u/poker10"
+      ]
+    }
+  ]
+}

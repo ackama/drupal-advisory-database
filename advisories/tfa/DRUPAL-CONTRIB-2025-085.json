@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-085",
+  "modified": "2025-07-02T17:37:03.000Z",
+  "published": "2025-07-02T17:37:03.000Z",
+  "aliases": [
+    "CVE-2025-7030"
+  ],
+  "details": "This module enables you to allow and/or require a second authentication method in addition to password authentication.\n\nThe module does not sufficiently ensure that users with enhanced privileges are prevented from viewing recovery codes of other users.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the *Administer TFA for other users* permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/tfa"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.11.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.11.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.11.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-085"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Conrad Lara (cmlara)",
+      "contact": [
+        "https://www.drupal.org/u/cmlara"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-076",
+  "modified": "2025-05-29T18:15:56.000Z",
+  "published": "2025-05-28T17:46:09.000Z",
+  "aliases": [
+    "CVE-2025-48915"
+  ],
+  "details": "The COOKIES module protects users from executing JavaScript code provided by third parties, e.g., to display ads or track user data without consent.\n\nEach sub-module allows to include a specific third party service in the consent management, by controlling the execution of javascript. However, this does not adequately check whether the provided JavaScript code originates from authorized users.\n\nA potential attacker would at least need permission to create and publish HTML (e.g. content or comments).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/cookies"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.15"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.15"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-076"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
