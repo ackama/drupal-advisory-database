@@ -9,6 +9,7 @@ most recent changed time out of all the existing SA advisories
 
 import json
 import os
+import time
 import typing
 
 import requests
@@ -49,12 +50,28 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
 
   print(f'fetching sa advisories modified after {last_modified_timestamp}')
   url = 'https://www.drupal.org/api-d7/node.json?type=sa&sort=changed&direction=DESC&field_is_psa=0'
+  retry = True
   while url != '':
     print(f'fetching {url}')
     response = requests.get(url, headers={'user-agent': user_agent})
+
+    # if we're making too many requests and have not already retried the current
+    # url, wait the requested number of seconds before doing a retry
+    if retry and response.status_code == 429:
+      retry = False  # just give up if we get told to back off again
+      seconds = int(response.headers.get('Retry-After', 0))
+      print(f' |* (waiting {seconds} seconds before retrying)')
+      time.sleep(seconds)
+      continue
+
     if response.status_code != 200:
-      print(f'X API responded {response.status_code}')
-      break
+      raise Exception(f'unexpected {response.status_code} response when fetching {url}')
+
+    # allow (re)retrying for future requests
+    retry = True
+
+    # grab each advisory from the response and write it to disk
+    # before then continuing to the next page (if there is one)
     data: drupal.ApiResponse[drupal.Advisory] = response.json()
     url = data.get('next', '').replace('api-d7/node?', 'api-d7/node.json?')
     for item in data['list']:
