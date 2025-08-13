@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-097",
+  "modified": "2025-08-13T17:33:34.000Z",
+  "published": "2025-08-13T17:33:34.000Z",
+  "aliases": [
+    "CVE-2025-8996"
+  ],
+  "details": "The Layout Builder Advanced Permissions module enables you to have fine grained control over who can do what in editing pages built with Layout Builder.\n\nThe module doesn't sufficiently control access for adding sections in the submodule.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with a specific set of permissions:\n\n* Node: View published content\n* Node: (Your content type): Create new content\n* Node: (Your content type): Edit any content\n* Layout builder: (Your content type): Configure layout overrides for content items that the user can edit\n* Layout builder advanced permissions: Access Layout Builder page",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/layout_builder_perms"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.2.0"
+            },
+            {
+              "last_affected": "2.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "2.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-097"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Eelke Blok (eelkeblok)",
+      "contact": [
+        "https://www.drupal.org/u/eelkeblok"
+      ]
+    },
+    {
+      "name": "Michael Whittaker (mrwhittaker)",
+      "contact": [
+        "https://www.drupal.org/u/mrwhittaker"
+      ]
+    }
+  ]
+}
