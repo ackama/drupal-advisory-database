@@ -53,8 +53,7 @@ def download_sa_advisories_from_rest_api(last_modified_timestamp: int) -> None:
     print(f'fetching {url}')
     response = requests.get(url, headers={'user-agent': user_agent})
     if response.status_code != 200:
-      print(f'X API responded {response.status_code}')
-      break
+      raise Exception(f'unexpected {response.status_code} response when fetching {url}')
     data: drupal.ApiResponse[drupal.Advisory] = response.json()
     url = data.get('next', '').replace('api-d7/node?', 'api-d7/node.json?')
     for item in data['list']:
