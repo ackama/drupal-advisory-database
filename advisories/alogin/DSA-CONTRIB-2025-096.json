@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-096",
+  "modified": "2025-08-13T17:33:24.000Z",
+  "published": "2025-08-13T17:33:24.000Z",
+  "aliases": [
+    "CVE-2025-8995"
+  ],
+  "details": "This module enables users to setup two-factor authentication (2FA) using authenticator apps for enhanced login security. The module alters the standard Drupal login form to use AJAX callbacks for handling authentication flow.\n\nThe module doesn't sufficiently validate authentication under specific conditions, allowing an attacker to log in as any account where they know the username.\n\nThis vulnerability is mitigated by the fact that an attacker must make a series of requests to trigger the necessary conditions that allow authentication byass. The series of requests could alert a site owner that they are being attacked; however, the number of requests necessary to trigger the conditions is usually quite small (the number depends on site configuration, by default it is 5).",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/alogin"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-096"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
