@@ -16,14 +16,11 @@ from urllib.parse import urljoin
 
 import requests
 import semver
-from colorama import Fore, Style
-from colorama import init as colorama_init
 from markdownify import markdownify
 
 from typings import drupal, osv
+from helpers.text import Text
 from user_agent import user_agent
-
-colorama_init()
 
 
 def fetch_drupal_node(nid: str) -> drupal.Node:
@@ -354,11 +351,11 @@ def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
 
     if before == sa_advisory['field_affected_versions']:
       sa_advisory['field_affected_versions'] = after
-      print('  \\- ' + success_string('patched affected versions'))
+      print('  \\- ' + Text.success('patched affected versions'))
       return True
     print(
       '  \\- '
-      + warning_string(
+      + Text.warning(
         f'skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"'
       )
     )
@@ -382,14 +379,14 @@ def build_osv_advisory(
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
   if sa_advisory['field_is_psa'] == '1':
-    print(' \\-' + error_string('skipping as it is a psa? (this should not happen)'))
+    print(' \\-' + Text.error('skipping as it is a psa? (this should not happen)'))
     return None
 
   # there's not really much we can do if there isn't an affected version
   # todo: since build_affected_ranges throws if this isn't present, it might
   #  make more sense to use that, with a custom exception class
   if sa_advisory['field_affected_versions'] is None:
-    print(' \\- ' + notice_string('skipping as we do not have any affected versions'))
+    print(' \\- ' + Text.notice('skipping as we do not have any affected versions'))
     return None
 
   osv_advisory: osv.Vulnerability = {
@@ -469,7 +466,7 @@ def generate_osv_advisories() -> None:
       if is_existing_advisory_ahead(name, sa_id, osv_advisory['modified']):
         print(
           ' \\- '
-          + error_string(
+          + Text.error(
             'error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
           )
         )
@@ -478,22 +475,6 @@ def generate_osv_advisories() -> None:
       with open(f'advisories/{name}/D{sa_id}.json', 'w') as f:
         json.dump(osv_advisory, f, indent=2)
         f.write('\n')
-
-
-def notice_string(message: str) -> str:
-  return f'{Fore.YELLOW}{Style.DIM}{message}{Style.RESET_ALL}'
-
-
-def success_string(message: str) -> str:
-  return f'{Fore.GREEN}{message}{Style.RESET_ALL}'
-
-
-def warning_string(message: str) -> str:
-  return f'{Fore.YELLOW}{message}{Style.RESET_ALL}'
-
-
-def error_string(message: str) -> str:
-  return f'{Fore.RED}{message}{Style.RESET_ALL}'
 
 
 if __name__ == '__main__':
