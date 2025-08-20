@@ -19,7 +19,7 @@ import semver
 from markdownify import markdownify
 
 from typings import drupal, osv
-from helpers.text import Text
+from helpers.text_is import TextIs
 from user_agent import user_agent
 
 
@@ -351,11 +351,11 @@ def patch_advisory(sa_id: str, sa_advisory: drupal.Advisory) -> bool:
 
     if before == sa_advisory['field_affected_versions']:
       sa_advisory['field_affected_versions'] = after
-      print('  \\- ' + Text.success('patched affected versions'))
+      print('  \\- ' + TextIs.success('patched affected versions'))
       return True
     print(
       '  \\- '
-      + Text.warning(
+      + TextIs.warning(
         f'skipped patching as affected version is now "{sa_advisory["field_affected_versions"]}"'
       )
     )
@@ -379,14 +379,14 @@ def build_osv_advisory(
   # we expect that the downloader has excluded PSA type entries, but
   # we still guard against them here just in case one slips through
   if sa_advisory['field_is_psa'] == '1':
-    print(' \\-' + Text.error('skipping as it is a psa? (this should not happen)'))
+    print(' \\-' + TextIs.error('skipping as it is a psa? (this should not happen)'))
     return None
 
   # there's not really much we can do if there isn't an affected version
   # todo: since build_affected_ranges throws if this isn't present, it might
   #  make more sense to use that, with a custom exception class
   if sa_advisory['field_affected_versions'] is None:
-    print(' \\- ' + Text.notice('skipping as we do not have any affected versions'))
+    print(' \\- ' + TextIs.notice('skipping as we do not have any affected versions'))
     return None
 
   osv_advisory: osv.Vulnerability = {
@@ -466,7 +466,7 @@ def generate_osv_advisories() -> None:
       if is_existing_advisory_ahead(name, sa_id, osv_advisory['modified']):
         print(
           ' \\- '
-          + Text.error(
+          + TextIs.error(
             'error: current modified date is ahead of the proposed modified date (is your cache up to date?)'
           )
         )

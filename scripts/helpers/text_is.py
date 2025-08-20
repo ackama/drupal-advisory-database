@@ -4,7 +4,7 @@ from colorama import just_fix_windows_console
 just_fix_windows_console()
 
 
-class Text:
+class TextIs:
   @staticmethod
   def notice(message: str) -> str:
     return f'{Fore.YELLOW}{Style.DIM}{message}{Style.RESET_ALL}'
