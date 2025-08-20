@@ -3,6 +3,7 @@ name = "drupal-advisory-database"
 requires-python = ">= 3.13"
 
 [tool.poetry.dependencies]
+colorama = "^0.4.6"
 jsonschema = "^4.23.0"
 markdownify = "^1.1.0"
 mypy = "^1.15.0"
@@ -12,7 +13,6 @@ ruff = "~0.14.0"
 semver = "^3.0.4"
 types-jsonschema = "^4.23.0.20241208"
 types-requests = "^2.32.0.20250328"
-colorama = "^0.4.6"
 types-colorama = "^0.4.15.20240311"
 
 [tool.poetry]
