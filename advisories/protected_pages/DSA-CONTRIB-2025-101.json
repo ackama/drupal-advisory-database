@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-101",
+  "modified": "2025-08-27T17:19:59.000Z",
+  "published": "2025-08-27T17:19:59.000Z",
+  "aliases": [
+    "CVE-2025-9551"
+  ],
+  "details": "This module enables you to protect individual pages with a password.\n\nThe module doesn't limit the number of password attempts, making it vulnerable to brute force attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must know the protected page's URL.\n\n**CVSS risk score ([experimental](https://www.drupal.org/project/securitydrupalorg/issues/3442181)) 6.3 / Medium**\n\n[CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N](https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/protected_pages"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-101"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

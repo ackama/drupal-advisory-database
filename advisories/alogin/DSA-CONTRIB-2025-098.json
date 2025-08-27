@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-098",
+  "modified": "2025-08-27T17:19:14.000Z",
+  "published": "2025-08-27T17:19:14.000Z",
+  "aliases": [
+    "CVE-2025-8093"
+  ],
+  "details": "This module allows users to setup two-factor authentication (2FA) using authenticator apps for enhanced login security.\n\nThe module did not protect all possible login paths provided by core modules.\n\n**CVSS risk score ([experimental](https://www.drupal.org/project/securitydrupalorg/issues/3442181)) 6.3 / Medium**\n\n[CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N](https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/alogin"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.8"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.8"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.8"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-098"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
