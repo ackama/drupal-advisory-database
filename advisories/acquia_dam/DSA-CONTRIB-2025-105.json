@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-105",
+  "modified": "2025-09-03T16:15:48.000Z",
+  "published": "2025-09-03T16:15:48.000Z",
+  "aliases": [
+    "CVE-2025-9954"
+  ],
+  "details": "This module enables you to connect a Drupal site to the Acquia DAM service, which syncs media from the third party service to the site.\n\nThe module doesn't sufficiently validate authorization to a list of DAM assets currently synced to the website creating an access bypass vulnerability.\n\nThis vulnerability is mitigated by the fact that it only impacts sites where users having the \u201cview media\u201d permission accessing any DAM asset is undesirable.\n\n**CVSS risk score ([experimental](https://www.drupal.org/project/securitydrupalorg/issues/3442181)) 6.9 / Medium**\n\n[CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N](https://www.first.org/cvss/calculator/4-0#CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/acquia_dam"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-105"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Brandon Goodwin (bgoodie)",
+      "contact": [
+        "https://www.drupal.org/u/bgoodie"
+      ]
+    },
+    {
+      "name": "Chris Burge (chris burge)",
+      "contact": [
+        "https://www.drupal.org/u/chris-burge"
+      ]
+    },
+    {
+      "name": "Todd Woofenden (toddwoof)",
+      "contact": [
+        "https://www.drupal.org/u/toddwoof"
+      ]
+    }
+  ]
+}
