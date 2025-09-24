@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-110",
+  "modified": "2025-09-24T17:27:41.000Z",
+  "published": "2025-09-24T17:27:41.000Z",
+  "aliases": [
+    "CVE-2025-10930"
+  ],
+  "details": "This module allows you to use different currencies on your website and do currency conversion.\n\nThe module doesn't sufficiently protect routes used to enable and disable currencies from Cross-Site Request Forgery (CSRF) attacks, potentially allowing an attacker to trick an admin into changing settings.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/currency"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<3.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<3.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-110"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Juraj Nemec (poker10)",
+      "contact": [
+        "https://www.drupal.org/u/poker10"
+      ]
+    }
+  ]
+}

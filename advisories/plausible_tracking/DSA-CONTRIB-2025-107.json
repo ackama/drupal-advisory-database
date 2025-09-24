@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-107",
+  "modified": "2025-09-24T17:18:08.000Z",
+  "published": "2025-09-24T17:18:08.000Z",
+  "aliases": [
+    "CVE-2025-10927"
+  ],
+  "details": "This module integrates Plausible Analytics on a site.\n\nThe module did not properly filter output in certain cases.\n\nThis vulnerability is mitigated by the fact that an attacker must have permission to add raw HTML to the website, such as an unfiltered WYSIWYG field on a public-facing comment.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/plausible_tracking"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-107"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

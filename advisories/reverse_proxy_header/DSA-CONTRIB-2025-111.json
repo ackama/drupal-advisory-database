@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-111",
+  "modified": "2025-09-24T17:28:05.000Z",
+  "published": "2025-09-24T17:28:05.000Z",
+  "aliases": [
+    "CVE-2025-10929"
+  ],
+  "details": "This module allows you to specify an HTTP header name to determine the client's IP address.\n\nThe module doesn't sufficiently handle all cases under the scenario if Drupal Core settings `$settings['reverse_proxy']` is set to TRUE and `$settings['reverse_proxy_addresses']` is configured.\n\nThis vulnerability allows an attacker to spoof a request IP address (as Drupal sees it), potentially bypassing a variety of controls.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/reverse_proxy_header"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.1.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.1.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.1.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-111"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

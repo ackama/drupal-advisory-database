@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-108",
+  "modified": "2025-09-24T17:27:20.000Z",
+  "published": "2025-09-24T17:27:20.000Z",
+  "aliases": [
+    "CVE-2025-10928"
+  ],
+  "details": "This module enables users to sign in with an access code instead of entering user names and passwords. When users are allowed to pick their own access codes, they can guess other users' access codes based on the fact that access codes need to be unique and the system warns if the code of their choice is taken.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the \"change own access code\" permission.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/access_code"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-108"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

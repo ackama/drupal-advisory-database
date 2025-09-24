@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-109",
+  "modified": "2025-09-24T17:27:33.000Z",
+  "published": "2025-09-24T17:27:33.000Z",
+  "aliases": [
+    "CVE-2025-10931"
+  ],
+  "details": "This module enables you to add Umami Analytics web statistics tracking system to your website.\n\nThe \"administer umami analytics\" permission allows inserting an arbitrary JavaScript file on every page. While this is an expected feature, the permission lacks the \"restrict access\" flag, which should alert administrators that this permission is potentially dangerous and can lead to cross-site scripting (XSS) vulnerabilities.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission \u201cadminister umami analytics\u201d.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/umami_analytics"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-109"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}
