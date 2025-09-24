@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-106",
+  "modified": "2025-09-24T17:16:20.000Z",
+  "published": "2025-09-24T17:16:20.000Z",
+  "aliases": [
+    "CVE-2025-10926"
+  ],
+  "details": "This module enables you to store and display JSON data using optional 3rd party libraries.\n\nThe module doesn't sufficiently filter data using some of the included field formatters leading to a Cross-site Scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/json_field"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-106"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Ivan  (chi)",
+      "contact": [
+        "https://www.drupal.org/u/chi"
+      ]
+    }
+  ]
+}
