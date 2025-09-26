@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2019-006",
+  "modified": "2022-08-21T19:38:49.000Z",
+  "published": "2019-04-17T20:30:56.000Z",
+  "aliases": [
+    "CVE-2019-11358"
+  ],
+  "details": "The jQuery project released version 3.4.0, and as part of that, disclosed a security vulnerability that affects all prior versions. As described in their [release notes](https://blog.jquery.com/2019/04/10/jquery-3-4-0-released/):\n\n> jQuery 3.4.0 includes a fix for some unintended behavior when using jQuery.extend(true, {}, ...). If an unsanitized source object contained an enumerable \\_\\_proto\\_\\_ property, it could extend the native Object.prototype. This fix is included in jQuery 3.4.0, but patch diffs exist to patch previous jQuery versions.\n\nIt's possible that this vulnerability is exploitable with some Drupal modules. As a precaution, this Drupal security release backports the fix to jQuery.extend(), without making any other changes to the jQuery version that is included in Drupal core (3.2.1 for Drupal 8 and 1.4.4 for Drupal 7) or running on the site via some other module such as [jQuery Update](https://www.drupal.org/project/jquery_update).\n\n*2019-04-22, edited to add CVE.*",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.66.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.66"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.5.15"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.6.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.6.0 <8.6.15"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.66 || >= 8.0.0 <8.5.15 || >=8.6.0 <8.6.15"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-006"
+    }
+  ],
+  "credits": [
+    {
+      "name": "dtv_rb",
+      "contact": [
+        "https://www.drupal.org/user/3528196"
+      ]
+    },
+    {
+      "name": "xjm",
+      "contact": [
+        "https://www.drupal.org/user/65776"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-069",
+  "modified": "2023-08-11T18:26:25.000Z",
+  "published": "2019-09-25T14:55:33.000Z",
+  "aliases": [],
+  "details": "This module provides a new UI experience for node editing - Gutenberg editor.\n\nThe routes used by the Gutenberg editor lack proper permissions allowing untrusted users to view and modify some content they should not be able to view or modify.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/gutenberg"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-069"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Greg Knaddison",
+      "contact": [
+        "https://www.drupal.org/user/36762"
+      ]
+    },
+    {
+      "name": "Marco Fernandes",
+      "contact": [
+        "https://www.drupal.org/user/2127558"
+      ]
+    }
+  ]
+}

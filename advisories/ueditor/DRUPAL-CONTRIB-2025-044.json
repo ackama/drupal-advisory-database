@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-044",
+  "modified": "2025-04-23T16:59:11.000Z",
+  "published": "2025-04-23T16:59:11.000Z",
+  "aliases": [
+    "CVE-2025-3903"
+  ],
+  "details": "The security team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, please read: [https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-mai...](https://www.drupal.org/node/251466#s-becoming-owner-maintainer-or-co-maintainer-of-a-project-that-is-unsupported-for-security-reasons)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/ueditor"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-044"
+    }
+  ],
+  "credits": []
+}

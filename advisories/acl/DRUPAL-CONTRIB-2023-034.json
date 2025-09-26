@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-034",
+  "modified": "2023-08-23T18:45:47.000Z",
+  "published": "2023-08-23T14:51:16.000Z",
+  "aliases": [],
+  "details": "The ACL module, short for Access Control Lists, is an API for other modules to create lists of users and give them access to nodes.\n\nThe module processes user input in a way that could be unsafe. This can lead to Remote Code Execution via Object Injection.\n\nAs this is an API module, it is only exploitable if a \"client\" module exposes the vulnerability. Details of some contributed client modules are given below. Custom modules using ACL could also expose the vulnerability.\n\nThis vulnerability is mitigated by the fact that an attacker typically needs an \"admin\"-type permission provided by one of ACL's client modules.\n\nKnown client modules include:\n\n* Forum Access\n* Flexi Access\n* Content Access\n\nCoordinated Security Advisories are being released for those client modules that have Security coverage.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/acl"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.0.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.0.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-034"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Drew Webber",
+      "contact": [
+        "https://www.drupal.org/user/255969"
+      ]
+    },
+    {
+      "name": "Samuel Mortenson",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

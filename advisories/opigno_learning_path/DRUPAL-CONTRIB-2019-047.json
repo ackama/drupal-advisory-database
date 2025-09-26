@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-047",
+  "modified": "2023-08-11T18:35:51.000Z",
+  "published": "2019-05-15T17:09:57.000Z",
+  "aliases": [],
+  "details": "In certain configuration cases, when a learning path is configured as semi-private, anonymous users are allowed to join a learning path when they should not.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/opigno_learning_path"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-047"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Nathaniel Catchpole",
+      "contact": [
+        "https://www.drupal.org/user/35733"
+      ]
+    }
+  ]
+}

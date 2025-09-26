@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-049",
+  "modified": "2023-11-06T14:25:23.000Z",
+  "published": "2023-11-01T16:56:37.000Z",
+  "aliases": [],
+  "details": "This module enables you to view all paragraph entities in an admin view.  \nThe module contains an access bypass that allows non admin users to access the view.  \nThe vulnerability can be mitigated by editing the view to change the permission required to access the page.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/paragraphs_admin"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.5.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.5.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.5.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-049"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Jen M",
+      "contact": [
+        "https://www.drupal.org/user/3085703"
+      ]
+    }
+  ]
+}

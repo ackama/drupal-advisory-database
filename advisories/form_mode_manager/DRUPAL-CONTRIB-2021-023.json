@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-023",
+  "modified": "2023-08-11T16:57:55.000Z",
+  "published": "2021-07-21T16:51:57.000Z",
+  "aliases": [],
+  "details": "This module provides a user interface that allows the implementation and use of *Form modes* without custom development.\n\nThe module does not sufficiently respect access restrictions to entity forms for routes it creates to use specific form modes.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with the permission to use a specific form mode, for example `use X form mode`.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/form_mode_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-023"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Bec",
+      "contact": [
+        "https://www.drupal.org/user/81067"
+      ]
+    },
+    {
+      "name": "Byron Duvall",
+      "contact": [
+        "https://www.drupal.org/user/1279040"
+      ]
+    },
+    {
+      "name": "Jason Partyka",
+      "contact": [
+        "https://www.drupal.org/user/344048"
+      ]
+    }
+  ]
+}

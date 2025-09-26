@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2022-004",
+  "modified": "2023-08-11T14:04:07.000Z",
+  "published": "2022-01-19T15:33:50.000Z",
+  "aliases": [],
+  "details": "jQuery UI is a third-party library used by Drupal. The jQuery UI Datepicker module provides the jQuery UI Datepicker library, which is not included in Drupal 9 core.\n\njQuery UI was previously thought to be end-of-life.\n\nLate in 2021, jQuery UI announced that they would be continuing development, and released a [jQuery UI 1.13.0](https://blog.jqueryui.com/2021/10/jquery-ui-1-13-0-released/) version. As part of this 1.13.0 update, they disclosed the following security issues that may affect site using the jQuery UI Datepicker module:\n\n* CVE-2021-41182: [XSS in the altField option of the Datepicker widget](https://github.com/jquery/jquery-ui/security/advisories/GHSA-9gj3-hwp5-pmwc)\n* CVE-2021-41183: [XSS in \\*Text options of the Datepicker widget](https://github.com/jquery/jquery-ui/security/advisories/GHSA-j7qv-pgf6-hvh4)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/jquery_ui_datepicker"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2022-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lauri Eskola",
+      "contact": [
+        "https://www.drupal.org/user/1078742"
+      ]
+    }
+  ]
+}

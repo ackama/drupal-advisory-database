@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-073",
+  "modified": "2025-05-29T18:16:49.000Z",
+  "published": "2025-05-28T17:44:12.000Z",
+  "aliases": [
+    "CVE-2025-48919"
+  ],
+  "details": "The \"Simple Klaro\" module adds the \"Klaro! A Simple Consent Manager\" to your website and allows you to configure it according to your needs in the Drupal backend.\n\nThe module doesn't sufficiently sanitise data attributes allowing persistent Cross Site Scripting (XSS) attacks.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/simple_klaro"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.10.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.10.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.10.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-073"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

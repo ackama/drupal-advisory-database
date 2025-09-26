@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-063",
+  "modified": "2023-08-11T18:33:56.000Z",
+  "published": "2019-08-14T17:26:13.000Z",
+  "aliases": [],
+  "details": "The External Link Filter module provides an input filter that replaces external links by a local link that redirects to the target URL.\n\nThe module did not have protection for the Redirect URL to go where content authors intended.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/elf"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-063"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Manuel Ad\u00e1n",
+      "contact": [
+        "https://www.drupal.org/user/516420"
+      ]
+    }
+  ]
+}

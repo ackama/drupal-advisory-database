@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-044",
+  "modified": "2025-02-20T19:26:51.000Z",
+  "published": "2024-10-02T16:27:12.000Z",
+  "aliases": [
+    "CVE-2024-13280"
+  ],
+  "details": "This module enables users to remain logged in separately from session timeouts.\n\nThe module doesn't sufficiently check a user's disabled status when validating cookies.\n\nThis vulnerability is mitigated by the fact that an attacker must have an unexpired cookie from a previous successful login.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/persistent_login"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.8.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.8.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.2.0"
+            },
+            {
+              "fixed": "2.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.2.0 <2.2.2"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.1.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.0.*"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.1.0"
+            },
+            {
+              "fixed": "2.2.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.1.*"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.8.0 || >=2.2.0 <2.2.2 || 2.0.* || 2.1.*"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-044"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Geoff Appleby",
+      "contact": [
+        "https://www.drupal.org/user/490940"
+      ]
+    }
+  ]
+}

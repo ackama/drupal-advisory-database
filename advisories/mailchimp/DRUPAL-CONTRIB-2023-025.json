@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2023-025",
+  "modified": "2023-10-26T13:22:52.000Z",
+  "published": "2023-06-28T17:10:15.000Z",
+  "aliases": [],
+  "details": "This module provides integration with Mailchimp, a popular email delivery service.\n\nA route related to OAuth authentication is not protected against a Cross Site Request Forgery attack.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/mailchimp"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.2.0"
+            },
+            {
+              "fixed": "2.2.2"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.2.0 <2.2.2"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=2.2.0 <2.2.2"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2023-025"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Heine",
+      "contact": [
+        "https://www.drupal.org/user/17943"
+      ]
+    }
+  ]
+}

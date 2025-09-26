@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2019-014",
+  "modified": "2023-08-11T19:23:01.000Z",
+  "published": "2019-02-06T18:13:19.000Z",
+  "aliases": [],
+  "details": "Acquia Connector facilitates sending certain telemetry data to Acquia for the purposes of analysis. The module automates the collection of site information to speed support communication and issue resolution. It is required for use with the Acquia Insight service.\n\nThe module does not properly enforce access control in a specific case, which can lead to disclosing information.\n\nThe vulnerability is mitigated by requiring the module diff feature to be enabled. This feature is enabled by default.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/acquia_connector"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.16.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.16.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.16.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2019-014"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Samuel Mortenson",
+      "contact": [
+        "https://www.drupal.org/user/2582268"
+      ]
+    }
+  ]
+}

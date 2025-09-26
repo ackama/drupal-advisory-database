@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-028",
+  "modified": "2025-04-02T17:02:32.000Z",
+  "published": "2025-04-02T17:02:32.000Z",
+  "aliases": [
+    "CVE-2025-3129"
+  ],
+  "details": "This module enables users to log in using a short access code instead of providing a username/password combination.\n\nThe module doesn't sufficiently protect against brute force attacks to guess a user's access code.\n\nThis vulnerability is mitigated by the fact that access code based logins are off by default and only enabled for accounts that enable it. Sites could mitigate the issue without updating by:\n\n1. disabling the access code login method for critical accounts\n2. monitor and prevent brute force attacks in other ways (for example, with a Web Application Firewall)",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/access_code"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.4"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-028"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Marcin Maruszewski (marcin maruszewski)",
+      "contact": [
+        "https://www.drupal.org/u/marcin-maruszewski"
+      ]
+    }
+  ]
+}

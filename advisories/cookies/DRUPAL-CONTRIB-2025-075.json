@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-075",
+  "modified": "2025-05-29T18:16:19.000Z",
+  "published": "2025-05-28T17:45:37.000Z",
+  "aliases": [
+    "CVE-2025-48914"
+  ],
+  "details": "This module provides a format filter, which allows you to \"disable\" certain HTML elements (e.g. remove their src attribute) specified by the user. These elements will be enabled again, once the COOKiES banner is accepted.\n\nThe module doesn't sufficiently check whether to convert \"data-src\" attributes to \"src\" when their value might contain malicious content under the scenario, that module specific classes are set on the HTML element.\n\nThis vulnerability is mitigated by the fact that the site must have the COOKiES filter submodule enabled and an attacker must have the correct permissions to have a specific HTML element display for all users, and this HTML element needs to have three concise classes set.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/cookies"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.2.15"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.2.15"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.2.15"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-075"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

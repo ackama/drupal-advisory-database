@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-041",
+  "modified": "2025-05-29T18:23:44.000Z",
+  "published": "2025-04-23T16:58:39.000Z",
+  "aliases": [
+    "CVE-2025-3900"
+  ],
+  "details": "Colorbox is a module that allows Images, and iframed or inline content to be displayed in a modal above the current page.\n\nThe Colorbox module doesn't sufficiently sanitize data attributes before opening modals.\n\nThis vulnerability is mitigated by the fact that an attacker must have a role with permission to enter HTML tags containing specific data attributes.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/colorbox"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.1.3"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.1.3"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.1.3"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-041"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

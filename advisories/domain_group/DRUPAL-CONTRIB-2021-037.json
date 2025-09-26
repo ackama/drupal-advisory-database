@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-037",
+  "modified": "2023-08-11T16:54:22.000Z",
+  "published": "2021-09-22T17:17:05.000Z",
+  "aliases": [],
+  "details": "This module enables sites to define a domain from Domain Access that points directly to a group page.\n\nThe module doesn't sufficiently manage the access to content administrative paths allowing an attacker to see and take actions on content (nodes) they should be allowed to.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/domain_group"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.4.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.4.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "last_affected": "2.0.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "2.0.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.4.0 || 2.0.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-037"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Kalle Kipin\u00e4",
+      "contact": [
+        "https://www.drupal.org/user/813328"
+      ]
+    }
+  ]
+}

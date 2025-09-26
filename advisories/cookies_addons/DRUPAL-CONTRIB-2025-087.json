@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-087",
+  "modified": "2025-07-09T16:37:27.000Z",
+  "published": "2025-07-09T16:37:27.000Z",
+  "aliases": [
+    "CVE-2025-7392"
+  ],
+  "details": "This module provides a format filter, which allows you to \"disable\" iframes (e.g. remove their src attribute) specified by the user. These elements will be enabled again, once the Cookies banner is accepted.\n\nThe module doesn't sufficiently filter user-supplied content when their value might contain malicious content leading to a Cross-site Scripting (XSS) vulnerability.\n\nThis vulnerability is mitigated by the fact that the site must have the Cookies Addons Embed Iframe submodule enabled and an attacker must have the correct permissions to use a text field with a text format that allows iframes to be used.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/cookies_addons"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "1.0.0"
+            },
+            {
+              "fixed": "1.2.4"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=1.0.0 <1.2.4"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=1.0.0 <1.2.4",
+        "patched": true
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-087"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Pierre Rudloff (prudloff)",
+      "contact": [
+        "https://www.drupal.org/u/prudloff"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2025-089",
+  "modified": "2025-07-16T16:46:08.000Z",
+  "published": "2025-07-16T16:46:08.000Z",
+  "aliases": [
+    "CVE-2025-7717"
+  ],
+  "details": "The File Download enables you to allow users to download file and image entities directly using a custom field formatter. It also provides an optional submodule to count and display file downloads in Views, similar to how the core statistics module tracks content views.\n\nThe File Download module does not properly validate input when handling file access requests. This can allow users to bypass protections and access private files that should not be publicly available.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/file_download"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.9.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.9.0"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "2.0.0"
+            },
+            {
+              "fixed": "2.0.1"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=2.0.0 <2.0.1"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.9.0 || >=2.0.0 <2.0.1"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-089"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Willem Drupal enthousiast (willempje2)",
+      "contact": [
+        "https://www.drupal.org/u/willempje2"
+      ]
+    }
+  ]
+}

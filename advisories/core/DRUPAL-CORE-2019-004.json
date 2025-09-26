@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2019-004",
+  "modified": "2022-08-21T19:40:19.000Z",
+  "published": "2019-03-20T16:08:16.000Z",
+  "aliases": [
+    "CVE-2019-6341"
+  ],
+  "details": "Under certain circumstances the File module/subsystem allows a malicious user to upload a file that can trigger a cross-site scripting (XSS) vulnerability.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "7.0.0"
+            },
+            {
+              "fixed": "7.65.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=7.0 <7.65"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0.0"
+            },
+            {
+              "fixed": "8.5.14"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">= 8.0.0 <8.5.14"
+          }
+        },
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.6.0"
+            },
+            {
+              "fixed": "8.6.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.6.0 <8.6.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=7.0 <7.65 || >= 8.0.0 <8.5.14 || >=8.6.0 <8.6.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-004"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Sam Thomas",
+      "contact": [
+        "https://www.drupal.org/u/jazzy2fives"
+      ]
+    }
+  ]
+}

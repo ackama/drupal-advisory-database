@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2024-022",
+  "modified": "2025-02-20T19:14:10.000Z",
+  "published": "2024-05-29T16:44:55.000Z",
+  "aliases": [
+    "CVE-2024-13258"
+  ],
+  "details": "Drupal REST & JSON API Authentication module restricts and secures unauthorized access to your Drupal site APIs using different authentication methods including Basic Authentication , API Key Authentication , JWT Authentication , OAuth Authentication , External / Third-Party Provider Authentication, etc.\n\nThe module doesn't sufficiently control user access when using Basic Authentication.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/rest_api_authentication"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.13"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.13"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.13"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2024-022"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Arek Suchecki",
+      "contact": [
+        "https://www.drupal.org/user/3553379"
+      ]
+    }
+  ]
+}

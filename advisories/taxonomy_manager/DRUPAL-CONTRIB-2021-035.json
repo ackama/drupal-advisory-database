@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CONTRIB-2021-035",
+  "modified": "2023-08-11T16:51:09.000Z",
+  "published": "2021-09-22T17:09:11.000Z",
+  "aliases": [],
+  "details": "This module provides a powerful interface for managing a taxonomy vocabulary. A vocabulary gets displayed in a dynamic tree view, where parent terms can be expanded to list their nested child terms or can be collapsed.\n\nThe module does not take the correct user permissions into account, allowing an attacker to delete and move terms.\n\nThe issue is mitigated by the fact that an attacker must have permission to create terms in the targeted vocabulary.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Drupal",
+        "name": "drupal/taxonomy_manager"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "2.0.6"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<2.0.6"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<2.0.6"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2021-035"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Klaus Purer",
+      "contact": [
+        "https://www.drupal.org/user/262198"
+      ]
+    }
+  ]
+}

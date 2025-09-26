@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DRUPAL-CORE-2019-008",
+  "modified": "2025-02-25T00:02:32.000Z",
+  "published": "2019-07-17T16:05:11.000Z",
+  "aliases": [
+    "CVE-2019-6342"
+  ],
+  "details": "In Drupal 8.7.4, when the [experimental](https://www.drupal.org/core/experimental#beta) Workspaces module is enabled, an access bypass condition is created.\n\nThis can be mitigated by disabling the Workspaces module. It does not affect any release other than Drupal 8.7.4.\n\nDrupal 8.7.3 and earlier, Drupal 8.6.x and earlier, and Drupal 7.x are **not** affected.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/core"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.7.4"
+            },
+            {
+              "fixed": "8.7.5"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">=8.7.4 <8.7.5"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">=8.7.4 <8.7.5"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-core-2019-008"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dave Botsch",
+      "contact": [
+        "https://www.drupal.org/user/3534164"
+      ]
+    }
+  ]
+}
