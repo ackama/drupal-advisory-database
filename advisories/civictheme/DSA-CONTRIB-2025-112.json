@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-112",
+  "modified": "2025-10-22T16:34:46.000Z",
+  "published": "2025-10-22T16:34:46.000Z",
+  "aliases": [
+    "CVE-2025-12082"
+  ],
+  "details": "CivicTheme is a design system and theme framework used to build content-rich Drupal websites. It includes editorial workflows, structured content types, and flexible theming components.\n\nThe theme doesn't sufficiently check access to entities when they are displayed as reference cards used in manual lists, which leads to an information disclosure vulnerability\n\nSpecifically, when unpublished or archived nodes (CivicTheme Page and Event) are referenced via card components and placed into manually curated lists or blocks, a referenced card is rendered on the page for users who do not have permission to view unpublished content. The referenced node itself is correctly checked for permission, but the information in the card component (title, thumbnail, tags) discloses information that the user does not have access to view.\n\nThis results in:\n\n* Draft or never-published Event node data being visible to anonymous users on cards.\n* Archived content persisting in curated content lists.\n\nThis disclosure bypasses editorial expectations and may expose sensitive or internal-only content unintentionally. It does not require complex interaction or elevated permissions. It is triggered by standard reference configurations and view templates.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/civictheme"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.12.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.12.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.12.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-112"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Lee Rowlands (larowlan)",
+      "contact": [
+        "https://www.drupal.org/u/larowlan"
+      ]
+    }
+  ]
+}
