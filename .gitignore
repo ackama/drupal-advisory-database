@@ -1,4 +1,4 @@
-.envrc
+.env*
 .idea/
 .vscode/
 .mypy_cache/
