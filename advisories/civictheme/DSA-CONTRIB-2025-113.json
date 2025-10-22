@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-113",
+  "modified": "2025-10-22T16:35:12.000Z",
+  "published": "2025-10-22T16:35:12.000Z",
+  "aliases": [
+    "CVE-2025-12083"
+  ],
+  "details": "CivicTheme is a design system and theme framework used to build content-rich Drupal websites. It includes editorial workflows, structured content types, and flexible theming components.\n\nCivicTheme does not sufficiently filter field data before rendering them in Twig templates. This combined with multiple instances of the Twig `raw` filter throughout CivicTheme components, allows for the injection of malicious scripts in browser contexts.\n\nAdditionally, CivicTheme fails to filter markup from SVGs embedded within the web page allowing potentially malicious scripts to be injected.\n\nThis vulnerability is mitigated by an attacker needing permission to create or edit content within a CivicTheme site.\n\nCivicTheme with its default permissions restricts the creation of content to content author and content approver roles.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/civictheme"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.12.0"
+            }
+          ],
+          "database_specific": {
+            "constraint": "<1.12.0"
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": "<1.12.0"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-113"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Adam Bramley (acbramley)",
+      "contact": [
+        "https://www.drupal.org/u/acbramley"
+      ]
+    },
+    {
+      "name": "Lee Rowlands (larowlan)",
+      "contact": [
+        "https://www.drupal.org/u/larowlan"
+      ]
+    }
+  ]
+}

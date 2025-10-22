@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-088",
-  "modified": "2025-07-09T16:37:40.000Z",
+  "modified": "2025-10-20T09:41:24.000Z",
   "published": "2025-07-09T16:37:40.000Z",
   "aliases": [
     "CVE-2025-7393"
@@ -45,8 +45,7 @@
         }
       ],
       "database_specific": {
-        "affected_versions": ">=3.0.0 <3.2.0 || >=4.0.0 <4.2.0",
-        "patched": true
+        "affected_versions": ">=3.0.0 <3.2.0 || >=4.0.0 <4.2.0"
       }
     }
   ],
