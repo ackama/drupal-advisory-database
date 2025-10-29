@@ -16,9 +16,9 @@ from urllib.parse import urljoin
 
 import requests
 import semver
+from helpers import text_is
 from markdownify import markdownify
 
-from helpers import text_is
 from typings import drupal, osv
 from user_agent import user_agent
 
