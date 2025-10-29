@@ -18,8 +18,8 @@ import requests
 import semver
 from markdownify import markdownify
 
-from typings import drupal, osv
 from helpers import text_is
+from typings import drupal, osv
 from user_agent import user_agent
 
 

@@ -1,5 +1,5 @@
-from colorama import Fore, Style
 from colorama import just_fix_windows_console
+from colorama import Fore, Style
 
 just_fix_windows_console()
 
