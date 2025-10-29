@@ -1,7 +1,7 @@
 {
   "schema_version": "1.7.0",
   "id": "DSA-CONTRIB-2025-114",
-  "modified": "2025-10-29T17:14:34.000Z",
+  "modified": "2025-10-29T17:53:22.000Z",
   "published": "2025-10-29T16:44:39.000Z",
   "aliases": [
     "CVE-2025-12466"
@@ -19,22 +19,19 @@
           "type": "ECOSYSTEM",
           "events": [
             {
-              "introduced": "6.0.1"
+              "introduced": "6.0.0"
             },
             {
               "fixed": "6.0.7"
             }
           ],
           "database_specific": {
-            "constraint": ">6.0.0 <6.0.7",
-            "warnings": [
-              "the > operator should be avoided as it does not provide a concrete version"
-            ]
+            "constraint": ">=6.0.0 <6.0.7"
           }
         }
       ],
       "database_specific": {
-        "affected_versions": ">6.0.0 <6.0.7"
+        "affected_versions": ">=6.0.0 <6.0.7"
       }
     }
   ],
