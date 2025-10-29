@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.7.0",
+  "id": "DSA-CONTRIB-2025-114",
+  "modified": "2025-10-29T17:14:34.000Z",
+  "published": "2025-10-29T16:44:39.000Z",
+  "aliases": [
+    "CVE-2025-12466"
+  ],
+  "details": "This module introduces an OAuth 2.0 authorization server, which can be configured to protect your Drupal instance with access tokens, or allow clients to request new access tokens and refresh them.\n\nThe module doesn't sufficiently respect granted scopes, it affects all access checks that are based on roles. For example: routes that have the `_role` requirement, can be bypassed with an access token.\n\nThis vulnerability is mitigated by the fact that an attacker must have the access token in possession and the user related to the token must have the associated (role requirement) roles assigned.",
+  "affected": [
+    {
+      "package": {
+        "ecosystem": "Packagist",
+        "name": "drupal/simple_oauth"
+      },
+      "severity": [],
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "6.0.1"
+            },
+            {
+              "fixed": "6.0.7"
+            }
+          ],
+          "database_specific": {
+            "constraint": ">6.0.0 <6.0.7",
+            "warnings": [
+              "the > operator should be avoided as it does not provide a concrete version"
+            ]
+          }
+        }
+      ],
+      "database_specific": {
+        "affected_versions": ">6.0.0 <6.0.7"
+      }
+    }
+  ],
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.drupal.org/sa-contrib-2025-114"
+    }
+  ],
+  "credits": [
+    {
+      "name": "coffeemakr",
+      "contact": [
+        "https://www.drupal.org/u/coffeemakr"
+      ]
+    }
+  ]
+}
